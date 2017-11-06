@@ -1,0 +1,127 @@
+@font-face{
+    font-family: "Angie";
+    src: url('../../assets/AngieRegular.otf') format("opentype")
+}
+
+.containter {
+    font-family: "Angie";
+    font-size: 24px;
+    color: white;
+    background-color: blue;
+}
+
+.center{
+    text-align: center;
+}
+
+.main-content {
+    background-repeat: no-repeat;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.p2 {
+    display: block;
+}
+
+.p2 > div {
+    display: inline-block; text-align: right; width: 100%
+}
+
+.streams {
+    height: 375px;
+    width: 100%;
+}
+
+.timer {
+    font-size: 36px;
+}
+
+.tracker {
+    position: relative;
+}
+
+.tracker-item-left {
+    background: url('../../assets/tracker/tracker-bg.png');
+    background-repeat: no-repeat;
+    left: 10px;
+}
+
+.tracker-item-right {
+    background: url('../../assets/tracker/tracker-bg.png');
+    background-repeat: no-repeat;
+    left: 125px;
+}
+
+.tracker-item-left > img, 
+.tracker-item-right > img {
+    position: absolute;
+    top:0;
+    left:0;
+    max-height: 280px;
+}
+.info {
+    margin-top: 210px;
+    color: white;
+    text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+.mapstone {
+    position: absolute;
+    top:175px;
+    left:130px;
+    font-size: 18px;
+}
+
+.name-cycle {
+    position: relative;
+}
+
+.name-twitch, .name-signup {
+    position: absolute;
+}
+
+.name-signup {
+	animation-name: fade;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation-iteration-count: infinite;
+	animation-duration: 30s;
+    animation-direction: alternate;
+}
+
+.name-twitch {
+    animation-name: start-fade;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-direction: alternate;
+}
+
+.name-twitch > img {
+    margin-right: 10px;
+    width: 22px;
+    height: 24px;
+}
+
+@keyframes start-fade {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+    45% { opacity: 0 }
+    50% { opacity: 1}
+	100% { opacity: 1; }
+}
+
+@keyframes fade {
+	0% { opacity: 1; }
+	25% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+	100% { opacity: 0; }
+}

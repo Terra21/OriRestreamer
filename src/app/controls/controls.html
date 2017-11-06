@@ -1,0 +1,97 @@
+<div class="controls">
+    <div class="container">
+        <div class="row col-lg-12">
+            <div class="col-lg-2">
+                Timer:
+            </div>
+            <div class="col-lg-2">
+                <input type="button" value="Start" (click)="start()" [disabled]="timerStarted"/>
+            </div>
+            <div class="col-lg-2">
+                <input type="button" value="Reset" (click)="reset()" />
+            </div>
+        </div>  
+        <div class="row col-lg-12">
+            <div class="col-lg-2">
+                Player 1:
+            </div>
+            <div class="col-lg-4">
+                <input [(ngModel)]="p1_name" />
+            </div>
+            <div class="col-lg-2">
+                Player 2:
+            </div>
+            <div class="col-lg-4">
+                <input [(ngModel)]="p2_name" />
+            </div>
+        </div>
+        <div class="row col-lg-12">
+            <div class="col-lg-2">
+                Twitch:
+            </div>
+            <div class="col-lg-4">
+                <input [(ngModel)]="p1_twitch" />
+            </div>
+            <div class="col-lg-2">
+                Twitch:
+            </div>
+            <div class="col-lg-4">
+                <input [(ngModel)]="p2_twitch" />
+            </div>
+        </div>
+        <div class="row col-lg-12">
+            <div class="col-lg-2">
+                Audio:
+            </div>
+            <div class="col-lg-4">
+                <input type="checkbox" [(ngModel)]="p1_audio" />
+            </div>
+            <div class="col-lg-2">
+                Audio:
+            </div>
+            <div class="col-lg-4">
+                <input type="checkbox" [(ngModel)]="p2_audio" />
+            </div>
+        </div>
+        <div class="row col-lg-12">
+                <div class="col-lg-4">
+                    Match Type:
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" [(ngModel)]="matchType" style="width:100%">
+                </div>
+            </div>
+        <div class="row col-lg-12">
+            <div class="col-lg-4">
+                Commentators:
+            </div>
+            <div class="col-lg-8">
+                <input type="text" [(ngModel)]="commentators" style="width:100%">
+            </div>
+        </div>
+        <div class="row col-lg-12">
+                <div class="col-lg-4">
+                    Tracker Id:
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" [(ngModel)]="trackerId" style="width:100%">
+                </div>
+                <div class="col-lg-2">
+                    <input type="button" (click)="linkTracker()" value="Link" />
+                </div>
+            </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-4">
+                <img [ngClass]="{ 'active-background': vm.background == 'forlorn' }"
+                     (click)="setBackground('forlorn')" src="../../assets/background-forlorn.png" style="max-height:75px;">
+            </div>
+            <div class="col-lg-4">
+                    <img [ngClass]="{ 'active-background': vm.background == 'gumo' }"
+                    (click)="setBackground('gumo')" src="../../assets/background-gumo.png" style="max-height:75px;">
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="containter" 
+[ngStyle]="{'background': 'url(../../assets/background-' + vm.background + '.png)', 'background-repeat': 'no-repeat'}">
+    <div class="streams"></div>
+      <div class="row col-12">
+         <div class="col-1 center">
+             <img *ngIf="vm.currentAudioOnPlayer == 1" src="../../assets/audio.png">
+         </div>
+            <div class="col-3 name-cycle">
+                <div class="name-twitch">
+                    <img src="../../assets/twitch-icon.png" />
+                    {{ vm.player1_twitch }}
+                </div>
+                <div class="name-signup">
+                    {{ vm.player1 }}
+                </div>
+             </div>
+             <div class="col-4 center timer">
+                {{ ticks }}
+             </div>
+             <div class="col-3 name-cycle p2">
+                <div class="name-twitch">
+                    <img src="../../assets/twitch-icon.png" />
+                    {{ vm.player2_twitch }}
+                </div>
+                <div class="name-signup">
+                    {{ vm.player2 }}
+                </div>
+             </div>
+
+         <div class="col-1 center">
+             <img *ngIf="vm.currentAudioOnPlayer == 2" src="../../assets/audio.png">
+         </div>
+    </div>
+    <div class="row col-12 center tracker">
+        <div class="col-4 tracker-item-left">
+            <div class="mapstone">{{ vm.tracker.mapstones.t1 }}/9</div>
+
+            <img src="../../assets/tracker/GWaterVein.png">
+            <img src="../../assets/tracker/GGumonSeal.png">
+            <img src="../../assets/tracker/GSunstone.png">
+            <img src="../../assets/tracker/GCleanWater.png">
+            <img src="../../assets/tracker/GWindRestoredRando.png">
+
+            <img *ngIf="vm.tracker.t1-event-watervein" src="../../assets/tracker/WaterVein.png">
+            <img *ngIf="vm.tracker.t1-event-gumonseal" src="../../assets/tracker/GumonSeal.png">
+            <img *ngIf="vm.tracker.t1-event-sunstone" src="../../assets/tracker/Sunstone.png">
+
+            <img *ngIf="vm.tracker.t1-skill-sein" src="../../assets/tracker/SpiritFlame.png">
+            <img *ngIf="vm.tracker.t1-skill-walljump"src="../../assets/tracker/WallJump.png">
+            <img *ngIf="vm.tracker.t1-skill-cflame" src="../../assets/tracker/ChargeFlame.png">
+            <img *ngIf="vm.tracker.t1-skill-djump" src="../../assets/tracker/DoubleJump.png">
+            <img *ngIf="vm.tracker.t1-skill-bash" src="../../assets/tracker/Bash.png">
+            <img *ngIf="vm.tracker.t1-skill-stomp" src="../../assets/tracker/Stomp.png">
+            <img *ngIf="vm.tracker.t1-skill-glide" src="../../assets/tracker/Glide.png">
+            <img *ngIf="vm.tracker.t1-skill-climb" src="../../assets/tracker/Climb.png">
+            <img *ngIf="vm.tracker.t1-skill-cjump" src="../../assets/tracker/ChargeJump.png">
+            <img *ngIf="vm.tracker.t1-skill-grenade" src="../../assets/tracker/LightGrenade.png">
+            <img *ngIf="vm.tracker.t1-skill-dash" src="../../assets/tracker/Dash.png">
+
+            <img *ngIf="vm.tracker.t1-tree-sein" src="../../assets/tracker/TSpiritFlame.png">
+            <img *ngIf="vm.tracker.t1-tree-walljump" src="../../assets/tracker/TWallJump.png">
+            <img *ngIf="vm.tracker.t1-tree-cflame" src="../../assets/tracker/TChargeFlame.png">
+            <img *ngIf="vm.tracker.t1-tree-djump" src="../../assets/tracker/TDoubleJump.png">
+            <img *ngIf="vm.tracker.t1-tree-bash" src="../../assets/tracker/TBash.png">
+            <img *ngIf="vm.tracker.t1-tree-stomp" src="../../assets/tracker/TStomp.png">
+            <img *ngIf="vm.tracker.t1-tree-glide" src="../../assets/tracker/TGlide.png">
+            <img *ngIf="vm.tracker.t1-tree-climb" src="../../assets/tracker/TClimb.png">
+            <img *ngIf="vm.tracker.t1-tree-cjump" src="../../assets/tracker/TChargeJump.png">
+            <img *ngIf="vm.tracker.t1-tree-grenade" src="../../assets/tracker/TLightGrenade.png">
+            <img *ngIf="vm.tracker.t1-tree-dash" src="../../assets/tracker/TDash.png">
+        </div>
+        <div class="col-4">
+            <div class="info">
+                <div>{{ vm.matchType }}</div>
+                <div><img src="../../assets/commentary.png"> {{ vm.commentators }}</div>
+            </div>
+        </div>
+        <div class="col-4 tracker-item-right">
+                <div class="mapstone">{{ vm.tracker.mapstones.t2 }}/9</div>
+    
+                <img src="../../assets/tracker/GWaterVein.png">
+                <img src="../../assets/tracker/GGumonSeal.png">
+                <img src="../../assets/tracker/GSunstone.png">
+                <img src="../../assets/tracker/GCleanWater.png">
+                <img src="../../assets/tracker/GWindRestoredRando.png">
+    
+                <img *ngIf="vm.tracker.t2-event-watervein" src="../../assets/tracker/WaterVein.png">
+                <img *ngIf="vm.tracker.t2-event-gumonseal" src="../../assets/tracker/GumonSeal.png">
+                <img *ngIf="vm.tracker.t2-event-sunstone" src="../../assets/tracker/Sunstone.png">
+    
+                <img *ngIf="vm.tracker.t2-skill-sein" src="../../assets/tracker/SpiritFlame.png">
+                <img *ngIf="vm.tracker.t2-skill-walljump"src="../../assets/tracker/WallJump.png">
+                <img *ngIf="vm.tracker.t2-skill-cflame" src="../../assets/tracker/ChargeFlame.png">
+                <img *ngIf="vm.tracker.t2-skill-djump" src="../../assets/tracker/DoubleJump.png">
+                <img *ngIf="vm.tracker.t2-skill-bash" src="../../assets/tracker/Bash.png">
+                <img *ngIf="vm.tracker.t2-skill-stomp" src="../../assets/tracker/Stomp.png">
+                <img *ngIf="vm.tracker.t2-skill-glide" src="../../assets/tracker/Glide.png">
+                <img *ngIf="vm.tracker.t2-skill-climb" src="../../assets/tracker/Climb.png">
+                <img *ngIf="vm.tracker.t2-skill-cjump" src="../../assets/tracker/ChargeJump.png">
+                <img *ngIf="vm.tracker.t2-skill-grenade" src="../../assets/tracker/LightGrenade.png">
+                <img *ngIf="vm.tracker.t2-skill-dash" src="../../assets/tracker/Dash.png">
+    
+                <img *ngIf="vm.tracker.t2-tree-sein" src="../../assets/tracker/TSpiritFlame.png">
+                <img *ngIf="vm.tracker.t2-tree-walljump" src="../../assets/tracker/TWallJump.png">
+                <img *ngIf="vm.tracker.t2-tree-cflame" src="../../assets/tracker/TChargeFlame.png">
+                <img *ngIf="vm.tracker.t2-tree-djump" src="../../assets/tracker/TDoubleJump.png">
+                <img *ngIf="vm.tracker.t2-tree-bash" src="../../assets/tracker/TBash.png">
+                <img *ngIf="vm.tracker.t2-tree-stomp" src="../../assets/tracker/TStomp.png">
+                <img *ngIf="vm.tracker.t2-tree-glide" src="../../assets/tracker/TGlide.png">
+                <img *ngIf="vm.tracker.t2-tree-climb" src="../../assets/tracker/TClimb.png">
+                <img *ngIf="vm.tracker.t2-tree-cjump" src="../../assets/tracker/TChargeJump.png">
+                <img *ngIf="vm.tracker.t2-tree-grenade" src="../../assets/tracker/TLightGrenade.png">
+                <img *ngIf="vm.tracker.t2-tree-dash" src="../../assets/tracker/TDash.png">
+            </div>
+    </div>
+    <img src="../../assets/background-gumo.png" style="visibility:hidden">
+ </div>
