@@ -24,7 +24,9 @@
     "@types/jquery": "^3.2.13",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "jquery": "3.2.1",
+    "moment": "2.19.2"
   },
   "devDependencies": {
     "@angular/cli": "1.4.5",
