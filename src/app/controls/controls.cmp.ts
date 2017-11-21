@@ -10,15 +10,14 @@ import * as $ from 'jquery';
   styleUrls: ['./controls.css']
 })
 export class ControlsCMP {
-  constructor(public infoService: InformationService) {
-
-  } 
+  constructor(public infoService: InformationService) { } 
 
   public timer: Observable<number> = Observable.timer(0, 1000);
   private $timer: Subscription; 
   timerStarted: boolean = false;
   trackerId: string = 'covertmuffinvmadinsane';
-
+  ticks: number = 0;
+  
   setBackground(background: string) {
     this._vm.background = background;
     this.infoService.setInfo(this._vm);
@@ -56,8 +55,6 @@ export class ControlsCMP {
     this.ticks = 0;
   }
 
-  ticks: number = 0;
-
   private _vm: Information = new Information();
   public get vm(): Information {
     return this._vm;
@@ -68,14 +65,14 @@ export class ControlsCMP {
     this.infoService.setInfo(info);
   }
   
-public set matchType(matchType: string){
-  this._vm.matchType = matchType;
-  this.infoService.setInfo(this._vm);
-}
+  public set matchType(matchType: string){
+    this._vm.matchType = matchType;
+    this.infoService.setInfo(this._vm);
+  }
 
-public get matchType(): string {
-  return this._vm.matchType;
-}
+  public get matchType(): string {
+    return this._vm.matchType;
+  }
 
   public set commentators(commentators: string){
     this._vm.commentators = commentators;
