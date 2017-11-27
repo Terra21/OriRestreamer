@@ -44,27 +44,20 @@
     position: relative;
 }
 
-.tracker-item-left {
-    background: url('../../assets/tracker/tracker-bg.png');
-    background-repeat: no-repeat;
-    left: 10px;
-}
-
-.tracker-item-right {
-    background: url('../../assets/tracker/tracker-bg.png');
-    background-repeat: no-repeat;
-    left: 125px;
-}
-
-.tracker-item-left > img, 
-.tracker-item-right > img {
+.tracker-item-p1 > img {
     position: absolute;
     top:0;
     left:0;
     max-height: 280px;
 }
+.tracker-item-p2 > img {
+    position: absolute;
+    top:0;
+    right:0;
+    max-height: 280px;
+}
 .info {
-    margin-top: 210px;
+    margin-top: 205px;
     color: white;
     text-shadow:
      -1px -1px 0 #000,  
@@ -73,10 +66,17 @@
        1px 1px 0 #000;
 }
 
-.mapstone {
+.mapstone-p1 {
     position: absolute;
     top:175px;
     left:130px;
+    font-size: 18px;
+}
+
+.mapstone-p2 {
+    position: absolute;
+    top:175px;
+    left:265px;
     font-size: 18px;
 }
 
