@@ -12,6 +12,10 @@ io.on('connection', function(client) {
     client.on('data', function(data){
         io.emit('data', data);
     });
+
+    client.on('timer', function(start){
+        io.emit('timer', start);
+    })
 });
 
 server.listen(8080);  

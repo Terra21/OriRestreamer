@@ -14,21 +14,32 @@ import { Socket } from 'net';
 
 export class StreamCMP {
   constructor(private infoService: InformationService){
-    this.infoService.timerTickCountEvent.subscribe((ticks: number) => {
-      this.ticks = moment().startOf('day').seconds(ticks).format('H:mm:ss');
-    });
 
-    this.infoService.timerStopped.subscribe((stopped: boolean) => {
-      this.ticks = "0:00:00";
-    });
+  }
 
-    var socket = io.connect('http://localhost:8080');
-    socket.on('data', function(data: Information){
+  ngOnInit(){
+    this.socket.on('data', function(data: Information){
       this.vm = data;
+    }.bind(this));
+
+    this.socket.on('timer', function(start: boolean){
+      console.log(start)
+      if(!start) {
+        this.$timer.unsubscribe();
+        this.ticks = "0:00:00";
+      }
+      else {
+        this.$timer = this.timer.subscribe((ticks: number) => {
+          this.ticks = moment().startOf('day').seconds(ticks).format('H:mm:ss');
+        });
+    }
     }.bind(this));
   }
 
   ticks: string = "0:00:00";
   public nameTimer: Observable<number> = Observable.timer(0, 1000);
+  public timer: Observable<number> = Observable.timer(0, 1000);
+  private $timer: Subscription;
   public vm: Information = new Information();
+  socket: any = io.connect('http://localhost:8080');
 }

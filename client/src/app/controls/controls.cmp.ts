@@ -13,19 +13,16 @@ export class ControlsCMP {
   constructor(public infoService: InformationService) { 
   } 
 
-  public timer: Observable<number> = Observable.timer(0, 1000);
-  private $timer: Subscription; 
   timerStarted: boolean = false;
   trackerId: string = 'covertmuffinvmadinsane';
-  ticks: number = 0;
+  socket: any = io.connect('http://localhost:8080');
   
   setBackground(background: string) {
     this._vm.background = background;
   }
 
   linkTracker() {
-    var socket = io.connect('http://localhost:8080');
-    socket.emit('data', this.vm);
+    this.socket.emit('data', this.vm);
     
     // $.ajax({
     //   url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
@@ -43,19 +40,12 @@ export class ControlsCMP {
 
   start() {
     this.timerStarted = true;
-    this.$timer = this.timer.subscribe(t => {
-      this.ticks = t;
-      this.infoService.setTimer(this.ticks);
-    });
-
-    this.infoService.startTimer();
+    this.socket.emit('timer', true);
   }
     
   reset() {
-    this.infoService.stopTimer();
-    this.$timer.unsubscribe();
     this.timerStarted = false;
-    this.ticks = 0;
+    this.socket.emit('timer', false);
   }
 
   private _vm: Information = new Information();
