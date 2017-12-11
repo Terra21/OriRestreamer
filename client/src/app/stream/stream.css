@@ -32,12 +32,30 @@
     display: inline-block; text-align: right; width: 100%
 }
 
-.streams {
-    height: 375px;
-    width: 100%;
+.stream1 {
+    float: left;
+    height: 356px;
+    width: 631px;
+    background: #FF00FF;
+    margin: 5px;
+}
+
+.stream2 {
+    position: absolute;
+    top: 0;
+    right:0;
+    height: 356px;
+    width: 631px;
+    background: #FF00FF;
+    margin: 5px;
+}
+
+.audio {
+    margin-top:15px;
 }
 
 .timer {
+    margin-top:10px;
     font-size: 36px;
 }
 
@@ -47,13 +65,13 @@
 
 .tracker-item-p1 > img {
     position: absolute;
-    top:0;
+    margin-top:10px;
     left:0;
     max-height: 280px;
 }
 .tracker-item-p2 > img {
     position: absolute;
-    top:0;
+    margin-top:10px;
     right:0;
     max-height: 280px;
 }
@@ -69,6 +87,7 @@
 
 .mapstone-p1 {
     position: absolute;
+    margin-top:20px;
     top:175px;
     left:130px;
     font-size: 18px;
@@ -76,6 +95,7 @@
 
 .mapstone-p2 {
     position: absolute;
+    margin-top:20px;
     top:175px;
     left:265px;
     font-size: 18px;
@@ -83,6 +103,7 @@
 
 .name-cycle {
     position: relative;
+    margin-top:15px;
 }
 
 .name-twitch, .name-signup {

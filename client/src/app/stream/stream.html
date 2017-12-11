@@ -1,8 +1,9 @@
 <div class="containter" [ngStyle]="{'background': 'url(../../assets/background-' + vm.background + '.png) no-repeat'}">
-    <div class="streams"></div>
+    <div class="stream1"></div>
+    <div class="stream2"></div>
       <div class="row col-12">
-         <div class="col-1 center">
-             <img *ngIf="vm.currentAudioOnPlayer == 1" src="../../assets/audio.png">
+         <div class="col-1 center audio">
+             <!-- <img *ngIf="vm.currentAudioOnPlayer == 1" src="../../assets/audio.png"> -->
          </div>
             <div class="col-3 name-cycle">
                 <div class="name-twitch">
@@ -26,8 +27,8 @@
                 </div>
              </div>
 
-         <div class="col-1 center">
-             <img *ngIf="vm.currentAudioOnPlayer == 2" src="../../assets/audio.png">
+         <div class="col-1 center audio">
+             <!-- <img *ngIf="vm.currentAudioOnPlayer == 2" src="../../assets/audio.png"> -->
          </div>
     </div>
     <div class="row col-12 center tracker">
