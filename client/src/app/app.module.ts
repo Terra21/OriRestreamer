@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { DashboardCMP } from './dashboard/dashboard.cmp';
 import { StreamCMP } from './stream/stream.cmp';
 import { ControlsCMP } from './controls/controls.cmp'
-import { InformationService } from './services/information.service';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
@@ -28,7 +27,6 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [InformationService],
   bootstrap: [AppComponent]
 })
 

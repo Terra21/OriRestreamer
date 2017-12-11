@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
-import { InformationService } from '../services/information.service';
 import * as $ from 'jquery';
 import io from 'socket.io-client';
 
@@ -10,8 +9,7 @@ import io from 'socket.io-client';
   styleUrls: ['./controls.css']
 })
 export class ControlsCMP {
-  constructor(public infoService: InformationService) { 
-  } 
+  constructor() { } 
 
   timerStarted: boolean = false;
   trackerId: string = 'covertmuffinvmadinsane';
@@ -111,7 +109,6 @@ export class ControlsCMP {
 
   public set p1_audio(audioSelected: boolean) {
     this._vm.currentAudioOnPlayer = audioSelected ? 1 : this._vm.currentAudioOnPlayer;
-    this.infoService.setAudio(1);
   }
 
   public get p2_audio(): boolean {
@@ -120,6 +117,5 @@ export class ControlsCMP {
 
   public set p2_audio(audioSelected: boolean) {
     this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
-    this.infoService.setAudio(2);
   }
 }

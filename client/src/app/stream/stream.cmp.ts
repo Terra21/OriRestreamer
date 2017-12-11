@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
-import { InformationService } from '../services/information.service';
 import { Player } from '../services/player.enum';
 import * as moment from 'moment';
 import io from 'socket.io-client';
@@ -13,9 +12,7 @@ import { Socket } from 'net';
 })
 
 export class StreamCMP {
-  constructor(private infoService: InformationService){
-
-  }
+  constructor() { }
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
@@ -23,7 +20,6 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean){
-      console.log(start)
       if(!start) {
         this.$timer.unsubscribe();
         this.ticks = "0:00:00";

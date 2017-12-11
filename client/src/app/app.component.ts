@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InformationService } from './services/information.service';
 import { Information } from './services/information';
 
 @Component({
