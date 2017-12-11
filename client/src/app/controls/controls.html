@@ -1,5 +1,16 @@
 <div class="controls">
     <div class="container">
+            <div class="row col-lg-12">
+                    <div class="col-lg-4">
+                        Tracker Id:
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" [(ngModel)]="trackerId" style="width:100%">
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="button" (click)="linkTracker()" value="Link" />
+                    </div>
+                </div>
         <div class="row col-lg-12">
             <div class="col-lg-2">
                 Timer:
@@ -69,17 +80,7 @@
                 <input type="text" [(ngModel)]="commentators" style="width:100%">
             </div>
         </div>
-        <div class="row col-lg-12">
-                <div class="col-lg-4">
-                    Tracker Id:
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" [(ngModel)]="trackerId" style="width:100%">
-                </div>
-                <div class="col-lg-2">
-                    <input type="button" (click)="linkTracker()" value="Link" />
-                </div>
-            </div>
+
 
         <div class="row col-lg-12">
             <div class="col-lg-4">
@@ -92,6 +93,5 @@
             </div>
             <div class="col-lg-4">
             </div>
-        </div>
     </div>
 </div>

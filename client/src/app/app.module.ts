@@ -1,25 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { DashboardCMP } from './dashboard/dashboard.cmp';
 import { StreamCMP } from './stream/stream.cmp';
 import { ControlsCMP } from './controls/controls.cmp'
 import { InformationService } from './services/information.service';
+
+const appRoutes: Routes = [
+  { path: 'dashboard', component: DashboardCMP },
+  { path: 'stream', component: StreamCMP },
+  { path: 'controls', component: ControlsCMP, },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ControlsCMP,
+    DashboardCMP,
     StreamCMP
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [InformationService],
-  bootstrap: [AppComponent, ControlsCMP, StreamCMP]
+  bootstrap: [AppComponent]
 })
+
 export class AppModule {
   constructor(){}
  }

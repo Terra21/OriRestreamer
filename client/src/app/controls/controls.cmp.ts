@@ -3,14 +3,15 @@ import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
 import { InformationService } from '../services/information.service';
 import * as $ from 'jquery';
+import io from 'socket.io-client';
 
 @Component({
-  selector: 'controls',
   templateUrl: './controls.html',
   styleUrls: ['./controls.css']
 })
 export class ControlsCMP {
-  constructor(public infoService: InformationService) { } 
+  constructor(public infoService: InformationService) { 
+  } 
 
   public timer: Observable<number> = Observable.timer(0, 1000);
   private $timer: Subscription; 
@@ -20,22 +21,24 @@ export class ControlsCMP {
   
   setBackground(background: string) {
     this._vm.background = background;
-    this.infoService.setInfo(this._vm);
   }
 
   linkTracker() {
-    $.ajax({
-      url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
-      dataType: "jsonp",
-      data: {
-          format: "json"
-      },
-      success: function( response ) {
-          console.log(response);
-          this._vm.tracker = response;
-          this.infoService.setInfo(this._vm);
-      }
-    });
+    var socket = io.connect('http://localhost:8080');
+    socket.emit('data', this.vm);
+    
+    // $.ajax({
+    //   url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
+    //   dataType: "jsonp",
+    //   data: {
+    //       format: "json"
+    //   },
+    //   success: function( response ) {
+    //       console.log(response);
+    //       this._vm.tracker = response;
+    //       this.infoService.setInfo(this._vm);
+    //   }
+    // });
   }
 
   start() {
@@ -62,12 +65,10 @@ export class ControlsCMP {
 
   public set vm(info: Information) {
     this._vm = info;
-    this.infoService.setInfo(info);
   }
   
   public set matchType(matchType: string){
     this._vm.matchType = matchType;
-    this.infoService.setInfo(this._vm);
   }
 
   public get matchType(): string {
@@ -76,7 +77,6 @@ export class ControlsCMP {
 
   public set commentators(commentators: string){
     this._vm.commentators = commentators;
-    this.infoService.setInfo(this._vm);
   }
 
   public get commentators(): string {
@@ -89,7 +89,6 @@ export class ControlsCMP {
 
   public set p1_name(p1: string) {
     this._vm.player1 = p1;
-    this.infoService.setInfo(this._vm);
   }
 
   public get p2_name(): string {
@@ -98,7 +97,6 @@ export class ControlsCMP {
 
   public set p2_name(p2: string) {
     this._vm.player2 = p2;
-    this.infoService.setInfo(this._vm);
   }
 
   public get p1_twitch(): string {
@@ -107,7 +105,6 @@ export class ControlsCMP {
 
   public set p1_twitch(p1: string){
     this._vm.player1_twitch = p1;
-    this.infoService.setInfo(this._vm);
   }
 
   public get p2_twitch(): string {
@@ -116,7 +113,6 @@ export class ControlsCMP {
 
   public set p2_twitch(p2: string){
     this._vm.player2_twitch = p2;
-    this.infoService.setInfo(this._vm);
   }
 
   public get p1_audio(): boolean {
@@ -125,7 +121,6 @@ export class ControlsCMP {
 
   public set p1_audio(audioSelected: boolean) {
     this._vm.currentAudioOnPlayer = audioSelected ? 1 : this._vm.currentAudioOnPlayer;
-    this.infoService.setInfo(this._vm);
     this.infoService.setAudio(1);
   }
 
@@ -135,7 +130,6 @@ export class ControlsCMP {
 
   public set p2_audio(audioSelected: boolean) {
     this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
-    this.infoService.setInfo(this._vm);
     this.infoService.setAudio(2);
   }
 }
