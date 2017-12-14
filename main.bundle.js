@@ -172,7 +172,7 @@ var ControlsCMP = (function () {
     ControlsCMP.prototype.linkTracker = function () {
         this.socket.emit('data', this.vm);
         __WEBPACK_IMPORTED_MODULE_2_jquery__["ajax"]({
-            url: "https://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
+            url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
             dataType: "jsonp",
             error: function (response) {
                 alert('Success!');
