@@ -163,7 +163,7 @@ var ControlsCMP = (function () {
     function ControlsCMP() {
         this.timerStarted = false;
         this.trackerId = 'covertmuffinvmadinsane';
-        this.socket = __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default.a.connect('http://ori-restreamer.azurewebsites.net/');
+        this.socket = __WEBPACK_IMPORTED_MODULE_3_socket_io_client___default.a.connect('https://ori-restreamer.azurewebsites.net/');
         this._vm = new __WEBPACK_IMPORTED_MODULE_1__services_information__["a" /* Information */]();
     }
     ControlsCMP.prototype.setBackground = function (background) {
@@ -498,7 +498,7 @@ var StreamCMP = (function () {
         this.nameTimer = __WEBPACK_IMPORTED_MODULE_1_rxjs__["Observable"].timer(0, 1000);
         this.timer = __WEBPACK_IMPORTED_MODULE_1_rxjs__["Observable"].timer(0, 1000);
         this.vm = new __WEBPACK_IMPORTED_MODULE_2__services_information__["a" /* Information */]();
-        this.socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client___default.a.connect('http://ori-restreamer.azurewebsites.net/');
+        this.socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client___default.a.connect('https://ori-restreamer.azurewebsites.net/');
     }
     StreamCMP.prototype.ngOnInit = function () {
         this.socket.on('data', function (data) {
