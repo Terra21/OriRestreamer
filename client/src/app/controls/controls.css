@@ -7,3 +7,8 @@
     border-width: 2px;
     border-color: greenyellow;
 }
+
+.container {
+    margin-right: 0;
+    margin-left: 0;
+}

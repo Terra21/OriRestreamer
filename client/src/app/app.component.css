@@ -1,11 +1,27 @@
-body{
-    width: 100%;
+@font-face{
+    font-family: "Angie";
+    src: url('../assets/AngieRegular.otf') format("opentype")
 }
 
-.row {
-    margin: 0px;
+.btn {
+    color: #FFFFFF;
+    margin: 10px;
+    width: 250px;
+    height: 100px;
+    font-family: "Angie";
+    font-size: 24px;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 
-.app {
-    padding: 0px;
+.btn-restream {
+    background: url('../assets/btn1.png');
+}
+
+.btn-controls {
+    background: url('../assets/btn2.png');
 }

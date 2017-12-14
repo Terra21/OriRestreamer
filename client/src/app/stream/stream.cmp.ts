@@ -37,5 +37,5 @@ export class StreamCMP {
   public timer: Observable<number> = Observable.timer(0, 1000);
   private $timer: Subscription;
   public vm: Information = new Information();
-  socket: any = io.connect('http://localhost:8080');
+  socket: any = io.connect('http://ori-restreamer.azurewebsites.net/');
 }
