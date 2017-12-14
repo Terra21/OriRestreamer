@@ -175,7 +175,6 @@ var ControlsCMP = (function () {
             url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
             dataType: "jsonp",
             error: function (response) {
-                alert('Success!');
                 console.log(response);
             },
             success: function (response) {
