@@ -25,7 +25,7 @@ export class Tracker {
     ['t1-tree-climb']: boolean = false;
     ['t1-tree-glide']: boolean = false;
     ['t1-tree-dash']: boolean = false;
-    ['t1-tree-djump']: boolean = false;
+    ["t1-tree-djump"]: boolean = false;
     ['t1-tree-stomp']: boolean = false;
     ['t1-tree-walljump']: boolean = false;
     ['t1-tree-grenade']: boolean = false;

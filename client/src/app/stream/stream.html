@@ -2,34 +2,31 @@
     <div class="stream1"></div>
     <div class="stream2"></div>
       <div class="row col-12">
-         <div class="col-1 center audio">
-             <!-- <img *ngIf="vm.currentAudioOnPlayer == 1" src="../../assets/audio.png"> -->
+         <div class="col-2 center timer">
+            {{ ticks }}
          </div>
-            <div class="col-3 name-cycle">
-                <div class="name-twitch">
-                    <img src="../../assets/twitch-icon.png" />
-                    {{ vm.player1_twitch }}
-                </div>
-                <div class="name-signup">
-                    {{ vm.player1 }}
-                </div>
-             </div>
-             <div class="col-4 center timer">
-                {{ ticks }}
-             </div>
-             <div class="col-3 name-cycle p2">
-                <div class="name-twitch">
-                    <img src="../../assets/twitch-icon.png" />
-                    {{ vm.player2_twitch }}
-                </div>
-                <div class="name-signup">
-                    {{ vm.player2 }}
-                </div>
-             </div>
-
-         <div class="col-1 center audio">
-             <!-- <img *ngIf="vm.currentAudioOnPlayer == 2" src="../../assets/audio.png"> -->
-         </div>
+        <div class="col-3 name-cycle p1">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ vm.player1_twitch }}
+            </div>
+            <div class="name-signup">
+                {{ vm.player1 }}
+            </div>
+            </div>
+        <div class="col-2"></div>
+        <div class="col-3 name-cycle p2">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ vm.player2_twitch }}
+            </div>
+            <div class="name-signup">
+                {{ vm.player2 }}
+            </div>
+        </div>
+        <div class="col-2 center timer">
+            {{ ticks }}
+        </div>
     </div>
     <div class="row col-12 center tracker">
         <div class="col-4 tracker-item-p1">
@@ -49,7 +46,7 @@
             <img *ngIf="vm.tracker.t1-skill-sein" src="../../assets/tracker/SpiritFlame.png">
             <img *ngIf="vm.tracker.t1-skill-walljump"src="../../assets/tracker/WallJump.png">
             <img *ngIf="vm.tracker.t1-skill-cflame" src="../../assets/tracker/ChargeFlame.png">
-            <img *ngIf="vm.tracker.t1-skill-djump" src="../../assets/tracker/DoubleJump.png">
+            <img *ngIf="dJumpSkill" src="../../assets/tracker/DoubleJump.png">
             <img *ngIf="vm.tracker.t1-skill-bash" src="../../assets/tracker/Bash.png">
             <img *ngIf="vm.tracker.t1-skill-stomp" src="../../assets/tracker/Stomp.png">
             <img *ngIf="vm.tracker.t1-skill-glide" src="../../assets/tracker/Glide.png">

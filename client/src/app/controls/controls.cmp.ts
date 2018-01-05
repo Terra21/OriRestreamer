@@ -13,7 +13,7 @@ export class ControlsCMP {
 
   timerStarted: boolean = false;
   trackerId: string = 'covertmuffinvmadinsane';
-  socket: any = io.connect('http://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
   
   setBackground(background: string) {
     this._vm.background = background;
@@ -21,19 +21,16 @@ export class ControlsCMP {
 
   linkTracker() {
     this.socket.emit('data', this.vm);
-    
     $.ajax({
-      url: "http://www.dcmiller.org/ori/tracker/server.php?match=" + this.trackerId,
-      dataType: "jsonp",
+      url: "https://www.meldontaragon.org/ori/tracker/server.php?match=" + this.trackerId,
+      dataType: "json",
       error: function(response) {
-        alert('Success!');
         console.log(response);
       },
-      success: function( response ) {
-          console.log(response);
-          this._vm.tracker = response;
-          this.infoService.setInfo(this._vm);
-      }
+      success: function( response: any ) {
+          this._vm.tracker = JSON.parse(JSON.stringify(response));
+          this.socket.emit('data', this.vm);
+      }.bind(this)
     });
   }
   

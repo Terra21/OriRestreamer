@@ -17,6 +17,9 @@ export class StreamCMP {
   ngOnInit(){
     this.socket.on('data', function(data: Information){
       this.vm = data;
+      this.sein = data.tracker["t1-skill-sein"];
+      this.wallJumpSkill = data.tracker["t1-skill-walljump"];
+      this.dJumpSkill = data.tracker["t1-skill-djump"];
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean){
@@ -28,7 +31,7 @@ export class StreamCMP {
         this.$timer = this.timer.subscribe((ticks: number) => {
           this.ticks = moment().startOf('day').seconds(ticks).format('H:mm:ss');
         });
-    }
+      }
     }.bind(this));
   }
 
@@ -37,5 +40,17 @@ export class StreamCMP {
   public timer: Observable<number> = Observable.timer(0, 1000);
   private $timer: Subscription;
   public vm: Information = new Information();
-  socket: any = io.connect('http://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+
+  sein: boolean;
+  wallJumpSkill: boolean;
+  dashSkill: boolean;
+  dJumpSkill: boolean;
+  bashSkill: boolean;
+  stompSkill: boolean;
+  cFlameSkill: boolean;
+  glideSkill: boolean;
+  cJumpSkill: boolean;
+  climbSkill: boolean;
+  grandeSkill: boolean;
 }

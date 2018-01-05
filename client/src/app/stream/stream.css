@@ -24,12 +24,12 @@
     margin-right: 0px;
 }
 
-.p2 {
+.p2{
     display: block;
 }
 
 .p2 > div {
-    display: inline-block; text-align: right; width: 100%
+    display: inline-block; text-align: right; width: 100%; padding-right: 35px;
 }
 
 .stream1 {
@@ -103,7 +103,7 @@
 
 .name-cycle {
     position: relative;
-    margin-top:15px;
+    margin-top:22px;
 }
 
 .name-twitch, .name-signup {
