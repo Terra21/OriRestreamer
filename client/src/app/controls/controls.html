@@ -13,7 +13,7 @@
         </div>
         <div class="row col -lg-12">
             <div class="col-lg-3">
-                Timer:
+                Timer (Both runners):
             </div>
             <div class="col-lg-3">
                 <input type="button" class="btn btn-success" value="Start" (click)="start()" [disabled]="timerStarted"/>
@@ -22,6 +22,7 @@
                 <input type="button" class="btn btn-danger" value="Reset" (click)="reset()" />
             </div>
         </div>  
+
         <div class="row col-lg-12">
             <div class="col-lg-3">
                 Player 1:
@@ -37,6 +38,14 @@
                 <input class="form-control" [(ngModel)]="p1_twitch" />
             </div>
         </div>
+        <div class="row col -lg-12">
+            <div class="col-lg-3">
+                Timer (Player 1):
+            </div>
+            <div class="col-lg-2">
+                <input type="button" class="btn btn-warning" value="Finished" (click)="player1Finished()" />
+            </div>
+        </div>  
         <div class="row col-lg-12">
             <div class="col-lg-3">
                 Player 2:
@@ -51,6 +60,14 @@
                 <input class="form-control" [(ngModel)]="p2_twitch" />
             </div>
         </div>
+        <div class="row col -lg-12">
+            <div class="col-lg-3">
+                Timer (Player 2):
+            </div>
+            <div class="col-lg-2">
+                <input type="button" class="btn btn-warning" value="Finished" (click)="player2Finished()" />
+            </div>
+        </div>  
         <!-- <div class="row col-lg-12">
             <div class="col-lg-2">
                 Audio:

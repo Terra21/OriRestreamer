@@ -44,6 +44,14 @@ export class ControlsCMP {
     this.socket.emit('timer', false);
   }
 
+  player1Finished() {
+    this.socket.emit('timer1', true);
+  }
+
+  player2Finished() {
+    this.socket.emit('timer2', true);
+  }
+
   private _vm: Information = new Information();
   public get vm(): Information {
     return this._vm;

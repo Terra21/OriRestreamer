@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "code": "ng serve --ssl 1 --ssl-key \"C:\\users\\terra\\desktop\\server.key\" --ssl-cert \"C:\\users\\terra\\desktop\\server.crt\"",
+    "code": "ng serve --ssl 1 --ssl-key \"C:\\users\\terra\\desktop\\server.key\" --ssl-cert \"C:\\users\\terra\\desktop\\server.crt\" --open",
     "build": "ng build",
     "postinstall": "node ./src/scripts/fixAngularCrypto.js"
   },

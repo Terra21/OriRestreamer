@@ -21,7 +21,15 @@ io.on('connection', function(client) {
 
     client.on('timer', function(start){
         io.emit('timer', start);
-    })
+    });
+
+    client.on('timer1', function(finished){
+        io.emit('timer1', finished);
+    });
+
+    client.on('timer2', function(finished){
+        io.emit('timer2', finished);
+    });
 });
 
 server.listen(port);
