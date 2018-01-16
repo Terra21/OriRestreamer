@@ -24,52 +24,50 @@ export class StreamCMP {
 
     this.socket.on('timer', function(start: boolean){
       if(!start) {
-        this.$timer1.unsubscribe();
-        this.$timer2.unsubscribe();
+        clearInterval(this.player1Interval);
+        clearInterval(this.player2Interval);
         this.ticks1 = "0:00:00";
         this.ticks2 = "0:00:00";
       }
       else {
-        this.$timer1 = this.timer1.subscribe((ticks: number) => {
-          this.ticks1 = moment().startOf('day').seconds(ticks).format('H:mm:ss');
-        });
-        this.$timer2 = this.timer2.subscribe((ticks: number) => {
-          this.ticks2 = moment().startOf('day').seconds(ticks).format('H:mm:ss');
-        });
+        var seconds = new Date().getTime(), last = seconds;
+        this.player1Interval = setInterval(function(){
+          var now = new Date().getTime();
+          last = now;
+          this.ticks1 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+        }.bind(this), 100);
+
+        this.player2Interval = setInterval(function(){
+          var now = new Date().getTime();
+          last = now;
+          this.ticks2 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+        }.bind(this), 100);
       }
     }.bind(this));
 
     this.socket.on('timer1', function(finished: boolean) {
       if(!finished) {
-        this.$timer1.unsubscribe();
-        this.ticks1 = "0:00:00";
-        console.log('not finished 1');
       }
       else {
-        this.$timer1.unsubscribe();
-        console.log('finished 1');
+        clearInterval(this.player1Interval);
       }
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean) {
       if(!finished) {
-        this.$timer2.unsubscribe();
-        this.ticks2 = "0:00:00";
-        console.log('not finished 2');
       }
       else {
-        this.$timer2.unsubscribe();
-        console.log('finished 2');
+        clearInterval(this.player2Interval);
       }
     }.bind(this));
   }
 
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
+  player1Interval: any;
+  player2Interval: any;
   public nameTimer: Observable<number> = Observable.timer(0, 1000);
-  public timer1: Observable<number> = Observable.timer(0, 1000);
   public timer2: Observable<number> = Observable.timer(0, 1000);
-  private $timer1: Subscription;
   private $timer2: Subscription;
   public vm: Information = new Information();
   socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
