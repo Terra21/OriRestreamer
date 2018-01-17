@@ -45,6 +45,10 @@
             <div class="col-lg-2">
                 <input type="button" class="btn btn-warning" value="Finished" (click)="player1Finished()" />
             </div>
+            <div class="col-lg-2">
+                Hide:
+                <input type="checkbox" [(ngModel)]="hidePlayer1Timer" />
+            </div>
         </div>  
         <div class="row col-lg-12">
             <div class="col-lg-3">
@@ -66,6 +70,10 @@
             </div>
             <div class="col-lg-2">
                 <input type="button" class="btn btn-warning" value="Finished" (click)="player2Finished()" />
+            </div>
+            <div class="col-lg-2">
+                Hide:
+                <input type="checkbox" [(ngModel)]="hidePlayer2Timer" />
             </div>
         </div>  
         <!-- <div class="row col-lg-12">

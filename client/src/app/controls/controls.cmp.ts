@@ -61,6 +61,22 @@ export class ControlsCMP {
     this._vm = info;
   }
   
+  public get hidePlayer1Timer(): boolean {
+    return this._vm.player1_timerVisible;
+  }
+
+  public set hidePlayer1Timer(timerSelected: boolean) {
+    this._vm.player1_timerVisible = timerSelected;
+  }
+
+  public get hidePlayer2Timer(): boolean {
+    return this._vm.player2_timerVisible;
+  }
+
+  public set hidePlayer2Timer(timerSelected: boolean) {
+    this._vm.player2_timerVisible = timerSelected;
+  }
+
   public set matchType(matchType: string){
     this._vm.matchType = matchType;
   }

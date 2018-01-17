@@ -5,6 +5,8 @@ export class Information {
     player2: string = 'Shedd';
     player1_twitch: string = 'TheRooseIsLoose89';
     player2_twitch: string = 'Shedd_';
+    player1_timerVisible: boolean = false;
+    player2_timerVisible: boolean = false;
     currentAudioOnPlayer: number = 1;
     commentators: string = 'MeldonTaragon, CovertMuffin';
     matchType: string = 'Exhibition';

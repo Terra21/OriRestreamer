@@ -3,7 +3,7 @@
     <div class="stream2"></div>
       <div class="row col-12">
          <div class="col-2 center timer">
-            {{ ticks1 }}
+            <span *ngIf="!vm.player1_timerVisible">{{ ticks1 }}</span>
          </div>
         <div class="col-3 name-cycle p1">
             <div class="name-twitch">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-2 center timer">
-            {{ ticks2 }}
+             <span *ngIf="!vm.player2_timerVisible">{{ ticks2 }}</span>
         </div>
     </div>
     <div class="row col-12 center tracker">
