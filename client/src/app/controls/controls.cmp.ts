@@ -12,7 +12,6 @@ export class ControlsCMP {
   constructor() { } 
 
   timerStarted: boolean = false;
-  trackerId: string = 'covertmuffinvmadinsane';
   socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
   
   setBackground(background: string) {
@@ -22,7 +21,7 @@ export class ControlsCMP {
   linkTracker() {
     this.socket.emit('data', this.vm);
     $.ajax({
-      url: "https://www.meldontaragon.org/ori/tracker/server.php?match=" + this.trackerId,
+      url: "https://www.meldontaragon.org/ori/tracker/server.php?match=" + this._vm.seed,
       dataType: "json",
       error: function(response) {
         console.log(response);
@@ -92,6 +91,14 @@ export class ControlsCMP {
   public get commentators(): string {
     return this._vm.commentators;
   }
+
+public get seed(): string {
+  return this._vm.seed;
+}
+
+public set seed(seed: string){
+  this._vm.seed = seed;
+}
 
   public get p1_name(): string {
     return this._vm.player1;

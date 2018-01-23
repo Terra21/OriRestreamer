@@ -16,6 +16,11 @@ export class StreamCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
+      console.log(data.seed);
+      console.log(this.seed);
+      if(data.seed !== this.seed)
+        return;
+        
       this.vm = data;
       this.sein = data.tracker["t1-skill-sein"];
       this.wallJumpSkill = data.tracker["t1-skill-walljump"];
@@ -61,6 +66,8 @@ export class StreamCMP {
       }
     }.bind(this));
   }
+
+  seed: string = window.location.href.split('=')[1];
 
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
