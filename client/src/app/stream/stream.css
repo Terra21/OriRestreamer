@@ -38,6 +38,7 @@
     width: 631px;
     background: #FF00FF;
     margin: 5px;
+    margin-top: 10px;
 }
 
 .stream2 {
@@ -48,6 +49,7 @@
     width: 631px;
     background: #FF00FF;
     margin: 5px;
+    margin-top:62px;
 }
 
 .audio {
@@ -55,7 +57,7 @@
 }
 
 .timer {
-    margin-top:10px;
+    margin-bottom:10px;
     font-size: 36px;
     height: 42px;
 }
@@ -106,7 +108,7 @@
 
 .name-cycle {
     position: relative;
-    margin-top:22px;
+    margin-top:14px;
 }
 
 .name-twitch, .name-signup {
