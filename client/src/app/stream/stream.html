@@ -1,74 +1,71 @@
-<div class="containter" [ngStyle]="{'background': 'url(../../assets/background-' + vm.background + '.png) no-repeat'}">
-    <div class="row col-12">
-
-       <div class="col-3 name-cycle p1">
-           <div class="name-twitch">
-               <img src="../../assets/twitch-icon.png" />
-               {{ vm.player1_twitch }}
-           </div>
-           <div class="name-signup">
-               {{ vm.player1 }}
-           </div>
-           </div>
-           <div class="col-2 center timer">
+<div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '.png)'}">
+    <div class="topbar">
+    	<div class="name-cycle p1">
+        	<div class="name-twitch">
+            	<img src="../../assets/twitch-icon.png" />
+            	{{ vm.player1_twitch }}
+        	</div>
+        	<div class="name-signup">
+            	{{ vm.player1 }}
+        	</div>
+    	</div>
+    	<div class="timer">
             <span *ngIf="!vm.player1_timerVisible">{{ ticks1 }}</span>
-         </div>
-       <div class="col-2"></div>
-       <div class="col-2 center timer">
-        <span *ngIf="!vm.player2_timerVisible">{{ ticks2 }}</span>
-   </div>
-       <div class="col-3 name-cycle p2">
-           <div class="name-twitch">
-               <img src="../../assets/twitch-icon.png" />
-               {{ vm.player2_twitch }}
-           </div>
-           <div class="name-signup">
-               {{ vm.player2 }}
-           </div>
-       </div>
+    	</div>
+    	<!-- <div class="center timer">
+        	<span *ngIf="!vm.player2_timerVisible">{{ ticks2 }}</span>
+		</div> -->
+	    <div class="name-cycle p2">
+	        <div class="name-twitch">
+	            <img src="../../assets/twitch-icon.png" />
+	            {{ vm.player2_twitch }}
+	        </div>
+	        <div class="name-signup">
+	            {{ vm.player2 }}
+	        </div>
+	    </div>
+	</div>
 
-   </div>
-    <div class="stream1"></div>
-    <div class="stream2"></div>
+    <!-- <div class="stream-placeholder"></div>
+    <div class="stream-placeholder"></div> -->
 
-    <div class="row col-12 center tracker">
-        <div class="col-4 tracker-item-p1">
-            <img src="../../assets/allskills.png">
+    <div class="matchinfo">
+        <div class="tracker p1">
+			<!-- TODO: Remove the img tag below once bg image has it baked in -->
+            <img src="../../assets/skillring.png">
 
-            <img *ngIf="p1SpritFlameSkill" src="../../assets/allskills/spiritflame.png">
-            <img *ngIf="p1WallJumpSkill"src="../../assets/allskills/walljump.png">
-            <img *ngIf="p1CFlameSkill" src="../../assets/allskills/chargeflame.png">
-            <img *ngIf="p1DJumpSkill" src="../../assets/allskills/doublejump.png">
-            <img *ngIf="p1DBashSkill" src="../../assets/allskills/bash.png">
-            <img *ngIf="p1StompSkill" src="../../assets/allskills/stomp.png">
-            <img *ngIf="p1GlideSkill" src="../../assets/allskills/glide.png">
-            <img *ngIf="p1ClimbSkill" src="../../assets/allskills/climb.png">
-            <img *ngIf="p1CJumpSkill" src="../../assets/allskills/chargejump.png">
-            <img *ngIf="p1GrenadeSkill" src="../../assets/allskills/lightgrenade.png">
-            <img *ngIf="p1DashSkill" src="../../assets/allskills/dash.png">
+            <img *ngIf="p1SpritFlameSkill" src="../../assets/skills/spiritflame.png">
+            <img *ngIf="p1WallJumpSkill"src="../../assets/skills/walljump.png">
+            <img *ngIf="p1CFlameSkill" src="../../assets/skills/chargeflame.png">
+            <img *ngIf="p1DJumpSkill" src="../../assets/skills/doublejump.png">
+            <img *ngIf="p1DBashSkill" src="../../assets/skills/bash.png">
+            <img *ngIf="p1StompSkill" src="../../assets/skills/stomp.png">
+            <img *ngIf="p1GlideSkill" src="../../assets/skills/glide.png">
+            <img *ngIf="p1ClimbSkill" src="../../assets/skills/climb.png">
+            <img *ngIf="p1CJumpSkill" src="../../assets/skills/chargejump.png">
+            <img *ngIf="p1GrenadeSkill" src="../../assets/skills/lightgrenade.png">
+            <img *ngIf="p1DashSkill" src="../../assets/skills/dash.png">
         </div>
-        <div class="col-4">
-            <div class="info">
-                <div>{{ vm.matchType }}</div>
-                <div><img src="../../assets/commentary.png" /> {{ vm.commentators }}</div>
-            </div>
+        <div class="info">
+            <div>{{ vm.matchType }}</div>
+            <img src="../../assets/commentary.png" />
+			<div>{{ vm.commentators }}</div>
         </div>
-        <div class="col-4 tracker-item-p2">
-                <img src="../../assets/allskills.png">
+        <div class="tracker p2">
+			<!-- TODO: Remove the img tag below once bg image has it baked in -->
+                <img src="../../assets/skillring.png">
 
-                <img *ngIf="p2SpritFlameSkill" src="../../assets/allskills/spiritflame.png">
-                <img *ngIf="p2WallJumpSkill"src="../../assets/allskills/walljump.png">
-                <img *ngIf="p2CFlameSkill" src="../../assets/allskills/chargeflame.png">
-                <img *ngIf="p2DJumpSkill" src="../../assets/allskills/doublejump.png">
-                <img *ngIf="p2DBashSkill" src="../../assets/allskills/bash.png">
-                <img *ngIf="p2StompSkill" src="../../assets/allskills/stomp.png">
-                <img *ngIf="p2GlideSkill" src="../../assets/allskills/glide.png">
-                <img *ngIf="p2ClimbSkill" src="../../assets/allskills/climb.png">
-                <img *ngIf="p2CJumpSkill" src="../../assets/allskills/chargejump.png">
-                <img *ngIf="p2GrenadeSkill" src="../../assets/allskills/lightgrenade.png">
-                <img *ngIf="p2DashSkill" src="../../assets/allskills/dash.png">
+                <img *ngIf="p2SpritFlameSkill" src="../../assets/skills/spiritflame.png">
+                <img *ngIf="p2WallJumpSkill"src="../../assets/skills/walljump.png">
+                <img *ngIf="p2CFlameSkill" src="../../assets/skills/chargeflame.png">
+                <img *ngIf="p2DJumpSkill" src="../../assets/skills/doublejump.png">
+                <img *ngIf="p2DBashSkill" src="../../assets/skills/bash.png">
+                <img *ngIf="p2StompSkill" src="../../assets/skills/stomp.png">
+                <img *ngIf="p2GlideSkill" src="../../assets/skills/glide.png">
+                <img *ngIf="p2ClimbSkill" src="../../assets/skills/climb.png">
+                <img *ngIf="p2CJumpSkill" src="../../assets/skills/chargejump.png">
+                <img *ngIf="p2GrenadeSkill" src="../../assets/skills/lightgrenade.png">
+                <img *ngIf="p2DashSkill" src="../../assets/skills/dash.png">
             </div>
     </div>
-    <img src="../../assets/background-gumo.png" style="visibility:hidden">
  </div>
-

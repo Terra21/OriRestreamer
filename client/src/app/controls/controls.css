@@ -1,5 +1,13 @@
-.row {
-    margin-top: 10px;
+.controls {
+	padding: 50px;
+}
+
+.container {
+	display: grid;
+	grid-template-rows: [top] auto auto [bg] auto [spacer] 5px [timer] auto auto [spacer2] 5px [players] auto auto auto;
+	grid-template-columns: repeat( 8, 1fr );
+	grid-row-gap: 15px;
+	grid-column-gap: 20px;
 }
 
 .active-background {
@@ -8,7 +16,137 @@
     border-color: greenyellow;
 }
 
-.container {
-    margin-right: 0;
-    margin-left: 0;
+.spacer {
+	grid-column-start: 1;
+	grid-column-end: span 8;
+	width: 100%;
+}
+
+.btn {
+	padding: 20px;
+	background: #162458;
+	border: 1px solid #233166;
+	color: inherit;
+}
+
+.btn.timer-start {
+	background-color: #007729;
+}
+
+.btn.timer-reset {
+	background-color: #8e0000;
+}
+
+input[type="text"] {
+	width: 100%;
+}
+
+.label {
+	justify-self: end;
+	text-align: right;
+}
+
+.label-big {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.name, .twitch {
+	align-self: start;
+}
+
+.center {
+	justify-self: center;
+}
+
+.col-2 {
+	grid-column-end: span 2;
+}
+
+.col-3 {
+	grid-column-end: span 3;
+}
+
+.col-4 {
+	grid-column-end: span 4;
+}
+
+.col-6 {
+	grid-column-end: span 6;
+}
+
+.col-8 {
+	grid-column-end: span 8;
+}
+
+.r1 {
+	grid-row-start: 1;
+}
+
+.r2 {
+	grid-row-start: 2;
+}
+
+.r3 {
+	grid-row-start: 3;
+}
+
+.r4 {
+	grid-row-start: 4;
+}
+
+.r5 {
+	grid-row-start: 5;
+}
+
+.r6 {
+	grid-row-start: 6;
+}
+
+.r7 {
+	grid-row-start: 7;
+}
+
+.r8 {
+	grid-row-start: 8;
+}
+
+.r9 {
+	grid-row-start: 9;
+}
+
+.r10 {
+	grid-row-start: 10;
+}
+
+.c1 {
+	grid-column-start: 1;
+}
+
+.c2 {
+	grid-column-start: 2;
+}
+
+.c3 {
+	grid-column-start: 3;
+}
+
+.c4 {
+	grid-column-start: 4;
+}
+
+.c5 {
+	grid-column-start: 5;
+}
+
+.c6 {
+	grid-column-start: 6;
+}
+
+.c7 {
+	grid-column-start: 7;
+}
+
+.backgrounds > div {
+	display: inline-block;
 }
