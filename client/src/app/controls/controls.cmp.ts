@@ -21,7 +21,7 @@ export class ControlsCMP {
   linkTracker() {
     this.socket.emit('data', this.vm);
     $.ajax({
-      url: "https://www.meldontaragon.org/ori/tracker/server.php?match=" + this._vm.seed,
+      url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
       dataType: "json",
       error: function(response) {
         console.log(response);
