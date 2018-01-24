@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4201",
-    "code": "ng serve --ssl 1 --ssl-key \"C:\\users\\terra\\desktop\\server.key\" --ssl-cert \"C:\\users\\terra\\desktop\\server.crt\" --open",
+    "code": "ng serve --port 4202 --ssl 1 --ssl-key \"C:\\users\\terra\\desktop\\server.key\" --ssl-cert \"C:\\users\\terra\\desktop\\server.crt\" --open",
     "build": "ng build",
     "postinstall": "node ./src/scripts/fixAngularCrypto.js"
   },

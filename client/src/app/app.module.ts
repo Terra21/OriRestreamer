@@ -6,12 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardCMP } from './dashboard/dashboard.cmp';
 import { StreamCMP } from './stream/stream.cmp';
-import { ControlsCMP } from './controls/controls.cmp'
+import { ControlsCMP } from './controls/controls.cmp';
+import { GroupsCMP } from './groups/groups.cmp';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
   { path: 'stream', component: StreamCMP },
   { path: 'controls', component: ControlsCMP, },
+  { path: 'groups', component: GroupsCMP },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     ControlsCMP,
     DashboardCMP,
-    StreamCMP
+    StreamCMP,
+    GroupsCMP
   ],
   imports: [
     BrowserModule, 
