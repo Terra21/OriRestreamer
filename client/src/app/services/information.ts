@@ -12,6 +12,6 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = 'MeldonTaragon, CovertMuffin';
     matchType: string = 'Exhibition';
-    background: string = 'gumo'
+    background: string = 'ginso'
     tracker: Tracker = new Tracker();
 }
