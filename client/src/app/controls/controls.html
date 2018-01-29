@@ -76,7 +76,7 @@
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
         <label class="label r10 c1" for="p1Twitch">Twitch</label>
 		<input id="p1Twitch" class="twitch r10 c2" [(ngModel)]="p1_twitch" />
-        <div class="timer r9 c3 col-2"><i><b>Terra</b>, put the timer here, if possible</i></div>
+        <div class="timer r9 c3 col-2">{{ ticks1 }}</div>
         <input type="button" class="btn btn-warning r10 c3 col-2" value="FINISH" (click)="player1Finished()" />
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2</div>
@@ -84,7 +84,7 @@
 		<input id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
         <label class="label r10 c5" for="p2Twitch">Twitch</label>
 		<input id="p2Twitch" class="twitch r10 c6" [(ngModel)]="p2_twitch" />
-        <div class="timer r9 c7 col-2"><i>Put the timer for p2 here</i></div>
+        <div class="timer r9 c7 col-2">{{ ticks2 }}</div>
         <input type="button" class="btn btn-warning r10 c7 col-2" value="FINISH" (click)="player2Finished()" />
     </div>
 </div>
