@@ -1,26 +1,26 @@
 <div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '.png)'}">
     <div class="topbar">
     	<div class="name-cycle p1">
-        	<div class="name-twitch">
+        	<div class="name-twitch text">
             	<img src="../../assets/twitch-icon.png" />
             	{{ vm.player1_twitch }}
         	</div>
-        	<div class="name-signup">
+        	<div class="name-signup text">
             	{{ vm.player1 }}
         	</div>
     	</div>
     	<div class="timer">
-            <span *ngIf="!vm.player1_timerVisible">{{ ticks }}</span>
+            <span *ngIf="!vm.player1_timerVisible" class="text">{{ ticks }}</span>
     	</div>
     	<!-- <div class="center timer">
         	<span *ngIf="!vm.player2_timerVisible">{{ ticks2 }}</span>
 		</div> -->
 	    <div class="name-cycle p2">
-	        <div class="name-twitch">
+	        <div class="name-twitch text">
 	            <img src="../../assets/twitch-icon.png" />
 	            {{ vm.player2_twitch }}
 	        </div>
-	        <div class="name-signup">
+	        <div class="name-signup text">
 	            {{ vm.player2 }}
 	        </div>
 	    </div>

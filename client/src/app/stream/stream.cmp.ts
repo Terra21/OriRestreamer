@@ -47,6 +47,9 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean){
+      this.player1Finished = false; 
+      this.player2Finished = false;
+      
       if(!start) {
         clearInterval(this.timerInterval);
         this.ticks = "0:00:00";
@@ -62,23 +65,15 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer1', function(finished: boolean) {
-      if(!finished) {
-      }
-      else {
-        this.player1Finished = true;
+        this.player1Finished = finished;
         this.checkIfBothPlayersFinished();
         //TODO Animation/Show timer on screen when player finished
-      }
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean) {
-      if(!finished) {
-      }
-      else {
-        this.player2Finished = true;
+        this.player2Finished = finished;
         this.checkIfBothPlayersFinished();
         //TODO Animation/Show timer on screen when player finished
-      }
     }.bind(this));
   }
 
