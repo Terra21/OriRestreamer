@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
 import io from 'socket.io-client';
+import * as $ from 'jquery';
 import { Socket } from 'net';
 
 @Component({
@@ -15,6 +16,17 @@ export class GroupsCMP {
   ngOnInit(){
     this.socket.on('data', function(data: Information){
       
+      $.ajax({
+        url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Group Standings!B4:D8?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+        dataType: "json",
+        error: function(response) {
+          console.log(response);
+        },
+        success: function( response: any ) {
+          console.log(response);
+        }.bind(this)
+      });
+
     }.bind(this));
   }
 

@@ -75,8 +75,28 @@
     float: left;
     width: 950px; /* (stream_width - margins)/2 = (1920 - 4*5px)/2 = 950px */
     height: 534.375px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
-    background: #FF00FF;
-	margin: 0 5px 0;
+    margin: 0 5px 0;
+    position: relative;
+}
+
+.leftRunner {
+    position: absolute;
+    right: 0;
+    padding-right: 25px;
+    bottom: 50px;
+    font-size: 26pt;
+}
+
+.rightRunner {
+    position: absolute;
+    left: 0;
+    padding-left: 25px;
+    bottom: 50px;
+    font-size: 26pt;
+}
+
+.winner {
+    color: gold;
 }
 
 .audio {

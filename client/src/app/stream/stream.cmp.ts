@@ -21,6 +21,8 @@ export class StreamCMP {
         
       this.vm = data;
 
+      this.checkIfBothPlayersFinished();
+
       this.p1SpritFlameSkill = data.tracker["t1-skill-sein"];
       this.p1WallJumpSkill = data.tracker["t1-skill-walljump"];
       this.p1CFlameSkill = data.tracker["t1-skill-cflame"];
@@ -49,10 +51,14 @@ export class StreamCMP {
     this.socket.on('timer', function(start: boolean){
       this.player1Finished = false; 
       this.player2Finished = false;
-      
+
       if(!start) {
         clearInterval(this.timerInterval);
         this.ticks = "0:00:00";
+        $(".rightRunner").removeClass('winner');
+        $(".leftRunner").removeClass('winner');
+        $(".rightRunner").hide();
+        $(".leftRunner").hide();
       }
       else {
         var seconds = new Date().getTime(), last = seconds;
@@ -66,14 +72,10 @@ export class StreamCMP {
 
     this.socket.on('timer1', function(finished: boolean) {
         this.player1Finished = finished;
-        this.checkIfBothPlayersFinished();
-        //TODO Animation/Show timer on screen when player finished
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean) {
         this.player2Finished = finished;
-        this.checkIfBothPlayersFinished();
-        //TODO Animation/Show timer on screen when player finished
     }.bind(this));
   }
 
@@ -81,10 +83,25 @@ export class StreamCMP {
     if(this.player1Finished && this.player2Finished){
       clearInterval(this.timerInterval);
     }
+    else if (this.player1Finished && !this.player2Finished){
+      $(".leftRunner").addClass('winner');
+    }
+    else if(!this.player1Finished && this.player2Finished){
+      $(".rightRunner").addClass('winner');
+    }
+    if(this.player1Finished){
+        //TODO Animation/Show timer on screen when player finished
+      $(".leftRunner").show();
+    }
+    if(this.player2Finished){
+        //TODO Animation/Show timer on screen when player finished
+      $(".rightRunner").show();
+    }
   }
 
   player1Finished = false;
   player2Finished = false;
+
   seed: string = window.location.href.split('=')[1];
 
   ticks: string = "0:00:00";
