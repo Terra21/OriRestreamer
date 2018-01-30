@@ -40,6 +40,8 @@ export class ControlsCMP {
       if(!finished) {
       }
       else {
+        this._vm.player1_finishTime = this.ticks1;
+        this.socket.emit('data', this.vm);
         clearInterval(this.player1Interval);
       }
     }.bind(this));
@@ -48,6 +50,8 @@ export class ControlsCMP {
       if(!finished) {
       } 
       else {
+        this._vm.player2_finishTime = this.ticks2;
+        this.socket.emit('data', this.vm);
         clearInterval(this.player2Interval);
       }
     }.bind(this));
@@ -96,6 +100,9 @@ export class ControlsCMP {
   reset() {
     this.timerStarted = false;
     this.timerPaused = false;
+    this._vm.player1_finishTime = "0:00:00";
+    this._vm.player2_finishTime = "0:00:00";
+    this.socket.emit('data', this.vm);
     this.socket.emit('timer', false);
   }
 
