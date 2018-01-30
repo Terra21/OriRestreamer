@@ -66,8 +66,9 @@
 		<hr class="spacer r4 c1" />
 
         <div class="col-8 center label-big timer r5 c1">MAIN TIMER</div>
-        <input type="button" class="btn timer-start col-4 r6 c1" value="START" (click)="start()" [disabled]="timerStarted"/>
-        <input type="button" class="btn timer-reset col-4 r6 c5" value="RESET" (click)="reset()" />
+		<input type="button" class="btn timer-start col-3 r6 c1" value="START" (click)="start()" [disabled]="timerStarted"/>
+		<input type="button" class="btn col-2 r6 c4" value="PAUSE" (click)="pause()" />
+        <input type="button" class="btn timer-reset col-3 r6 c6" value="RESET" (click)="reset()" />
 
 		<hr class="spacer r7 c1" />
 
@@ -76,7 +77,7 @@
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
         <label class="label r10 c1" for="p1Twitch">Twitch</label>
 		<input id="p1Twitch" class="twitch r10 c2" [(ngModel)]="p1_twitch" />
-        <div class="timer r9 c3 col-2">{{ ticks1 }}</div>
+        <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timerPaused" />
         <input type="button" class="btn btn-warning r10 c3 col-2" value="FINISH" (click)="player1Finished()" />
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2</div>
@@ -84,7 +85,7 @@
 		<input id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
         <label class="label r10 c5" for="p2Twitch">Twitch</label>
 		<input id="p2Twitch" class="twitch r10 c6" [(ngModel)]="p2_twitch" />
-        <div class="timer r9 c7 col-2">{{ ticks2 }}</div>
+		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timerPaused"/>
         <input type="button" class="btn btn-warning r10 c7 col-2" value="FINISH" (click)="player2Finished()" />
     </div>
 </div>

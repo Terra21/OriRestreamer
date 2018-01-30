@@ -40,25 +40,21 @@ export class ControlsCMP {
       if(!finished) {
       }
       else {
-        this._vm.player1_finishTime = this.ticks1;
-        this.socket.emit('data', this.vm);
         clearInterval(this.player1Interval);
       }
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean) {
       if(!finished) {
-      }
+      } 
       else {
-        this._vm.player2_finishTime = this.ticks2;
-        this.socket.emit('data', this.vm);
         clearInterval(this.player2Interval);
       }
     }.bind(this));
   }
 
   timerStarted: boolean = false;
-  
+  timerPaused: boolean = false;
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
   player1Interval: any;
@@ -89,14 +85,17 @@ export class ControlsCMP {
   
   start() {
     this.timerStarted = true;
+    this.timerPaused = false;
     this.socket.emit('timer', true);
+  }
+
+  pause(){
+    this.timerPaused = true;
   }
     
   reset() {
     this.timerStarted = false;
-    this._vm.player1_finishTime = "0:00:00";
-    this._vm.player2_finishTime = "0:00:00";
-    this.socket.emit('data', this.vm);
+    this.timerPaused = false;
     this.socket.emit('timer', false);
   }
 
