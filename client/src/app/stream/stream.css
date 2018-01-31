@@ -54,7 +54,6 @@
 }
 
 .name-twitch > img {
-    /* margin-right: 10px; */
     width: 22px;
     height: 24px;
 }
@@ -67,8 +66,70 @@
     animation-direction: alternate;
 }
 
-.timer {
+.timers {
 	font-size: 56px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.timers > div {
+	display: inline-block;
+}
+
+.timer-main {
+	line-height: 75px;
+}
+
+.timer-main.paused {
+	color: #aaa;
+}
+
+.timer-finish {
+	background: linear-gradient(
+		135deg,
+		#1c7b9f 0%,
+		#1c7b9f 45%,
+		rgba(255,255,255,1) 50%,
+		#58a2bc 55%,
+		#58a2bc 100%
+	);
+	background-size: 600% 600%;
+	border: 2px solid white;
+	border-radius: 5px 5px 0 0;
+	margin-left: 20px;
+	padding: 0 10px 0;
+	margin-bottom: -44px; /* Have to define margin-bottom explicitly for transition to work */
+
+    font-size: 26px;
+	height: 40px;
+	line-height: 40px;
+	align-self: flex-end;
+}
+
+.timer-finish.p1 {
+	text-align: right;
+	margin-left: 0;
+	margin-right: 20px;
+}
+
+.timer-animate {
+	animation: sheen 2s ease;
+	transition: margin-bottom 600ms cubic-bezier(1, 0, 0, 1);
+	margin-bottom: -2px;
+}
+
+.winner {
+	background: linear-gradient(
+		135deg,
+		rgba(204,205,21,1) 0%,
+		rgba(204,205,21,1) 45%,
+		rgba(255,255,255,1) 50%,
+		rgba(204,205,21,1) 55%,
+		rgba(204,205,21,1) 100%
+	);
+	background-size: 600% 600%;
+	animation-iteration-count: infinite;
 }
 
 .stream-placeholder {
@@ -77,26 +138,6 @@
     height: 534.375px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 0 5px 0;
     position: relative;
-}
-
-.leftRunner {
-    position: absolute;
-    right: 0;
-    padding-right: 25px;
-    bottom: 50px;
-    font-size: 26pt;
-}
-
-.rightRunner {
-    position: absolute;
-    left: 0;
-    padding-left: 25px;
-    bottom: 50px;
-    font-size: 26pt;
-}
-
-.winner {
-    color: gold;
 }
 
 .audio {
@@ -178,4 +219,9 @@
     45% { opacity: 1; }
     50% { opacity: 0; }
 	100% { opacity: 0; }
+}
+
+@keyframes sheen {
+	0% { background-position: 100% 100%; }
+	100% { background-position: 0% 0%; }
 }

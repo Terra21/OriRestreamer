@@ -9,12 +9,15 @@
             	{{ vm.player1 }}
         	</div>
     	</div>
-    	<div class="timer">
-            <span *ngIf="!vm.player1_timerVisible" class="text">{{ ticks }}</span>
+    	<div class="timers">
+	        <div class="timer-finish p1 text">
+	            {{ vm.player1_finishTime }}
+	        </div>
+            <span *ngIf="!vm.player1_timerVisible" class="text timer-main">{{ ticks }}</span>
+	        <div class="timer-finish p2 text">
+	            {{ vm.player2_finishTime }}
+	        </div>
     	</div>
-    	<!-- <div class="center timer">
-        	<span *ngIf="!vm.player2_timerVisible">{{ ticks2 }}</span>
-		</div> -->
 	    <div class="name-cycle p2">
 	        <div class="name-twitch text">
 	            <img src="../../assets/twitch-icon.png" />
@@ -27,14 +30,8 @@
 	</div>
 
     <div class="stream-placeholder">
-        <div hidden class="leftRunner">
-            {{ vm.player1_finishTime }}
-        </div>
     </div>
     <div class="stream-placeholder">
-        <div hidden class="rightRunner">
-            {{ vm.player2_finishTime }}
-        </div>
     </div>
 
     <div class="matchinfo">
