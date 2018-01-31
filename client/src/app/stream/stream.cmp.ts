@@ -80,7 +80,7 @@ export class StreamCMP {
 
   checkIfBothPlayersFinished(){
     if(this.player1Finished && this.player2Finished){
-      // clearInterval(this.timerInterval);
+       clearInterval(this.timerInterval);
 	  $('.timer-main').addClass('paused');
     }
     else if (this.player1Finished && !this.player2Finished){
@@ -90,18 +90,25 @@ export class StreamCMP {
       $(".timer-finish.p2").addClass('winner');
     }
     if(this.player1Finished){
-        //TODO Animation/Show timer on screen when player finished
-      $(".timer-finish.p1").addClass( 'timer-animate' );
+      $(".timer-finish.p1").addClass('timer-animate');
+
+      if(this.player2Finished && $(".timer-finish.p2").hasClass('winner')){
+        this.ticks = this.vm.player1_finishTime;
+      }
     }
+
     if(this.player2Finished){
-        //TODO Animation/Show timer on screen when player finished
-      $(".timer-finish.p2").addClass( 'timer-animate' );
+      $(".timer-finish.p2").addClass('timer-animate');
+
+      if(this.player1Finished && $(".timer-finish.p1").hasClass('winner')){
+        this.ticks = this.vm.player2_finishTime;
+      }
     }
   }
 
   player1Finished = false;
   player2Finished = false;
-
+  timerInterval: any;
   seed: string = window.location.href.split('=')[1];
 
   ticks: string = "0:00:00";

@@ -66,8 +66,7 @@
 		<hr class="spacer r4 c1" />
 
         <div class="col-8 center label-big timer r5 c1">MAIN TIMER</div>
-		<input type="button" class="btn timer-start col-3 r6 c1" value="START" (click)="start()" [disabled]="canStartTimer"/>
-		<input type="button" class="btn col-2 r6 c4" value="PAUSE" (click)="pause()" />
+		<input type="button" class="btn timer-start col-3 r6 c0" value="START" (click)="start()" [disabled]="canStartTimer"/>
         <input type="button" class="btn timer-reset col-3 r6 c6" value="RESET" (click)="reset()" />
 
 		<hr class="spacer r7 c1" />
@@ -77,15 +76,18 @@
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
         <label class="label r10 c1" for="p1Twitch">Twitch</label>
 		<input id="p1Twitch" class="twitch r10 c2" [(ngModel)]="p1_twitch" />
-        <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timerPaused" />
-        <input type="button" class="btn btn-warning r10 c3 col-2" value="FINISH" (click)="player1Finished()" />
+        <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timer1Paused" />
+		<input type="button" class="btn btn-warning r10 c3 col-1" value="FINISH" (click)="player1Finished()" />
+		<input type="button" class="btn col-1 r10 c4" value="PAUSE/SET TIMER" (click)="player1Paused()" />
+		
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2</div>
         <label class="label r9 c5" for="p2Name">Name</label>
 		<input id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
         <label class="label r10 c5" for="p2Twitch">Twitch</label>
 		<input id="p2Twitch" class="twitch r10 c6" [(ngModel)]="p2_twitch" />
-		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timerPaused"/>
-        <input type="button" class="btn btn-warning r10 c7 col-2" value="FINISH" (click)="player2Finished()" />
+		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timer2Paused"/>
+		<input type="button" class="btn btn-warning r10 c7 col-1" value="FINISH" (click)="player2Finished()" />
+		<input type="button" class="btn col-1 r10 c8" value="PAUSE / SET TIMER" (click)="player2Paused()" />
     </div>
 </div>

@@ -23,7 +23,7 @@ export class ControlsCMP {
       else {
         var seconds = new Date().getTime(), last = seconds;
         this.player1Interval = setInterval(function(){
-          if(this.timerPaused)
+          if(this.timer1Paused)
             return;
 
           var now = new Date().getTime();
@@ -32,7 +32,7 @@ export class ControlsCMP {
         }.bind(this), 100);
 
         this.player2Interval = setInterval(function(){
-          if(this.timerPaused)
+          if(this.timer2Paused)
             return;
 
           var now = new Date().getTime();
@@ -65,9 +65,12 @@ export class ControlsCMP {
 
 
   timerStarted: boolean = false;
-  timerPaused: boolean = false;
+  timer1Paused: boolean = false;
+  timer2Paused: boolean = false;
+  hasPlayer1Finished: boolean = false;
+  hasPlayer2Finished: boolean = false;
 
-  canStartTimer: boolean = !this.timerPaused && this.timerStarted;
+  canStartTimer: boolean = !this.timer1Paused && !this.timer2Paused && this.timerStarted;
 
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
@@ -98,23 +101,45 @@ export class ControlsCMP {
   }
   
   start() {
-    if(this.timerPaused){
-      this.timerPaused = false;
+    if(this.timer1Paused){
+      this.timer1Paused = false;
+      //TODO Set value to timer inputs to internal ticks and resume
+
+      return;
+    }
+
+    if(this.timer2Paused){
+      this.timer2Paused = false;
+      //TODO Set value to timer inputs to internal ticks and resume
+
+      return;
+    }
+
+    if(this.hasPlayer1Finished && this.hasPlayer2Finished){
       return;
     }
 
     this.timerStarted = true;
-    this.timerPaused = false;
+    this.timer1Paused = false;
+    this.timer2Paused = false;
     this.socket.emit('timer', true);
   }
 
-  pause(){
-    this.timerPaused = true;
+  player1Paused(){
+    this.timer1Paused = true;
+    
+  }
+
+  player2Paused(){
+    this.timer2Paused = true;
   }
     
   reset() {
     this.timerStarted = false;
-    this.timerPaused = false;
+    this.timer1Paused = false;
+    this.timer2Paused = false;
+    this.hasPlayer1Finished = false;
+    this.hasPlayer2Finished = false;
     this._vm.player1_finishTime = "0:00:00";
     this._vm.player2_finishTime = "0:00:00";
     this.socket.emit('data', this.vm);
@@ -122,10 +147,12 @@ export class ControlsCMP {
   }
 
   player1Finished() {
+    this.hasPlayer1Finished = true;
     this.socket.emit('timer1', true);
   }
 
   player2Finished() {
+    this.hasPlayer2Finished = true;
     this.socket.emit('timer2', true);
   }
 
