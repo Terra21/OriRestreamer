@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "server.js",
   "license": "MIT",
+  "typings": "./app/typings.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4201",

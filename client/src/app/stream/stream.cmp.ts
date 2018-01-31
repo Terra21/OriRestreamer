@@ -81,7 +81,7 @@ export class StreamCMP {
 
   checkIfBothPlayersFinished(){
     if(this.player1Finished && this.player2Finished){
-      clearInterval(this.timerInterval);
+      //clearInterval(this.timerInterval);
     }
     else if (this.player1Finished && !this.player2Finished){
       $(".leftRunner").addClass('winner');
@@ -105,10 +105,9 @@ export class StreamCMP {
   seed: string = window.location.href.split('=')[1];
 
   ticks: string = "0:00:00";
-  timerInterval: any;
-  public timer: Observable<number> = Observable.timer(0, 1000);
+  public timer: any;
   public vm: Information = new Information();
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect('http://localhost:3000/');
 
   p1SpritFlameSkill: boolean;
   p1WallJumpSkill: boolean;

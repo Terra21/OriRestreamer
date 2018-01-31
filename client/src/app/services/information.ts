@@ -1,7 +1,7 @@
 import { Tracker } from './tracker';
 
 export class Information {
-    seed: string = 'testmatchterra';
+    seed: string = 'teamterra';
 
     player1: string = 'TheRooseIsLoose89';
     player2: string = 'Shedd';

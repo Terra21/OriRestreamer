@@ -23,12 +23,18 @@ export class ControlsCMP {
       else {
         var seconds = new Date().getTime(), last = seconds;
         this.player1Interval = setInterval(function(){
+          if(this.timerPaused)
+            return;
+
           var now = new Date().getTime();
           last = now;
           this.ticks1 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
         }.bind(this), 100);
 
         this.player2Interval = setInterval(function(){
+          if(this.timerPaused)
+            return;
+
           var now = new Date().getTime();
           last = now;
           this.ticks2 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
@@ -57,8 +63,12 @@ export class ControlsCMP {
     }.bind(this));
   }
 
+
   timerStarted: boolean = false;
   timerPaused: boolean = false;
+
+  canStartTimer: boolean = !this.timerPaused && this.timerStarted;
+
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
   player1Interval: any;
@@ -66,7 +76,7 @@ export class ControlsCMP {
   public nameTimer: Observable<number> = Observable.timer(0, 1000);
   public timer2: Observable<number> = Observable.timer(0, 1000);
   private $timer2: Subscription;
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect('http://localhost:3000/');
   
   setBackground(background: string) {
     this._vm.background = background;
@@ -88,6 +98,11 @@ export class ControlsCMP {
   }
   
   start() {
+    if(this.timerPaused){
+      this.timerPaused = false;
+      return;
+    }
+
     this.timerStarted = true;
     this.timerPaused = false;
     this.socket.emit('timer', true);
