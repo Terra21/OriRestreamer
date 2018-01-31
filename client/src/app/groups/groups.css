@@ -1,7 +1,30 @@
 .container {
     font-family: "Angie";
-    font-size: 24px;
+    font-size: 80px;
     color: white;
     width: 1920px;
-	height: 1080px;
+    height: 1080px;
+    background-color:	rgba(0,0,0,0.5);
+}
+
+.groupTitle {
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.table {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.table > thead > th {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.table > tbody > tr > td {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    padding-top: 25px;
 }

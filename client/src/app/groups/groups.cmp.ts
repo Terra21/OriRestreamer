@@ -15,7 +15,6 @@ export class GroupsCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
-      
       $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Group Standings!B4:D8?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
         dataType: "json",
@@ -24,6 +23,7 @@ export class GroupsCMP {
         },
         success: function( response: any ) {
           console.log(response);
+          this.players = response.values;
         }.bind(this)
       });
 
@@ -31,5 +31,7 @@ export class GroupsCMP {
   }
 
   public vm: Information = new Information();
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+
+  players: any;
+  socket: any = io.connect('http://localhost:3000/');
 }

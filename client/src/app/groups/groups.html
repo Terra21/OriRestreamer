@@ -1,6 +1,23 @@
-<div class="container" [ngStyle]="{'background': 'url(../../assets/background-' + vm.background + '.png) no-repeat'}">
+<div class="container">
     <div class="row col-12">
-
-   </div>
-    <img src="../../assets/background-gumo.png" style="visibility:hidden">
- </div>
+        <div class="groupTitle">
+            {{ vm.background + ' Group' | titlecase }}
+        </div>
+    </div>
+    <div class="row col-12">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>W/L</th>
+                <th>Tiebreak</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of players">
+                    <td>{{ p[0] }}</td>
+                    <td>{{ p[1] }}</td>
+                    <td>{{ p[2] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
