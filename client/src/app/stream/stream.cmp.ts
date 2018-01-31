@@ -18,7 +18,7 @@ export class StreamCMP {
     this.socket.on('data', function(data: Information){
       if(data.seed !== this.seed)
         return;
-        
+
       this.vm = data;
 
       this.checkIfBothPlayersFinished();
@@ -49,19 +49,18 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean){
-      this.player1Finished = false; 
+      this.player1Finished = false;
       this.player2Finished = false;
 
       if(!start) {
         clearInterval(this.timerInterval);
         this.ticks = "0:00:00";
-        $(".rightRunner").removeClass('winner');
-        $(".leftRunner").removeClass('winner');
-        $(".rightRunner").hide();
-        $(".leftRunner").hide();
+		$('.timer-main').addClass('paused');
+        $(".timer-finish").removeClass('winner timer-animate');
       }
       else {
         var seconds = new Date().getTime(), last = seconds;
+		$('.timer-main').removeClass('paused');
         this.timerInterval = setInterval(function(){
           var now = new Date().getTime();
           last = now;
@@ -81,21 +80,22 @@ export class StreamCMP {
 
   checkIfBothPlayersFinished(){
     if(this.player1Finished && this.player2Finished){
-      //clearInterval(this.timerInterval);
+      // clearInterval(this.timerInterval);
+	  $('.timer-main').addClass('paused');
     }
     else if (this.player1Finished && !this.player2Finished){
-      $(".leftRunner").addClass('winner');
+      $(".timer-finish.p1").addClass('winner');
     }
     else if(!this.player1Finished && this.player2Finished){
-      $(".rightRunner").addClass('winner');
+      $(".timer-finish.p2").addClass('winner');
     }
     if(this.player1Finished){
         //TODO Animation/Show timer on screen when player finished
-      $(".leftRunner").show();
+      $(".timer-finish.p1").addClass( 'timer-animate' );
     }
     if(this.player2Finished){
         //TODO Animation/Show timer on screen when player finished
-      $(".rightRunner").show();
+      $(".timer-finish.p2").addClass( 'timer-animate' );
     }
   }
 
