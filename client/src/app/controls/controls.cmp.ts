@@ -102,15 +102,53 @@ export class ControlsCMP {
   
   start() {
     if(this.timer1Paused){
+      clearInterval(this.player1Interval);
       this.timer1Paused = false;
-      //TODO Set value to timer inputs to internal ticks and resume
+
+      var timer1 = this.player1Interval;
+      var ticks1Array = this.ticks1.split(":");
+
+      var newTicksSecondsHours = (parseInt(ticks1Array[0]) * 3600);
+      var newTicksSecondsMinutes = (parseInt(ticks1Array[1]) * 60); 
+      var newTicksSeconds = parseInt(ticks1Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
+      var newP1TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
+
+      var seconds = new Date().getTime() - (newTicksSeconds * 1000);
+
+      this.player1Interval = setInterval(function(){
+        if(this.timer1Paused)
+          return;
+
+          var now = new Date().getTime();
+
+        this.ticks1 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+      }.bind(this), 100);
 
       return;
     }
 
     if(this.timer2Paused){
+      clearInterval(this.player2Interval);
       this.timer2Paused = false;
-      //TODO Set value to timer inputs to internal ticks and resume
+
+      var timer2 = this.player2Interval;
+      var ticks2Array = this.ticks2.split(":");
+
+      var newTicksSecondsHours = (parseInt(ticks2Array[0]) * 3600);
+      var newTicksSecondsMinutes = (parseInt(ticks2Array[1]) * 60); 
+      var newTicksSeconds = parseInt(ticks2Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
+      var newP2TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
+
+      var seconds = new Date().getTime() - (newTicksSeconds * 1000);
+
+      this.player2Interval = setInterval(function(){
+        if(this.timer2Paused)
+          return;
+
+          var now = new Date().getTime();
+
+        this.ticks2 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+      }.bind(this), 100);
 
       return;
     }
