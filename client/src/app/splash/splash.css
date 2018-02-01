@@ -1,3 +1,24 @@
+@font-face{
+    font-family: "Angie";
+    src: url('../../assets/AngieRegular.otf') format("opentype")
+}
+
+.container {
+    font-family: "Angie";
+    font-size: 24px;
+    color: white;
+    width: 1920px;
+	height: 1080px;
+	background-size: 1920px 1080px;
+}
+
+
 div {
-    font-size: 40px;
+    font-size: 80px;
+}
+
+.matchup {
+    position: absolute;
+    top: 100px;
+    left:100px;
 }

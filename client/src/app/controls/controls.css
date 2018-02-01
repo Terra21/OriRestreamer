@@ -52,7 +52,7 @@ input[type="text"] {
 	font-weight: bold;
 }
 
-.name, .twitch {
+.name, .twitch, .seed {
 	align-self: start;
 }
 

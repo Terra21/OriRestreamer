@@ -26,8 +26,13 @@
 .table > tbody > tr > td {
     padding-left: 50px;
     padding-right: 50px;
-    text-align: center;
+    text-align: left;
     padding-top: 25px;
+    font-size: 62px;
+}
+
+.table > tbody > tr {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .footer {

@@ -278,6 +278,23 @@ public set seed(seed: string){
     this._vm.player2_twitch = p2;
   }
 
+  public get p1_seed(): string {
+    return this._vm.player1_seed;
+  }
+
+  public set p1_seed(p1: string){
+    this._vm.player1_seed = p1;
+  }
+
+  public get p2_seed(): string {
+    return this._vm.player2_seed;
+  }
+
+  public set p2_seed(p2: string){
+    this._vm.player2_seed = p2;
+  }
+
+
   public get p1_audio(): boolean {
     return this._vm.currentAudioOnPlayer == 1;
   }
