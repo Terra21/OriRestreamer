@@ -8,12 +8,20 @@ import { DashboardCMP } from './dashboard/dashboard.cmp';
 import { StreamCMP } from './stream/stream.cmp';
 import { ControlsCMP } from './controls/controls.cmp';
 import { GroupsCMP } from './groups/groups.cmp';
+import { SplashCMP } from './splash/splash.cmp';
+import { BracketCMP } from './bracket/bracket.cmp';
+import { StatsCMP } from './stats/stats.cmp';
+import { CreditsCMP } from './credits/credits.cmp';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
   { path: 'stream', component: StreamCMP },
   { path: 'controls', component: ControlsCMP, },
   { path: 'groups', component: GroupsCMP },
+  { path: 'splash', component: SplashCMP },
+  { path: 'bracket', component: BracketCMP },
+  { path: 'stats', component: StatsCMP },
+  { path: 'credits', component: CreditsCMP },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -23,7 +31,11 @@ const appRoutes: Routes = [
     ControlsCMP,
     DashboardCMP,
     StreamCMP,
-    GroupsCMP
+    GroupsCMP,
+    SplashCMP,
+    BracketCMP,
+    StatsCMP,
+    CreditsCMP
   ],
   imports: [
     BrowserModule, 
