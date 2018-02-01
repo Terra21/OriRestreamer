@@ -15,7 +15,7 @@ export class Information {
     player2_finishTime: string = '0:00:00';
     currentAudioOnPlayer: number = 1;
     commentators: string = 'MeldonTaragon, CovertMuffin';
-    matchType: string = 'Exhibition';
+    matchType: string = 'Forlorn Group';
     background: string = 'ginso'
     tracker: Tracker = new Tracker();
 }
