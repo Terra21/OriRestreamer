@@ -24,6 +24,7 @@ export class GroupsCMP {
         success: function( response: any ) {
           console.log(response);
           this.players = response.values;
+          this.vm = data;
         }.bind(this)
       });
 

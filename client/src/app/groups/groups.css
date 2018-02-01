@@ -8,13 +8,14 @@
 }
 
 .groupTitle {
-    padding-left: 100px;
-    padding-top: 100px;
+    position: absolute;
+    top: 75px;
+    left: 100px;
+    align-content: center;
 }
 
 .table {
     margin: 0 auto;
-    padding-top: 100px;
 }
 
 .table > thead > th {
@@ -27,4 +28,11 @@
     padding-right: 50px;
     text-align: center;
     padding-top: 25px;
+}
+
+.footer {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50px;
+    left: 75px;
 }
