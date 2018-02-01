@@ -15,6 +15,9 @@ export class GroupsCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
+      if(data.seed !== this.seed)
+        return;
+
       $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Group Standings!B4:D8?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
         dataType: "json",
@@ -35,4 +38,5 @@ export class GroupsCMP {
 
   players: any;
   socket: any = io.connect('http://localhost:3000/');
+  seed: string = window.location.href.split('=')[1];
 }

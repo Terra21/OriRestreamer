@@ -70,7 +70,7 @@ export class ControlsCMP {
   hasPlayer1Finished: boolean = false;
   hasPlayer2Finished: boolean = false;
 
-  canStartTimer: boolean = !this.timer1Paused && !this.timer2Paused && this.timerStarted;
+  canStartTimer: boolean = !this.timer1Paused && !this.timer2Paused && !this.timerStarted;
 
   ticks1: string = "0:00:00";
   ticks2: string = "0:00:00";
@@ -157,10 +157,13 @@ export class ControlsCMP {
       return;
     }
 
+    if(!this.timerStarted){
+      this.socket.emit('timer', true);
+    }
+
     this.timerStarted = true;
     this.timer1Paused = false;
     this.timer2Paused = false;
-    this.socket.emit('timer', true);
   }
 
   player1Paused(){

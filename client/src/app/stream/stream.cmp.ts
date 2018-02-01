@@ -49,6 +49,9 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean){
+      if(this.vm.seed !== this.seed)
+        return;
+
       this.player1Finished = false;
       this.player2Finished = false;
 
@@ -70,11 +73,15 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer1', function(finished: boolean) {
-        this.player1Finished = finished;
+      if(this.vm.seed !== this.seed)
+        return;
+      this.player1Finished = finished;
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean) {
-        this.player2Finished = finished;
+      if(this.vm.seed !== this.seed)
+        return;
+      this.player2Finished = finished;
     }.bind(this));
   }
 

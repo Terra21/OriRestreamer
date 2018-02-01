@@ -66,7 +66,7 @@
 		<hr class="spacer r4 c1" />
 
         <div class="col-8 center label-big timer r5 c1">MAIN TIMER</div>
-		<input type="button" class="btn timer-start col-3 r6 c0" value="START" (click)="start()" [disabled]="canStartTimer"/>
+		<input type="button" class="btn timer-start col-3 r6 c0" value="START" (click)="start()" [disabled]="!canStartTimer"/>
         <input type="button" class="btn timer-reset col-3 r6 c6" value="RESET" (click)="reset()" />
 
 		<hr class="spacer r7 c1" />
