@@ -4,9 +4,9 @@ export class Information {
     seed: string = 'testmatch';
 
     player1: string = 'TheRooseIsLoose89';
-    player2: string = 'Shedd';
+    player2: string = 'chicken_supreme';
     player1_twitch: string = 'TheRooseIsLoose89';
-    player2_twitch: string = 'Shedd_';
+    player2_twitch: string = 'chicken_supreme';
     player1_seed: string = '2';
     player2_seed: string = '34';
     player1_timerVisible: boolean = false;

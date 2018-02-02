@@ -1,3 +1,28 @@
-<div>
-    Stats Here
+<div class="container">
+    <div>
+        <img src="../assets/logo.png" width="300px">
+        <div class="title">All Skills Tournament 2018</div>
+    </div>
+
+    <table *ngIf="player1 && player2">
+        <thead>
+            <tr>
+                <td style="width: 500px;"></td>
+                <td>{{ vm.player1_twitch }}</td>
+                <td>{{ vm.player2_twitch }}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="seeds">
+                <td></td>
+                <td>Seed {{ vm.player1_seed }}</td>
+                <td>Seed {{ vm.player2_seed }}</td>
+            </tr>
+            <tr class="stats">
+                <td>Current PB (Improvement)</td>
+                <td>{{ player1[1] }} {{ player1[2] }} ({{ player1[3] }})</td>
+                <td>{{ player2[1] }} {{ player2[2] }} ({{ player2[3] }})</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
