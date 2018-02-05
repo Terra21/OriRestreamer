@@ -61,8 +61,11 @@ export class ControlsCMP {
         clearInterval(this.player2Interval);
       }
     }.bind(this));
+
+    console.log(this.players);
   }
 
+  playersList: any;
 
   timerStarted: boolean = false;
   timer1Paused: boolean = false;
@@ -310,4 +313,27 @@ public set seed(seed: string){
   public set p2_audio(audioSelected: boolean) {
     this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
   }
+
+  players = [ 
+    {
+        "name": "Terra21",
+        "startColumn": "B56",
+        "endColumn": "G56"
+    },
+    {
+        "name": "Shedd_",
+        "startColumn": "B48",
+        "endColumn": "G48"
+    },
+    {
+        "name": "TheRooseIsLoose89",
+        "startColumn": "B57",
+        "endColumn": "G57"
+    },
+    {
+      "name": "chicken_supreme",
+      "startColumn": "B8",
+      "endColumn": "G8"
+  }
+ ]
 }

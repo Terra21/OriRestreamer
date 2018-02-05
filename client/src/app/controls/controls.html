@@ -74,8 +74,13 @@
         <div class="col-4 center label-big players r8 c1">PLAYER 1</div>
 		<label class="label r9 c1" for="p1Name">Name</label>
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
-        <label class="label r10 c1" for="p1Twitch">Twitch</label>
-		<input id="p1Twitch" class="twitch r10 c2" [(ngModel)]="p1_twitch" />
+		<label class="label r10 c1" for="p1Twitch">Twitch</label>
+		
+		<select class="twitch r10 c2" [(ngModel)]="p1_twitch">
+			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }}</option>
+		</select>
+
+
 		<label class="label r11 c1" for="p1Seed">Seed</label>
 		<input id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" />
         <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timer1Paused" />
@@ -86,8 +91,12 @@
         <div class="col-4 center label-big players r8 c5">PLAYER 2</div>
         <label class="label r9 c5" for="p2Name">Name</label>
 		<input id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
-        <label class="label r10 c5" for="p2Twitch">Twitch</label>
-		<input id="p2Twitch" class="twitch r10 c6" [(ngModel)]="p2_twitch" />
+		<label class="label r10 c5" for="p2Twitch">Twitch</label>
+		
+		<select class="twitch r10 c6" [(ngModel)]="p2_twitch">
+			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }}</option>
+		</select>
+
 		<label class="label r11 c5" for="p2Seed">Seed</label>
 		<input id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" />
 		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timer2Paused"/>
