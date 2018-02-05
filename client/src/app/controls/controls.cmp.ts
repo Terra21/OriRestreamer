@@ -13,7 +13,17 @@ export class ControlsCMP {
   constructor() {} 
 
   ngOnInit(){
-    this.socket.on('timer', function(start: boolean){
+    this.socket.on('data', function(data: Information){
+      if(data.seed !== this.seed)
+        return;
+
+      this.vm = data;
+    }.bind(this));
+
+    this.socket.on('timer', function(start: boolean, data: Information){
+      if(data.seed !== this.seed)
+        return;
+
       if(!start) {
         clearInterval(this.player1Interval);
         clearInterval(this.player2Interval);
@@ -42,7 +52,10 @@ export class ControlsCMP {
       }
     }.bind(this));
 
-    this.socket.on('timer1', function(finished: boolean) {
+    this.socket.on('timer1', function(finished: boolean, data: Information) {
+      if(data.seed !== this.seed)
+        return;
+
       if(!finished) {
       }
       else {
@@ -52,7 +65,10 @@ export class ControlsCMP {
       }
     }.bind(this));
 
-    this.socket.on('timer2', function(finished: boolean) {
+    this.socket.on('timer2', function(finished: boolean, data: Information) {
+      if(data.seed !== this.seed)
+        return;
+
       if(!finished) {
       } 
       else {
@@ -83,24 +99,33 @@ export class ControlsCMP {
   public timer2: Observable<number> = Observable.timer(0, 1000);
   private $timer2: Subscription;
   socket: any = io.connect('http://localhost:3000/');
-  
+  private isLinked: boolean = false;
+  linkedInterval: any;
+
   setBackground(background: string) {
     this._vm.background = background;
   }
 
   linkTracker() {
-    this.socket.emit('data', this.vm);
-    $.ajax({
-      url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
-      dataType: "json",
-      error: function(response) {
-        console.log(response);
-      },
-      success: function( response: any ) {
-          this._vm.tracker = JSON.parse(JSON.stringify(response));
-          this.socket.emit('data', this.vm);
-      }.bind(this)
-    });
+    this.isLinked = true;
+    this.linkedInterval = setInterval(function(){
+      $.ajax({
+        url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
+        dataType: "json",
+        error: function(response) {
+          console.log(response);
+        },
+        success: function( response: any ) {
+            this._vm.tracker = JSON.parse(JSON.stringify(response));
+            this.socket.emit('data', this.vm);
+        }.bind(this)
+      });
+    }.bind(this), 1000);
+  }
+
+  unlink(){
+    this.isLinked = false;
+    clearInterval(this.linkedInterval);
   }
   
   start() {
@@ -161,7 +186,7 @@ export class ControlsCMP {
     }
 
     if(!this.timerStarted){
-      this.socket.emit('timer', true);
+      this.socket.emit('timer', true, this.vm);
     }
 
     this.timerStarted = true;
@@ -187,17 +212,17 @@ export class ControlsCMP {
     this._vm.player1_finishTime = "0:00:00";
     this._vm.player2_finishTime = "0:00:00";
     this.socket.emit('data', this.vm);
-    this.socket.emit('timer', false);
+    this.socket.emit('timer', false, this.vm);
   }
 
   player1Finished() {
     this.hasPlayer1Finished = true;
-    this.socket.emit('timer1', true);
+    this.socket.emit('timer1', true, this.vm);
   }
 
   player2Finished() {
     this.hasPlayer2Finished = true;
-    this.socket.emit('timer2', true);
+    this.socket.emit('timer2', true, this.vm);
   }
 
   private _vm: Information = new Information();
@@ -286,7 +311,7 @@ public set seed(seed: string){
   }
 
   public set p1_seed(p1: string){
-    this._vm.player1_seed = p1;
+    this._vm.player1_seed = (p1 !== "" || undefined || null) ? p1 : null;
   }
 
   public get p2_seed(): string {
@@ -294,7 +319,7 @@ public set seed(seed: string){
   }
 
   public set p2_seed(p2: string){
-    this._vm.player2_seed = p2;
+    this._vm.player2_seed = (p2 !== "" || undefined || null) ? p2 : null;
   }
 
 

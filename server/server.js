@@ -19,16 +19,16 @@ io.on('connection', function(client) {
         io.emit('data', data);
     });
 
-    client.on('timer', function(start){
-        io.emit('timer', start);
+    client.on('timer', function(start, data){
+        io.emit('timer', start, data);
     });
 
-    client.on('timer1', function(finished){
-        io.emit('timer1', finished);
+    client.on('timer1', function(finished, data){
+        io.emit('timer1', finished, data);
     });
 
-    client.on('timer2', function(finished){
-        io.emit('timer2', finished);
+    client.on('timer2', function(finished, data){
+        io.emit('timer2', finished, data);
     });
 });
 

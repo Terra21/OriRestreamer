@@ -15,8 +15,8 @@
         <tbody>
             <tr class="seeds">
                 <td></td>
-                <td>Seed {{ vm.player1_seed }}</td>
-                <td>Seed {{ vm.player2_seed }}</td>
+                <td><span *ngIf="vm.player1_seed">Seed ({{ vm.player1_seed }})</span></td>
+                <td><span *ngIf="vm.player2_seed">Seed ({{ vm.player2_seed }})</span></td>
             </tr>
             <tr class="stats">
                 <td style="vertical-align: center; text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Current PB (Improvement)</td>

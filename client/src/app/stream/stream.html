@@ -6,7 +6,7 @@
             	{{ vm.player1_twitch }}
         	</div>
         	<div class="name-signup text">
-            	{{ vm.player1 }} ({{ vm.player1_seed }})
+            	{{ vm.player1 }} <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span>
         	</div>
     	</div>
     	<div class="timers">
@@ -24,7 +24,7 @@
 	            {{ vm.player2_twitch }}
 	        </div>
 	        <div class="name-signup text">
-	            {{ vm.player2 }} ({{ vm.player2_seed }})
+                {{ vm.player2 }} <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span>
 	        </div>
 	    </div>
 	</div>

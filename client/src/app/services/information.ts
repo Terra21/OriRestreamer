@@ -7,8 +7,8 @@ export class Information {
     player2: string = 'chicken_supreme';
     player1_twitch: string = 'TheRooseIsLoose89';
     player2_twitch: string = 'chicken_supreme';
-    player1_seed: string = '2';
-    player2_seed: string = '34';
+    player1_seed: string = '';
+    player2_seed: string = '';
     player1_timerVisible: boolean = false;
     player2_timerVisible: boolean = false;
     player1_finishTime: string = '0:00:00';

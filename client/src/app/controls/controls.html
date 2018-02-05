@@ -7,167 +7,233 @@
 	        <label for="commentators">Commentators</label>
         </div>
 		<div class="col-3 r2 c2">
-			<input type="text" id="trackerId" [(ngModel)]="seed"><br>
+			<input type="text" id="trackerId" [(ngModel)]="seed" [disabled]="isLinked"><br>
 			<input type="text" id="matchType" [(ngModel)]="matchType">
 			<input type="text" id="commentators" [(ngModel)]="commentators">
 		</div>
-        <input type="button" class="btn col-4 update r2 c5" (click)="linkTracker()" value="UPDATE LIVE FEED" />
+		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-2 update r2 c5' : true }"  (click)="linkTracker()"  value="UPDATE LIVE FEED (every 1000ms)" [disabled]="isLinked" />
+		<input type="button" class="btn col-2 r2 c7" (click)="unlink()" value="UNLINK" [disabled]="!isLinked" />
 		<div class="backgrounds col-8 center r3 c1">
 	        <div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'forlorn' }"
-				(click)="setBackground('forlorn')" src="../../assets/background-forlorn.png" style="max-height:75px;">
+				(click)="setBackground('forlorn')" src="../../assets/background-forlorn.png" style="max-height:50px;">
 				<br>
 				<b>Forlorn</b> <br>
-				<small>
-					(64) TheRooseIsLoose89 <br>
+				<h6>
+					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 	        </div>
 	        <div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'glades' }"
-				(click)="setBackground('glades')" src="../../assets/background-glades.png" style="max-height:75px;">
+				(click)="setBackground('glades')" src="../../assets/background-glades.png" style="max-height:50px;">
 				<br>
 				<b>Glades</b> <br>
-				<small>
-					(64) TheRooseIsLoose89 <br>
+				<h6>
+					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'grotto' }"
-				(click)="setBackground('grotto')" src="../../assets/background-grotto.png" style="max-height:75px;">
+				(click)="setBackground('grotto')" src="../../assets/background-grotto.png" style="max-height:50px;">
 				<br>
-				<b>Grotto</b> <br>
-				<small>
-					(64) TheRooseIsLoose89 <br>
+				<b>Hideout</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 	        </div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'ginso' }"
-				(click)="setBackground('ginso')" src="../../assets/background-ginso.png" style="max-height:75px;">
+				(click)="setBackground('ginso')" src="../../assets/background-ginso.png" style="max-height:50px;">
 				<br>
 				<b>Ginso</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'swamp' }"
-				(click)="setBackground('swamp')" src="../../assets/background-swamp.png" style="max-height:75px;">
+				(click)="setBackground('swamp')" src="../../assets/background-swamp.png" style="max-height:50px;">
 				<br>
 				<b>Swamp</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'valley' }"
-				(click)="setBackground('valley')" src="../../assets/background-valley.png" style="max-height:75px;">
+				(click)="setBackground('valley')" src="../../assets/background-valley.png" style="max-height:50px;">
 				<br>
 				<b>Valley</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'sorrow' }"
-				(click)="setBackground('sorrow')" src="../../assets/background-sorrow.png" style="max-height:75px;">
+				(click)="setBackground('sorrow')" src="../../assets/background-sorrow.png" style="max-height:50px;">
 				<br>
 				<b>Sorrow</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'horu' }"
-				(click)="setBackground('horu')" src="../../assets/background-horu.png" style="max-height:75px;">
+				(click)="setBackground('horu')" src="../../assets/background-horu.png" style="max-height:50px;">
 				<br>
 				<b>Horu</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'blackroot' }"
-				(click)="setBackground('blackroot')" src="../../assets/background-blackroot.png" style="max-height:75px;">
+				(click)="setBackground('blackroot')" src="../../assets/background-blackroot.png" style="max-height:50px;">
 				<br>
 				<b>Blackroot</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'lostgrove' }"
-				(click)="setBackground('lostgrove')" src="../../assets/background-lostgrove.png" style="max-height:75px;">
+				(click)="setBackground('lostgrove')" src="../../assets/background-lostgrove.png" style="max-height:50px;">
 				<br>
 				<b>Lost Grove</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'misty' }"
-				(click)="setBackground('misty')" src="../../assets/background-misty.png" style="max-height:75px;">
+				(click)="setBackground('misty')" src="../../assets/background-misty.png" style="max-height:50px;">
 				<br>
 				<b>Misty</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
 			</div>
 			<div>
 	            <img [ngClass]="{ 'active-background': vm.background == 'grove' }"
-				(click)="setBackground('grove')" src="../../assets/background-grove.png" style="max-height:75px;">
+				(click)="setBackground('grove')" src="../../assets/background-grove.png" style="max-height:50px;">
 				<br>
 				<b>Hollow Grove</b> <br>
-				<small>
+				<h6>
 					TheRooseIsLoose89 <br>
 					Vulajin <br>
 					Chicken_Supreme <br>
 					Terra21 <br>
 					Hyrdra <br>
-				</small>
+				</h6>
+			</div>
+			<div>
+	            <img [ngClass]="{ 'active-background': vm.background == 'spidercoves' }"
+				(click)="setBackground('spidercoves')" src="../../assets/background-spidercoves.png" style="max-height:50px;">
+				<br>
+				<b>Spider Coves</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
+					Vulajin <br>
+					Chicken_Supreme <br>
+					Terra21 <br>
+					Hyrdra <br>
+				</h6>
+			</div>
+			<div>
+	            <img [ngClass]="{ 'active-background': vm.background == 'moongrotto' }"
+				(click)="setBackground('moongrotto')" src="../../assets/background-moongrotto.png" style="max-height:50px;">
+				<br>
+				<b>Moon Grotto</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
+					Vulajin <br>
+					Chicken_Supreme <br>
+					Terra21 <br>
+					Hyrdra <br>
+				</h6>
+			</div>
+			<div>
+	            <img [ngClass]="{ 'active-background': vm.background == 'spiritcaverns' }"
+				(click)="setBackground('spiritcaverns')" src="../../assets/background-spiritcaverns.png" style="max-height:50px;">
+				<br>
+				<b>Spirit Caverns</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
+					Vulajin <br>
+					Chicken_Supreme <br>
+					Terra21 <br>
+					Hyrdra <br>
+				</h6>
+			</div>
+			<div>
+	            <img [ngClass]="{ 'active-background': vm.background == 'swallowsnest' }"
+				(click)="setBackground('swallowsnest')" src="../../assets/background-swallowsnest.png" style="max-height:50px;">
+				<br>
+				<b>Swallows Nest</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
+					Vulajin <br>
+					Chicken_Supreme <br>
+					Terra21 <br>
+					Hyrdra <br>
+				</h6>
+			</div>
+			<div>
+	            <img [ngClass]="{ 'active-background': vm.background == 'kurosnest' }"
+				(click)="setBackground('kurosnest')" src="../../assets/background-kurosnest.png" style="max-height:50px;">
+				<br>
+				<b>Kuros Nest</b> <br>
+				<h6>
+					TheRooseIsLoose89 <br>
+					Vulajin <br>
+					Chicken_Supreme <br>
+					Terra21 <br>
+					Hyrdra <br>
+				</h6>
 	        </div>
 		</div>
 

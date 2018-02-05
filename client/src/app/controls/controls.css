@@ -1,5 +1,5 @@
 .controls {
-	padding: 0 50px 50px 50px;
+	padding: 0 25px 25px 50px;
 	background: #181819;
 }
 
@@ -27,6 +27,12 @@
 	padding: 20px;
 	background: #162458;
 	border: 1px solid #233166;
+	color: inherit;
+}
+
+.btn-update {
+	padding: 20px;
+	background: #162458;
 	color: inherit;
 }
 

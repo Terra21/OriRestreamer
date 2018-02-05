@@ -2,11 +2,11 @@
     <div class="col-6">
         <div class="matchup">
             <div style="width: 100% auto">
-                ({{ vm.player1_seed }}) {{ vm.player1 }}
+                <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ vm.player1 }}
             </div>
             <div style="width: 100% auto">vs</div>
             <div style="width: 100% auto">
-                ({{ vm.player2_seed }}) {{ vm.player2 }}
+                <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ vm.player2 }}
             </div>
         </div>
     </div>
