@@ -19,6 +19,8 @@ export class StatsCMP {
       if(data.seed !== this.seed)
         return;
 
+        console.log(data);
+
         var runner1 = jQuery.grep(this.players, function(n: any, i) {
             return n.name == data.player1_twitch;
         })[0];
@@ -34,6 +36,8 @@ export class StatsCMP {
             console.log(response);
           },
           success: function( response: any ) {
+            console.log("p1");
+            console.log(response);
             this.player1 = response.values[0];
           }.bind(this)
         });
@@ -45,6 +49,8 @@ export class StatsCMP {
             console.log(response);
           },
           success: function( response: any ) {
+            console.log("p2");
+            console.log(response);
             this.player2 = response.values[0];
           }.bind(this)
         });
@@ -63,23 +69,23 @@ export class StatsCMP {
   players = [ 
     {
         "name": "Terra21",
-        "startColumn": "B4",
-        "endColumn": "G4"
+        "startColumn": "B56",
+        "endColumn": "J56"
     },
     {
         "name": "Shedd_",
-        "startColumn": "B5",
-        "endColumn": "G5"
+        "startColumn": "B48",
+        "endColumn": "J48"
     },
     {
         "name": "TheRooseIsLoose89",
-        "startColumn": "B6",
-        "endColumn": "G6"
+        "startColumn": "B57",
+        "endColumn": "J57"
     },
     {
       "name": "chicken_supreme",
-      "startColumn": "B7",
-      "endColumn": "G7"
+      "startColumn": "B8",
+      "endColumn": "J8"
   }
  ]
 }

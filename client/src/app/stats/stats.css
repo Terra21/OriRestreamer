@@ -4,7 +4,6 @@
     color: white;
     width: 1920px;
     height: 1080px;
-    background-color:	rgba(0,0,0,0.5);
 }
 
 div {
@@ -25,7 +24,6 @@ div {
     top: 50px;
     left: 0;
     width: 100%;
-    padding-right: 100px;
 }
 
 table > thead > tr > td {
@@ -37,11 +35,36 @@ table > thead > tr > td {
 .seeds > td {
     font-size: 32px;
     padding-left: 100px;
+    padding-bottom: 50px;
     text-align: center;
 }
 
 .stats > td {
     font-size: 32px;
-    padding-top: 100px;
-    padding-left: 125px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.method > td {
+    font-size: 32px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.misc > td {
+    font-size: 32px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.healthCells > td {
+    font-size: 32px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.tricks > td {
+    font-size: 32px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
