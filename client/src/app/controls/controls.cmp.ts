@@ -318,22 +318,22 @@ public set seed(seed: string){
     {
         "name": "Terra21",
         "startColumn": "B56",
-        "endColumn": "G56"
+        "endColumn": "J56"
     },
     {
         "name": "Shedd_",
         "startColumn": "B48",
-        "endColumn": "G48"
+        "endColumn": "J48"
     },
     {
         "name": "TheRooseIsLoose89",
         "startColumn": "B57",
-        "endColumn": "G57"
+        "endColumn": "J57"
     },
     {
       "name": "chicken_supreme",
       "startColumn": "B8",
-      "endColumn": "G8"
+      "endColumn": "J8"
   }
  ]
 }
