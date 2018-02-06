@@ -4,6 +4,7 @@ import { Information } from '../services/information';
 import * as moment from 'moment';
 import * as $ from 'jquery';
 import io from 'socket.io-client';
+import { retry } from 'rxjs/operators/retry';
 
 @Component({
   templateUrl: './controls.html',
@@ -34,6 +35,9 @@ export class ControlsCMP {
         this.ticks2 = "0:00:00";
       }
       else {
+        if(this.timerStarted) return;
+
+        this.timerStarted = true;
         var seconds = new Date().getTime(), last = seconds;
         this.player1Interval = setInterval(function(){
           if(this.timer1Paused)
@@ -139,13 +143,12 @@ export class ControlsCMP {
   }
   
   start() {
-    console.log(this);
-
+    var changedTimer = false;
     if(this.timer1Paused){
+      changedTimer = true;
       clearInterval(this.player1Interval);
       this.timer1Paused = false;
 
-      var timer1 = this.player1Interval;
       var ticks1Array = this.ticks1.split(":");
 
       var newTicksSecondsHours = (parseInt(ticks1Array[0]) * 3600);
@@ -153,7 +156,7 @@ export class ControlsCMP {
       var newTicksSeconds = parseInt(ticks1Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
       var newP1TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
 
-      var seconds = new Date().getTime() - (newTicksSeconds * 1000);
+      var p1seconds = new Date().getTime() - (newTicksSeconds * 1000);
 
       this.player1Interval = setInterval(function(){
         if(this.timer1Paused)
@@ -161,25 +164,23 @@ export class ControlsCMP {
 
           var now = new Date().getTime();
 
-        this.ticks1 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+        this.ticks1 = moment().startOf('day').seconds((now - p1seconds) / 1000).format('H:mm:ss');
       }.bind(this), 100);
-
-      return;
     }
 
     if(this.timer2Paused){
+      changedTimer = true;
       clearInterval(this.player2Interval);
       this.timer2Paused = false;
 
-      var timer2 = this.player2Interval;
       var ticks2Array = this.ticks2.split(":");
 
-      var newTicksSecondsHours = (parseInt(ticks2Array[0]) * 3600);
-      var newTicksSecondsMinutes = (parseInt(ticks2Array[1]) * 60); 
-      var newTicksSeconds = parseInt(ticks2Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
-      var newP2TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
+      var newTicks2SecondsHours = (parseInt(ticks2Array[0]) * 3600);
+      var newTicks2SecondsMinutes = (parseInt(ticks2Array[1]) * 60); 
+      var newTicks2Seconds = parseInt(ticks2Array[2]) + newTicks2SecondsHours + newTicks2SecondsMinutes;
+      var newP2TimerTicks = moment().startOf('day').seconds(newTicks2Seconds).format('H:mm:ss');
 
-      var seconds = new Date().getTime() - (newTicksSeconds * 1000);
+      var p2seconds = new Date().getTime() - (newTicks2Seconds * 1000);
 
       this.player2Interval = setInterval(function(){
         if(this.timer2Paused)
@@ -187,9 +188,29 @@ export class ControlsCMP {
 
           var now = new Date().getTime();
 
-        this.ticks2 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
+        this.ticks2 = moment().startOf('day').seconds((now - p2seconds) / 1000).format('H:mm:ss');
       }.bind(this), 100);
 
+    }
+
+    if(changedTimer){
+      console.log(p2seconds);
+      console.log(p1seconds);
+      if(p2seconds > p1seconds){
+        if(p1seconds !== undefined)
+        this.socket.emit('timer-set', p1seconds, this.vm);
+        else
+        this.socket.emit('timer-set', p2seconds, this.vm);
+      } else {
+        if(p2seconds !== undefined)
+          this.socket.emit('timer-set', p2seconds, this.vm);
+          else
+          this.socket.emit('timer-set', p1seconds, this.vm);
+      }
+      changedTimer = false;
+    }
+
+    if(this.timer2Paused){
       return;
     }
 
@@ -201,7 +222,6 @@ export class ControlsCMP {
       this.socket.emit('timer', true, this.vm);
     }
 
-    this.timerStarted = true;
     this.timer1Paused = false;
     this.timer2Paused = false;
   }
@@ -216,6 +236,9 @@ export class ControlsCMP {
   }
     
   reset() {
+  if(!confirm("Reset?"))
+  return;
+
     this.timerStarted = false;
     this.timer1Paused = false;
     this.timer2Paused = false;

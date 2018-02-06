@@ -48,6 +48,20 @@ export class StreamCMP {
       this.p2DashSkill = data.tracker["t2-skill-dash"];
     }.bind(this));
 
+    this.socket.on('timer-set', function(ticks: number, data: Information){
+      if(data.seed !== this.seed)
+        return;
+
+        clearInterval(this.timerInterval);
+  
+        this.timerInterval = setInterval(function(){
+            var now = new Date().getTime();
+  
+          this.ticks = moment().startOf('day').seconds((now - ticks) / 1000).format('H:mm:ss');
+        }.bind(this), 100);
+
+    }.bind(this));
+
     this.socket.on('timer', function(start: boolean, data: Information){
       if(data.seed !== this.seed)
         return;
@@ -56,12 +70,16 @@ export class StreamCMP {
       this.player2Finished = false;
 
       if(!start) {
+        this.timerStarted = false;
         clearInterval(this.timerInterval);
         this.ticks = "0:00:00";
 		$('.timer-main').addClass('paused');
         $(".timer-finish").removeClass('winner timer-animate');
       }
       else {
+        if(this.timerStarted) return;
+
+        this.timerStarted = true;
         var seconds = new Date().getTime(), last = seconds;
 		$('.timer-main').removeClass('paused');
         this.timerInterval = setInterval(function(){
@@ -120,6 +138,7 @@ export class StreamCMP {
 
   ticks: string = "0:00:00";
   public timer: any;
+  timerStarted: boolean = false;
   public vm: Information = new Information();
   socket: any = io.connect('http://localhost:3000/');
 

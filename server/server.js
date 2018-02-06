@@ -30,6 +30,10 @@ io.on('connection', function(client) {
     client.on('timer2', function(finished, data){
         io.emit('timer2', finished, data);
     });
+
+    client.on('timer-set', function(ticks, data){
+        io.emit('timer-set', ticks, data);
+    });
 });
 
 server.listen(port);
