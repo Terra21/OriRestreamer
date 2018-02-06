@@ -11,7 +11,8 @@
 			<input type="text" id="matchType" [(ngModel)]="matchType">
 			<input type="text" id="commentators" [(ngModel)]="commentators">
 		</div>
-		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-2 update r2 c5' : true }"  (click)="linkTracker()"  value="UPDATE LIVE FEED (every 1000ms)" [disabled]="isLinked" />
+		<input type="button" class="btn col-1 update r2 c5" (click)="updateInfo()"  value="UPDATE INFO" />
+		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-1 update r2 c6' : true }"  (click)="linkTracker()"  value="LINK SKILL TRACKER (every 1000ms)" [disabled]="isLinked" />
 		<input type="button" class="btn col-2 r2 c7" (click)="unlink()" value="UNLINK" [disabled]="!isLinked" />
 		<div class="backgrounds col-8 center r3 c1">
 	        <div>

@@ -14,8 +14,6 @@ export class ControlsCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
-      console.log(data.seed);
-      console.log(this.seed);
       if(data.seed !== this.seed)
         return;
 
@@ -106,31 +104,30 @@ export class ControlsCMP {
   socket: any = io.connect('http://localhost:3000/');
   private isLinked: boolean = false;
   linkedInterval: any;
-  updating: boolean = false;
 
   setBackground(background: string) {
     this._vm.background = background;
   }
 
-  linkTracker() {
-    this.linkedInterval = setInterval(function(){
-    this.isLinked = true;
+  updateInfo(){
+    this.socket.emit('data', this.vm);
+  }
 
-    if(this.updating)
+  linkTracker() {
+    if(this.isLinked)
       return;
 
-    this.updating = true;
-    this.socket.emit('data', this.vm);
+    this.isLinked = true;
+
+    this.linkedInterval = setInterval(function(){
       $.ajax({
         url: "https://www.meldontaragon.org/ori/tracker/allskills/server.php?match=" + this._vm.seed,
         dataType: "json",
         error: function(response) {
           console.log(response);
-          this.updating = false;
         },
         success: function( response: any ) {
             this._vm.tracker = JSON.parse(JSON.stringify(response));
-            this.updating = false;
         }.bind(this)
       });
     }.bind(this), 1000);
