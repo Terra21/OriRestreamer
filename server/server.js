@@ -1,17 +1,17 @@
-var express = require('express');  
-var app = express();  
+var express = require('express');
+var app = express();
 var fs = require('fs');
 var server = require('http').createServer(app);
 
 var io = require('socket.io')(server);
 var port = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + '/node_modules'));  
-app.get('/', function(req, res,next) {  
+app.use(express.static(__dirname + '/node_modules'));
+app.get('/', function(req, res,next) {
     //res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', function(client) {  
+io.on('connection', function(client) {
     client.on('data', function(data){
         io.emit('data', data);
     });

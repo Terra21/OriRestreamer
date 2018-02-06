@@ -58,10 +58,10 @@ export class StreamCMP {
         return;
 
         clearInterval(this.timerInterval);
-  
+
         this.timerInterval = setInterval(function(){
             var now = new Date().getTime();
-  
+
           this.ticks = moment().startOf('day').seconds((now - ticks) / 1000).format('H:mm:ss');
         }.bind(this), 100);
 
