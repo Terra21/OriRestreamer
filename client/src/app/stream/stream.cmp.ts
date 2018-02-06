@@ -49,7 +49,7 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer', function(start: boolean, data: Information){
-      if(this.vm.seed !== this.seed)
+      if(data.seed !== this.seed)
         return;
 
       this.player1Finished = false;
@@ -73,13 +73,13 @@ export class StreamCMP {
     }.bind(this));
 
     this.socket.on('timer1', function(finished: boolean, data: Information) {
-      if(this.vm.seed !== this.seed)
+      if(data.seed !== this.seed)
         return;
       this.player1Finished = finished;
     }.bind(this));
 
     this.socket.on('timer2', function(finished: boolean, data: Information) {
-      if(this.vm.seed !== this.seed)
+      if(data.seed !== this.seed)
         return;
       this.player2Finished = finished;
     }.bind(this));
