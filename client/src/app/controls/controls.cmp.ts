@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, transition } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
 import * as moment from 'moment';
@@ -14,8 +14,13 @@ export class ControlsCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
+      console.log(data.seed);
+      console.log(this.seed);
       if(data.seed !== this.seed)
         return;
+
+        if(this.updating)
+          return;
 
       this.vm = data;
     }.bind(this));
@@ -101,23 +106,31 @@ export class ControlsCMP {
   socket: any = io.connect('http://localhost:3000/');
   private isLinked: boolean = false;
   linkedInterval: any;
+  updating: boolean = false;
 
   setBackground(background: string) {
     this._vm.background = background;
   }
 
   linkTracker() {
-    this.isLinked = true;
     this.linkedInterval = setInterval(function(){
+    this.isLinked = true;
+
+    if(this.updating)
+      return;
+
+    this.updating = true;
+    this.socket.emit('data', this.vm);
       $.ajax({
-        url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
+        url: "https://www.meldontaragon.org/ori/tracker/allskills/server.php?match=" + this._vm.seed,
         dataType: "json",
         error: function(response) {
           console.log(response);
+          this.updating = false;
         },
         success: function( response: any ) {
             this._vm.tracker = JSON.parse(JSON.stringify(response));
-            this.socket.emit('data', this.vm);
+            this.updating = false;
         }.bind(this)
       });
     }.bind(this), 1000);
@@ -129,6 +142,8 @@ export class ControlsCMP {
   }
   
   start() {
+    console.log(this);
+
     if(this.timer1Paused){
       clearInterval(this.player1Interval);
       this.timer1Paused = false;
