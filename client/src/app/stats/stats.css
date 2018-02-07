@@ -55,16 +55,22 @@ table > thead > tr > td {
     font-size: 32px;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .healthCells > td {
     font-size: 32px;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .tricks > td {
     font-size: 32px;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
