@@ -1,3 +1,38 @@
-div {
-    font-size: 40px;
+@font-face{
+    font-family: "Angie";
+    src: url('../../assets/AngieRegular.otf') format("opentype")
+}
+
+.lower-third {
+	position: absolute;
+	display: flex;
+	height: 340px;
+	bottom: 0;
+	padding-left: 20px;
+	align-items: center;
+}
+
+.logo {
+	width: 405px;
+	height: 300px;
+}
+
+.next-match {
+	font-family: "Angie";
+	font-size: 44px;
+    text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+     -2px 2px 0 #000,
+      2px 2px 0 #000;
+	/* background-color: rgba(0, 0, 0, 0.5); */
+	padding: 20px 40px 20px;
+	min-width: 500px;
+}
+
+.next-match .label {
+	font-family: "Segoe UI";
+	font-weight: bold;
+	color: #fff36a;
+	font-size: 32px;
 }
