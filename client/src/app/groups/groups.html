@@ -15,11 +15,13 @@
             <thead>
                 <th>Runner</th>
                 <th>W/L</th>
+                <th>Best Race Time</th>
             </thead>
             <tbody>
                 <tr *ngFor="let p of players">
                     <td>{{ p[0] }}</td>
                     <td style="text-align: center;">{{ p[1] }}</td>
+                    <td style="text-align: center;">{{ p[2] }}</td>
                 </tr>
             </tbody>
         </table>

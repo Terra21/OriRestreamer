@@ -14,6 +14,7 @@ export class ControlsCMP {
   constructor() {}
 
   ngOnInit(){
+    this.seed = this.urlSeed;
     this.socket.on('data', function(data: Information){
       if(data.seed !== this.seed)
         return;
@@ -89,7 +90,7 @@ export class ControlsCMP {
   }
 
   playersList: any;
-
+  urlSeed: string = window.location.href.split('=')[1];
   timerStarted: boolean = false;
   timer1Paused: boolean = false;
   timer2Paused: boolean = false;
@@ -271,6 +272,20 @@ export class ControlsCMP {
 
     this.hasPlayer2Finished = true;
     this.socket.emit('timer2', true, this.vm);
+  }
+
+  setP1Name(event: any){
+    var runner = jQuery.grep(this.players, function(n: any, i) {
+      return n.name == event;
+    })[0];
+    this.vm.player1 = runner.preferredName;
+  }
+
+  setP2Name(event: any){
+    var runner = jQuery.grep(this.players, function(n: any, i) {
+      return n.name == event;
+    })[0];
+    this.vm.player2 = runner.preferredName;
   }
 
   private _vm: Information = new Information();

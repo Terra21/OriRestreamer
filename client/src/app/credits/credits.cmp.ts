@@ -17,9 +17,6 @@ export class CreditsCMP {
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
-      if(data.seed !== this.seed)
-        return;
-
       $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1getUmipiBxUTIyPdyW-9JkMPBnfeKHGAxgogWYjfg8k/values/Schedule Responses!A2:M306?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
         dataType: "json",
