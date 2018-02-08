@@ -11,7 +11,7 @@ import { retry } from 'rxjs/operators/retry';
   styleUrls: ['./controls.css']
 })
 export class ControlsCMP {
-  constructor() {} 
+  constructor() {}
 
   ngOnInit(){
     this.socket.on('data', function(data: Information){
@@ -77,7 +77,7 @@ export class ControlsCMP {
         return;
 
       if(!finished) {
-      } 
+      }
       else {
         this._vm.player2_finishTime = this.ticks2;
         this.socket.emit('data', this.vm);
@@ -142,7 +142,7 @@ export class ControlsCMP {
     this.isLinked = false;
     clearInterval(this.linkedInterval);
   }
-  
+
   start() {
     var changedTimer = false;
     if(this.timer1Paused){
@@ -153,7 +153,7 @@ export class ControlsCMP {
       var ticks1Array = this.ticks1.split(":");
 
       var newTicksSecondsHours = (parseInt(ticks1Array[0]) * 3600);
-      var newTicksSecondsMinutes = (parseInt(ticks1Array[1]) * 60); 
+      var newTicksSecondsMinutes = (parseInt(ticks1Array[1]) * 60);
       var newTicksSeconds = parseInt(ticks1Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
       var newP1TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
 
@@ -177,7 +177,7 @@ export class ControlsCMP {
       var ticks2Array = this.ticks2.split(":");
 
       var newTicks2SecondsHours = (parseInt(ticks2Array[0]) * 3600);
-      var newTicks2SecondsMinutes = (parseInt(ticks2Array[1]) * 60); 
+      var newTicks2SecondsMinutes = (parseInt(ticks2Array[1]) * 60);
       var newTicks2Seconds = parseInt(ticks2Array[2]) + newTicks2SecondsHours + newTicks2SecondsMinutes;
       var newP2TimerTicks = moment().startOf('day').seconds(newTicks2Seconds).format('H:mm:ss');
 
@@ -229,13 +229,13 @@ export class ControlsCMP {
 
   player1Paused(){
     this.timer1Paused = true;
-    
+
   }
 
   player2Paused(){
     this.timer2Paused = true;
   }
-    
+
   reset() {
   if(!confirm("Reset?"))
   return;
@@ -281,7 +281,7 @@ export class ControlsCMP {
   public set vm(info: Information) {
     this._vm = info;
   }
-  
+
   public get hidePlayer1Timer(): boolean {
     return this._vm.player1_timerVisible;
   }
@@ -387,7 +387,7 @@ public set seed(seed: string){
     this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
   }
 
-  players = [ 
+  players = [
     {
         "name": "acridstingray3",
         "preferredName": "Acrid",
