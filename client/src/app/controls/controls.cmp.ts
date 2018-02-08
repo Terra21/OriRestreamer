@@ -105,7 +105,7 @@ export class ControlsCMP {
   public nameTimer: Observable<number> = Observable.timer(0, 1000);
   public timer2: Observable<number> = Observable.timer(0, 1000);
   private $timer2: Subscription;
-  socket: any = io.connect('http://localhost:3000/');
+  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
   private isLinked: boolean = false;
   linkedInterval: any;
 
@@ -132,7 +132,7 @@ export class ControlsCMP {
         },
         success: function( response: any ) {
             this._vm.tracker = JSON.parse(JSON.stringify(response));
-            this.socket.emit('data', this.vm);
+            this.socket.emit('tracker', this.vm);
         }.bind(this)
       });
     }.bind(this), 1000);
@@ -252,11 +252,23 @@ export class ControlsCMP {
   }
 
   player1Finished() {
+    if(this.hasPlayer1Finished){
+      this._vm.player1_finishTime = this.ticks1;
+      this.socket.emit('data', this.vm);
+      return;
+    }
+
     this.hasPlayer1Finished = true;
     this.socket.emit('timer1', true, this.vm);
   }
 
   player2Finished() {
+    if(this.hasPlayer2Finished){
+      this._vm.player2_finishTime = this.ticks2;
+      this.socket.emit('data', this.vm);
+      return;
+    }
+
     this.hasPlayer2Finished = true;
     this.socket.emit('timer2', true, this.vm);
   }

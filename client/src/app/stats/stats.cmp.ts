@@ -61,7 +61,7 @@ export class StatsCMP {
 
   public vm: Information = new Information();
 
-  socket: any = io.connect('http://localhost:3000/');
+  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
   seed: string = window.location.href.split('=')[1];
   player1: any;
   player2: any;

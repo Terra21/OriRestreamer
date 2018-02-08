@@ -22,6 +22,11 @@ export class StreamCMP {
       this.vm = data;
 
       this.checkIfBothPlayersFinished();
+    }.bind(this));
+
+    this.socket.on('tracker', function(data: Information){
+      if(data.seed !== this.seed)
+        return;
 
       this.p1SpritFlameSkill = data.tracker["t1-skill-sein"];
       this.p1WallJumpSkill = data.tracker["t1-skill-walljump"];
@@ -140,7 +145,7 @@ export class StreamCMP {
   public timer: any;
   timerStarted: boolean = false;
   public vm: Information = new Information();
-  socket: any = io.connect('http://localhost:3000/');
+  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
 
   p1SpritFlameSkill: boolean;
   p1WallJumpSkill: boolean;
