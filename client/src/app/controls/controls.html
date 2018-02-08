@@ -3,7 +3,7 @@
 		<div class="col-8 center label-big r1 c1">GENERAL INFO</div>
         <div class="label r2 c1">
             <label for="trackerId">Match ID</label><br>
-            <label for="matchType">Match Type</label>
+            <label for="matchType">Match Type</label><br>
 	        <label for="commentators">Commentators</label>
         </div>
 		<div class="col-3 r2 c2">
@@ -236,7 +236,7 @@
 		<label class="label r9 c1" for="p1Name">Name</label>
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
 		<label class="label r10 c1" for="p1Twitch">Twitch</label>
-		
+
 		<select class="twitch r10 c2" [(ngModel)]="p1_twitch">
 			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
 		</select>
@@ -246,13 +246,13 @@
         <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timer1Paused" />
 		<input type="button" class="btn btn-warning r10 c3 col-1" value="FINISH" (click)="player1Finished()" />
 		<input type="button" class="btn col-1 r10 c4" value="PAUSE/SET TIMER" (click)="player1Paused()" />
-		
+
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2</div>
         <label class="label r9 c5" for="p2Name">Name</label>
 		<input id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
 		<label class="label r10 c5" for="p2Twitch">Twitch</label>
-		
+
 		<select class="twitch r10 c6" [(ngModel)]="p2_twitch">
 			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
 		</select>
