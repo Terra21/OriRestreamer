@@ -1,23 +1,17 @@
 <div class="container">
-    <div class="col-6">
-        <div class="matchup">
-            <div style="width: 100% auto">
-                <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ vm.player1 }}
-            </div>
-            <div style="width: 100% auto">vs</div>
-            <div style="width: 100% auto">
-                <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ vm.player2 }}
-            </div>
+    <div class="matchType">
+        {{ vm.matchType }}
+    </div>
+    <div class="matchup">
+        <div>
+            <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ vm.player1 }}
+        </div>
+        <div>vs</div>
+        <div>
+            <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ vm.player2 }}
         </div>
     </div>
-    <div class="col-6">
-        <div class="info">
-            <div>
-                {{ vm.matchType }}
-            </div>
-        </div>
-    </div>
-    <div class="col-6">
+    <div>
         <div class="logo">
             <div>
                 <img src="../assets/logo.png" width="300px"/>

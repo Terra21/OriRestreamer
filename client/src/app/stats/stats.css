@@ -13,7 +13,7 @@ div {
 .title {
     position: absolute;
     top: 50px;
-    left: 350px;
+    left: 280px;
     width: 200px;
     text-align: center;
     word-wrap: normal;
@@ -26,10 +26,25 @@ div {
     width: 100%;
 }
 
+table {
+	table-layout: fixed;
+}
+
 table > thead > tr > td {
     font-size: 64px;
-    padding-left: 100px;
     text-align: center;
+}
+
+table td {
+	overflow: hidden;
+	max-width: 500px;
+}
+
+table > tbody > tr > td:first-child {
+	font-family: "Segoe UI";
+	font-size: 28px;
+	font-weight: bold;
+	color: #fff36a;
 }
 
 .seeds > td {
