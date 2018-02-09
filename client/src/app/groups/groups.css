@@ -1,10 +1,9 @@
 .container {
     font-family: "Angie";
-    font-size: 80px;
     color: white;
     width: 1920px;
     height: 1080px;
-    background-color:	rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .groupTitle {
@@ -12,23 +11,32 @@
     top: 75px;
     left: 100px;
     align-content: center;
+    font-size: 80px;
 }
 
 .table {
     margin: 0 auto;
 }
 
+.table td, .table th {
+	min-width: 200px;
+}
+
 .table > thead > th {
     padding-left: 50px;
     padding-right: 50px;
+	text-align: center;
+	font-family: "Segoe UI";
+	font-size: 52px;
+	color: #fff36a;
 }
 
 .table > tbody > tr > td {
-    padding-left: 50px;
-    padding-right: 50px;
+	padding: 15px 50px;
     text-align: left;
-    padding-top: 25px;
+	vertical-align: middle;
     font-size: 62px;
+	text-align: center;
 }
 
 .table > tbody > tr {
