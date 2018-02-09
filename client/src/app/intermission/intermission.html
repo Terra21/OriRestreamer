@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="matchType">
+        {{ vm.matchType }}
+    </div>
+    <div class="matchup">
+        <div>
+            <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ vm.player1 }}
+        </div>
+        <div><i>Setting up next race...</i></div>
+        <div>
+            <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ vm.player2 }}
+        </div>
+    </div>
+    <div>
+        <div class="logo">
+            <div>
+                <img src="../assets/logo.png" width="300px"/>
+            </div>
+        </div>
+        <div class="title">All Skills Tournament 2018</div>
+    </div>
+</div>

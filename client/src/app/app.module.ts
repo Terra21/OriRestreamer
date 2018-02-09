@@ -12,6 +12,7 @@ import { SplashCMP } from './splash/splash.cmp';
 import { BracketCMP } from './bracket/bracket.cmp';
 import { StatsCMP } from './stats/stats.cmp';
 import { CreditsCMP } from './credits/credits.cmp';
+import { IntermissionCMP } from './intermission/intermission.cmp';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'bracket', component: BracketCMP },
   { path: 'stats', component: StatsCMP },
   { path: 'credits', component: CreditsCMP },
+  { path: 'intermission', component: IntermissionCMP },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     SplashCMP,
     BracketCMP,
     StatsCMP,
-    CreditsCMP
+    CreditsCMP,
+    IntermissionCMP
   ],
   imports: [
     BrowserModule, 

@@ -1,0 +1,52 @@
+@font-face{
+    font-family: "Angie";
+    src: url('../../assets/AngieRegular.otf') format("opentype")
+}
+
+.container {
+    font-family: "Angie";
+    color: white;
+    width: 1920px;
+	height: 1080px;
+    background-size: 1920px 1080px;
+    background-color: rgba(0,0,0,0.25)
+}
+
+
+div {
+    font-size: 80px;
+}
+
+.matchup {
+    position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 300px;
+}
+
+.matchType {
+    position: absolute;
+    top: 75px;
+    left: 100px;
+    font-size: 100px;
+    word-wrap: break-word;
+}
+
+.matchup > div {
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+.title {
+    position: absolute;
+    bottom: 100px;
+    left: 500px;
+}
