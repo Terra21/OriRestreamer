@@ -22,52 +22,52 @@ export class GroupsCMP {
 
       console.log(data.background);
       switch(data.background){
-        case "forlorn":
+        case "swamp":
           groupCols = "B4:D8";
           break;
-        case "glades":
+        case "swallowsnest":
           groupCols = "F4:H8";
           break;
-        case "grotto":
+        case "lostgrove":
           groupCols = "J4:L8";
           break;
-        case "ginso":
+        case "misty":
           groupCols = "N4:P8";
           break;
-        case "swamp":
+        case "spidercoves":
           groupCols = "B12:D15";
           break;
-        case "valley":
+        case "grove":
           groupCols = "F12:H15";
           break;
-        case "sorrow":
+        case "forlorn":
           groupCols = "J12:L15";
           break;
-        case "horu":
+        case "spiritcaverns":
           groupCols = "N12:P15";
           break;
-        case "blackroot":
+        case "ginso":
           groupCols = "B20:D23";
           break;
-        case "lostgrove":
+        case "horu":
           groupCols = "F20:H23";
           break;
-        case "misty":
+        case "glades":
           groupCols = "J20:L23";
           break;
-        case "grove":
+        case "grotto":
           groupCols = "N20:P23";
           break;
-        case "spidercoves":
+        case "moongrotto":
           groupCols = "B28:D31";
           break;
-        case "moongrotto":
+        case "blackroot":
           groupCols = "F28:H31";
           break;
-        case "spiritcaverns":
+        case "valley":
           groupCols = "J28:L31";
           break;
-        case "swallowsnest":
+        case "sorrow":
           groupCols = "N28:P31";
           break;
         case "kurosnest":
