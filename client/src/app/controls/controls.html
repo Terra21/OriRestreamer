@@ -7,9 +7,9 @@
 	        <label for="commentators">Commentators</label>
         </div>
 		<div class="col-3 r2 c2">
-			<input type="text" id="trackerId" [(ngModel)]="seed" [disabled]="isLinked"><br>
-			<input type="text" id="matchType" [(ngModel)]="matchType">
-			<input type="text" id="commentators" [(ngModel)]="commentators">
+			<input type="text" id="trackerId" [(ngModel)]="seed" [disabled]="isLinked" placeholder="Same as Skill Tracker"><br>
+			<input type="text" id="matchType" [(ngModel)]="matchType"  placeholder="Group/Bracket Stage - Group Name">
+			<input type="text" id="commentators" [(ngModel)]="commentators"  placeholder="ENTER COMMENTATORS">
 		</div>
 		<input type="button" class="btn col-1 update r2 c5" (click)="updateInfo()" value="UPDATE STREAM INFO" />
 		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-1 update r2 c6' : true }"  (click)="linkTracker()"  value="LINK SKILL TRACKER (every 1000ms)" [disabled]="isLinked" />
@@ -242,7 +242,7 @@
 		</select>
 
 		<label class="label r11 c1" for="p1Seed">Seed</label>
-		<input id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" />
+		<input id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
         <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timer1Paused" />
 		<input type="button" class="btn btn-warning r10 c3 col-1" value="FINISH" (click)="player1Finished()" />
 		<input type="button" class="btn col-1 r10 c4" value="PAUSE/SET TIMER" (click)="player1Paused()" />
@@ -258,7 +258,7 @@
 		</select>
 
 		<label class="label r11 c5" for="p2Seed">Seed</label>
-		<input id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" />
+		<input id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
 		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timer2Paused"/>
 		<input type="button" class="btn btn-warning r10 c7 col-1" value="FINISH" (click)="player2Finished()" />
 		<input type="button" class="btn col-1 r10 c8" value="PAUSE / SET TIMER" (click)="player2Paused()" />

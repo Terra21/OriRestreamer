@@ -46,6 +46,11 @@
 
 input[type="text"] {
 	width: 100%;
+	text-shadow: initial;
+}
+
+input:not([type="button"]), select {
+    text-shadow: initial;
 }
 
 .label {

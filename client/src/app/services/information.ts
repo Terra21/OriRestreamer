@@ -14,8 +14,8 @@ export class Information {
     player1_finishTime: string = '0:00:00';
     player2_finishTime: string = '0:00:00';
     currentAudioOnPlayer: number = 1;
-    commentators: string = 'ENTER COMMENTATORS';
-    matchType: string = 'ENTER GROUP';
+    commentators: string = '';
+    matchType: string = '';
     background: string = 'ginso'
     tracker: Tracker = new Tracker();
 }
