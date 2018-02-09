@@ -7,3 +7,11 @@ html, body {
 	color: #f9f9f9;
 	font-family: Segoe UI;
 }
+
+* {
+    text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
