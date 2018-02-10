@@ -111,7 +111,62 @@ export class ControlsCMP {
   linkedInterval: any;
 
   setBackground(background: string) {
+    switch(background){
+      case "swamp":
+        this._vm.groupName = "Thornfelt Swamp";
+        break;
+      case "swallowsnest":
+      this._vm.groupName = "Swallow's Nest";
+        break;
+      case "lostgrove":
+      this._vm.groupName = "Lost Grove";
+        break;
+      case "misty":
+      this._vm.groupName = "Misty Woods";
+        break;
+      case "spidercoves":
+      this._vm.groupName = "Spider Coves";
+        break;
+      case "grove":
+      this._vm.groupName = "Hollow Grove";
+        break;
+      case "forlorn":
+      this._vm.groupName = "Forlorn Ruins";
+        break;
+      case "spiritcaverns":
+      this._vm.groupName = "Spirit Caverns";
+        break;
+      case "ginso":
+      this._vm.groupName = "Ginso Tree";
+        break;
+      case "horu":
+      this._vm.groupName = "Mount Horu";
+        break;
+      case "glades":
+      this._vm.groupName = "Sunken Glades";
+        break;
+      case "grotto":
+      this._vm.groupName = "Gumo's Hideout";
+        break;
+      case "moongrotto":
+      this._vm.groupName = "Moon Grotto";
+        break;
+      case "blackroot":
+      this._vm.groupName = "Blackroot Burrows";
+        break;
+      case "valley":
+      this._vm.groupName = "Valley of the Wind";
+        break;
+      case "sorrow":
+      this._vm.groupName = "Sorrow Pass";
+        break;
+      case "kurosnest":
+      this._vm.groupName = "Kuro's Nest";
+        break;
+    }
+
     this._vm.background = background;
+    this._vm.matchType = "Group Match - " + this._vm.groupName;
   }
 
   updateInfo(){
