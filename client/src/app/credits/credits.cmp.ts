@@ -16,30 +16,35 @@ export class CreditsCMP {
   constructor() { }
 
   ngOnInit(){
+    this.getNextMatch();
     this.socket.on('data', function(data: Information){
-      $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1getUmipiBxUTIyPdyW-9JkMPBnfeKHGAxgogWYjfg8k/values/Schedule Responses!A2:M306?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-        dataType: "json",
-        error: function(response) {
-          console.log(response);
-        },
-        success: function( response: any ) {
-          console.log(response.values);
-          let matchFound = false;
-
-          response.values.forEach(function(match) {
-            if(matchFound == true) return;
-              if(match[12] === undefined){
-                this.p1 = match[1];
-                this.p2 = match[3];
-
-                this.date = moment(match[5]).format("ddd MMM Mo - h:mm A");
-                matchFound = true;
-            }
-          }.bind(this));
-        }.bind(this)
-      });
+        this.getNextMatch();
     }.bind(this));
+  }
+
+  getNextMatch(){
+    $.ajax({
+      url: "https://sheets.googleapis.com/v4/spreadsheets/1getUmipiBxUTIyPdyW-9JkMPBnfeKHGAxgogWYjfg8k/values/Schedule Responses!A2:M306?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+      dataType: "json",
+      error: function(response) {
+        console.log(response);
+      },
+      success: function( response: any ) {
+        console.log(response.values);
+        let matchFound = false;
+
+        response.values.forEach(function(match) {
+          if(matchFound == true) return;
+            if(match[12] === undefined){
+              this.p1 = match[1];
+              this.p2 = match[3];
+
+              this.date = moment(match[5]).format("ddd MMM Do - h:mm A");
+              matchFound = true;
+          }
+        }.bind(this));
+      }.bind(this)
+    });
   }
 
   socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');

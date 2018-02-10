@@ -20,8 +20,8 @@
             </tr>
             <tr class="stats">
                 <td style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Current PB (Improvement)</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[1] }} {{ player1[2] }} ({{ player1[3] }})</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[1] }} {{ player2[2] }} ({{ player2[3] }})</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[1] }} {{ player1[2] }} <span *ngIf="player1[3]">({{ player1[3] }})</span></td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[1] }} {{ player2[2] }} <span *ngIf="player2[3]">({{ player2[3] }})</span></td>
             </tr>
             <tr class="method">
                 <td style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Input Method</td>

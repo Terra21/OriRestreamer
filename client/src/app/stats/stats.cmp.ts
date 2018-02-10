@@ -338,14 +338,14 @@ export class StatsCMP {
       "endColumn": "J47"
     },
     {
-      "name": "sigmasin",
-      "preferredName": "sigma",
+      "name": "sickynar",
+      "preferredName": "Sickynar",
       "startColumn": "B48",
       "endColumn": "J48"
     },
     {
-      "name": "sickynar",
-      "preferredName": "Sickynar",
+      "name": "sigmasin",
+      "preferredName": "sigma",
       "startColumn": "B49",
       "endColumn": "J49"
     },
