@@ -15,7 +15,7 @@ export class ControlsCMP {
 
   ngOnInit(){
     this.seed = this.urlSeed;
-    this.socket.on('data', function(data: Information){
+    this.socket.on('data-read', function(data: Information){
       if(data.seed !== this.seed)
         return;
 
@@ -24,6 +24,9 @@ export class ControlsCMP {
 
       this.vm = data;
     }.bind(this));
+
+    if(this.seed)
+      this.socket.emit('data-read', this.vm);
 
     this.socket.on('timer', function(start: boolean, data: Information){
       if(data.seed !== this.seed)
@@ -68,7 +71,7 @@ export class ControlsCMP {
       }
       else {
         this._vm.player1_finishTime = this.ticks1;
-        this.socket.emit('data', this.vm);
+        this.socket.emit('data-write', this.vm);
         clearInterval(this.player1Interval);
       }
     }.bind(this));
@@ -81,7 +84,7 @@ export class ControlsCMP {
       }
       else {
         this._vm.player2_finishTime = this.ticks2;
-        this.socket.emit('data', this.vm);
+        this.socket.emit('data-write', this.vm);
         clearInterval(this.player2Interval);
       }
     }.bind(this));
@@ -170,7 +173,7 @@ export class ControlsCMP {
   }
 
   updateInfo(){
-    this.socket.emit('data', this.vm);
+    this.socket.emit('data-write', this.vm);
   }
 
   linkTracker() {
@@ -181,7 +184,7 @@ export class ControlsCMP {
 
     this.linkedInterval = setInterval(function(){
       $.ajax({
-        url: "https://www.meldontaragon.org/ori/tracker/allskills/server.php?match=" + this._vm.seed,
+        url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
         dataType: "json",
         error: function(response) {
           console.log(response);
@@ -303,14 +306,14 @@ export class ControlsCMP {
     this.hasPlayer2Finished = false;
     this._vm.player1_finishTime = "0:00:00";
     this._vm.player2_finishTime = "0:00:00";
-    this.socket.emit('data', this.vm);
+    this.socket.emit('data-write', this.vm);
     this.socket.emit('timer', false, this.vm);
   }
 
   player1Finished() {
     if(this.hasPlayer1Finished){
       this._vm.player1_finishTime = this.ticks1;
-      this.socket.emit('data', this.vm);
+      this.socket.emit('data-write', this.vm);
       return;
     }
 
@@ -321,7 +324,7 @@ export class ControlsCMP {
   player2Finished() {
     if(this.hasPlayer2Finished){
       this._vm.player2_finishTime = this.ticks2;
-      this.socket.emit('data', this.vm);
+      this.socket.emit('data-write', this.vm);
       return;
     }
 

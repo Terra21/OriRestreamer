@@ -15,7 +15,7 @@ export class StreamCMP {
   constructor() { }
 
   ngOnInit(){
-    this.socket.on('data', function(data: Information){
+    this.socket.on('data-read', function(data: Information){
       if(data.seed !== this.seed)
         return;
 
@@ -39,6 +39,7 @@ export class StreamCMP {
       this.p1CJumpSkill = data.tracker["t1-skill-cjump"];
       this.p1GrenadeSkill = data.tracker["t1-skill-grenade"];
       this.p1DashSkill = data.tracker["t1-skill-dash"];
+      this.p1First = data.tracker["t1-place-first"];
 
       this.p2SpritFlameSkill = data.tracker["t2-skill-sein"];
       this.p2WallJumpSkill = data.tracker["t2-skill-walljump"];
@@ -51,6 +52,8 @@ export class StreamCMP {
       this.p2CJumpSkill = data.tracker["t2-skill-cjump"];
       this.p2GrenadeSkill = data.tracker["t2-skill-grenade"];
       this.p2DashSkill = data.tracker["t2-skill-dash"];
+      this.p2First = data.tracker["t2-place-first"];
+
     }.bind(this));
 
     this.socket.on('timer-set', function(ticks: number, data: Information){
@@ -170,4 +173,7 @@ export class StreamCMP {
   p2CJumpSkill: boolean;
   p2GrenadeSkill: boolean;
   p2DashSkill: boolean;
+
+  p1First: boolean = true;
+  p2First: boolean = false;
 }

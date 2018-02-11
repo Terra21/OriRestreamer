@@ -37,6 +37,8 @@
     <div class="matchinfo">
         <div class="tracker p1">
 			<!-- TODO: Remove the img tag below once bg image has it baked in -->
+            <img *ngIf="p1First" src="../../assets/1stplace70percent.png">
+            <img *ngIf="p2First" src="../../assets/2ndplace70percent.png">
             <img src="../../assets/skillring.png">
 
             <img *ngIf="p1SpritFlameSkill" src="../../assets/skills/spiritflame.png">
@@ -58,6 +60,8 @@
         </div>
         <div class="tracker p2">
 			<!-- TODO: Remove the img tag below once bg image has it baked in -->
+                <img *ngIf="p2First" src="../../assets/1stplace70percent.png">
+                <img *ngIf="p1First" src="../../assets/2ndplace70percent.png">
                 <img src="../../assets/skillring.png">
 
                 <img *ngIf="p2SpritFlameSkill" src="../../assets/skills/spiritflame.png">

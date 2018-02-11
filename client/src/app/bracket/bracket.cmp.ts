@@ -14,7 +14,7 @@ export class BracketCMP {
   constructor() { }
 
   ngOnInit(){
-    this.socket.on('data', function(data: Information){
+    this.socket.on('data-read', function(data: Information){
       if(data.seed !== this.seed)
         return;
 

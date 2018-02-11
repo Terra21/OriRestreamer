@@ -15,7 +15,7 @@ export class StatsCMP {
   constructor() { }
 
   ngOnInit(){
-    this.socket.on('data', function(data: Information){
+    this.socket.on('data-read', function(data: Information){
       if(data.seed !== this.seed)
         return;
 
@@ -36,8 +36,6 @@ export class StatsCMP {
             console.log(response);
           },
           success: function( response: any ) {
-            console.log("p1");
-            console.log(response);
             this.player1 = response.values[0];
           }.bind(this)
         });
@@ -49,8 +47,6 @@ export class StatsCMP {
             console.log(response);
           },
           success: function( response: any ) {
-            console.log("p2");
-            console.log(response);
             this.player2 = response.values[0];
           }.bind(this)
         });
