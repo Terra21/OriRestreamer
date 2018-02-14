@@ -28,6 +28,9 @@ export class StreamCMP {
       if(data.seed !== this.seed)
         return;
 
+      if(data.tracker["playerLead"] == undefined)
+        return;
+
       this.p1SpritFlameSkill = data.tracker["t1-skill-sein"];
       this.p1WallJumpSkill = data.tracker["t1-skill-walljump"];
       this.p1CFlameSkill = data.tracker["t1-skill-cflame"];
