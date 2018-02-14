@@ -75,6 +75,9 @@ export class GroupsCMP {
           break;
       }
 
+      if(this.seed)
+        this.socket.emit('data-read', this.vm);
+
       $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Group Standings!" + groupCols +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
         dataType: "json",

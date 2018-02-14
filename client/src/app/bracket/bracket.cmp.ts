@@ -23,7 +23,6 @@ export class BracketCMP {
   }
 
   public vm: Information = new Information();
-
   socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
   seed: string = window.location.href.split('=')[1];
 }

@@ -39,7 +39,7 @@ export class StreamCMP {
       this.p1CJumpSkill = data.tracker["t1-skill-cjump"];
       this.p1GrenadeSkill = data.tracker["t1-skill-grenade"];
       this.p1DashSkill = data.tracker["t1-skill-dash"];
-      this.p1First = data.tracker["t1-place-first"];
+      this.p1First = data.tracker["playerLead"].p1 == 1;
 
       this.p2SpritFlameSkill = data.tracker["t2-skill-sein"];
       this.p2WallJumpSkill = data.tracker["t2-skill-walljump"];
@@ -52,7 +52,7 @@ export class StreamCMP {
       this.p2CJumpSkill = data.tracker["t2-skill-cjump"];
       this.p2GrenadeSkill = data.tracker["t2-skill-grenade"];
       this.p2DashSkill = data.tracker["t2-skill-dash"];
-      this.p2First = data.tracker["t2-place-first"];
+      this.p2First = data.tracker["playerLead"].p2 == 1;
 
     }.bind(this));
 
@@ -174,6 +174,6 @@ export class StreamCMP {
   p2GrenadeSkill: boolean;
   p2DashSkill: boolean;
 
-  p1First: boolean = true;
-  p2First: boolean = false;
+  p1First: boolean;
+  p2First: boolean;
 }

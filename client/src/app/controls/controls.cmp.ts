@@ -25,8 +25,8 @@ export class ControlsCMP {
       this.vm = data;
     }.bind(this));
 
-    if(this.seed)
-      this.socket.emit('data-read', this.vm);
+    // if(this.seed)
+    //   this.socket.emit('data-read', this.vm);
 
     this.socket.on('timer', function(start: boolean, data: Information){
       if(data.seed !== this.seed)
@@ -184,7 +184,7 @@ export class ControlsCMP {
 
     this.linkedInterval = setInterval(function(){
       $.ajax({
-        url: "https://www.meldontaragon.org/ori/testing/allskills/server.php?match=" + this._vm.seed,
+        url: "https://www.meldontaragon.org/ori/tracker/allskills/server.php?match=" + this._vm.seed,
         dataType: "json",
         error: function(response) {
           console.log(response);
@@ -287,12 +287,14 @@ export class ControlsCMP {
   }
 
   player1Paused(){
-    this.timer1Paused = true;
+    if(this.timerStarted)
+      this.timer1Paused = true;
 
   }
 
   player2Paused(){
-    this.timer2Paused = true;
+    if(this.timerStarted)
+      this.timer2Paused = true;
   }
 
   reset() {
