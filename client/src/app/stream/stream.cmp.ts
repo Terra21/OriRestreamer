@@ -15,7 +15,7 @@ export class StreamCMP {
   constructor() { }
 
   ngOnInit(){
-    this.socket.on('data-read', function(data: Information){
+    this.socket.on('data', function(data: Information){
       if(data.seed !== this.seed)
         return;
 

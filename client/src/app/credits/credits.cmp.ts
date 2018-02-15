@@ -17,7 +17,7 @@ export class CreditsCMP {
 
   ngOnInit(){
     this.getNextMatch();
-    this.socket.on('data-read', function(data: Information){
+    this.socket.on('data', function(data: Information){
         this.getNextMatch();
     }.bind(this));
   }

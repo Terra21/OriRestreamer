@@ -14,7 +14,7 @@ export class GroupsCMP {
   constructor() { }
 
   ngOnInit(){
-    this.socket.on('data-read', function(data: Information){
+    this.socket.on('data', function(data: Information){
       if(data.seed !== this.seed)
         return;
 
@@ -75,8 +75,8 @@ export class GroupsCMP {
           break;
       }
 
-      if(this.seed)
-        this.socket.emit('data-read', this.vm);
+      // if(this.seed)
+      //   this.socket.emit('data', this.vm);
 
       $.ajax({
         url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Group Standings!" + groupCols +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
