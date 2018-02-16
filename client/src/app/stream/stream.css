@@ -163,6 +163,36 @@
 .tracker > img {
 	position: absolute;
     height: 390px;
+	transform-origin: var(--x, center) var(--y, center);
+	transform: scale(0.1);
+	visibility: hidden;
+}
+
+.tracker > img.always-on {
+	transform: scale(1.0);
+	visibility: visible;
+}
+
+.tracker > img.on {
+	transform: scale(1.0);
+	transition: transform 500ms cubic-bezier(0.595, 1.800, 0.145, 0.910);
+	visibility: visible;
+}
+
+.tracker > img.on.shine {
+	background: linear-gradient(
+		135deg,
+		transparent 0%,
+		transparent 45%,
+		rgba(255,255,255,1) 50%,
+		transparent 55%,
+		transparent 100%
+	);
+	background-size: 600% 600%;
+	clip-path: circle(var(--r, 36.829px) at var(--x, center) var(--y, center));
+	animation: sheen 2s ease;
+	/* background: rgba(255,255,255,0); */
+	/* animation: light-burst 500ms ease alternate 2; */
 }
 
 .text {
@@ -224,3 +254,8 @@
 	0% { background-position: 100% 100%; }
 	100% { background-position: 0% 0%; }
 }
+
+/* @keyframes light-burst {
+	0% { box-shadow: inset 0 0 0 1000px rgba(255,255,255,0); }
+	100% { box-shadow: inset 0 0 0 1000px rgba(255,255,255,1); }
+} */
