@@ -17,6 +17,6 @@ export class Information {
     commentators: string = '';
     background: string = 'ginso';
     groupName: string = 'Ginso Tree';
-    matchType: string = 'Group Match - ' + this.groupName;
+    matchType: string = 'Group Stage - ' + this.groupName;
     tracker: Tracker = new Tracker();
 }

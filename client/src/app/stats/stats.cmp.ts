@@ -71,9 +71,9 @@ export class StatsCMP {
     },
     {
         "name": "AHuntersPixxel",
-        "preferredName": "Pix",
+        "preferredName": "Pixxel",
         "startColumn": "B4",
-        "endColumn": "B4"
+        "endColumn": "J4"
     },
     {
         "name": "Axetox",
@@ -119,7 +119,7 @@ export class StatsCMP {
     },
     {
       "name": "Covert_Muffin",
-      "preferredName": "CovertMuffin",
+      "preferredName": "CovertCupcake",
       "startColumn": "B12",
       "endColumn": "J12"
     },
@@ -227,7 +227,7 @@ export class StatsCMP {
     },
     {
       "name": "LostDedew",
-      "preferredName": "Dedew",
+      "preferredName": "LostDedew",
       "startColumn": "B30",
       "endColumn": "J30"
     },
@@ -239,7 +239,7 @@ export class StatsCMP {
     },
     {
       "name": "LurkingAssassin",
-      "preferredName": "Lurking",
+      "preferredName": "Lurking Assassin",
       "startColumn": "B32",
       "endColumn": "J32"
     },
@@ -257,7 +257,7 @@ export class StatsCMP {
     },
     {
       "name": "MeldonTaragon",
-      "preferredName": "Meldon",
+      "preferredName": "Meldon Taragon",
       "startColumn": "B35",
       "endColumn": "J35"
     },
@@ -275,7 +275,7 @@ export class StatsCMP {
     },
     {
       "name": "MrGreeZ",
-      "preferredName": "GreeZ",
+      "preferredName": "MrGreeZ",
       "startColumn": "B38",
       "endColumn": "J38"
     },
@@ -287,7 +287,7 @@ export class StatsCMP {
     },
     {
       "name": "ogndrahcir",
-      "preferredName": "Richard",
+      "preferredName": "ogndrahcir",
       "startColumn": "B40",
       "endColumn": "J40"
     },
@@ -311,13 +311,13 @@ export class StatsCMP {
     },
     {
       "name": "rainbowpoogle",
-      "preferredName": "Poogle",
+      "preferredName": "Rainbow Poogle",
       "startColumn": "B44",
       "endColumn": "J44"
     },
     {
       "name": "RedR3dRum",
-      "preferredName": "Red",
+      "preferredName": "RedR3dRum",
       "startColumn": "B45",
       "endColumn": "J45"
     },
@@ -437,21 +437,9 @@ export class StatsCMP {
     },
     {
       "name": "Vennguard",
-      "preferredName": "Venn",
+      "preferredName": "Vennguard",
       "startColumn": "B65",
       "endColumn": "J65"
-    },
-    {
-      "name": "Vulajin",
-      "preferredName": "Vulajin",
-      "startColumn": "B66",
-      "endColumn": "J66"
-    },
-    {
-      "name": "Willson",
-      "preferredName": "Willson",
-      "startColumn": "B67",
-      "endColumn": "J67"
     },
     {
       "name": "Vulajin",
