@@ -166,7 +166,7 @@ export class ControlsCMP {
     }
 
     this._vm.background = background;
-    this._vm.matchType = "Group Match - " + this._vm.groupName;
+    this._vm.matchType = "Group Stage - " + this._vm.groupName;
   }
 
   updateInfo(){
