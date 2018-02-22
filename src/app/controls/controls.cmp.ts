@@ -1,6 +1,7 @@
 import { Component, Input, transition } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
+import { environment } from '../../environments/environment';
 import * as moment from 'moment';
 import * as $ from 'jquery';
 import io from 'socket.io-client';
@@ -106,8 +107,8 @@ export class ControlsCMP {
   public nameTimer: Observable<number> = Observable.timer(0, 1000);
   public timer2: Observable<number> = Observable.timer(0, 1000);
   private $timer2: Subscription;
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
-  private isLinked: boolean = false;
+  socket: any = io.connect(environment.socketPath);
+  isLinked: boolean = false;
   linkedInterval: any;
 
   setBackground(background: string) {

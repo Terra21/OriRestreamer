@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
+import { environment } from '../../environments/environment';
 import io from 'socket.io-client';
 import * as $ from 'jquery';
 import * as moment from 'moment';
@@ -47,8 +48,7 @@ export class CreditsCMP {
     });
   }
 
-  // socket: any = io.connect('http://localhost:3000/');
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
 
   p1: string;
