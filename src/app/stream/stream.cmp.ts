@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
 import { Player } from '../services/player.enum';
+import { environment } from '../../environments/environment';
 import * as moment from 'moment';
 import io from 'socket.io-client';
 import { Socket } from 'net';
@@ -151,7 +152,7 @@ export class StreamCMP {
   public timer: any;
   timerStarted: boolean = false;
   public vm: Information = new Information();
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect(environment.socketPath);
 
   p1SpritFlameSkill: boolean;
   p1WallJumpSkill: boolean;
