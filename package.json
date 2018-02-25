@@ -6,9 +6,10 @@
   "typings": "./app/typings.d.ts",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4201",
-    "code": "ng serve --port 4202 --ssl 1 --ssl-key \"C:\\users\\terra\\desktop\\server.key\" --ssl-cert \"C:\\users\\terra\\desktop\\server.crt\" --open",
-    "build": "ng build",
+    "start": "node server.js",
+	"start-dev": "run-p start dev",
+    "dev": "ng serve --port 4201",
+    "build": "ng build --prod",
     "postinstall": "node ./src/scripts/fixAngularCrypto.js"
   },
   "private": true,
@@ -26,6 +27,7 @@
     "@types/jquery": "^3.2.13",
     "@types/signalr": "^2.2.35",
     "core-js": "^2.4.1",
+    "express": "^4.16.2",
     "jquery": "3.2.1",
     "moment": "2.19.2",
     "rxjs": "^5.4.2",
@@ -39,6 +41,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^6.0.92",
     "codelyzer": "~3.2.0",
+    "npm-run-all": "^4.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.3.3"

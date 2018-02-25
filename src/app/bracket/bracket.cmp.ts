@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Information } from '../services/information';
+import { environment } from '../../environments/environment';
 import io from 'socket.io-client';
 import * as $ from 'jquery';
 import { Socket } from 'net';
@@ -23,6 +24,6 @@ export class BracketCMP {
   }
 
   public vm: Information = new Information();
-  socket: any = io.connect('https://ori-restreamer.azurewebsites.net/');
+  socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
 }

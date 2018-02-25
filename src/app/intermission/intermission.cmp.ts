@@ -16,5 +16,6 @@ export class IntermissionCMP {
   constructor() { }
 
   ngOnInit(){
+	  //TODO: Add next match info
   }
 }
