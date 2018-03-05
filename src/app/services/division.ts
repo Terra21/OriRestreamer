@@ -1,3 +1,5 @@
+import { Match } from './match';
+
 export class Division {
     WinnersPrelim: Match = new Match;
     LosersPrelim: Match = new Match;
@@ -16,9 +18,4 @@ export class Division {
 
     get hasWinnersPrelim() { return !(this.WinnersPrelim.player1 == "" || this.WinnersPrelim.player2 == "") }
     get hasLosersPrelim() { return !(this.LosersPrelim.player1 == "" || this.LosersPrelim.player2 == "") }
-}
-
-class Match {
-    player1: string = "";
-    player2: string = "";
 }

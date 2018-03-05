@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 import * as $ from 'jquery';
 import { Socket } from 'net';
 import { Division } from '../services/division';
+import { Match } from '../services/match';
 
 @Component({
   templateUrl: './bracket.html',
@@ -22,16 +23,16 @@ export class BracketCMP {
     //   if(data.seed !== this.seed)
     //     return;
         
-      let divCols = "C6:N19";;
+      let divCols = "B6:N19";;
 
       switch("fil"){
         case "fil":
-          divCols = "C6:N19";
+          divCols = "B6:X19";
           break;
       }
 
       $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1_Y2NpB4qp2govQmMmRWZLtVgg6g2LzOssR8IGrER0T8/values/Bracket!" + divCols +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+        url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Bracket (WIP)!" + divCols +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
         dataType: "json",
         error: function(response) {
           console.log(response);
@@ -40,7 +41,7 @@ export class BracketCMP {
           console.log(response);
 
           //Pulled from
-          //https://docs.google.com/spreadsheets/d/1_Y2NpB4qp2govQmMmRWZLtVgg6g2LzOssR8IGrER0T8/edit#gid=1672953942
+          //https://docs.google.com/spreadsheets/d/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/edit#gid=129944555
 
           this.mapSheetToDivision(response);
 
@@ -54,48 +55,19 @@ export class BracketCMP {
 
   private mapSheetToDivision(response: any){
     //Winners
-    this.Division.WinnersPrelim.player1 = this.getPlayerName(response.values[0][0]);
-    this.Division.WinnersPrelim.player2 = this.getPlayerName(response.values[1][0]);
-
-    this.Division.WinnersRound1_1.player1 = this.getPlayerName(response.values[0][3]);
-    this.Division.WinnersRound1_1.player2 = this.getPlayerName(response.values[1][3]);
-
-    this.Division.WinnersRound1_2.player1 = this.getPlayerName(response.values[4][3]);
-    this.Division.WinnersRound1_2.player2 = this.getPlayerName(response.values[5][3]);
-
-    this.Division.WinnersRound2.player1 = this.getPlayerName(response.values[2][7]);
-    this.Division.WinnersRound2.player2 = this.getPlayerName(response.values[3][7]);
-
-    this.Division.WinnersFinal.player1 = this.getPlayerName(response.values[2][11]);
-    this.Division.WinnersFinal.player2 = this.getPlayerName(response.values[3][11]);
+    this.Division.WinnersPrelim = new Match(response.values[0][0], response.values[1][0], response.values[0][1], response.values[1][1], response.values[0][2], response.values[1][2]);
+    this.Division.WinnersRound1_1 = new Match(response.values[0][4], response.values[1][4], response.values[0][5], response.values[1][5], response.values[0][6], response.values[1][6]);
+    this.Division.WinnersRound1_2 = new Match(response.values[4][4], response.values[5][4], response.values[4][5], response.values[5][5], response.values[4][6], response.values[5][6]);
+    this.Division.WinnersRound2 = new Match(response.values[2][13], response.values[3][13], response.values[2][14], response.values[3][14], response.values[3][15], response.values[4][15]);
+    this.Division.WinnersFinal = new Match(response.values[2][21], response.values[3][21], response.values[2][22], response.values[3][22], response.values[3][23], response.values[4][23])
 
     //Losers
-    this.Division.LosersPrelim.player1 = this.getPlayerName(response.values[8][0]);
-    this.Division.LosersPrelim.player2 = this.getPlayerName(response.values[9][0]);
-
-    this.Division.LosersLowerRound1_1.player1 = this.getPlayerName(response.values[8][3]);
-    this.Division.LosersLowerRound1_1.player2 = this.getPlayerName(response.values[9][3]);
-
-    this.Division.LosersLowerRound1_2.player1 = this.getPlayerName(response.values[12][3]);
-    this.Division.LosersLowerRound1_2.player2 = this.getPlayerName(response.values[13][3]);
-
-    this.Division.LosersRound1_1.player1 = this.getPlayerName(response.values[8][5]);
-    this.Division.LosersRound1_1.player2 = this.getPlayerName(response.values[9][5]);
-
-    this.Division.LosersRound1_2.player1 = this.getPlayerName(response.values[12][5]);
-    this.Division.LosersRound1_2.player2 = this.getPlayerName(response.values[13][5]);
-
-    this.Division.LosersRound2.player1 = this.getPlayerName(response.values[10][7]);
-    this.Division.LosersRound2.player2 = this.getPlayerName(response.values[11][7]);
-
-    this.Division.LosersFinal.player1 = this.getPlayerName(response.values[10][9]);
-    this.Division.LosersFinal.player2 = this.getPlayerName(response.values[11][9]);
-  }
-
-  private getPlayerName(text: string): string {
-    //return text; <-- for testing and seeing text come back
-
-    //returns nothing if the cell contains the word Winner or Loser
-    return (~ text.indexOf('Winner') || ~ text.indexOf('Loser') ? "" : text)
+    this.Division.LosersPrelim = new Match(response.values[8][0], response.values[9][0], response.values[8][1], response.values[9][1], response.values[8][2], response.values[9][2]);
+    this.Division.LosersRound1_1 = new Match(response.values[8][4], response.values[9][4], response.values[8][5], response.values[9][5], response.values[8][6], response.values[9][6]);
+    this.Division.LosersRound1_2 = new Match(response.values[12][4], response.values[13][4], response.values[12][5], response.values[13][5], response.values[12][6], response.values[13][6])
+    this.Division.LosersLowerRound1_1 = new Match(response.values[8][8], response.values[9][8], response.values[8][9], response.values[9][9], response.values[8][10], response.values[9][10]);
+    this.Division.LosersLowerRound1_2 = new Match(response.values[12][8], response.values[13][8], response.values[12][9], response.values[13][9], response.values[12][10], response.values[13][10]);
+    this.Division.LosersRound2 = new Match(response.values[10][13], response.values[11][13], response.values[10][14], response.values[11][14], response.values[10][15], response.values[11][15]);
+    this.Division.LosersFinal = new Match(response.values[10][17], response.values[11][17], response.values[10][18], response.values[11][18], response.values[10][19], response.values[11][19]);
   }
 }

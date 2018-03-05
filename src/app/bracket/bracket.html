@@ -1,5 +1,6 @@
 <div *ngIf="Division.hasWinnersPrelim">
-    {{ Division.WinnersPrelim.player1 }} vs {{ Division.WinnersPrelim.player2 }}
+        {{ Division.WinnersPrelim.player1_seed }} {{ Division.WinnersPrelim.player1 }} vs {{ Division.WinnersPrelim.player2_seed }} {{ Division.WinnersPrelim.player2 }}
+        {{ Division.WinnersPrelim.player1_result }} - {{ Division.WinnersPrelim.player2_result }}
 </div>
 
 <div *ngIf="Division.hasLosersPrelim">
@@ -7,5 +8,6 @@
 </div>
 
 <div>
-    {{ Division.LosersFinal.player1 }} vs {{ Division.LosersFinal.player2 }}
+        {{ Division.LosersFinal.player1_seed }} {{ Division.LosersFinal.player1 }} vs {{ Division.LosersFinal.player2_seed }} {{ Division.LosersFinal.player2 }}
+        {{ Division.LosersFinal.player1_result }} - {{ Division.LosersFinal.player2_result }}
 </div>
