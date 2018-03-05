@@ -27,6 +27,42 @@
 				<br>
 				<b>Eki (D2)</b>
 			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'ano' }"
+				(click)="setBackground('ano')" src="../../assets/background-ano.png" style="max-height:50px;">
+				<br>
+				<b>Ano (D3)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'leru' }"
+				(click)="setBackground('leru')" src="../../assets/background-leru.png" style="max-height:50px;">
+				<br>
+				<b>Leru (D4)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'reem' }"
+				(click)="setBackground('reem')" src="../../assets/background-reem.png" style="max-height:50px;">
+				<br>
+				<b>Reem (D5)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'ilo' }"
+				(click)="setBackground('ilo')" src="../../assets/background-ilo.png" style="max-height:50px;">
+				<br>
+				<b>Ilo (D6)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'tatsu' }"
+				(click)="setBackground('tatsu')" src="../../assets/background-tatsu.png" style="max-height:50px;">
+				<br>
+				<b>Tatsu (D7)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'nir' }"
+				(click)="setBackground('nir')" src="../../assets/background-nir.png" style="max-height:50px;">
+				<br>
+				<b>Nir (D8)</b>
+			</div>
 		</div>
 
 		<hr class="spacer r4 c1" />

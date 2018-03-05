@@ -189,8 +189,31 @@ export class ControlsCMP {
         this._vm.groupName = "Eki";
         this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
+      case "ano":
+        this._vm.groupName = "Ano";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "leru":
+        this._vm.groupName = "Leru";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "reem":
+        this._vm.groupName = "Reem";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "ilo":
+        this._vm.groupName = "Ilo";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "tatsu":
+        this._vm.groupName = "Tatsu";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "nir":
+        this._vm.groupName = "Nir";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
     }
-
     this._vm.background = background;
   }
 
