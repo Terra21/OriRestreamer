@@ -1,3 +1,11 @@
+<div *ngIf="Division.hasWinnersPrelim">
+    {{ Division.WinnersPrelim.player1 }} vs {{ Division.WinnersPrelim.player2 }}
+</div>
+
+<div *ngIf="Division.hasLosersPrelim">
+    {{ Division.LosersPrelim.player1 }} vs {{ Division.LosersPrelim.player2 }}
+</div>
+
 <div>
-    Bracket Here
+    {{ Division.LosersFinal.player1 }} vs {{ Division.LosersFinal.player2 }}
 </div>

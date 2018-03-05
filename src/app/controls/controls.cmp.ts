@@ -115,59 +115,91 @@ export class ControlsCMP {
     switch(background){
       case "swamp":
         this._vm.groupName = "Thornfelt Swamp";
+        this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "swallowsnest":
       this._vm.groupName = "Swallow's Nest";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "lostgrove":
       this._vm.groupName = "Lost Grove";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "misty":
       this._vm.groupName = "Misty Woods";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "spidercoves":
       this._vm.groupName = "Spider Coves";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "grove":
       this._vm.groupName = "Hollow Grove";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "forlorn":
       this._vm.groupName = "Forlorn Ruins";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "spiritcaverns":
       this._vm.groupName = "Spirit Caverns";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "ginso":
       this._vm.groupName = "Ginso Tree";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "horu":
       this._vm.groupName = "Mount Horu";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "glades":
       this._vm.groupName = "Sunken Glades";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "grotto":
       this._vm.groupName = "Gumo's Hideout";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "moongrotto":
       this._vm.groupName = "Moon Grotto";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "blackroot":
       this._vm.groupName = "Blackroot Burrows";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "valley":
       this._vm.groupName = "Valley of the Wind";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "sorrow":
       this._vm.groupName = "Sorrow Pass";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case "kurosnest":
       this._vm.groupName = "Kuro's Nest";
+      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
+      case "fil":
+        this._vm.groupName = "Fil";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
+      case "eki":
+        this._vm.groupName = "Eki";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
     }
 
     this._vm.background = background;
-    this._vm.matchType = "Group Stage - " + this._vm.groupName;
+  }
+
+  private setDivisionName(name: string){
+    return name + " Division";
+  }
+
+  private setGroupName(name: string){
+    return "Group Stage - " + name;
   }
 
   updateInfo(){
@@ -337,6 +369,7 @@ export class ControlsCMP {
       return n.name == event;
     })[0];
     this.vm.player1 = runner.preferredName;
+    this.vm.player1_seed = runner.seed;
   }
 
   setP2Name(event: any){
@@ -344,6 +377,7 @@ export class ControlsCMP {
       return n.name == event;
     })[0];
     this.vm.player2 = runner.preferredName;
+    this.vm.player2_seed = runner.seed;
   }
 
   private _vm: Information = new Information();
@@ -465,7 +499,8 @@ public set seed(seed: string){
         "name": "acridstingray3",
         "preferredName": "Acrid",
         "startColumn": "B3",
-        "endColumn": "J3"
+        "endColumn": "J3",
+        "seed": "1"
     },
     {
         "name": "AHuntersPixxel",

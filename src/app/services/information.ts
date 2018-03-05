@@ -15,8 +15,8 @@ export class Information {
     player2_finishTime: string = '0:00:00';
     currentAudioOnPlayer: number = 1;
     commentators: string = '';
-    background: string = 'ginso';
-    groupName: string = 'Ginso Tree';
-    matchType: string = 'Group Stage - ' + this.groupName;
+    background: string = 'fil';
+    groupName: string = 'Fil';
+    matchType: string = this.groupName + ' Division';
     tracker: Tracker = new Tracker();
 }
