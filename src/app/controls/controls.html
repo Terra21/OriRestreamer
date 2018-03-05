@@ -73,6 +73,7 @@
 
 		<hr class="spacer r7 c1" />
 
+
         <div class="col-4 center label-big players r8 c1">PLAYER 1</div>
 		<label class="label r9 c1" for="p1Name">Name</label>
         <input id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
@@ -103,5 +104,19 @@
 		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timer2Paused"/>
 		<input type="button" class="btn btn-warning r10 c7 col-1" value="FINISH" (click)="player2Finished()" />
 		<input type="button" class="btn col-1 r10 c8" value="PAUSE / SET TIMER" (click)="player2Paused()" />
+
+		<hr class="spacer r12 c1" />
+
+        <div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
+		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId">
+			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
+		</select>
+		<input type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
+
+		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
+		<select class="twitch r14 c6" [(ngModel)]="p2StatsSelectionId">
+			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
+		</select>
+		<input type="button" class="btn col-1 r14 c7" value="SHOW ON STREAM" (click)="setP2Stats()" />
     </div>
 </div>

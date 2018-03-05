@@ -13,6 +13,8 @@ export class Information {
     player2_timerVisible: boolean = false;
     player1_finishTime: string = '0:00:00';
     player2_finishTime: string = '0:00:00';
+    player1_stats: number = 0;
+    player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
     commentators: string = '';
     background: string = 'fil';

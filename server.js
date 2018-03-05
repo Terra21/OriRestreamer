@@ -43,6 +43,18 @@ io.on('connection', function(client) {
     client.on('timer-set', function(ticks, data){
         io.emit('timer-set', ticks, data);
     });
+
+    client.on('p1Stats', function(data){
+        io.emit('p1Stats', data);
+    });
+
+    client.on('p2Stats', function(data){
+        io.emit('p2Stats', data);
+    });
+
+    client.on('freeTextStats', function(data, text){
+        io.emit('freeTextStats', data, text);
+    });
 });
 
 server.listen(port);
