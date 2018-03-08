@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 import * as $ from 'jquery';
 import { Socket } from 'net';
 import { read } from 'fs';
+import { Chart } from 'chart.js';
 
 @Component({
   templateUrl: './stats.html',
@@ -20,7 +21,7 @@ export class StatsCMP {
       if(data.seed !== this.seed)
         return;
 
-        console.log(data);
+
 
         var runner1 = jQuery.grep(this.players, function(n: any, i) {
             return n.name == data.player1_twitch;
@@ -72,6 +73,93 @@ export class StatsCMP {
                 this.player2.stats = response.values[0];
               }.bind(this)
             });
+
+            $.ajax({
+              url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Radar!A3:F4?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+              dataType: "json",
+              error: function(response) {
+                console.log(response);
+              },
+              success: function( response: any ) {
+                this.player1.name = response.values[0][0];
+                this.player2.name = response.values[1][0];
+                let canvas = document.getElementById("statChart").getContext("2d");
+    
+                var chart = new Chart(canvas, {
+                  type: 'radar',
+                  data: {
+                      labels: ["Mid", "Late", "Consistency", "Tricks", "Early"],
+                      datasets: [{
+                          label: response.values[0][0],
+                          data: [response.values[0][1], response.values[0][2], response.values[0][3], response.values[0][4], response.values[0][5]],
+                          backgroundColor: 'rgba(255, 0, 0, 0)',
+                          borderColor: 'rgba(255, 0, 0, 1)',
+                          borderWidth: 2,
+                          lineTension: 0.2
+                      },
+                      {
+                        label: response.values[1][0],
+                        data: [response.values[1][1], response.values[1][2], response.values[1][3], response.values[1][4], response.values[1][5]],
+                        backgroundColor: 'rgba(0, 255, 0, 0)',
+                        borderColor: 'rgba(0, 255, 0, 1)',
+                        borderWidth: 2,
+                        lineTension: 0.2
+                    }]
+                  },
+                  pointDot: false,
+                  pointLabelFontSize: 60,
+                  options: {
+                    responsive: false,
+                    maintainAspectRatio: true,
+                    scales: {
+                      yAxes: [{
+                        gridLines: {
+                          display: false
+                        },
+                          ticks: {
+                              display: false,
+                          }
+                      }],
+                      xAxes: [{
+                        gridLines: {
+                          display: false
+                        },
+                        ticks: {
+                            display: false,
+                        }
+                    }]
+                  },
+                      scale: {
+                              ticks: {
+                                  beginAtZero:true,
+                                  max: 1,
+                                  display: false,
+                                  fontColor: 'rgba(255,255,255,1)',
+                                  fontFamily: 'Angie'
+                              },
+                              pointLabels: {
+                                fontSize: 20,
+                                fontColor: 'rgba(255,255,255,1)',
+                                fontFamily: 'Angie'
+                              }
+                      },
+                      legend: {
+                        labels: {
+                          fontSize: 20,
+                          fontColor: 'rgba(255,255,255,1)',
+                          fontFamily: 'Angie'
+                      }
+                     },
+                     tooltips: {
+                        enabled: false
+                     }
+                  }});
+    
+              console.log(chart);
+              
+              }.bind(this)
+            });
+
           }.bind(this)
         });
       this.vm = data;

@@ -33,24 +33,26 @@
                     <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[7] }}</td>
                     <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[7] }}</td>
                 </tr>
-            <tr class="healthCells">
-                    <td style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Health Cells Collecting</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[8] }}</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[8] }}</td>
+            <tr class="healthCells notitle">
+                <td rowspan="2">
+                    <div style="position: relative; height: 400px;">
+  
+                            <canvas id="statChart" style="position: absolute" height="450px" width="475px"></canvas>
+                        </div>
+                    </td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[5] }}</td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[6] }}</td>
                 </tr>
-            <tr class="misc">
-                    <td style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Miscellaneous</td>
-                    <td style="text-align: center;  background-color:rgba(0,0,0,0.4);">
-                        {{ player1[5] }}<br><br>
-                        {{ player1[6] }}
-                    </td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">
-                        {{ player2[5] }}<br><br>
-                        {{ player2[6] }}
-                    </td>
+                <tr class="misc">
+                        <td style="text-align: center;  background-color:rgba(0,0,0,0.4);">
+                            {{ player1[5] }}<br><br>
+                            {{ player1[6] }}
+                        </td>
+                        <td style="text-align: center; background-color:rgba(0,0,0,0.6);">
+                            {{ player2[5] }}<br><br>
+                            {{ player2[6] }}
+                        </td>
                 </tr>
         </tbody>
     </table>
 </div>
-
-<!-- Seperate player 1 and 2 visibly, preferably via opacity, see richard -->

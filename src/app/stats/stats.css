@@ -4,6 +4,7 @@
     color: white;
     width: 1920px;
     height: 1080px;
+    position: relative;
 }
 
 div {
@@ -74,10 +75,18 @@ table > tbody > tr > td:first-child {
     padding-right: 25px;
 }
 
+.misc > td {
+    font-family: "Angie" !important;
+    font-size: 32px !important;
+    color: #fff !important;
+    font-weight: normal !important;
+    padding-top: 0px !important;
+}
+
 .healthCells > td {
     font-size: 32px;
-    padding-top: 50px;
     padding-bottom: 50px;
+    padding-top: 50px;
     padding-left: 25px;
     padding-right: 25px;
 }
