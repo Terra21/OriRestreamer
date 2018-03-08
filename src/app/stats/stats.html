@@ -30,18 +30,19 @@
             </tr>
             <tr class="tricks">
                     <td style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Average Race Time</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1.stats[0] }}</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2.stats[0] }}</td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1.stats">{{ player1.stats[0] }}</td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2.stats">{{ player2.stats[0] }}</td>
                 </tr>
                 <tr class="tricks">
                     <td style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Best Race Time</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1.stats[1] }}</td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2.stats[1] }}</td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1.stats">{{ player1.stats[1] }}</td>
+                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2.stats">{{ player2.stats[1] }}</td>
                 </tr>
             <tr class="healthCells notitle">
                 <td rowspan="2" style="background-color:rgba(0,0,0,0.6);">
                     <div style="position: relative; height: 465px;">
-  
+                            <span class="p1ChartName" style="position: absolute; left: -15px; top: 5px">{{ p1Chart }}</span>
+                            <span class="p2ChartName" style="position: absolute; right: -15px; top: 5px">{{ p2Chart }}</span>
                             <canvas id="statChart" style="position: absolute; left: -25px;" height="480px" width="500px"></canvas>
                         </div>
                     </td>

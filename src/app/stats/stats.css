@@ -91,10 +91,19 @@ table > tbody > tr > td:first-child {
 .healthCells > td:first-child{
     padding-top: 0px !important;
 }
+
+ul > li:first-child {
+    color: #fff36a;
+}
+
 .tricks > td {
     font-size: 32px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.p1ChartName, .p2ChartName {
+    font-size: 20px;
 }
