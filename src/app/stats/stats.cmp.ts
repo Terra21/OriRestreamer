@@ -114,7 +114,8 @@ export class StatsCMP {
                     scales: {
                       yAxes: [{
                         gridLines: {
-                          display: false
+                          display: false,
+                          lineWidth: 0
                         },
                           ticks: {
                               display: false,
@@ -122,7 +123,8 @@ export class StatsCMP {
                       }],
                       xAxes: [{
                         gridLines: {
-                          display: false
+                          display: false,
+                          lineWidth: 0
                         },
                         ticks: {
                             display: false,
@@ -141,7 +143,9 @@ export class StatsCMP {
                                 fontSize: 20,
                                 fontColor: 'rgba(255,255,255,1)',
                                 fontFamily: 'Angie'
-                              }
+                              },
+                              angleLines: { color: 'rgba(255,255,255,0.2)' },
+                              gridLines: { color: 'rgba(255,255,255,0.2)' }
                       },
                       legend: {
                         labels: {

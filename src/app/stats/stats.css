@@ -91,6 +91,10 @@ table > tbody > tr > td:first-child {
     padding-right: 25px;
 }
 
+
+.healthCells > td:first-child{
+    padding-top: 0px !important;
+}
 .tricks > td {
     font-size: 32px;
     padding-top: 50px;
