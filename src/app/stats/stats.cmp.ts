@@ -92,17 +92,17 @@ export class StatsCMP {
                       datasets: [{
                           label: response.values[0][0],
                           data: [response.values[0][1], response.values[0][2], response.values[0][3], response.values[0][4], response.values[0][5]],
-                          backgroundColor: 'rgba(255, 0, 0, 0)',
-                          borderColor: 'rgba(255, 0, 0, 1)',
-                          borderWidth: 2,
+                          backgroundColor: 'rgba(255, 145, 0, 0)',
+                          borderColor: 'rgba(255, 145, 0, 1)',
+                          borderWidth: 4,
                           lineTension: 0.2
                       },
                       {
                         label: response.values[1][0],
                         data: [response.values[1][1], response.values[1][2], response.values[1][3], response.values[1][4], response.values[1][5]],
-                        backgroundColor: 'rgba(0, 255, 0, 0)',
-                        borderColor: 'rgba(0, 255, 0, 1)',
-                        borderWidth: 2,
+                        backgroundColor: 'rgba(70, 206, 247, 0)',
+                        borderColor: 'rgba(70, 206, 247, 1)',
+                        borderWidth: 4,
                         lineTension: 0.2
                     }]
                   },

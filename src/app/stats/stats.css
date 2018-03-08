@@ -50,8 +50,7 @@ table > tbody > tr > td:first-child {
 
 .seeds > td {
     font-size: 32px;
-    padding-left: 100px;
-    padding-bottom: 125px;
+    padding-bottom: 90px;
     text-align: center;
 }
 
@@ -63,14 +62,13 @@ table > tbody > tr > td:first-child {
 
 .method > td {
     font-size: 32px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .misc > td {
     font-size: 32px;
     padding-top: 50px;
-    padding-bottom: 50px;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -85,8 +83,6 @@ table > tbody > tr > td:first-child {
 
 .healthCells > td {
     font-size: 32px;
-    padding-bottom: 50px;
-    padding-top: 50px;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -97,8 +93,8 @@ table > tbody > tr > td:first-child {
 }
 .tricks > td {
     font-size: 32px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     padding-left: 25px;
     padding-right: 25px;
 }
