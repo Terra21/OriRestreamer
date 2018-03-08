@@ -92,19 +92,38 @@ export class StreamCMP {
 
     }.bind(this));
 
-    this.socket.on('p1Stats', function(data: Information, statTitle: string){
+    this.socket.on('p1Stats', function(data: Information, statTitle: string, convert: boolean){
       if(data.seed !== this.seed)
         return;
 
+        if(this.player1Stats[data.player1_stats] == "")
+          this.player1Stats[data.player1_stats] = "Does not attempt";
+        else{
+          if(convert)
+          this.player1Stats[data.player1_stats] = this.player1Stats[data.player1_stats] * 100 + "%";
+        }
+
+
+        this.p1StatsText = statTitle + ": " + this.player1Stats[data.player1_stats];
+        $('.p1Stats').first().fadeIn(1000).delay(8000).fadeOut(1000);
         //TODO Show Stat
         console.log(this.player1Stats[data.player1_stats]);
 
     }.bind(this));
 
-    this.socket.on('p2Stats', function(data: Information, statTitle: string){
+    this.socket.on('p2Stats', function(data: Information, statTitle: string, convert: boolean){
       if(data.seed !== this.seed)
         return;
 
+        if(this.player2Stats[data.player2_stats] == "")
+          this.player2Stats[data.player2_stats] = "Does not attempt";
+        else{
+          if(convert)
+          this.player2Stats[data.player2_stats] = this.player2Stats[data.player2_stats] * 100 + "%";
+        }
+
+        this.p2StatsText = statTitle + ": " + this.player2Stats[data.player2_stats];
+        $('.p2Stats').fadeIn(1000).delay(8000).fadeOut(1000);
         //TODO Show Stat
         console.log(this.player2Stats[data.player2_stats]);
 
@@ -114,6 +133,7 @@ export class StreamCMP {
       if(data.seed !== this.seed)
         return;
 
+        
         //TODO Show Stat
         console.log(freeText);
 
@@ -243,6 +263,9 @@ export class StreamCMP {
 
   player1Stats: any;
   player2Stats: any;
+
+  p1StatsText: string;
+  p2StatsText: string;
 
   players = [
     {

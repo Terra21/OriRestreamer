@@ -44,12 +44,12 @@ io.on('connection', function(client) {
         io.emit('timer-set', ticks, data);
     });
 
-    client.on('p1Stats', function(data){
-        io.emit('p1Stats', data);
+    client.on('p1Stats', function(data, title, convert){
+        io.emit('p1Stats', data, title, convert);
     });
 
-    client.on('p2Stats', function(data){
-        io.emit('p2Stats', data);
+    client.on('p2Stats', function(data, title, convert){
+        io.emit('p2Stats', data, title, convert);
     });
 
     client.on('freeTextStats', function(data, text){

@@ -107,13 +107,16 @@
 
 		<hr class="spacer r12 c1" />
 
-        <div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
+		<div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
+		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
+		
 		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId">
 			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
 		</select>
 		<input type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
 
-		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
+		<input type="button" class="btn col-2 r14 c4" value="SHOW BOTH ON STREAM" (click)="setBothStats()" />
+
 		<select class="twitch r14 c6" [(ngModel)]="p2StatsSelectionId">
 			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
 		</select>

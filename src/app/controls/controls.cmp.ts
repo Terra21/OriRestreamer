@@ -528,7 +528,7 @@ public set seed(seed: string){
       return n.index == this.p1StatsSelectionId;
     }.bind(this))[0];
 
-    this.socket.emit('p1Stats', this._vm, title.name);
+    this.socket.emit('p1Stats', this._vm, title.name, title.convertToPercentage);
   }
 
   setP2Stats() {
@@ -538,196 +538,248 @@ public set seed(seed: string){
       return n.index == this.p2StatsSelectionId;
     }.bind(this))[0];
 
-    this.socket.emit('p2Stats', this._vm, title.name);
+    this.socket.emit('p2Stats', this._vm, title.name, title.convertToPercentage);
+  }
+
+  setBothStats(){
+    this.setP1Stats();
+    this.setP2Stats();
   }
 
   stats = [{
     index: 0,
-    name: "Average Race Time"
+    name: "Average Race Time",
+    convertToPercentage: false
   },
   {
     index: 1,
-    name: "Best Race Time"
+    name: "Best Race Time",
+    convertToPercentage: false
   },
   {
     index: 2,
-    name: "Worst Race Time"
+    name: "Worst Race Time",
+    convertToPercentage: false
   },
   {
     index: 12,
-    name: "Grotto God Cycle (Success %)"
+    name: "Grotto Cycle (Success %)",
+    convertToPercentage: true
   },
   {
     index: 19,
-    name: "Grotto Skip (Success %)"
+    name: "Grotto Skip (Success %)",
+    convertToPercentage: true
   },
   {
     index: 34,
-    name: "Swamp Entry (Success %)"
+    name: "Swamp Entry (Success %)",
+    convertToPercentage: true
   },
   {
     index: 43,
-    name: "Kuro CS Skip (Success %)"
+    name: "Kuro CS Skip (Success %)",
+    convertToPercentage: true
   },
   {
     index: 50,
-    name: "Stompless (Success %)"
+    name: "Stompless (Success %)",
+    convertToPercentage: true
   },
   {
     index: 59,
-    name: "Sorrow Bash (Success %)"
+    name: "Sorrow Bash (Success %)",
+    convertToPercentage: true
   },
   {
     index: 86,
-    name: "Door Warp (Success %)"
+    name: "Door Warp (Success %)",
+    convertToPercentage: true
   },
   {
     index: 87,
-    name: "Grenade Jump (Success %)"
+    name: "Grenade Jump (Success %)",
+    convertToPercentage: true
   },
   {
     index: 3,
-    name: "Wall Jump (Average)"
+    name: "Wall Jump (Average)",
+    convertToPercentage: false
   },
   {
     index: 4,
-    name: "Wall Jump (Best)"
+    name: "Wall Jump (Best)",
+    convertToPercentage: false
   },
   {
     index: 5,
-    name: "Wall Jump (Worst)"
+    name: "Wall Jump (Worst)",
+    convertToPercentage: false
   },
   {
     index: 6,
-    name: "Dash (Average)"
+    name: "Dash (Average)",
+    convertToPercentage: false
   },
   {
     index: 7,
-    name: "Dash (Best)"
+    name: "Dash (Best)",
+    convertToPercentage: false
   },
   {
     index: 8,
-    name: "Dash (Worst)"
+    name: "Dash (Worst)",
+    convertToPercentage: false
   },
   {
     index: 13,
-    name: "Double Jump (Average)"
+    name: "Double Jump (Average)",
+    convertToPercentage: false
   },
   {
     index: 14,
-    name: "Double Jump (Best)"
+    name: "Double Jump (Best)",
+    convertToPercentage: false
   },
   {
     index: 15,
-    name: "Double Jump (Worst)"
+    name: "Double Jump (Worst)",
+    convertToPercentage: false
   },
   {
     index: 22,
-    name: "Enter Ginso (Average)"
+    name: "Enter Ginso (Average)",
+    convertToPercentage: false
   },
   {
     index: 23,
-    name: "Enter Ginso (Best)"
+    name: "Enter Ginso (Best)",
+    convertToPercentage: false
   },
   {
     index: 24,
-    name: "Enter Ginso (Worst)"
+    name: "Enter Ginso (Worst)",
+    convertToPercentage: false
   },
   {
     index: 28,
-    name: "Bash (Average)"
+    name: "Bash (Average)",
+    convertToPercentage: false
   },
   {
     index: 29,
-    name: "Bash (Best)"
+    name: "Bash (Best)",
+    convertToPercentage: false
   },
   {
     index: 30,
-    name: "Bash (Worst)"
+    name: "Bash (Worst)",
+    convertToPercentage: false
   },
   {
     index: 37,
-    name: "Stomp (Average)"
+    name: "Stomp (Average)",
+    convertToPercentage: false
   },
   {
     index: 38,
-    name: "Stomp (Best)"
+    name: "Stomp (Best)",
+    convertToPercentage: false
   },
   {
     index: 39,
-    name: "Stomp (Worst)"
+    name: "Stomp (Worst)",
+    convertToPercentage: false
   },
   {
     index: 44,
-    name: "Charge Flame (Average)"
+    name: "Charge Flame (Average)",
+    convertToPercentage: false
   },
   {
     index: 45,
-    name: "Charge Flame (Best)"
+    name: "Charge Flame (Best)",
+    convertToPercentage: false
   },
   {
     index: 46,
-    name: "Charge Flame (Worst)"
+    name: "Charge Flame (Worst)",
+    convertToPercentage: false
   },
   {
     index: 51,
-    name: "Feather (Average)"
+    name: "Feather (Average)",
+    convertToPercentage: false
   },
   {
     index: 52,
-    name: "Feather (Best)"
+    name: "Feather (Best)",
+    convertToPercentage: false
   },
   {
     index: 53,
-    name: "Feather (Worst)"
+    name: "Feather (Worst)",
+    convertToPercentage: false
   },
   {
     index: 60,
-    name: "Charge Jump (Average)"
+    name: "Charge Jump (Average)",
+    convertToPercentage: false
   },
   {
     index: 61,
-    name: "Charge Jump (Best)"
+    name: "Charge Jump (Best)",
+    convertToPercentage: false
   },
   {
     index: 62,
-    name: "Charge Jump (Worst)"
+    name: "Charge Jump (Worst)",
+    convertToPercentage: false
   },
   {
     index: 66,
-    name: "Climb (Average)"
+    name: "Climb (Average)",
+    convertToPercentage: false
   },
   {
     index: 67,
-    name: "Climb (Best)"
+    name: "Climb (Best)",
+    convertToPercentage: false
   },
   {
     index: 68,
-    name: "Climb (Worst)"
+    name: "Climb (Worst)",
+    convertToPercentage: false
   },
   {
     index: 72,
-    name: "Grenade (Average)"
+    name: "Grenade (Average)",
+    convertToPercentage: false
   },
   {
     index: 73,
-    name: "Grenade (Best)"
+    name: "Grenade (Best)",
+    convertToPercentage: false
   },
   {
     index: 74,
-    name: "Grenade (Worst)"
+    name: "Grenade (Worst)",
+    convertToPercentage: false
   },
   {
     index: 78,
-    name: "Enter Horu (Average)"
+    name: "Enter Horu (Average)",
+    convertToPercentage: false
   },
   {
     index: 79,
-    name: "Enter Horu (Best)"
+    name: "Enter Horu (Best)",
+    convertToPercentage: false
   },
   {
     index: 80,
-    name: "Enter Horu (Worst)"
+    name: "Enter Horu (Worst)",
+    convertToPercentage: false
   }
 ]
 players = [
