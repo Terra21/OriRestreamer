@@ -16,7 +16,7 @@ import { Match } from '../services/match';
 export class BracketCMP {
   constructor() { }
 
-  private Division: Division = new Division();
+  Division: Division = new Division();
 
   ngOnInit(){
     // this.socket.on('data', function(data: Information){
