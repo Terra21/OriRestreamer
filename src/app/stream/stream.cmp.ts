@@ -99,7 +99,7 @@ export class StreamCMP {
         if(this.player1Stats[data.player1_stats] == "")
           this.player1Stats[data.player1_stats] = "Does not attempt";
         else{
-          if(convert)
+          if(convert  && !isNaN(this.player1Stats[data.player1_stats] * 100))
           this.player1Stats[data.player1_stats] = this.player1Stats[data.player1_stats] * 100 + "%";
         }
 
@@ -118,7 +118,7 @@ export class StreamCMP {
         if(this.player2Stats[data.player2_stats] == "")
           this.player2Stats[data.player2_stats] = "Does not attempt";
         else{
-          if(convert)
+          if(convert && !isNaN(this.player2Stats[data.player2_stats] * 100))
           this.player2Stats[data.player2_stats] = this.player2Stats[data.player2_stats] * 100 + "%";
         }
 
