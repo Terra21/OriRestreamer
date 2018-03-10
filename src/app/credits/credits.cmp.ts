@@ -41,6 +41,10 @@ export class CreditsCMP {
               this.p2 = match[3];
               this.channel = match[12];
               this.date = moment(match[5]).format("ddd MMM Do - h:mm A");
+
+              if(parseInt(moment(match[5]).format(("DDD DDDD"))) > 69)
+                this.timezone = "EDT";
+
               matchFound = true;
           }
         }.bind(this));
@@ -55,4 +59,5 @@ export class CreditsCMP {
   p2: string;
   date: string;
   channel: string;
+  timezone: string = "EST";
 }
