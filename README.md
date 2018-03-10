@@ -2,9 +2,11 @@
 
 This web app is intended for restreaming Ori and the Blind Forest speedrun races.
 
-* Basic timer
-* Change the players and commentary name without reloading the page
-* Visual Audio selection to show which runner has audio
+* Single timer with finish times and animation
+* Change the players and commentary names without reloading the page
+* Skill tracker integration
+* Pulls data from google sheets to show stats/standings
+* Stat fly-ins for main stream page
 
 Build instructions:
 - Development:
