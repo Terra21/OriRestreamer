@@ -3,13 +3,13 @@
 		<img class="logo" src="../assets/logo.png">
 		<div class="title">All Skills Tournament 2018 Standings - {{ Division.name }} Division</div>
 	</header>
-	<div class="grid">
-		<div class="round-header pre ui">Preliminary Round</div>
-		<div class="round-header r1 ui">Round of 64</div>
-		<div class="round-header lr1 ui">Round of 48</div>
-		<div class="round-header r2 ui">Round of 32</div>
-		<div class="round-header lr2 ui">Lower Finals</div>
-		<div class="round-header wb ui">Upper Finals</div>
+	<div [ngClass]="{ 'grid': true, 'mirror': shouldMirror }">
+		<div class="round-header ui" style="grid-column: pre-start / pre-end;">Preliminary Round</div>
+		<div class="round-header ui" style="grid-column: r1-start / r1-end;">Round of 64</div>
+		<div class="round-header ui" style="grid-column: lr1-start / lr1-end;">Round of 48</div>
+		<div class="round-header ui" style="grid-column: r2-start / r2-end;">Round of 32</div>
+		<div class="round-header ui" style="grid-column: lr2-start / lr2-end;">Lower Finals</div>
+		<div class="round-header ui" style="grid-column: wb-start / wb-end;">Upper Finals</div>
 
 		<div class="spacer ui">Lower Bracket</div>
 

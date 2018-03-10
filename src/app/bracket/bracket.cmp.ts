@@ -40,34 +40,42 @@ export class BracketCMP {
         case 'reem':
           divCols = 'B6:X19';
 		  this.Division.name = 'Reem';
+		  this.shouldMirror = false;
           break;
         case 'ano':
           divCols = 'B128:X142';
 		  this.Division.name = 'Ano';
+		  this.shouldMirror = true;
           break;
         case 'ilo':
           divCols = 'B76:X90';
 		  this.Division.name = 'Ilo';
+		  this.shouldMirror = true;
           break;
         case 'eki':
           divCols = 'B58:X72';
 		  this.Division.name = 'Eki';
+		  this.shouldMirror = false;
           break;
         case 'fil':
           divCols = 'B41:X55';
 		  this.Division.name = 'Fil';
+		  this.shouldMirror = false;
           break;
         case 'tatsu':
           divCols = 'B93:X107';
 		  this.Division.name = 'Tatsu';
+		  this.shouldMirror = true;
           break;
         case 'leru':
           divCols = 'B111:X125';
 		  this.Division.name = 'Leru';
+		  this.shouldMirror = true;
           break;
         case 'nir':
           divCols = 'B23:X37';
 		  this.Division.name = 'Nir';
+		  this.shouldMirror = false;
           break;
       }
 
@@ -91,6 +99,7 @@ export class BracketCMP {
   }
 
   matches: Match[];
+  shouldMirror: boolean = false;
   socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
 
