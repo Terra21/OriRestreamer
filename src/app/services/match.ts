@@ -1,11 +1,14 @@
 export class Match {
-    constructor(player1_seed: string = "",
+    constructor(name: string = "",
+				round: string = "",
+				player1_seed: string = "",
                 player2_seed: string = "",
                 player1: string = "",
                 player2: string = "",
                 player1_result: string = "",
                 player2_result: string = ""){
-
+		this.name = name;
+		this.round = round;
         this.player1 = this.getPlayerName(player1);
         this.player2 = this.getPlayerName(player2);
         this.player1_seed = player1_seed;
@@ -14,6 +17,8 @@ export class Match {
         this.player2_result = isNaN(parseInt(player2_result)) ? 0 : parseInt(player2_result);
     }
 
+	name: string;
+	round: string;
     player1: string;
     player2: string;
     player1_seed: string;

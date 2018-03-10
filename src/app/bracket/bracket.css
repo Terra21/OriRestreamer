@@ -1,3 +1,89 @@
-div {
-    font-size: 40px;
+.container {
+	font-family: "Angie";
+	font-size: 32px;
+	line-height: 32px;
+	color: white;
+	width: 1920px;
+	height: 1080px;
+}
+.ui {
+	font-family: "Segoe UI";
+	font-size: 28px;
+	font-weight: bold;
+	color: #fff36a;
+}
+
+header {
+	display: flex;
+	font-size: 56px;
+	margin: 10px;
+	align-items: center;
+}
+
+header > div,
+header > img {
+	display: inline-block;
+}
+
+.logo {
+	height: 150px;
+}
+
+.title {
+	margin-left: 25px;
+}
+
+.grid {
+	width: 1910px;
+	margin: 5px;
+	display: grid;
+	grid:
+		[header-start] "pre r1 lr1 r2 lr2 wb" auto [header-end]
+		[main-start upper-start m2-start m5-start] "pre r1 lr1 r2 lr2 wb" 100px [m2-end m5-end]
+		[m7-start] "pre r1 lr1 r2 lr2 wb" 100px [m7-end]
+		[m6-start] "pre r1 lr1 r2 lr2 wb" 100px [m6-end]
+		[m8-start wb-start] "pre r1 lr1 r2 lr2 wb" 100px [m8-end wb-end upper-end]
+		[lower-start mL5-start mL9-start mL11-start] "pre r1 lr1 r2 lr2 wb" 100px [mL5-end mL9-end mL11-end]
+		[mL13-start mL14-start] "pre r1 lr1 r2 lr2 wb" 100px [mL13-end mL14-end]
+		[mL10-start mL12-start] "pre r1 lr1 r2 lr2 wb" 100px [mL10-end mL12-end lower-end main-end]
+		/ 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 20px 20px;
+	justify-content: center;
+}
+
+.grid > .round-header {
+	text-align: center;
+}
+
+.match-container > .player-container {
+	background-color:rgba(0,0,0,0.6);
+}
+
+.match-container > div:first-child {
+	margin-bottom: 2px;
+}
+
+.match-container > .match-label {
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.match-container > div > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.match-container .player-seed {
+	width: 36px;
+	height: 32px;
+	padding: 10px 5px;
+	font-size: 22px;
+	border-right: 1px solid rgba(255, 255, 255, 0.3);
+	text-align: center;
+}
+
+.match-container .player-name {
+	padding: 10px 5px;
+	height: 32px;
+	font-size: 24px;
 }

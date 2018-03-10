@@ -1,13 +1,26 @@
-<div *ngIf="Division.hasWinnersPrelim">
-        {{ Division.WinnersPrelim.player1_seed }} {{ Division.WinnersPrelim.player1 }} vs {{ Division.WinnersPrelim.player2_seed }} {{ Division.WinnersPrelim.player2 }}
-        {{ Division.WinnersPrelim.player1_result }} - {{ Division.WinnersPrelim.player2_result }}
-</div>
+<div class="container">
+	<header>
+		<img class="logo" src="../assets/logo.png">
+		<div class="title">All Skills Tournament 2018 Standings - {{ Division.name }} Division</div>
+	</header>
+	<div class="grid">
+		<div class="round-header pre ui">Preliminary Round</div>
+		<div class="round-header r1 ui">Upper Round 1</div>
+		<div class="round-header lr1 ui">Lower Round 1</div>
+		<div class="round-header r2 ui">Upper Round 2</div>
+		<div class="round-header lr2 ui">Lower Finals</div>
+		<div class="round-header wb ui">Upper Finals</div>
 
-<div *ngIf="Division.hasLosersPrelim">
-    {{ Division.LosersPrelim.player1 }} vs {{ Division.LosersPrelim.player2 }}
-</div>
-
-<div>
-        {{ Division.LosersFinal.player1_seed }} {{ Division.LosersFinal.player1 }} vs {{ Division.LosersFinal.player2_seed }} {{ Division.LosersFinal.player2 }}
-        {{ Division.LosersFinal.player1_result }} - {{ Division.LosersFinal.player2_result }}
+		<div *ngFor="let match of Division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
+			<div class="player-container">
+				<div class="player-seed ui">{{ match.player1_seed }}</div>
+				<div class="player-name">{{ match.player1 }}</div>
+			</div>
+			<div class="player-container">
+				<div class="player-seed ui">{{ match.player2_seed }}</div>
+				<div class="player-name">{{ match.player2 }}</div>
+			</div>
+			<div class="match-label ui">Match {{ match.name | slice:1 | uppercase }}</div>
+		</div>
+	</div>
 </div>
