@@ -657,7 +657,7 @@ public set seed(seed: string){
     convertToPercentage: true
   },
   {
-    index: 86,
+    index: 84,
     name: "Door Warp (Success %)",
     convertToPercentage: true
   },
