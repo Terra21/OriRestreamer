@@ -59,13 +59,33 @@ header > img {
 	align-items: center;
 }
 
+.grid.mirror {
+	grid-template-areas:
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre";
+}
+
 .grid > .round-header {
 	text-align: center;
+	grid-row: header-start / span 1;
 }
 
 .grid > .spacer {
 	grid-row: spacer-start / span 1;
-	grid-column: pre-start / span 6;
+	grid-column: 1 / span 6;
 	border-top: 3px dashed white;
 	padding-top: 2px;
 	height: 0px;
