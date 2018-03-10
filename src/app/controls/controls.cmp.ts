@@ -552,7 +552,7 @@ public set seed(seed: string){
         this.player1Stats[this._vm.player1_stats] = "Does not attempt";
       else{
         if(title.convertToPercentage  && !isNaN(this.player1Stats[this._vm.player1_stats] * 100))
-        this.playe1Stats[this._vm.player1_stats] = (this.player1Stats[this._vm.player1_stats] * 100).toFixed(2) + "%";
+        this.player1Stats[this._vm.player1_stats] = (this.player1Stats[this._vm.player1_stats] * 100).toFixed(2) + "%";
       }
 
       console.log(this.player1Stats[this._vm.player1_stats]);
