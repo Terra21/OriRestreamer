@@ -22,10 +22,6 @@ export class StreamCMP {
         return;
 
       this.vm = data;
-
-
-
-
       this.checkIfBothPlayersFinished();
     }.bind(this));
 
@@ -69,8 +65,8 @@ export class StreamCMP {
         return;
 
         this.p1StatsText = text;
-        $('.p1Stats').first().fadeIn(1000).delay(8000).fadeOut(1000);
-        console.log(this.player1Stats[data.player1_stats]);
+        let statbox = $('.stat-flyin.p1').addClass('show');
+		setTimeout(() => statbox.removeClass('show'), 8000);
 
     }.bind(this));
 
@@ -80,22 +76,10 @@ export class StreamCMP {
 
 
         this.p2StatsText = text;
-        $('.p2Stats').fadeIn(1000).delay(8000).fadeOut(1000);
-        //TODO Show Stat
-        console.log(text);
+        let statbox = $('.stat-flyin.p2').addClass('show');
+		setTimeout(() => statbox.removeClass('show'), 8000);
 
     }.bind(this));
-
-    this.socket.on('freeTextStats', function(data: Information, freeText: string){
-      if(data.seed !== this.seed)
-        return;
-
-        
-        //TODO Show Stat
-        console.log(freeText);
-
-    }.bind(this));
-    
 
     this.socket.on('timer-set', function(ticks: number, data: Information){
       if(data.seed !== this.seed)
