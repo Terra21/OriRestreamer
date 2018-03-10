@@ -25,7 +25,7 @@ export class CreditsCMP {
 
   getNextMatch(){
     $.ajax({
-      url: "https://sheets.googleapis.com/v4/spreadsheets/1getUmipiBxUTIyPdyW-9JkMPBnfeKHGAxgogWYjfg8k/values/Schedule Responses!A2:M306?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+      url: "https://sheets.googleapis.com/v4/spreadsheets/1getUmipiBxUTIyPdyW-9JkMPBnfeKHGAxgogWYjfg8k/values/Schedule Responses!A2:N306?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
       dataType: "json",
       error: function(response) {
         console.log(response);
@@ -36,10 +36,10 @@ export class CreditsCMP {
 
         response.values.forEach(function(match) {
           if(matchFound == true) return;
-            if(match[12] === undefined){
+            if(match[13] === undefined){
               this.p1 = match[1];
               this.p2 = match[3];
-
+              this.channel = match[12];
               this.date = moment(match[5]).format("ddd MMM Do - h:mm A");
               matchFound = true;
           }
@@ -54,4 +54,5 @@ export class CreditsCMP {
   p1: string;
   p2: string;
   date: string;
+  channel: string;
 }
