@@ -55,12 +55,17 @@ header > img {
 	text-align: center;
 }
 
-.match-container > div {
+.match-container > .player-container {
 	background-color:rgba(0,0,0,0.6);
 }
 
 .match-container > div:first-child {
 	margin-bottom: 2px;
+}
+
+.match-container > .match-label {
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .match-container > div > div {

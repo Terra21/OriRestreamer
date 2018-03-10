@@ -12,15 +12,15 @@
 		<div class="round-header wb ui">Upper Finals</div>
 
 		<div *ngFor="let match of Division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
-			<!-- <div class="match-label">{{ match.name | uppercase }}</div> -->
-			<div class="match-top">
+			<div class="player-container">
 				<div class="player-seed ui">{{ match.player1_seed }}</div>
 				<div class="player-name">{{ match.player1 }}</div>
 			</div>
-			<div class="match-bottom">
+			<div class="player-container">
 				<div class="player-seed ui">{{ match.player2_seed }}</div>
 				<div class="player-name">{{ match.player2 }}</div>
 			</div>
+			<div class="match-label ui">Match {{ match.name | slice:1 | uppercase }}</div>
 		</div>
 	</div>
 </div>
