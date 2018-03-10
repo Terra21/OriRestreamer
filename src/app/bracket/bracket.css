@@ -59,6 +59,20 @@ header > img {
 	background-color:rgba(0,0,0,0.6);
 }
 
+.match-container > .player-container.winner {
+	background: linear-gradient(
+		90deg,
+		rgba(0,0,0,0.6) 0%,
+		rgba(0,0,0,0.6) 97%,
+		#fff36a 97%,
+		#fff36a 100%
+	);
+}
+
+.match-container > .player-container.loser {
+	opacity: 0.4;
+}
+
 .match-container > div:first-child {
 	margin-bottom: 2px;
 }
