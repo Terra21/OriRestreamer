@@ -134,16 +134,21 @@
 		<div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
 		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
 		
-		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId">
-			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
+		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId"  (change)="calculateP1Stat()">
+			<option *ngFor="let option of stats" [value]="option.index">{{ option.name }}</option>
 		</select>
+
+		<input class="twitch r15 c2" [(ngModel)]="p1StatsText" />
+
 		<input type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
 
 		<input type="button" class="btn col-2 r14 c4" value="SHOW BOTH ON STREAM" (click)="setBothStats()" />
 
-		<select class="twitch r14 c6" [(ngModel)]="p2StatsSelectionId">
+		<select class="twitch r14 c6" [(ngModel)]="p2StatsSelectionId" (change)="calculateP2Stat()">
 			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
 		</select>
+
+		<input class="twitch r15 c6" [(ngModel)]="p2StatsText" />
 		<input type="button" class="btn col-1 r14 c7" value="SHOW ON STREAM" (click)="setP2Stats()" />
     </div>
 </div>

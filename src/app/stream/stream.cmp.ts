@@ -23,36 +23,8 @@ export class StreamCMP {
 
       this.vm = data;
 
-      var runner1 = jQuery.grep(this.players, function(n: any, i) {
-        return n.name == data.player1_twitch;
-      })[0];
 
-      var runner2 = jQuery.grep(this.players, function(n: any, i) {
-        return n.name == data.player2_twitch;
-      })[0];
 
-      $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner1.statsStartColumn + ":"+ runner1.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-        dataType: "json",
-        error: function(response) {
-          console.log(response);
-        },
-        success: function( response: any ) {
-          console.log(response.values[0]);
-          this.player1Stats = response.values[0];
-        }.bind(this)
-      });
-
-      $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner2.statsStartColumn + ":"+ runner2.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-        dataType: "json",
-        error: function(response) {
-          console.log(response);
-        },
-        success: function( response: any ) {
-          this.player2Stats = response.values[0];
-        }.bind(this)
-      });
 
       this.checkIfBothPlayersFinished();
     }.bind(this));
@@ -92,40 +64,25 @@ export class StreamCMP {
 
     }.bind(this));
 
-    this.socket.on('p1Stats', function(data: Information, statTitle: string, convert: boolean){
+    this.socket.on('p1Stats', function(data: Information, text: string){
       if(data.seed !== this.seed)
         return;
 
-        if(this.player1Stats[data.player1_stats] == "")
-          this.player1Stats[data.player1_stats] = "Does not attempt";
-        else{
-          if(convert  && !isNaN(this.player1Stats[data.player1_stats] * 100))
-          this.player1Stats[data.player1_stats] = this.player1Stats[data.player1_stats] * 100 + "%";
-        }
-
-
-        this.p1StatsText = statTitle + ": " + this.player1Stats[data.player1_stats];
+        this.p1StatsText = text;
         $('.p1Stats').first().fadeIn(1000).delay(8000).fadeOut(1000);
-        //TODO Show Stat
         console.log(this.player1Stats[data.player1_stats]);
 
     }.bind(this));
 
-    this.socket.on('p2Stats', function(data: Information, statTitle: string, convert: boolean){
+    this.socket.on('p2Stats', function(data: Information, text: string){
       if(data.seed !== this.seed)
         return;
 
-        if(this.player2Stats[data.player2_stats] == "")
-          this.player2Stats[data.player2_stats] = "Does not attempt";
-        else{
-          if(convert && !isNaN(this.player2Stats[data.player2_stats] * 100))
-          this.player2Stats[data.player2_stats] = this.player2Stats[data.player2_stats] * 100 + "%";
-        }
 
-        this.p2StatsText = statTitle + ": " + this.player2Stats[data.player2_stats];
+        this.p2StatsText = text;
         $('.p2Stats').fadeIn(1000).delay(8000).fadeOut(1000);
         //TODO Show Stat
-        console.log(this.player2Stats[data.player2_stats]);
+        console.log(text);
 
     }.bind(this));
 
@@ -261,11 +218,7 @@ export class StreamCMP {
   p1First: boolean;
   p2First: boolean;
 
-  player1Stats: any;
-  player2Stats: any;
 
-  p1StatsText: string;
-  p2StatsText: string;
 
   players = [
     {

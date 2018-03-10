@@ -116,6 +116,12 @@ export class ControlsCMP {
   p1StatsSelectionId: number = 0;
   p2StatsSelectionId: number = 0;
 
+  player1Stats: any;
+  player2Stats: any;
+
+  p1StatsText: string;
+  p2StatsText: string;
+
   setBackground(background: string) {
     switch(background){
       case "swamp":
@@ -521,30 +527,89 @@ public set seed(seed: string){
     this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
   }
 
-  setP1Stats() {
+  calculateP1Stat() {
     this._vm.player1_stats = this.p1StatsSelectionId;
 
     var title = jQuery.grep(this.stats, function(n: any, i) {
       return n.index == this.p1StatsSelectionId;
     }.bind(this))[0];
 
-    this.socket.emit('p1Stats', this._vm, title.name, title.convertToPercentage);
+    var runner1 = jQuery.grep(this.players, function(n: any, i) {
+      return n.name == this._vm.player1_twitch;
+    }.bind(this))[0];
+
+    $.ajax({
+      url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner1.statsStartColumn + ":"+ runner1.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+      dataType: "json",
+      error: function(response) {
+        console.log(response);
+      },
+      success: function( response: any ) {
+        console.log(response.values[0]);
+        this.player1Stats = response.values[0];
+        console.log(this.player1Stats);
+        if(this.player1Stats[this._vm.player1_stats] == "")
+        this.player1Stats[this._vm.player1_stats] = "Does not attempt";
+      else{
+        if(title.convertToPercentage  && !isNaN(this.player1Stats[this._vm.player1_stats] * 100))
+        this.playe1Stats[this._vm.player1_stats] = (this.player1Stats[this._vm.player1_stats] * 100).toFixed(2) + "%";
+      }
+
+      console.log(this.player1Stats[this._vm.player1_stats]);
+
+      this.p1StatsText = title.name + ": " + this.player1Stats[this._vm.player1_stats];
+      
+      }.bind(this)
+    });
+
+  }
+
+  setP1Stats(){
+    this.socket.emit('p1Stats', this._vm, this.p1StatsText);
   }
 
   setP2Stats() {
-    this._vm.player2_stats = this.p2StatsSelectionId;
-
-    var title = jQuery.grep(this.stats, function(n: any, i) {
-      return n.index == this.p2StatsSelectionId;
-    }.bind(this))[0];
-
-    this.socket.emit('p2Stats', this._vm, title.name, title.convertToPercentage);
+    this.socket.emit('p2Stats', this._vm, this.p2StatsText);
   }
 
   setBothStats(){
     this.setP1Stats();
     this.setP2Stats();
   }
+
+  calculateP2Stat(){
+    this._vm.player2_stats = this.p2StatsSelectionId;
+
+    var title = jQuery.grep(this.stats, function(n: any, i) {
+      return n.index == this.p2StatsSelectionId;
+    }.bind(this))[0];
+
+    var runner2 = jQuery.grep(this.players, function(n: any, i) {
+      return n.name == this._vm.player2_twitch;
+    }.bind(this))[0];
+
+    $.ajax({
+      url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner2.statsStartColumn + ":"+ runner2.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+      dataType: "json",
+      error: function(response) {
+        console.log(response);
+      },
+      success: function( response: any ) {
+        this.player2Stats = response.values[0];
+
+        if(this.player2Stats[this._vm.player2_stats] == "")
+        this.player2Stats[this._vm.player2_stats] = "Does not attempt";
+      else{
+        if(title.convertToPercentage && !isNaN(this.player2Stats[this._vm.player2_stats] * 100))
+        this.player2Stats[this._vm.player2_stats] = (this.player2Stats[this._vm.player2_stats] * 100).toFixed(2) + "%";
+      }
+
+        this.p2StatsText = title.name + ": " + this.player2Stats[this._vm.player2_stats];
+
+      }.bind(this)
+    });
+
+  } 
 
   stats = [{
     index: 0,
