@@ -1,4 +1,5 @@
 .container {
+	position: absolute; /* Fix for <body>'s unremovable margin by user agent */
 	font-family: "Angie";
 	font-size: 32px;
 	line-height: 32px;
@@ -38,21 +39,40 @@ header > img {
 	margin: 5px;
 	display: grid;
 	grid:
-		[header-start] "pre r1 lr1 r2 lr2 wb" auto [header-end]
-		[main-start upper-start m2-start m5-start] "pre r1 lr1 r2 lr2 wb" 100px [m2-end m5-end]
-		[m7-start] "pre r1 lr1 r2 lr2 wb" 100px [m7-end]
-		[m6-start] "pre r1 lr1 r2 lr2 wb" 100px [m6-end]
-		[m8-start wb-start] "pre r1 lr1 r2 lr2 wb" 100px [m8-end wb-end upper-end]
-		[lower-start mL5-start mL9-start mL11-start] "pre r1 lr1 r2 lr2 wb" 100px [mL5-end mL9-end mL11-end]
-		[mL13-start mL14-start] "pre r1 lr1 r2 lr2 wb" 100px [mL13-end mL14-end]
-		[mL10-start mL12-start] "pre r1 lr1 r2 lr2 wb" 100px [mL10-end mL12-end lower-end main-end]
-		/ 1fr 1fr 1fr 1fr 1fr 1fr;
+		                     [header-start] "pre r1  lr1 r2  lr2 wb" auto [header-end]
+		  [main-start upper-start m5-start] "pre r1  lr1 r2  lr2 wb" 50px []
+		                [m2-start m7-start] "pre r1  lr1 r2  lr2 wb" 50px [m5-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m2-end]
+		       [m6-start m8-start wb-start] "pre r1  lr1 r2  lr2 wb" 50px [m7-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m6-end m8-end wb-end upper-end]
+		                     [spacer-start] "pre r1  lr1 r2  lr2 wb"  5px [spacer-end]
+		[lower-start mL11-start mL14-start] "pre r1  lr1 r2  lr2 wb" 50px []
+		                        [mL9-start] "pre r1  lr1 r2  lr2 wb" 50px [mL11-end mL14-end]
+		             [mL5-start mL13-start] "pre r1  lr1 r2  lr2 wb" 50px [mL9-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL5-end]
+		                       [mL10-start] "pre r1  lr1 r2  lr2 wb" 50px [mL13-end]
+		                       [mL12-start] "pre r1  lr1 r2  lr2 wb" 50px [mL10-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL12-end lower-end main-end]
+										   / 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 20px 20px;
 	justify-content: center;
+	align-items: center;
 }
 
 .grid > .round-header {
 	text-align: center;
+}
+
+.grid > .spacer {
+	grid-row: spacer-start / span 1;
+	grid-column: pre-start / span 6;
+	border-top: 3px dashed white;
+	padding-top: 2px;
+	height: 0px;
+	overflow: visible;
+	color: white;
+	font-style: italic;
+	opacity: 0.4;
 }
 
 .match-container > .player-container {
@@ -77,7 +97,7 @@ header > img {
 	margin-bottom: 2px;
 }
 
-.match-container > .match-label {
+.match-label {
 	font-size: 18px;
 	color: rgba(255, 255, 255, 0.7);
 }

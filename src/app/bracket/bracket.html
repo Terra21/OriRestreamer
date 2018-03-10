@@ -11,6 +11,8 @@
 		<div class="round-header lr2 ui">Lower Finals</div>
 		<div class="round-header wb ui">Upper Finals</div>
 
+		<div class="spacer ui">Lower Bracket</div>
+
 		<div *ngFor="let match of Division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
 			<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2 }">
 				<div class="player-seed ui">{{ match.player1_seed }}</div>
