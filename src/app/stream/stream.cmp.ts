@@ -218,7 +218,8 @@ export class StreamCMP {
   p1First: boolean;
   p2First: boolean;
 
-
+  p1StatsText: string;
+  p2StatsText: string;
 
   players = [
     {
