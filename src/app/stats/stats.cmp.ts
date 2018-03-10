@@ -14,172 +14,135 @@ import { Chart } from 'chart.js';
 })
 
 export class StatsCMP {
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(){
-    this.socket.on('data', function(data: Information){
-      if(data.seed !== this.seed)
-        return;
+	ngOnInit(){
+		this.socket.on('data', function(data: Information) {
+			if(data.seed !== this.seed)
+				return;
 
+			var runner1 = jQuery.grep(this.players, function(n: any, i) {
+				return n.name == data.player1_twitch;
+			})[0];
 
+			var runner2 = jQuery.grep(this.players, function(n: any, i) {
+				return n.name == data.player2_twitch;
+			})[0];
 
-        var runner1 = jQuery.grep(this.players, function(n: any, i) {
-            return n.name == data.player1_twitch;
-        })[0];
+			$.ajax({
+				url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stream Stats!" + runner1.startColumn + ":"+ runner1.endColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+				dataType: "json",
+				error: function(response) {
+					console.log(response);
+				},
+				success: function( response: any ) {
+					this.player1 = response.values[0];
 
-        var runner2 = jQuery.grep(this.players, function(n: any, i) {
-          return n.name == data.player2_twitch;
-        })[0];
+					$.ajax({
+						url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner1.statsStartColumn + ":"+ runner1.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+						dataType: "json",
+						error: function(response) {
+							console.log(response);
+						},
+						success: function( response: any ) {
+							console.log(response.values[0]);
+							this.player1.stats = response.values[0];
+						}.bind(this)
+					});
+				}.bind(this)
+			});
 
-        $.ajax({
-          url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stream Stats!" + runner1.startColumn + ":"+ runner1.endColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-          dataType: "json",
-          error: function(response) {
-            console.log(response);
-          },
-          success: function( response: any ) {
-            this.player1 = response.values[0];
+			$.ajax({
+				url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stream Stats!" + runner2.startColumn + ":"+ runner2.endColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+				dataType: "json",
+				error: function(response) {
+					console.log(response);
+				},
+				success: function( response: any ) {
+					this.player2 = response.values[0];
 
-            $.ajax({
-              url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner1.statsStartColumn + ":"+ runner1.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-              dataType: "json",
-              error: function(response) {
-                console.log(response);
-              },
-              success: function( response: any ) {
-                console.log(response.values[0]);
-                this.player1.stats = response.values[0];
-              }.bind(this)
-            });
-          }.bind(this)
-        });
+					$.ajax({
+						url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner2.statsStartColumn + ":"+ runner2.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+						dataType: "json",
+						error: function(response) {
+							console.log(response);
+						},
+						success: function( response: any ) {
+							this.player2.stats = response.values[0];
+						}.bind(this)
+					});
 
-        $.ajax({
-          url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stream Stats!" + runner2.startColumn + ":"+ runner2.endColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-          dataType: "json",
-          error: function(response) {
-            console.log(response);
-          },
-          success: function( response: any ) {
-            this.player2 = response.values[0];
+					$.ajax({
+						url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Radar!A3:F4?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
+						dataType: "json",
+						error: function(response) {
+						console.log(response);
+						},
+						success: function( response: any ) {
+							this.player1.name = response.values[0][0];
+							this.player2.name = response.values[1][0];
+							let canvas = document.getElementById("statChart").getContext("2d");
 
-            $.ajax({
-              url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stats Summary!" + runner2.statsStartColumn + ":"+ runner2.statsEndColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-              dataType: "json",
-              error: function(response) {
-                console.log(response);
-              },
-              success: function( response: any ) {
-                this.player2.stats = response.values[0];
-              }.bind(this)
-            });
+							var chart = new Chart(canvas, {
+								type: 'radar',
+								data: {
+									labels: ["Mid", "Late", "Consistency", "Tricks", "Early"],
+									datasets: [{
+										label: response.values[0][0],
+										data: [response.values[0][1], response.values[0][2], response.values[0][3], response.values[0][4], response.values[0][5]],
+										backgroundColor: 'rgba(255, 145, 0, 0)',
+										borderColor: 'rgba(255, 145, 0, 1)',
+										fillColor: 'rgba(255, 145, 0, 1)',
+										borderWidth: 4,
+										lineTension: 0.2,
+									},
+									{
+										label: response.values[1][0],
+										data: [response.values[1][1], response.values[1][2], response.values[1][3], response.values[1][4], response.values[1][5]],
+										backgroundColor: 'rgba(70, 206, 247, 0)',
+										borderColor: 'rgba(70, 206, 247, 1)',
+										fillColor: 'rgba(70, 206, 247, 1)',
+										borderWidth: 4,
+										lineTension: 0.2
+									}]
+								},
+								pointDot: false,
+								options: {
+									responsive: false,
+									maintainAspectRatio: true,
+									scale: {
+										ticks: {
+											beginAtZero: true,
+											max: 1,
+											display: false
+										},
+										pointLabels: {
+											fontSize: 20,
+											fontColor: 'rgba(255,255,255,1)',
+											fontFamily: 'Segoe UI'
+										},
+										angleLines: { color: 'rgba(255,255,255,0.2)' },
+										gridLines: { color: 'rgba(255,255,255,0.2)' }
+									},
+									legend: {
+										display: false
+									},
+									tooltips: {
+										enabled: false
+									}
+								}
+							});
 
-            $.ajax({
-              url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Radar!A3:F4?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-              dataType: "json",
-              error: function(response) {
-                console.log(response);
-              },
-              success: function( response: any ) {
-                this.player1.name = response.values[0][0];
-                this.player2.name = response.values[1][0];
-                let canvas = document.getElementById("statChart").getContext("2d");
-    
-                var chart = new Chart(canvas, {
-                  type: 'radar',
-                  data: {
-                      labels: ["Mid", "Late", "Consistency", "Tricks", "Early"],
-                      datasets: [{
-                          label: response.values[0][0],
-                          data: [response.values[0][1], response.values[0][2], response.values[0][3], response.values[0][4], response.values[0][5]],
-                          backgroundColor: 'rgba(255, 145, 0, 0)',
-                          borderColor: 'rgba(255, 145, 0, 1)',
-                          borderWidth: 4,
-                          lineTension: 0.2,
-                          pointLabels: {
-                            fontSize: 20,
-                            fontColor: 'rgba(255,255,255,1)',
-                            fontFamily: 'Angie'
-                          },
-                      },
-                      {
-                        label: response.values[1][0],
-                        data: [response.values[1][1], response.values[1][2], response.values[1][3], response.values[1][4], response.values[1][5]],
-                        backgroundColor: 'rgba(70, 206, 247, 0)',
-                        borderColor: 'rgba(70, 206, 247, 1)',
-                        fillColor: 'rgba(70, 206, 247, 1)',
-                        borderWidth: 4,
-                        lineTension: 0.2
-                    }]
-                  },
-                  pointDot: false,
-                  pointLabelFontSize: 60,
-                  options: {
-                    responsive: false,
-                    maintainAspectRatio: true,
-                    scales: {
-                      yAxes: [{
-                        gridLines: {
-                          display: false,
-                          lineWidth: 0
-                        },
-                          ticks: {
-                              display: false,
-                          }
-                      }],
-                      xAxes: [{
-                        gridLines: {
-                          display: false,
-                          lineWidth: 0
-                        },
-                        ticks: {
-                            display: false,
-                        }
-                    }]
-                  },
-                      scale: {
-                              ticks: {
-                                  beginAtZero:true,
-                                  max: 1,
-                                  display: false,
-                                  fontColor: 'rgba(255,255,255,1)',
-                                  fontFamily: 'Angie'
-                              },
-                              pointLabels: {
-                                fontSize: 20,
-                                fontColor: 'rgba(255,255,255,1)',
-                                fontFamily: 'Angie'
-                              },
-                              angleLines: { color: 'rgba(255,255,255,0.2)' },
-                              gridLines: { color: 'rgba(255,255,255,0.2)' }
-                      },
-                      legend: {
-                        labels: {
-                          fontSize: 20,
-                          fontFamily: 'Angie'
-                      },
-                      display: false                  
-                     },
-                     tooltips: {
-                        enabled: false
-                     }
-                  }});
-
-                  this.p1Chart = chart.legend.legendItems[0].text;
-                  this.p2Chart = chart.legend.legendItems[1].text;
-                  $(".p1ChartName").css('color', '#ff9100');
-                  $(".p2ChartName").css('color', '#46cef7');
-
-                  console.log(chart);
-              
-              }.bind(this)
-            });
-
-          }.bind(this)
-        });
-      this.vm = data;
-    }.bind(this));
-  }
+						this.p1Chart = chart.legend.legendItems[0].text;
+						this.p2Chart = chart.legend.legendItems[1].text;
+						console.log(chart);
+						}.bind(this)
+					});
+				}.bind(this)
+			});
+			this.vm = data;
+		}.bind(this));
+	}
 
   public vm: Information = new Information();
 

@@ -41,7 +41,8 @@ table td {
 	max-width: 500px;
 }
 
-table > tbody > tr > td:first-child {
+.ui,
+tr > td.ui {
 	font-family: "Segoe UI";
 	font-size: 28px;
 	font-weight: bold;
@@ -54,7 +55,7 @@ table > tbody > tr > td:first-child {
     text-align: center;
 }
 
-.stats > td {
+.stats > td{
     font-size: 32px;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -67,29 +68,19 @@ table > tbody > tr > td:first-child {
 }
 
 .misc > td {
-    font-size: 32px;
-    padding-top: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+	font-size: 32px;
+	padding: 10px 25px;
 }
 
-.misc > td {
-    font-family: "Angie" !important;
-    font-size: 32px !important;
-    color: #fff !important;
-    font-weight: normal !important;
-    padding-top: 0px !important;
+.misc > td.radar {
+	padding: 0;
+	position: relative;
 }
 
 .healthCells > td {
     font-size: 32px;
     padding-left: 25px;
     padding-right: 25px;
-}
-
-
-.healthCells > td:first-child{
-    padding-top: 0px !important;
 }
 
 ul > li:first-child {
@@ -104,6 +95,22 @@ ul > li:first-child {
     padding-right: 25px;
 }
 
-.p1ChartName, .p2ChartName {
-    font-size: 20px;
+.chartName {
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+}
+
+.chartName.p1 {
+	color: #ff9100;
+	left: 5px;
+}
+
+.chartName.p2 {
+	color: #46cef7;
+	right: 5px;
+}
+
+#statChart {
+	margin: auto;
 }
