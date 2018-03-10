@@ -101,3 +101,8 @@ header > img {
 	height: 32px;
 	font-size: 24px;
 }
+
+.match-container .player-name.placeholder {
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.6);
+}
