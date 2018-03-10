@@ -33,6 +33,7 @@ npm-debug.log
 server.zip
 testem.log
 /typings
+/src/keys
 
 # e2e
 /e2e/*.js
