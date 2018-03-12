@@ -652,7 +652,7 @@ public set seed(seed: string){
     convertToPercentage: true
   },
   {
-    index: 59,
+    index: 57,
     name: "Sorrow Bash (Success %)",
     convertToPercentage: true
   },
