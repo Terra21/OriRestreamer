@@ -59,9 +59,11 @@ header > img {
 	transform: scaleX(3.0) scaleY(4.0);
 }
 
-.full-bracket > .division,
-.full-bracket > .top8,
-.full-bracket > .spacer {
+#fullbracketSol.full-bracket.zoom {
+	transform: scaleX(1.5) scaleY(2.0);
+}
+
+.full-bracket > .division {
 	transform-origin: top left;
 	transform: scaleX(0.333333333) scaleY(0.25);
 }
@@ -69,9 +71,4 @@ header > img {
 .division {
 	width: 1910px;
 	grid-area: var(--division);
-}
-
-.division.Sol {
-	height: 1800px;
-	background-color: green;
 }

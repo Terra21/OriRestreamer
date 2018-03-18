@@ -48,14 +48,23 @@
 		"wb  lr2 r2  lr1 r1  pre";
 }
 
+#Sol.grid {
+	height: 1800px;
+	grid:
+		[header-start] "h   h    h    h   h" auto [header-end]
+		               "mQ1 .    .    . mQ3" 120px
+		               ".   mS1 mF1 mS2   ." 1fr
+		               "mQ2 .    .    . mQ4" 120px
+		              / 1fr 1fr 1fr 1fr 1fr;
+}
+
 .grid > .round-header {
 	text-align: center;
 	grid-row: header-start / span 1;
-	display: none;
 }
 
-.showHeaders .round-header {
-	display: block;
+.hideHeaders .round-header {
+	display: none;
 }
 
 .grid > .spacer {

@@ -1,12 +1,20 @@
-<div [id]="division.name" [ngClass]="{ 'grid': true, 'mirror': shouldMirror, 'showHeaders': shouldShowHeaders }">
-	<div class="round-header ui" style="grid-column: pre-start / pre-end;">Preliminary Round</div>
-	<div class="round-header ui" style="grid-column: r1-start / r1-end;">Round of 64</div>
-	<div class="round-header ui" style="grid-column: lr1-start / lr1-end;">Round of 48</div>
-	<div class="round-header ui" style="grid-column: r2-start / r2-end;">Round of 32</div>
-	<div class="round-header ui" style="grid-column: lr2-start / lr2-end;">Lower Finals</div>
-	<div class="round-header ui" style="grid-column: wb-start / wb-end;">Upper Finals</div>
-
-	<div class="spacer ui">Lower Bracket</div>
+<div [id]="division.name" [ngClass]="{ 'grid': true, 'mirror': shouldMirror, 'hideHeaders': !shouldShowHeaders }">
+	<ng-container *ngIf="division.name === 'Sol'">
+		<div class="round-header ui" style="grid-column: 1 / 2;">Quarterfinals</div>
+		<div class="round-header ui" style="grid-column: 2 / 3;">Semifinals</div>
+		<div class="round-header ui" style="grid-column: 3 / 4;">Grand Finals</div>
+		<div class="round-header ui" style="grid-column: 4 / 5;">Semifinals</div>
+		<div class="round-header ui" style="grid-column: 5 / 6;">Quarterfinals</div>
+	</ng-container>
+	<ng-container *ngIf="division.name !== 'Sol'">
+		<div class="round-header ui" style="grid-column: pre-start / pre-end;">Preliminary Round</div>
+		<div class="round-header ui" style="grid-column: r1-start / r1-end;">Round of 64</div>
+		<div class="round-header ui" style="grid-column: lr1-start / lr1-end;">Round of 48</div>
+		<div class="round-header ui" style="grid-column: r2-start / r2-end;">Round of 32</div>
+		<div class="round-header ui" style="grid-column: lr2-start / lr2-end;">Lower Finals</div>
+		<div class="round-header ui" style="grid-column: wb-start / wb-end;">Upper Finals</div>
+		<div class="spacer ui">Lower Bracket</div>
+	</ng-container>
 
 	<div *ngFor="let match of division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
 		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2 }">
