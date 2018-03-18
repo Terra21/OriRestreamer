@@ -1,28 +1,21 @@
 <div class="container">
 	<header>
 		<img class="logo" src="../assets/logo.png">
-		<div class="title">All Skills Tournament 2018 Standings - {{ Division.name }} Division</div>
+		<div class="title">All Skills Tournament 2018 Standings - {{ currentDivision.name }} Division</div>
 	</header>
-	<div [ngClass]="{ 'grid': true, 'mirror': shouldMirror }">
-		<div class="round-header ui" style="grid-column: pre-start / pre-end;">Preliminary Round</div>
-		<div class="round-header ui" style="grid-column: r1-start / r1-end;">Round of 64</div>
-		<div class="round-header ui" style="grid-column: lr1-start / lr1-end;">Round of 48</div>
-		<div class="round-header ui" style="grid-column: r2-start / r2-end;">Round of 32</div>
-		<div class="round-header ui" style="grid-column: lr2-start / lr2-end;">Lower Finals</div>
-		<div class="round-header ui" style="grid-column: wb-start / wb-end;">Upper Finals</div>
-
-		<div class="spacer ui">Lower Bracket</div>
-
-		<div *ngFor="let match of Division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
-			<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2 }">
-				<div class="player-seed ui">{{ match.player1_seed }}</div>
-				<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player1_seed }">{{ match.player1 }}</div>
-			</div>
-			<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2, 'loser': match.winner === match.player1 }">
-				<div class="player-seed ui">{{ match.player2_seed }}</div>
-				<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player2_seed }">{{ match.player2 }}</div>
-			</div>
-			<div class="match-label ui">Match {{ match.name | slice:1 | uppercase }}</div>
+	<div class="big-container">
+		<div
+			[ngClass]="{ 'full-bracket': true, 'zoom': zoomBracket }"
+			[style]="setOrigin(currentDivision.name)"
+		>
+			<app-division
+				*ngFor="let division of divisions"
+				[name]="division"
+				[shouldShowHeaders]="shouldShowHeaders"
+				[ngClass]="[ 'division', division ]"
+				[style]="divisionStyles(division)"
+			>
+			</app-division>
 		</div>
 	</div>
 </div>

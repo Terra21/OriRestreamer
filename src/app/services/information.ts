@@ -21,4 +21,5 @@ export class Information {
     groupName: string = 'Fil';
     matchType: string = this.groupName + ' Division';
     tracker: Tracker = new Tracker();
+	zoomBracket: boolean = false;
 }
