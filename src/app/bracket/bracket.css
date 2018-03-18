@@ -75,3 +75,10 @@ header > img {
 	height: 1800px;
 	background-color: green;
 }
+
+/* .full-bracket > div.expand {
+	grid-row: 1 / span 5;
+	grid-column: left-start / right-end;
+	transform-origin: bottom right;
+	transform: scale(1.0);
+} */
