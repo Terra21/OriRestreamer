@@ -7,7 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-	"start-dev": "run-p start dev",
+    "start-dev": "run-p start dev",
     "dev": "ng serve --port 4201",
     "build": "ng build --prod",
     "postinstall": "node ./src/scripts/fixAngularCrypto.js"
@@ -26,13 +26,13 @@
     "@types/angular": "1.6.39",
     "@types/jquery": "^3.2.13",
     "@types/signalr": "^2.2.35",
+    "chart.js": "2.7.2",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "jquery": "3.2.1",
     "moment": "2.19.2",
     "rxjs": "^5.4.2",
-    "socket.io": "2.0.4",
-    "chart.js": "2.7.2"
+    "socket.io": "2.0.4"
   },
   "devDependencies": {
     "@angular/cli": "1.4.5",
