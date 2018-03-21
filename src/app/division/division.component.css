@@ -13,10 +13,10 @@
 		  [main-start upper-start m5-start] "pre r1  lr1 r2  lr2 wb" 50px []
 		                [m2-start m7-start] "pre r1  lr1 r2  lr2 wb" 50px [m5-end]
 		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m2-end]
-		       [m6-start m8-start wb-start] "pre r1  lr1 r2  lr2 wb" 50px [m7-end]
-		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m6-end m8-end wb-end upper-end]
+		                [m6-start wb-start] "pre r1  lr1 r2  lr2 wb" 50px [m7-end]
+		                         [m8-start] "pre r1  lr1 r2  lr2 wb" 50px [m6-end wb-end upper-end]
 		                     [spacer-start] "pre r1  lr1 r2  lr2 wb"  5px [spacer-end]
-		[lower-start mL11-start mL14-start] "pre r1  lr1 r2  lr2 wb" 50px []
+		[lower-start mL11-start mL14-start] "pre r1  lr1 r2  lr2 wb" 50px [m8-end]
 		                        [mL9-start] "pre r1  lr1 r2  lr2 wb" 50px [mL11-end mL14-end]
 		             [mL5-start mL13-start] "pre r1  lr1 r2  lr2 wb" 50px [mL9-end]
 		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL5-end]
@@ -69,7 +69,7 @@
 
 .grid > .spacer {
 	grid-row: spacer-start / span 1;
-	grid-column: 1 / span 6;
+	grid-column: 1 / span 5;
 	border-top: 3px dashed white;
 	padding-top: 2px;
 	height: 0px;
@@ -77,22 +77,26 @@
 	color: white;
 	font-style: italic;
 	opacity: 0.4;
+}
+
+.grid.mirror > .spacer {
+	grid-column: 2 / span 5;
+	text-align: right;
+}
+
+.hideHeaders .spacer {
 	display: none;
 }
 
-.showHeaders .spacer {
-	display: block;
-}
-
 .match-container > .player-container {
-	background-color:rgba(0,0,0,0.6);
+	background-color: var(--bg, rgba(0,0,0,0.6));
 }
 
 .match-container > .player-container.winner {
 	background: linear-gradient(
 		90deg,
-		rgba(0,0,0,0.6) 0%,
-		rgba(0,0,0,0.6) 97%,
+		var(--bg, rgba(0,0,0,0.6)) 0%,
+		var(--bg, rgba(0,0,0,0.6)) 97%,
 		#fff36a 97%,
 		#fff36a 100%
 	);

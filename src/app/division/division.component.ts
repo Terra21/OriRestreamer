@@ -14,22 +14,27 @@ import { Match } from '../services/match';
 })
 export class DivisionComponent implements OnInit {
   @Input() name: string;
-  @Input() shouldShowHeaders: boolean = false;
+  @Input() shouldShowHeaders = false;
   division: Division = new Division();
   matches: Match[];
-  shouldMirror: boolean = false;
+  shouldMirror = false;
   socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
 
-  constructor(private sanitizer:DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   public matchStyles(match: Match): SafeStyle {
+	  let bg;
+	  if (match.name.charAt(1) === 'L') {
+		  bg = '--bg: rgba(32, 0, 0, 0.6);';
+	  }
 	  return this.sanitizer.bypassSecurityTrustStyle(
 		  `grid-row: ${match.name}-start / ${match.name}-end;` +
-		  `grid-column: ${match.round}-start / ${match.round}-end;`);
+		  `grid-column: ${match.round}-start / ${match.round}-end;` +
+		  bg);
   }
 
-  private mapSheetToDivision(division:string, response: any){
+  private mapSheetToDivision(division: string, response: any){
 	if (division === 'Sol') {
 		// S O L
 		this.division.matches.push(new Match('mQ1', 'mQ1', response.values[0][0], response.values[1][0], response.values[0][1], response.values[1][1], response.values[0][2], response.values[1][2]));
@@ -67,7 +72,7 @@ export class DivisionComponent implements OnInit {
 
 	  this.division.name = this.name;
 
-      switch(this.name){
+      switch (this.name){
         case 'Reem':
           divCols = 'B6:X19';
 		  this.shouldMirror = false;
@@ -109,12 +114,12 @@ export class DivisionComponent implements OnInit {
       }
 
     this.socket.on('data', function(data: Information){
-      if(data.seed !== this.seed || !divCols)
+      if (data.seed !== this.seed || !divCols)
         return;
 
       $.ajax({
-        url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Bracket!" + divCols +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
-        dataType: "json",
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Bracket!' + divCols + '?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0',
+        dataType: 'json',
         error: function(response) {
           console.log(response);
         },
