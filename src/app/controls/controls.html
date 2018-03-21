@@ -15,6 +15,7 @@
 		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-1 update r2 c6' : true }"  (click)="linkTracker()"  value="LINK SKILL TRACKER (every 1000ms)" [disabled]="isLinked" />
 		<input type="button" class="btn col-2 r2 c7" (click)="unlink()" value="UNLINK" [disabled]="!isLinked" />
 		<div class="backgrounds col-8 center r3 c1">
+			<label for="zoomBracket">Zoom bracket to division?</label><input type="checkbox" id="zoomBracket" [(ngModel)]="zoomBracket" />
 			<div>
 				<img [ngClass]="{ 'active-background': vm.background == 'reem' }"
 				(click)="setBackground('reem')" src="../../assets/background-reem.png" style="max-height:50px;">
@@ -33,7 +34,7 @@
 				<h6>TheRoosIsLoose</h6>
 				<h6>Smashy</h6>
 			</div>
-			<div>	
+			<div>
 				<img [ngClass]="{ 'active-background': vm.background == 'ilo' }"
 				(click)="setBackground('ilo')" src="../../assets/background-ilo.png" style="max-height:50px;">
 				<br>
@@ -87,6 +88,15 @@
 				<h6>TrojanDude12</h6>
 				<h6>Stimon</h6>
 			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'sol' }"
+				(click)="setBackground('sol')" src="../../assets/background-sol.png" style="max-height:50px;">
+				<br>
+				<b>Sol (Top 8)</b>
+				<h6>TBD</h6>
+				<h6>TBD</h6>
+				<h6>TBD</h6>
+			</div>
 		</div>
 
 		<hr class="spacer r4 c1" />
@@ -133,7 +143,7 @@
 
 		<div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
 		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
-		
+
 		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId"  (change)="calculateP1Stat()">
 			<option *ngFor="let option of stats" [value]="option.index">{{ option.name }}</option>
 		</select>
