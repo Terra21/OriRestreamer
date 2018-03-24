@@ -13,6 +13,7 @@ import { BracketCMP } from './bracket/bracket.cmp';
 import { StatsCMP } from './stats/stats.cmp';
 import { CreditsCMP } from './credits/credits.cmp';
 import { IntermissionCMP } from './intermission/intermission.cmp';
+import { DivisionComponent } from './division/division.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
@@ -38,10 +39,11 @@ const appRoutes: Routes = [
     BracketCMP,
     StatsCMP,
     CreditsCMP,
-    IntermissionCMP
+    IntermissionCMP,
+    DivisionComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],

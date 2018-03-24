@@ -224,6 +224,10 @@ export class ControlsCMP {
         this._vm.groupName = "Nir";
         this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
+      case "sol":
+        this._vm.groupName = "Sol";
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      break;
     }
     this._vm.background = background;
   }
@@ -455,6 +459,14 @@ export class ControlsCMP {
     return this._vm.commentators;
   }
 
+  public set zoomBracket(zoomBracket: boolean){
+    this._vm.zoomBracket = zoomBracket;
+  }
+
+  public get zoomBracket(): boolean {
+    return this._vm.zoomBracket;
+  }
+
 public get seed(): string {
   return this._vm.seed;
 }
@@ -558,7 +570,7 @@ public set seed(seed: string){
       console.log(this.player1Stats[this._vm.player1_stats]);
 
       this.p1StatsText = title.name + ": " + this.player1Stats[this._vm.player1_stats];
-      
+
       }.bind(this)
     });
 
@@ -609,7 +621,7 @@ public set seed(seed: string){
       }.bind(this)
     });
 
-  } 
+  }
 
   stats = [{
     index: 0,

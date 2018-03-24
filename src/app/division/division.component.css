@@ -1,0 +1,141 @@
+.ui {
+	font-family: "Segoe UI";
+	font-size: 28px;
+	font-weight: bold;
+	color: #fff36a;
+}
+
+.grid {
+	width: 1910px;
+	display: grid;
+	grid:
+		                     [header-start] "pre r1  lr1 r2  lr2 wb" auto [header-end]
+		  [main-start upper-start m5-start] "pre r1  lr1 r2  lr2 wb" 50px []
+		                [m2-start m7-start] "pre r1  lr1 r2  lr2 wb" 50px [m5-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m2-end]
+		                [m6-start wb-start] "pre r1  lr1 r2  lr2 wb" 50px [m7-end]
+		                         [m8-start] "pre r1  lr1 r2  lr2 wb" 50px [m6-end wb-end upper-end]
+		                     [spacer-start] "pre r1  lr1 r2  lr2 wb"  5px [spacer-end]
+		[lower-start mL11-start mL14-start] "pre r1  lr1 r2  lr2 wb" 50px [m8-end]
+		                        [mL9-start] "pre r1  lr1 r2  lr2 wb" 50px [mL11-end mL14-end]
+		             [mL5-start mL13-start] "pre r1  lr1 r2  lr2 wb" 50px [mL9-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL5-end]
+		                       [mL10-start] "pre r1  lr1 r2  lr2 wb" 50px [mL13-end]
+		                       [mL12-start] "pre r1  lr1 r2  lr2 wb" 50px [mL10-end]
+		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL12-end lower-end main-end]
+										   / 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 20px 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid.mirror {
+	grid-template-areas:
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre"
+		"wb  lr2 r2  lr1 r1  pre";
+}
+
+#Sol.grid {
+	height: 1800px;
+	grid:
+		[header-start] "h   h    h    h   h" auto [header-end]
+		               "mQ1 .    .    . mQ3" 120px
+		               ".   mS1 mF1 mS2   ." 1fr
+		               "mQ2 .    .    . mQ4" 120px
+		              / 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid > .round-header {
+	text-align: center;
+	grid-row: header-start / span 1;
+}
+
+.hideHeaders .round-header {
+	display: none;
+}
+
+.grid > .spacer {
+	grid-row: spacer-start / span 1;
+	grid-column: 1 / span 5;
+	border-top: 3px dashed white;
+	padding-top: 2px;
+	height: 0px;
+	overflow: visible;
+	color: white;
+	font-style: italic;
+	opacity: 0.4;
+}
+
+.grid.mirror > .spacer {
+	grid-column: 2 / span 5;
+	text-align: right;
+}
+
+.hideHeaders .spacer {
+	display: none;
+}
+
+.match-container > .player-container {
+	background-color: var(--bg, rgba(0,0,0,0.6));
+}
+
+.match-container > .player-container.winner {
+	background: linear-gradient(
+		90deg,
+		var(--bg, rgba(0,0,0,0.6)) 0%,
+		var(--bg, rgba(0,0,0,0.6)) 97%,
+		#fff36a 97%,
+		#fff36a 100%
+	);
+}
+
+.match-container > .player-container.loser {
+	opacity: 0.4;
+}
+
+.match-container > div:first-child {
+	margin-bottom: 2px;
+}
+
+.match-label {
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.match-container > div > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.match-container .player-seed {
+	width: 36px;
+	height: 32px;
+	padding: 10px 5px;
+	font-size: 22px;
+	border-right: 1px solid rgba(255, 255, 255, 0.3);
+	text-align: center;
+}
+
+.match-container .player-name {
+	padding: 10px 5px;
+	height: 32px;
+	font-size: 24px;
+}
+
+.match-container .player-name.placeholder {
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.6);
+}
