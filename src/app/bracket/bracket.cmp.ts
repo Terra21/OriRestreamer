@@ -8,45 +8,48 @@ import io from 'socket.io-client';
 import { Socket } from 'net';
 
 @Component({
-  templateUrl: './bracket.html',
-  styleUrls: ['./bracket.css']
+	templateUrl: './bracket.html',
+	styleUrls: ['./bracket.css']
 })
 
 export class BracketCMP {
-  socket: any = io.connect(environment.socketPath);
-  seed: string = window.location.href.split('=')[1];
-  divisions: Array<string> = [ 'Reem', 'Ano', 'Ilo', 'Eki', 'Fil', 'Tatsu', 'Leru', 'Nir', 'Sol' ];
-  currentDivision: Division = new Division();
-  shouldShowHeaders: boolean = false;
-  zoomBracket: boolean = false;
+	socket: any = io.connect(environment.socketPath);
+	seed: string = window.location.href.split('=')[1];
+	divisions: Array<string> = ['Reem', 'Ano', 'Ilo', 'Eki', 'Fil', 'Tatsu', 'Leru', 'Nir', 'Sol'];
+	currentDivision: Division = new Division();
+	shouldShowHeaders = false;
+	zoomBracket = false;
 
-  constructor(private sanitizer:DomSanitizer) { }
+	constructor(private sanitizer: DomSanitizer) { }
 
-  public setOrigin(division: string): SafeStyle {
-	  let origins = {
-        Reem: 'left top',
-        Ano: 'right bottom',
-        Ilo: 'right top',
-        Eki: 'left bottom',
-		Fil: 'left 66.6666%',
-		Tatsu: 'right 33.3333%',
-		Leru: 'right 66.6666%',
-		Nir: 'left 33.3333%',
-		Sol: 'center'
-      }
-	  return this.sanitizer.bypassSecurityTrustStyle(`--origin: ${origins[division]}`);
-  }
-  public divisionStyles(division: string): SafeStyle {
-	  return this.sanitizer.bypassSecurityTrustStyle(`--division: ${division.toLowerCase()}`);
-  }
+	public setOrigin(division: string): SafeStyle {
+		const origins = {
+			Reem: 'left top',
+			Ano: 'right bottom',
+			Ilo: 'right top',
+			Eki: 'left bottom',
+			Fil: 'left 66.6666%',
+			Tatsu: 'right 33.3333%',
+			Leru: 'right 66.6666%',
+			Nir: 'left 33.3333%',
+			Sol: 'center'
+		};
+		return this.sanitizer.bypassSecurityTrustStyle(`--origin: ${origins[division]}`);
+	}
+	public divisionStyles(division: string): SafeStyle {
+		return this.sanitizer.bypassSecurityTrustStyle(`--division: ${division.toLowerCase()}`);
+	}
 
-  ngOnInit(){
-    this.socket.on('data', function(data: Information){
-	  this.currentDivision.name = data.groupName;
-	  this.zoomBracket = data.zoomBracket;
+	ngOnInit() {
+		this.socket.on('data', function(data: Information) {
+			if (data.seed !== this.seed) {
+				return;
+			}
+			this.currentDivision.name = data.groupName;
+			this.zoomBracket = data.zoomBracket;
 
-	  this.shouldShowHeaders = data.zoomBracket;
-    }.bind(this));
-  }
+			this.shouldShowHeaders = data.zoomBracket;
+		}.bind(this));
+	}
 
 }
