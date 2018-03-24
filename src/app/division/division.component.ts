@@ -51,8 +51,8 @@ export class DivisionComponent implements OnInit {
 		}
 	    this.division.matches.push(new Match('m5', 'r1', response.values[0][4], response.values[1][4], response.values[0][5], response.values[1][5], response.values[0][6], response.values[1][6]));
 	    this.division.matches.push(new Match('m6', 'r1', response.values[4][4], response.values[5][4], response.values[4][5], response.values[5][5], response.values[4][6], response.values[5][6]));
-	    this.division.matches.push(new Match('m7', 'r2', response.values[2][12], response.values[3][12], response.values[2][13], response.values[3][13], response.values[3][14], response.values[4][14]));
-	    this.division.matches.push(new Match('m8', 'wb', response.values[2][20], response.values[3][20], response.values[2][21], response.values[3][21], response.values[3][22], response.values[4][22]));
+	    this.division.matches.push(new Match('m7', 'r2', response.values[2][12], response.values[3][12], response.values[2][13], response.values[3][13], response.values[2][14], response.values[3][14]));
+	    this.division.matches.push(new Match('m8', 'wb', response.values[2][20], response.values[3][20], response.values[2][21], response.values[3][21], response.values[2][22], response.values[3][22]));
 
 	    // Losers
 		if (response.values[8][0] !== '') { // Not all divisions have loser's prelim round
