@@ -1,18 +1,15 @@
-<div class="container">
+<div [ngClass]="{ 'container': true, 'zoom': zoomBracket }">
 	<header>
 		<img class="logo" src="../assets/logo.png">
 		<div class="title">All Skills Tournament 2018 Standings - {{ currentDivision.name }} Division</div>
 	</header>
 	<div class="big-container">
-		<div
-			id="fullbracket{{currentDivision.name}}"
-			[ngClass]="{ 'full-bracket': true, 'zoom': zoomBracket }"
-			[style]="setOrigin(currentDivision.name)"
-		>
+		<div id="fullbracket{{currentDivision.name}}" class="full-bracket" [style]="setOrigin(currentDivision.name)" >
 			<app-division
 				*ngFor="let division of divisions"
 				[name]="division"
 				[shouldShowHeaders]="shouldShowHeaders"
+				[divData]="divData[division]"
 				[ngClass]="[ 'division', division ]"
 				[style]="divisionStyles(division)"
 			>
