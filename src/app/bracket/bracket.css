@@ -8,6 +8,23 @@
 	height: 1080px;
 }
 
+/* .container::after {
+	content: '';
+	background-color: #03112d;
+	opacity: 1.0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	transition: opacity 2s ease-in-out;
+} */
+/*
+.container.zoom::after {
+	opacity: 0;
+} */
+
 .ui {
 	font-family: "Segoe UI";
 	font-size: 28px;
@@ -54,18 +71,45 @@ header > img {
 	transition: transform 1.25s ease-in-out, transform-origin 1.25s ease-in-out;
 }
 
-.full-bracket.zoom {
+.zoom .full-bracket {
 	transform-origin: var(--origin);
 	transform: scaleX(3.0) scaleY(4.0);
 }
 
-#fullbracketSol.full-bracket.zoom {
+.zoom #fullbracketSol {
 	transform: scaleX(1.5) scaleY(2.0);
 }
 
 .full-bracket > .division {
+	width: 1910px;
+	height: 900px;
+	position: relative;
 	transform-origin: top left;
 	transform: scaleX(0.333333333) scaleY(0.25);
+}
+
+.full-bracket > .division.Sol {
+	height: 1800px;
+}
+
+.full-bracket > .division::after {
+	content: '';
+	/* TODO: select the proper division bg */
+	background-image: var(--division-bg);
+	background-position: center;
+	background-size: cover;
+	opacity: 0.6;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+	transition: opacity 1.25s ease-in-out;
+}
+
+.zoom .full-bracket > .division::after {
+	opacity: 0;
 }
 
 .division {

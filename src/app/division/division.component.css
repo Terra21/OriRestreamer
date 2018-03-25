@@ -88,15 +88,23 @@
 	display: none;
 }
 
+.match-container {
+	--bg: rgba(0, 0, 0, 0.6);
+}
+
+.match-container.lower {
+	--bg: rgba(32, 0, 0, 0.6);
+}
+
 .match-container > .player-container {
-	background-color: var(--bg, rgba(0,0,0,0.6));
+	background-color: var(--bg);
 }
 
 .match-container > .player-container.winner {
 	background: linear-gradient(
 		90deg,
-		var(--bg, rgba(0,0,0,0.6)) 0%,
-		var(--bg, rgba(0,0,0,0.6)) 97%,
+		var(--bg) 0%,
+		var(--bg) 97%,
 		#fff36a 97%,
 		#fff36a 100%
 	);

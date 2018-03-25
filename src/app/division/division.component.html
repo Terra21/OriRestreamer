@@ -16,12 +16,18 @@
 		<div class="spacer ui">Lower Bracket</div>
 	</ng-container>
 
-	<div *ngFor="let match of division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
-		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2 }">
+	<div *ngFor="let match of division.matches"
+		[id]="match.name"
+		[ngClass]="{ 'match-container': true, 'lower': match.name.charAt(1) === 'L' }"
+		[style]="matchStyles(match)"
+	>
+		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1,
+			'loser': match.winner === match.player2 }" >
 			<div class="player-seed ui">{{ match.player1_seed }}</div>
 			<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player1_seed }">{{ match.player1 }}</div>
 		</div>
-		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2, 'loser': match.winner === match.player1 }">
+		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2,
+			'loser': match.winner === match.player1 }" >
 			<div class="player-seed ui">{{ match.player2_seed }}</div>
 			<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player2_seed }">{{ match.player2 }}</div>
 		</div>
