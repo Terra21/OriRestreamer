@@ -71,6 +71,8 @@ export class ControlsCMP {
       }
       else {
         this._vm.player1_finishTime = this.ticks1;
+        if(this._vm.player2_finishTime == '0:00:00')
+          ++this._vm.player1_winCount;
         this.socket.emit('data', this.vm);
         clearInterval(this.player1Interval);
       }
@@ -84,6 +86,8 @@ export class ControlsCMP {
       }
       else {
         this._vm.player2_finishTime = this.ticks2;
+        if(this._vm.player1_finishTime == '0:00:00')
+          ++this._vm.player2_winCount;
         this.socket.emit('data', this.vm);
         clearInterval(this.player2Interval);
       }
@@ -233,7 +237,7 @@ export class ControlsCMP {
   }
 
   private setDivisionName(name: string){
-    return name + ' Division';
+    return name + ' Division - STAGE HERE';
   }
 
   private setGroupName(name: string){
@@ -284,7 +288,7 @@ export class ControlsCMP {
       let newTicksSeconds = parseInt(ticks1Array[2]) + newTicksSecondsHours + newTicksSecondsMinutes;
       let newP1TimerTicks = moment().startOf('day').seconds(newTicksSeconds).format('H:mm:ss');
 
-      let p1seconds = new Date().getTime() - (newTicksSeconds * 1000);
+      var p1seconds = new Date().getTime() - (newTicksSeconds * 1000);
 
       this.player1Interval = setInterval(function(){
         if (this.timer1Paused)
@@ -308,7 +312,7 @@ export class ControlsCMP {
       let newTicks2Seconds = parseInt(ticks2Array[2]) + newTicks2SecondsHours + newTicks2SecondsMinutes;
       let newP2TimerTicks = moment().startOf('day').seconds(newTicks2Seconds).format('H:mm:ss');
 
-      let p2seconds = new Date().getTime() - (newTicks2Seconds * 1000);
+      var p2seconds = new Date().getTime() - (newTicks2Seconds * 1000);
 
       this.player2Interval = setInterval(function(){
         if (this.timer2Paused)
@@ -506,6 +510,30 @@ public set seed(seed: string){
   public set p2_twitch(p2: string){
     this._vm.player2_twitch = p2;
   }
+ 
+  public get p1_wins(): number {
+    return this._vm.player1_winCount;
+  }
+
+  public set p1_wins(wins: number){
+    this._vm.player1_winCount = wins;
+  }
+
+  public get p2_wins(): number {
+    return this._vm.player2_winCount;
+  }
+
+  public set p2_wins(wins: number){
+    this._vm.player2_winCount = wins;
+  }
+
+  public get bestOf(): number {
+    return this._vm.bestOf;
+  }
+
+  public set bestOf(bestOf: number){
+    this._vm.bestOf = bestOf;
+  }
 
   public get p1_seed(): string {
     return this._vm.player1_seed;
@@ -622,6 +650,19 @@ public set seed(seed: string){
     });
 
   }
+
+  matchTypes = [{
+    name: 'Best of 1',
+    value: 1
+  },
+  {
+    name: 'Best of 3',
+    value: 3
+  },
+  {
+    name: 'Best of 5',
+    value: 5
+  }];
 
   stats = [{
     index: 0,

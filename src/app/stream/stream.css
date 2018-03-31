@@ -282,6 +282,29 @@
     font-size: 18px;
 }
 
+.win-count-container {
+	position: relative;
+	text-align: center;
+	margin-top: -50px;
+}
+
+.win-count-p1, .win-count-p2 {
+	display: inline-block;
+	margin: 0 20px 0 20px;
+}
+
+.match-type {
+	display: inline-block;
+	font-size: 28px;
+	vertical-align: middle;
+	margin-bottom: 60px;
+}
+
+.win-count-p2 > img {
+	-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 @keyframes start-fade {
 	0% { opacity: 0; }
 	25% { opacity: 0; }

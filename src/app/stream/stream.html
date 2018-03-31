@@ -33,18 +33,46 @@
     </div>
     <div class="stream-placeholder">
     </div>
-	<div class="stats-container">
-		<!-- <div class="wrapper"> -->
-	        <div class="stat-flyin p1 ui">
-	            {{ p1StatsText }}
-	        </div>
-		<!-- </div> -->
-		<!-- <div class="wrapper"> -->
-	        <div class="stat-flyin p2 ui">
-	            {{ p2StatsText }}
-	        </div>
-		<!-- </div> -->
-	</div>
+
+    <div class="stats-container">
+        <!-- <div class="wrapper"> -->
+            <div class="stat-flyin p1 ui">
+                {{ p1StatsText }}
+            </div>
+        <!-- </div> -->
+        <!-- <div class="wrapper"> -->
+            <div class="stat-flyin p2 ui">
+                {{ p2StatsText }}
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <div *ngIf="vm.bestOf >= 3" class="win-count-container">
+        <div class="win-count-p1">
+            <img *ngIf="vm.bestOf >= 5 && !p1ThirdWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p1ThirdWin" src="../../assets/bo3;5-indicator.png">
+
+            <img *ngIf="vm.bestOf >= 3 && !p1SecondWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p1SecondWin" src="../../assets/bo3;5-indicator.png">
+
+            <img *ngIf="!p1FirstWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p1FirstWin" src="../../assets/bo3;5-indicator.png">
+        </div>
+        <div class="match-type">
+            <span *ngIf="vm.bestOf == 3">Best of 3</span>
+            <span *ngIf="vm.bestOf == 5">Best of 5</span>
+        </div>
+        <div class="win-count-p2">
+            <img *ngIf="!p2FirstWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p2FirstWin" src="../../assets/bo3;5-indicator.png">
+
+            <img *ngIf="vm.bestOf >= 3 && !p2SecondWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p2SecondWin" src="../../assets/bo3;5-indicator.png">
+
+            <img *ngIf="vm.bestOf >= 5 && !p2ThirdWin" src="../../assets/bo3;5-indicatorRing.png">
+            <img *ngIf="p2ThirdWin" src="../../assets/bo3;5-indicator.png">
+        </div>
+    </div>
 
     <div class="matchinfo">
         <div class="tracker p1">

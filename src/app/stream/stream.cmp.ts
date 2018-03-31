@@ -22,6 +22,15 @@ export class StreamCMP {
         return;
 
       this.vm = data;
+
+      this.p1FirstWin = this.vm.player1_winCount >= 1;
+      this.p1SecondWin = this.vm.player1_winCount >= 2;
+      this.p1ThirdWin = this.vm.player1_winCount >= 3;
+
+      this.p2FirstWin = this.vm.player2_winCount >= 1;
+      this.p2SecondWin = this.vm.player2_winCount >= 2;
+      this.p2ThirdWin = this.vm.player2_winCount >= 3;
+
       this.checkIfBothPlayersFinished();
     }.bind(this));
 
@@ -204,6 +213,14 @@ export class StreamCMP {
 
   p1StatsText: string;
   p2StatsText: string;
+
+  p1FirstWin: boolean;
+  p1SecondWin: boolean;
+  p1ThirdWin: boolean;
+
+  p2FirstWin: boolean;
+  p2SecondWin: boolean;
+  p2ThirdWin: boolean;
 
   players = [
     {
