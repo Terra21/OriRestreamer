@@ -232,12 +232,16 @@ export class ControlsCMP {
         this._vm.groupName = 'Sol';
         this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
+      case 'leftgrotto':
+      this._vm.groupName = 'Exhibition';
+      this._vm.matchType = this.setDivisionName(this._vm.groupName);
+    break;
     }
     this._vm.background = background;
   }
 
   private setDivisionName(name: string){
-    return name + ' Division - STAGE HERE';
+    return name + ' Division';
   }
 
   private setGroupName(name: string){
@@ -549,6 +553,14 @@ public set seed(seed: string){
 
   public set p2_seed(p2: string){
     this._vm.player2_seed = (p2 !== '' || undefined || null) ? p2 : null;
+  }
+
+  public get randomizer(){
+    return this._vm.randomizer;
+  }
+
+  public set randomizer(randomizer: boolean){
+    this._vm.randomizer = randomizer;
   }
 
   public get p1_audio(): boolean {
@@ -1316,7 +1328,7 @@ players = [
     'seed': '55'
   },
   {
-    'name': 'Sigmasin',
+    'name': 'sigmasin',
     'preferredName': 'Sigma',
     'startColumn': 'B49',
     'endColumn': 'J49',
@@ -1406,7 +1418,7 @@ players = [
     'seed': '15'
   },
   {
-    'name': 'TheSparik',
+    'name': 'thesparik',
     'preferredName': 'Sparik',
     'startColumn': 'B59',
     'endColumn': 'J59',

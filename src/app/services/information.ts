@@ -19,10 +19,11 @@ export class Information {
     commentators: string = '';
     background: string = 'fil';
     groupName: string = 'Fil';
-    matchType: string = this.groupName + ' Division - STAGE HERE';
+    matchType: string = this.groupName + ' Division';
     tracker: Tracker = new Tracker();
     zoomBracket: boolean = false;
     bestOf: number = 3;
+    randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
 }
