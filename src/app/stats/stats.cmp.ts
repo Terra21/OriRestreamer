@@ -459,7 +459,7 @@ export class StatsCMP {
       "seed": "62"
     },
     {
-      "name": "monkley6",
+      "name": "Monkley6",
       "preferredName": "Monkley",
       "startColumn": "B37",
       "endColumn": "J37",
@@ -702,7 +702,7 @@ export class StatsCMP {
       "seed": "9"
     },
     {
-      "name": "uncleronny",
+      "name": "UncleRonny",
       "preferredName": "Ronny",
       "startColumn": "B64",
       "endColumn": "J64",

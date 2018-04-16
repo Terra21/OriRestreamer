@@ -233,8 +233,11 @@ export class ControlsCMP {
         this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'leftgrotto':
-      this._vm.groupName = 'Exhibition';
-      this._vm.matchType = this.setDivisionName(this._vm.groupName);
+        this._vm.groupName = 'Exhibition';
+        this._vm.matchType = this.setDivisionName(this._vm.groupName);
+      case 'catandmouse':
+        this._vm.groupName = 'Semi Final';
+        this._vm.matchType = this._vm.groupName;
     break;
     }
     this._vm.background = background;

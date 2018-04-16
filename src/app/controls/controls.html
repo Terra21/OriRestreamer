@@ -109,6 +109,12 @@
 				<br>
 				<b>Exhibition</b>
 			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'catandmouse' }"
+				(click)="setBackground('catandmouse')" src="../../assets/background-catandmouse.png" style="max-height:50px;">
+				<br>
+				<b>Semi Final</b>
+			</div>
 		</div>
 
 		<hr class="spacer r4 c1" />
