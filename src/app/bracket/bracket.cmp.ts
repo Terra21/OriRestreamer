@@ -15,7 +15,7 @@ import { Socket } from 'net';
 export class BracketCMP {
 	socket: any = io.connect(environment.socketPath);
 	seed: string = window.location.href.split('=')[1];
-	divisions: Array<string> = ['Reem', 'Ano', 'Ilo', 'Eki', 'Fil', 'Tatsu', 'Leru', 'Nir', 'Sol'];
+	divisions: Array<string> = ['Reem', 'Ano', 'Ilo', 'Eki', 'Fil', 'Tatsu', 'Leru', 'Nir', 'Sol', 'Semi Final'];
 	currentDivision: Division = new Division();
 	shouldShowHeaders = false;
 	zoomBracket = false;
@@ -32,7 +32,8 @@ export class BracketCMP {
 			Tatsu: 'right 33.3333%',
 			Leru: 'right 66.6666%',
 			Nir: 'left 33.3333%',
-			Sol: 'center'
+			Sol: 'center',
+			["Semi Final"]: 'center'
 		};
 		return this.sanitizer.bypassSecurityTrustStyle(`--origin: ${origins[division]}`);
 	}
