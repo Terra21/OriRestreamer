@@ -3,12 +3,12 @@ import { Tracker } from './tracker';
 export class Information {
     seed: string = null;
 
-    player1: string = 'TheRooseIsLoose89';
-    player2: string = 'chicken_supreme';
-    player1_twitch: string = 'TheRooseIsLoose89';
-    player2_twitch: string = 'chicken_supreme';
-    player1_seed: string = '15';
-    player2_seed: string = '23';
+    player1: string = 'UncleRonny';
+    player2: string = 'Willson';
+    player1_twitch: string = 'UncleRonny';
+    player2_twitch: string = 'Willson';
+    player1_seed: string = '2';
+    player2_seed: string = '3';
     player1_timerVisible: boolean = false;
     player2_timerVisible: boolean = false;
     player1_finishTime: string = '0:00:00';
@@ -22,7 +22,7 @@ export class Information {
     matchType: string = this.groupName + ' Division';
     tracker: Tracker = new Tracker();
     zoomBracket: boolean = false;
-    bestOf: number = 3;
+    bestOf: number = 5;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;

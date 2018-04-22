@@ -115,6 +115,13 @@
 				<br>
 				<b>Semi Final</b>
 			</div>
+
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'horuescape' }"
+				(click)="setBackground('horuescape')" src="../../assets/background-horuescape.png" style="max-height:50px;">
+				<br>
+				<b>Grand Final</b>
+			</div>
 		</div>
 
 		<hr class="spacer r4 c1" />
