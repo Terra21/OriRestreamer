@@ -13,7 +13,7 @@
 	        <div class="timer-finish p1 text">
 	            {{ vm.player1_finishTime }}
 	        </div>
-            <span *ngIf="!vm.player1_timerVisible" class="text timer-main">{{ ticks }}</span>
+            <span *ngIf="!vm.player1_timerVisible" class="text timer-main"></span>
 	        <div class="timer-finish p2 text">
 	            {{ vm.player2_finishTime }}
 	        </div>
@@ -76,47 +76,15 @@
 
     <div class="matchinfo">
         <div class="tracker p1">
-            <div *ngIf="!vm.randomizer">
-                <img [ngClass]="{ 'on' : p1First }" style="--r: 65.52px" src="../../assets/1stplace70percent.png">
-                <img [ngClass]="{ 'on' : p2First }" style="--r: 62px" src="../../assets/2ndplace70percent.png">
-                <img class="always-on" src="../../assets/skillring.png">
-    
-                <img [ngClass]="{ 'on' : p1SpritFlameSkill }" class="shine" style="--x: 195px; --y: 37.61px;" src="../../assets/skills/spiritflame.png">
-                <img [ngClass]="{ 'on' : p1WallJumpSkill }" class="shine" style="--x: 281.06px; --y: 62.42px;" src="../../assets/skills/walljump.png">
-                <img [ngClass]="{ 'on' : p1CFlameSkill }" class="shine" style="--x: 339.21px; --y: 130.26px;" src="../../assets/skills/chargeflame.png">
-                <img [ngClass]="{ 'on' : p1DJumpSkill }" class="shine" style="--x: 352.78px; --y: 217.10px;" src="../../assets/skills/doublejump.png">
-                <img [ngClass]="{ 'on' : p1DBashSkill }" class="shine" style="--x: 314.79px; --y: 298.5px;" src="../../assets/skills/bash.png">
-                <img [ngClass]="{ 'on' : p1StompSkill }" class="shine" style="--x: 239.97px; --y: 346.19px;" src="../../assets/skills/stomp.png">
-                <img [ngClass]="{ 'on' : p1GlideSkill }" class="shine" style="--x: 151.19px; --y: 346.19px;" src="../../assets/skills/glide.png">
-                <img [ngClass]="{ 'on' : p1ClimbSkill }" class="shine" style="--x: 76.76px; --y: 298.12px;" src="../../assets/skills/climb.png">
-                <img [ngClass]="{ 'on' : p1CJumpSkill }" class="shine" style="--x: 39.16px; --y: 217.10px;" src="../../assets/skills/chargejump.png">
-                <img [ngClass]="{ 'on' : p1GrenadeSkill }" class="shine" style="--x: 51.56px; --y: 129.48px;" src="../../assets/skills/lightgrenade.png">
-                <img [ngClass]="{ 'on' : p1DashSkill }" class="shine" style="--x: 110.49px; --y: 62.80px;" src="../../assets/skills/dash.png">
-            </div>
         </div>
         <div class="info">
             <div>{{ vm.matchType }}</div>
-            <img src="../../assets/commentary.png" />
-			<div>{{ vm.commentators }}</div>
+			<div style="text-align: center">
+                <img src="../../assets/commentary.png" />
+                <span style="padding-bottom: 10px">{{ vm.commentators }}</span>
+            </div>
         </div>
         <div class="tracker p2">
-            <div *ngIf="!vm.randomizer">
-                <img [ngClass]="{ 'on' : p2First }" style="--r: 65.52px" src="../../assets/1stplace70percent.png">
-                <img [ngClass]="{ 'on' : p1First }" style="--r: 62px" src="../../assets/2ndplace70percent.png">
-                <img class="always-on" src="../../assets/skillring.png">
-    
-                <img [ngClass]="{ 'on' : p2SpritFlameSkill }" class="shine" style="--x: 195px; --y: 37.61px;" src="../../assets/skills/spiritflame.png">
-                <img [ngClass]="{ 'on' : p2WallJumpSkill }" class="shine" style="--x: 281.06px; --y: 62.42px;" src="../../assets/skills/walljump.png">
-                <img [ngClass]="{ 'on' : p2CFlameSkill }" class="shine" style="--x: 339.21px; --y: 130.26px;" src="../../assets/skills/chargeflame.png">
-                <img [ngClass]="{ 'on' : p2DJumpSkill }" class="shine" style="--x: 352.78px; --y: 217.10px;" src="../../assets/skills/doublejump.png">
-                <img [ngClass]="{ 'on' : p2DBashSkill }" class="shine" style="--x: 314.79px; --y: 298.5px;" src="../../assets/skills/bash.png">
-                <img [ngClass]="{ 'on' : p2StompSkill }" class="shine" style="--x: 239.97px; --y: 346.19px;" src="../../assets/skills/stomp.png">
-                <img [ngClass]="{ 'on' : p2GlideSkill }" class="shine" style="--x: 151.19px; --y: 346.19px;" src="../../assets/skills/glide.png">
-                <img [ngClass]="{ 'on' : p2ClimbSkill }" class="shine" style="--x: 76.76px; --y: 298.12px;" src="../../assets/skills/climb.png">
-                <img [ngClass]="{ 'on' : p2CJumpSkill }" class="shine" style="--x: 39.16px; --y: 217.10px;" src="../../assets/skills/chargejump.png">
-                <img [ngClass]="{ 'on' : p2GrenadeSkill }" class="shine" style="--x: 51.56px; --y: 129.48px;" src="../../assets/skills/lightgrenade.png">
-                <img [ngClass]="{ 'on' : p2DashSkill }" class="shine" style="--x: 110.49px; --y: 62.80px;" src="../../assets/skills/dash.png">
-            </div>
         </div>
     </div>
  </div>
