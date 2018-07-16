@@ -130,117 +130,88 @@ export class ControlsCMP {
     switch (background){
       case 'swamp':
         this._vm.groupName = 'Thornfelt Swamp';
-        this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'swallowsnest':
       this._vm.groupName = 'Swallow\'s Nest';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'lostgrove':
       this._vm.groupName = 'Lost Grove';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'misty':
       this._vm.groupName = 'Misty Woods';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'spidercoves':
       this._vm.groupName = 'Spider Coves';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'grove':
       this._vm.groupName = 'Hollow Grove';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'forlorn':
       this._vm.groupName = 'Forlorn Ruins';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'spiritcaverns':
       this._vm.groupName = 'Spirit Caverns';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'ginso':
       this._vm.groupName = 'Ginso Tree';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'horu':
       this._vm.groupName = 'Mount Horu';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'glades':
       this._vm.groupName = 'Sunken Glades';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'grotto':
       this._vm.groupName = 'Gumo\'s Hideout';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'moongrotto':
       this._vm.groupName = 'Moon Grotto';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'blackroot':
       this._vm.groupName = 'Blackroot Burrows';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'valley':
       this._vm.groupName = 'Valley of the Wind';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'sorrow':
       this._vm.groupName = 'Sorrow Pass';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'kurosnest':
       this._vm.groupName = 'Kuro\'s Nest';
-      this._vm.matchType = this.setGroupName(this._vm.groupName);
         break;
       case 'fil':
         this._vm.groupName = 'Fil';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'eki':
         this._vm.groupName = 'Eki';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'ano':
         this._vm.groupName = 'Ano';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'leru':
         this._vm.groupName = 'Leru';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'reem':
         this._vm.groupName = 'Reem';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'ilo':
         this._vm.groupName = 'Ilo';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'tatsu':
         this._vm.groupName = 'Tatsu';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'nir':
         this._vm.groupName = 'Nir';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'sol':
         this._vm.groupName = 'Sol';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       break;
       case 'leftgrotto':
         this._vm.groupName = 'Exhibition';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       case 'catandmouse':
         this._vm.groupName = 'Sol';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
       case 'horuescape':
         this._vm.groupName = 'Sol';
-        this._vm.matchType = this.setDivisionName(this._vm.groupName);
     break;
     }
     this._vm.background = background;

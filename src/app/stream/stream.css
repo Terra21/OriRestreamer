@@ -1,11 +1,11 @@
 @font-face{
-    font-family: "Angie";
-    src: url('../../assets/AngieRegular.otf') format("opentype")
+    font-family: "Gara";
+    src: url('../../assets/belleza-regular.ttf') format("truetype")
 }
 
 .container {
-    font-family: "Angie";
-    font-size: 24px;
+    font-family: "Gara";
+    font-size: 32px;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -17,13 +17,13 @@
 }
 
 .main-content {
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 }
 
 .topbar {
 	display: flex;
 	justify-content: space-between;
-    font-size: 36px;
+    font-size: 42px;
 	line-height: 75px;
     height: 75px;
 }
@@ -236,13 +236,6 @@
 	/* animation: light-burst 500ms ease alternate 2; */
 }
 
-.text {
-    text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
-}
 
 .ui {
 	font-family: "Segoe UI";
@@ -253,11 +246,11 @@
 
 .info {
 	flex-grow: 1;
-	margin-bottom: 45px;
+	margin-bottom: 30px;
 	min-width: 400px;
 	max-width: 660px;
 	text-align: center;
-	font-size: 28px;
+	font-size: 36px;
     color: white;
     text-shadow:
      -1px -1px 0 #000,

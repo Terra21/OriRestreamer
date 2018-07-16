@@ -1,15 +1,15 @@
 @font-face{
-    font-family: "Angie";
-    src: url('../../assets/AngieRegular.otf') format("opentype")
+    font-family: "Gara";
+    src: url('../../assets/belleza-regular.ttf') format("truetype")
 }
 
 .container {
-    font-family: "Angie";
+    font-family: "Gara";
     color: white;
     width: 1920px;
 	height: 1080px;
     background-size: 1920px 1080px;
-    background-color: rgba(0,0,0,0.25)
+    background-color: rgba(0,0,0,0.15)
 }
 
 
