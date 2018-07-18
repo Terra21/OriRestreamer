@@ -16,8 +16,8 @@ export class Information {
     player1_stats: number = 0;
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
-    commentators: string = 'Sigmasin, Vulajin';
-    background: string = 'leru';
+    commentators: string = 'TheRooseIsLoose, TheRooseIsLoose';
+    background: string = 'iceless';
     groupName: string = 'Swiss - Round 2';
     matchType: string = this.groupName + ' (2-0)';
     tracker: Tracker = new Tracker();
@@ -26,4 +26,7 @@ export class Information {
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
+
+    team1Id: number = 1;
+    team2Id: number = 2;
 }

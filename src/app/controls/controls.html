@@ -6,129 +6,25 @@
             <label for="matchType">Match Type</label><br>
 			<label for="commentators">Commentators</label><br>
 			<label for="bestOf">Best of</label><br>
-			<label for="randomizer">Randomizer?</label>
         </div>
-		<div class="col-3 r2 c2">
+		<div class="col-2 r2 c2">
 			<input type="text" id="trackerId" [(ngModel)]="seed" [disabled]="isLinked" placeholder="Same as Skill Tracker"><br>
 			<input type="text" id="matchType" [(ngModel)]="matchType"  placeholder="Group/Bracket Stage - Group Name">
 			<input type="text" id="commentators" [(ngModel)]="commentators"  placeholder="ENTER COMMENTATORS">
 			<select class="twitch" [(ngModel)]="bestOf">
 				<option *ngFor="let match of matchTypes" [value]="match.value" >{{ match.name }}</option>
 			</select><br>
-			<input type="checkbox" id="randomizer" [(ngModel)]="randomizer">
 		</div>
-		<input type="button" class="btn col-1 update r2 c5" (click)="updateInfo()" value="UPDATE STREAM INFO" />
-		<input type="button" [ngClass]="{ 'active-background': isLinked == true, 'btn-update col-1 update r2 c6' : true }"  (click)="linkTracker()"  value="LINK SKILL TRACKER (every 1000ms)" [disabled]="isLinked" />
-		<input type="button" class="btn col-2 r2 c7" (click)="unlink()" value="UNLINK" [disabled]="!isLinked" />
+		<input type="button" class="btn col-1 update r2 c4" (click)="updateInfo()" value="UPDATE STREAM INFO" />
 		<div class="backgrounds col-8 center r3 c1">
-			<label for="zoomBracket">Zoom bracket to division?</label><input type="checkbox" id="zoomBracket" [(ngModel)]="zoomBracket" />
+			<!-- <label for="zoomBracket">Zoom bracket to division?</label><input type="checkbox" id="zoomBracket" [(ngModel)]="zoomBracket" /> -->
 			<div>
 				<img [ngClass]="{ 'active-background': vm.background == 'reem' }"
-				(click)="setBackground('reem')" src="../../assets/background-reem.png" style="max-height:50px;">
+				(click)="setBackground('iceless')" src="../../assets/background-iceless.png" style="max-height:50px;">
 				<br>
-				<b>Reem (D1)</b>
-				<h6>Hydra</h6>
-				<h6>Richard</h6>
-				<h6>Monkley</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'ano' }"
-				(click)="setBackground('ano')" src="../../assets/background-ano.png" style="max-height:50px;">
-				<br>
-				<b>Ano (D2)</b>
-				<h6>UncleRonny</h6>
-				<h6>TheRoosIsLoose</h6>
-				<h6>Smashy</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'ilo' }"
-				(click)="setBackground('ilo')" src="../../assets/background-ilo.png" style="max-height:50px;">
-				<br>
-				<b>Ilo (D3)</b>
-				<h6>Elojimmini</h6>
-				<h6>Terra</h6>
-				<h6>Bynhold</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'eki' }"
-				(click)="setBackground('eki')" src="../../assets/background-eki.png" style="max-height:50px;">
-				<br>
-				<b>Eki (D4)</b>
-				<h6>Raziel</h6>
-				<h6>CovertMuffin</h6>
-				<h6>MrRandomson</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'fil' }"
-				(click)="setBackground('fil')" src="../../assets/background-fil.png" style="max-height:50px;">
-				<br>
-				<b>Fil (D5)</b>
-				<h6>Willson</h6>
-				<h6>Stafoo</h6>
-				<h6>Roryrai</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'tatsu' }"
-				(click)="setBackground('tatsu')" src="../../assets/background-tatsu.png" style="max-height:50px;">
-				<br>
-				<b>Tatsu (D6)</b>
-				<h6>Sigmasin</h6>
-				<h6>Eviona</h6>
-				<h6>Dileira</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'leru' }"
-				(click)="setBackground('leru')" src="../../assets/background-leru.png" style="max-height:50px;">
-				<br>
-				<b>Leru (D7)</b>
-				<h6>Shedd</h6>
-				<h6>Vulajin</h6>
-				<h6>ChickenSupreme</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'nir' }"
-				(click)="setBackground('nir')" src="../../assets/background-nir.png" style="max-height:50px;">
-				<br>
-				<b>Nir (D8)</b>
-				<h6>CheeseLover</h6>
-				<h6>TrojanDude12</h6>
-				<h6>Stimon</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'sol' }"
-				(click)="setBackground('sol')" src="../../assets/background-sol.png" style="max-height:50px;">
-				<br>
-				<b>Sol (Top 8)</b>
-				<h6>TBD</h6>
-				<h6>TBD</h6>
-				<h6>TBD</h6>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'leftgrotto' }"
-				(click)="setBackground('leftgrotto')" src="../../assets/background-leftgrotto.png" style="max-height:50px;">
-				<br>
-				<b>Exhibition</b>
-			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'catandmouse' }"
-				(click)="setBackground('catandmouse')" src="../../assets/background-catandmouse.png" style="max-height:50px;">
-				<br>
-				<b>Semi Final</b>
-			</div>
-
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'horuescape' }"
-				(click)="setBackground('horuescape')" src="../../assets/background-horuescape.png" style="max-height:50px;">
-				<br>
-				<b>Grand Final</b>
+				<b>Iceless (M2)</b>
 			</div>
 		</div>
-
-		<hr class="spacer r4 c1" />
-
-        <div class="col-8 center label-big timer r5 c1">MAIN TIMER</div>
-		<input type="button" class="btn timer-start col-3 r6 c0" value="START" (click)="start()" [disabled]="!canStartTimer"/>
-        <input type="button" class="btn timer-reset col-3 r6 c6" value="RESET" (click)="reset()" />
 
 		<hr class="spacer r7 c1" />
 
@@ -145,9 +41,7 @@
 
 		<label class="label r11 c1" for="p1Seed">Seed</label>
 		<input id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
-        <input type="textbox" class="timer r9 c3 col-2" [(ngModel)]="ticks1" [disabled]="!timer1Paused" />
-		<input type="button" class="btn btn-warning r10 c3 col-1" value="FINISH" (click)="player1Finished()" />
-		<input type="button" class="btn col-1 r10 c4" value="PAUSE/SET TIMER" (click)="player1Paused()" />
+		<input type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2 - Wins:
 			<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
@@ -162,30 +56,26 @@
 
 		<label class="label r11 c5" for="p2Seed">Seed</label>
 		<input id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
-		<input type="textbox" class="timer r9 c7 col-2" [(ngModel)]="ticks2" [disabled]="!timer2Paused"/>
-		<input type="button" class="btn btn-warning r10 c7 col-1" value="FINISH" (click)="player2Finished()" />
-		<input type="button" class="btn col-1 r10 c8" value="PAUSE / SET TIMER" (click)="player2Paused()" />
+		<input type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
 
 		<hr class="spacer r12 c1" />
 
-		<div class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
-		<div class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
-
-		<select class="twitch r14 c2" [(ngModel)]="p1StatsSelectionId"  (change)="calculateP1Stat()">
-			<option *ngFor="let option of stats" [value]="option.index">{{ option.name }}</option>
+		<div class="col-4 center label-big players r13 c1">TEAM 1 - Wins:
+			<input class="p1Wins" type="number" [(ngModel)]="p1_wins" />
+		</div>
+		<label class="label r14 c1" for="t1Id">Name</label>
+		<input type="button" class="btn btn-warning r14 c3 col-1" value="WINNER" (click)="player1Winner()" />
+		<select class="twitch r14 c2" [(ngModel)]="t1Id" (ngModelChange)="setT1Id($event)">
+			<option *ngFor="let option of teams" [value]="option.id" >{{ option.name }}</option>
 		</select>
 
-		<input class="twitch r15 c2" [(ngModel)]="p1StatsText" />
-
-		<input type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
-
-		<input type="button" class="btn col-2 r14 c4" value="SHOW BOTH ON STREAM" (click)="setBothStats()" />
-
-		<select class="twitch r14 c6" [(ngModel)]="p2StatsSelectionId" (change)="calculateP2Stat()">
-			<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
+		<div class="col-4 center label-big players r13 c5">TEAM 2 - Wins:
+			<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
+		</div>
+		<label class="label r14 c5" for="t2Id">Name</label>
+		<input type="button" class="btn btn-warning r14 c7 col-1" value="WINNER" (click)="player2Winner()" />
+		<select class="twitch r14 c6" [(ngModel)]="t2Id" (ngModelChange)="setT2Id($event)">
+			<option *ngFor="let option of teams" [value]="option.id" >{{ option.name }}</option>
 		</select>
-
-		<input class="twitch r15 c6" [(ngModel)]="p2StatsText" />
-		<input type="button" class="btn col-1 r14 c7" value="SHOW ON STREAM" (click)="setP2Stats()" />
     </div>
 </div>
