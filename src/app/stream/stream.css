@@ -194,6 +194,19 @@
 	align-items: flex-end;
 }
 
+.commentators {
+	margin-top: 10px;
+}
+
+.commentators > div {
+	display: inline-block;
+}
+
+.commentators > img {
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
 .tracker  {
 	position: relative;
 	margin: 0 120px 40.3125px; /* horiz margin is manual, vert is (matchinfo_height - tracker_height)/2 = 40.3125px */
