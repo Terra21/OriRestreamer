@@ -19,10 +19,58 @@
 		<div class="backgrounds col-8 center r3 c1">
 			<!-- <label for="zoomBracket">Zoom bracket to division?</label><input type="checkbox" id="zoomBracket" [(ngModel)]="zoomBracket" /> -->
 			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'reem' }"
+				<img [ngClass]="{ 'active-background': vm.background == 'gladesms' }"
+				(click)="setBackground('gladesms')" src="../../assets/background-gladesms.png" style="max-height:50px;">
+				<br>
+				<b>Glades (M1)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'iceless' }"
 				(click)="setBackground('iceless')" src="../../assets/background-iceless.png" style="max-height:50px;">
 				<br>
 				<b>Iceless (M2)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'brbms' }"
+				(click)="setBackground('brbms')" src="../../assets/background-brbms.png" style="max-height:50px;">
+				<br>
+				<b>Blackroot (M3)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'grottoms' }"
+				(click)="setBackground('grottoms')" src="../../assets/background-grottoms.png" style="max-height:50px;">
+				<br>
+				<b>Grotto (M4)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'swampms' }"
+				(click)="setBackground('swampms')" src="../../assets/background-swampms.png" style="max-height:50px;">
+				<br>
+				<b>Swamp (M5)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'forlornms' }"
+				(click)="setBackground('forlornms')" src="../../assets/background-forlornms.png" style="max-height:50px;">
+				<br>
+				<b>Forlorn (M6)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'valleyms' }"
+				(click)="setBackground('valleyms')" src="../../assets/background-valleyms.png" style="max-height:50px;">
+				<br>
+				<b>Valley (M7)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'sorrowms' }"
+				(click)="setBackground('sorrowms')" src="../../assets/background-sorrowms.png" style="max-height:50px;">
+				<br>
+				<b>Sorrow (M8)</b>
+			</div>
+			<div>
+				<img [ngClass]="{ 'active-background': vm.background == 'horums' }"
+				(click)="setBackground('horums')" src="../../assets/background-horums.png" style="max-height:50px;">
+				<br>
+				<b>Horu (M9)</b>
 			</div>
 		</div>
 

@@ -5,7 +5,7 @@
 
 .container {
     font-family: "Gara";
-    font-size: 36px;
+    font-size: 32px;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -14,37 +14,66 @@
 
 .team1 {
     float: left;
-    padding-top: 5px;
+    padding-top: 15px;
     text-align: center;
     padding-left: 5px;
     padding-right: 5px;
     width: 355px;
 }
 
-.stream-placeholder {
+.team2 {
+    float: left;
+    padding-top: 385px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 352px;
+}
+
+.stream-placeholder-top {
     float: left;
     width: 773px; /* (stream_width - margins)/2 = (1920 - 4*5px)/2 = 950px */
     height: 435px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 3px 0px 0px 3px;
-    background: magenta;
+    box-sizing: border-box;
+    border-color: rgba(255, 145, 0, 0.5);
+    border-style: solid;
+    border-width: 2px;
 }
 
-.middle {
+.stream-placeholder-bottom {
+    float: left;
+    width: 773px; /* (stream_width - margins)/2 = (1920 - 4*5px)/2 = 950px */
+    height: 435px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
+    margin: -1px 3px 0px 3px;
+    box-sizing: border-box;
+    border-color: rgba(70, 206, 247, 0.5);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.middle-team1 {
     float: left;
     width: 100%;
-    height: 100%;
+    height: 100px;
+}
+
+.middle-team2 {
+    float: left;
+    width: 100%;
+    height: 105px;
 }
 
 .player1 {
     float: left;
     width: 766px;
-    padding: 10px 0px 0px 10px;
+    padding: 20px 0px 0px 10px;
 }
 
 .player2 {
     float: left;
     width: 766px;
-    padding: 10px 10px 0px 0px;
+    padding: 20px 10px 0px 0px;
     text-align: right;
 }
 
@@ -56,10 +85,31 @@
     margin: auto;
 }
 
+.commentators {
+    float: left;
+    width: 388px;
+    text-align: center;
+}
+
+.commentators > div {
+	display: inline-block;
+}
+
+.commentators > img {
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
 .player3 {
     float: left;
+    width: 756px;
+    padding: 45px 0px 0px 10px;
+    vertical-align: text-bottom;
 }
 
 .player4 { 
     float: left;
+    text-align: right;
+    width: 756px;
+    padding: 45px 10px 0px 0px;
 }

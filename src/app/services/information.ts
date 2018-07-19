@@ -16,7 +16,7 @@ export class Information {
     player1_stats: number = 0;
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
-    commentators: string = 'TheRooseIsLoose, TheRooseIsLoose';
+    commentators: string = 'Sigmasin, JHobz296';
     background: string = 'iceless';
     groupName: string = 'Swiss - Round 2';
     matchType: string = this.groupName + ' (2-0)';

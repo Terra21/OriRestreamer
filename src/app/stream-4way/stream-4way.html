@@ -1,30 +1,45 @@
 <div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '-4way.png)'}">
-    <div class="stream-placeholder">
+    <div class="stream-placeholder-top">
     </div>
 
     <div class="team1">
         {{ team1Name }}
     </div>
     
-    <div class="stream-placeholder">
+    <div class="stream-placeholder-top">
     </div>
 
-    <div class="middle">
+    <div class="middle-team1">
         <div class="player1">
             {{ player1Name }}
         </div>
         <div class="matchType">
-            {{ vm.groupName }}
+            {{ vm.matchType }}
         </div>
         <div class="player2">
             {{ player2Name }}
         </div>
+    </div>
+    <div class="middle-team2">
         <div class="player3">
             {{ player3Name }}
+        </div>
+        <div class="commentators">
+            <img src="../../assets/commentary.png" />
+            {{ vm.commentators }}
         </div>
         <div class="player4">
             {{ player4Name }}
         </div>
     </div>
 
+    <div class="stream-placeholder-bottom">
+    </div>
+
+    <div class="team2">
+        {{ team2Name }}
+    </div>
+    
+    <div class="stream-placeholder-bottom">
+    </div>
  </div>
