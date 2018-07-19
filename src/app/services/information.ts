@@ -23,6 +23,7 @@ export class Information {
     tracker: Tracker = new Tracker();
     zoomBracket: boolean = false;
     bestOf: number = 1;
+    tournament: number = 1;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;

@@ -430,6 +430,14 @@ public set seed(seed: string){
     return this._vm.bestOf;
   }
 
+  public set tournament(tournament: number){
+    this._vm.tournament = tournament;
+  }
+
+  public get tournament(): number {
+    return this._vm.tournament;
+  }
+
   public set bestOf(bestOf: number){
     this._vm.bestOf = bestOf;
   }
@@ -514,6 +522,15 @@ public set seed(seed: string){
   {
     name: 'Best of 5',
     value: 5
+  }];
+
+  tournaments = [{
+    name: 'Singles',
+    value: 1
+  },
+  {
+    name: 'Doubles',
+    value: 2
   }];
 
   stats = [{
