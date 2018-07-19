@@ -50,9 +50,26 @@ import { Socket } from 'net';
             return n.id == this.vm.team1Id;
         }.bind(this))[0].name;
 
+        this.player1Name = jQuery.grep(this.teams, function(n: any, i) {
+          return n.id == this.vm.team1Id;
+      }.bind(this))[0].p1Name;
+
+        this.player2Name = jQuery.grep(this.teams, function(n: any, i) {
+          return n.id == this.vm.team1Id;
+      }.bind(this))[0].p2Name;
+
         this.team2Name = jQuery.grep(this.teams, function(n: any, i) {
             return n.id == this.vm.team2Id;
         }.bind(this))[0].name;
+
+        this.player3Name = jQuery.grep(this.teams, function(n: any, i) {
+          return n.id == this.vm.team2Id;
+      }.bind(this))[0].p1Name;
+
+      this.player4Name = jQuery.grep(this.teams, function(n: any, i) {
+        return n.id == this.vm.team2Id;
+    }.bind(this))[0].p2Name;
+
   }
 
   public vm: Information = new Information();
@@ -61,6 +78,11 @@ import { Socket } from 'net';
 
   team1Name: string;
   team2Name: string;
+
+  player1Name: string;
+  player2Name: string;
+  player3Name: string;
+  player4Name: string;
 
   players = [
     {
