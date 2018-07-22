@@ -18,8 +18,8 @@
                 <th>Best Race Time</th>
             </thead>
             <tbody>
-                <tr *ngFor="let p of players">
-                    <td>{{ p[0] }}</td>
+                <tr *ngFor="let p of swiss">
+                    <td>{{ p.participant.name }}</td>
                     <td style="text-align: center;">{{ p[1] }}</td>
                     <td style="text-align: center;">{{ p[2] }}</td>
                 </tr>
