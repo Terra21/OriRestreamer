@@ -30,4 +30,37 @@ export class Information {
 
     team1Id: number = 1;
     team2Id: number = 2;
+
+
+
+    players: Array<any> = [
+        {
+            'id': 1,
+            'name': 'TheRooseIsLoose89',
+            'preferredName': 'TheRooseIsLoose',
+            'seed': '20'
+        },
+        {
+          'id': 2,
+          'name': 'Terra21',
+          'preferredName': 'Terra',
+          'seed': '19'
+        },
+      ];
+    
+      teams: Array<any> = [
+        {
+          'id': 1,
+          'name': 'Team Zote',
+          'p1Id': 1,
+          'p2Id': 2,
+          'seed': '20'
+        },
+        {
+          'id': 2,
+          'name': 'Team Polarity Shift',
+          'p1Id': 2,
+          'p2Id': 1,
+          'seed': '20'
+        }];
 }

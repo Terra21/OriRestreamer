@@ -20,6 +20,8 @@ export class GroupsCMP {
       if(data.seed !== this.seed)
         return;
 
+      
+
     }.bind(this));
   }
 

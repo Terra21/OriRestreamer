@@ -92,8 +92,6 @@ export class ControlsCMP {
         clearInterval(this.player2Interval);
       }
     }.bind(this));
-
-    console.log(this.players);
   }
 
   playersList: any;
@@ -306,7 +304,7 @@ export class ControlsCMP {
   }
 
   setP1Name(event: any){
-    let runner = jQuery.grep(this.players, function(n: any, i) {
+    let runner = jQuery.grep(this.vm.players, function(n: any, i) {
       return n.name == event;
     })[0];
     this.vm.player1 = runner.preferredName;
@@ -314,7 +312,7 @@ export class ControlsCMP {
   }
 
   setP2Name(event: any){
-    let runner = jQuery.grep(this.players, function(n: any, i) {
+    let runner = jQuery.grep(this.vm.players, function(n: any, i) {
       return n.name == event;
     })[0];
     this.vm.player2 = runner.preferredName;
@@ -511,6 +509,7 @@ public set seed(seed: string){
     this.setP2Stats();
   }
 
+
   matchTypes = [{
     name: 'Best of 1',
     value: 1
@@ -539,37 +538,4 @@ public set seed(seed: string){
     convertToPercentage: false
   }
 ];
-  players = [
-    {
-        'name': 'TheRooseIsLoose89',
-        'preferredName': 'TheRooseIsLoose',
-        'seed': '20'
-    },
-    {
-      'name': 'Terra21',
-      'preferredName': 'Terra',
-      'seed': '19'
-    },
-  ];
-
-  teams = [
-    {
-      'id': 1,
-      'name': 'Team Zote',
-      'p1Name': 'Terra',
-      'p1PreferredName': 'Terra21',
-      'p2Name': 'Grimelios',
-      'p2PreferredName': 'Grimelios',
-      'seed': '20'
-    },
-    {
-      'id': 2,
-      'name': 'Team Polarity Shift',
-      'p1Name': 'eikocastsholy',
-      'p1PreferredName': 'Eiko',
-      'p2Name': 'Skulblaka17',
-      'p2PreferredName': 'Skulblaka',
-      'seed': '20'
-    }
-  ]
 }

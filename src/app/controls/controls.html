@@ -88,7 +88,7 @@
 		<label class="label r10 c1" for="p1Twitch">Twitch</label>
 
 		<select class="twitch r10 c2" [(ngModel)]="p1_twitch" (ngModelChange)="setP1Name($event)">
-			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
+			<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
 		</select>
 
 		<label class="label r11 c1" for="p1Seed">Seed</label>
@@ -103,7 +103,7 @@
 		<label class="label r10 c5" for="p2Twitch">Twitch</label>
 
 		<select class="twitch r10 c6" [(ngModel)]="p2_twitch" (ngModelChange)="setP2Name($event)">
-			<option *ngFor="let option of players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
+			<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
 		</select>
 
 		<label class="label r11 c5" for="p2Seed">Seed</label>
@@ -117,8 +117,8 @@
 		</div>
 		<label class="label r14 c1" for="t1Id">Name</label>
 		<input type="button" class="btn btn-warning r14 c3 col-1" value="WINNER" (click)="player1Winner()" />
-		<select class="twitch r14 c2" [(ngModel)]="t1Id" (ngModelChange)="setT1Id($event)">
-			<option *ngFor="let option of teams" [value]="option.id" >{{ option.name }}</option>
+		<select class="twitch r14 c2" [(ngModel)]="t1Id">
+			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
 		</select>
 
 		<div class="col-4 center label-big players r13 c5">TEAM 2 - Wins:
@@ -126,8 +126,8 @@
 		</div>
 		<label class="label r14 c5" for="t2Id">Name</label>
 		<input type="button" class="btn btn-warning r14 c7 col-1" value="WINNER" (click)="player2Winner()" />
-		<select class="twitch r14 c6" [(ngModel)]="t2Id" (ngModelChange)="setT2Id($event)">
-			<option *ngFor="let option of teams" [value]="option.id" >{{ option.name }}</option>
+		<select class="twitch r14 c6" [(ngModel)]="t2Id">
+			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
 		</select>
     </div>
 </div>

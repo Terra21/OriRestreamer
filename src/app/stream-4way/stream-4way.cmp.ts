@@ -34,41 +34,36 @@ import { Socket } from 'net';
           this.p2SecondWin = this.vm.player2_winCount >= 2;
           this.p2ThirdWin = this.vm.player2_winCount >= 3;
     
-          this.team1Name = jQuery.grep(this.teams, function(n: any, i) {
-            return n.id == data.team1Id;
-          })[0].name;
+          console.log(data);
 
-          this.team2Name = jQuery.grep(this.teams, function(n: any, i) {
-            return n.id == data.team2Id;
-          })[0].name;
-
+          let team1 = this.getTeamById(this.vm.team1Id);
+          this.team1Name = team1.name;
+  
+        this.player1Name = this.getPlayerById(team1.p1Id).name;
+          this.player2Name = this.getPlayerById(team1.p2Id).name;
+  
+          let team2 = this.getTeamById(this.vm.team2Id);
+          this.team2Name = team2.name;
+  
+          this.player3Name = this.getPlayerById(team2.p1Id).name;
+          this.player4Name = this.getPlayerById(team2.p2Id).name;
+  
         }.bind(this));
   }
 
   debug(){
-        this.team1Name = jQuery.grep(this.teams, function(n: any, i) {
-            return n.id == this.vm.team1Id;
-        }.bind(this))[0].name;
 
-        this.player1Name = jQuery.grep(this.teams, function(n: any, i) {
-          return n.id == this.vm.team1Id;
-      }.bind(this))[0].p1Name;
+        let team1 = this.getTeamById(this.vm.team1Id);
+        this.team1Name = team1.name;
 
-        this.player2Name = jQuery.grep(this.teams, function(n: any, i) {
-          return n.id == this.vm.team1Id;
-      }.bind(this))[0].p2Name;
+      this.player1Name = this.getPlayerById(team1.p1Id).name;
+        this.player2Name = this.getPlayerById(team1.p2Id).name;
 
-        this.team2Name = jQuery.grep(this.teams, function(n: any, i) {
-            return n.id == this.vm.team2Id;
-        }.bind(this))[0].name;
+        let team2 = this.getTeamById(this.vm.team2Id);
+        this.team2Name = team2.name;
 
-        this.player3Name = jQuery.grep(this.teams, function(n: any, i) {
-          return n.id == this.vm.team2Id;
-      }.bind(this))[0].p1Name;
-
-      this.player4Name = jQuery.grep(this.teams, function(n: any, i) {
-        return n.id == this.vm.team2Id;
-    }.bind(this))[0].p2Name;
+        this.player3Name = this.getPlayerById(team2.p1Id).name;
+        this.player4Name = this.getPlayerById(team2.p2Id).name;
 
   }
 
@@ -84,37 +79,15 @@ import { Socket } from 'net';
   player3Name: string;
   player4Name: string;
 
-  players = [
-    {
-        'name': 'TheRooseIsLoose89',
-        'preferredName': 'TheRooseIsLoose',
-        'seed': '20'
-    },
-    {
-      'name': 'Terra21',
-      'preferredName': 'Terra',
-      'seed': '19'
-    },
-  ];
+  getPlayerById(id: number) {
+    return  jQuery.grep(this.vm.players, function(n: any, i) {
+        return n.id == id;
+    }.bind(this))[0];
+  }
 
-  teams = [
-    {
-      'id': 1,
-      'name': 'Team Zote',
-      'p1Name': 'TheRooseIsLoose',
-      'p1PreferredName': 'Terra21',
-      'p2Name': 'TheRooseIsLoose',
-      'p2PreferredName': 'Grimelios',
-      'seed': '20'
-    },
-    {
-      'id': 2,
-      'name': 'Team Polarity Shift',
-      'p1Name': 'TheRooseIsLoose',
-      'p1PreferredName': 'Eiko',
-      'p2Name': 'TheRooseIsLoose',
-      'p2PreferredName': 'Skulblaka',
-      'seed': '20'
-    }
-  ]
+  getTeamById(id: number) {
+      return  jQuery.grep(this.vm.teams, function(n: any, i) {
+          return n.id == id;
+      }.bind(this))[0];
+  }
 }

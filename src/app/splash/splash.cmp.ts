@@ -20,11 +20,37 @@ export class SplashCMP {
         return;
 
       this.vm = data;
+
+      //Singles
+      if(data.tournament == 1) {
+        this.opponent1 = data.player1;
+        this.opponent2 = data.player2;
+      } 
+      //Doubles
+      else if(data.tournament == 2 ) {
+        let team1 = this.getTeamById(data.team1Id);
+        this.opponent1 = team1.name;
+      }
+
     }.bind(this));
+  }
+  
+  getPlayerById(id: number) {
+    return  jQuery.grep(this.vm.players, function(n: any, i) {
+        return n.id == id;
+    }.bind(this))[0];
+  }
+
+  getTeamById(id: number) {
+      return  jQuery.grep(this.vm.teams, function(n: any, i) {
+          return n.id == id;
+      }.bind(this))[0];
   }
 
   public vm: Information = new Information();
 
   socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
+  opponent1: string;
+  opponent2: string;
 }
