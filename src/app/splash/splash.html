@@ -2,13 +2,24 @@
     <div class="matchType">
         {{ vm.matchType }}
     </div>
-    <div class="matchup">
+    <div class="matchup" *ngIf="vm.tournament == 1">
         <div>
             <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ opponent1 }}
         </div>
         <div>vs</div>
         <div>
             <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ opponent2 }}
+        </div>
+    </div>
+    <div class="matchup-doubles" *ngIf="vm.tournament == 2">
+        <div>
+            <span *ngIf="opponent1Seed">({{ opponent1Seed }})</span> {{ opponent1 }}
+            <span *ngIf="players1"><br />{{ players1 }}</span>
+        </div>
+        <div>vs</div>
+        <div>
+            <span *ngIf="opponent2Seed">({{ opponent2Seed }})</span> {{ opponent2 }}
+            <span *ngIf="players2"><br />{{ players2 }}</span>
         </div>
     </div>
     <div>

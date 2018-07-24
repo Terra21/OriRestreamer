@@ -22,17 +22,45 @@ export class SplashCMP {
       this.vm = data;
 
       //Singles
-      if(data.tournament == 1) {
-        this.opponent1 = data.player1;
-        this.opponent2 = data.player2;
+      if(this.vm.tournament == 1) {
+        this.opponent1 = this.vm.player1;
+        this.opponent2 = this.vm.player2;
       } 
       //Doubles
-      else if(data.tournament == 2 ) {
-        let team1 = this.getTeamById(data.team1Id);
-        this.opponent1 = team1.name;
+      else if(this.vm.tournament == 2 ) {
+        let team1 = this.getTeamById(this.vm.team1Id);
+        this.opponent1 = team1.name + ' ('+ this.getPlayerById(team1.p1Id) + ', ' + this.getPlayerById(team1.p2Id) + ')';
+
+        let team2 = this.getTeamById(this.vm.team2Id);
+        this.opponent2 = team2.name;
       }
 
+      this.debug();
     }.bind(this));
+
+    this.debug();
+  }
+
+
+  debug() {
+    
+      //Singles
+      if(this.vm.tournament == 1) {
+        this.opponent1 = this.vm.player1;
+        this.opponent2 = this.vm.player2;
+      } 
+      //Doubles
+      else if(this.vm.tournament == 2 ) {
+        let team1 = this.getTeamById(this.vm.team1Id);
+        this.opponent1 = team1.name;
+        this.players1 = '('+ this.getPlayerById(team1.p1Id).preferredName + ', ' + this.getPlayerById(team1.p2Id).preferredName + ')';
+        this.opponent1Seed = team1.seed;
+
+        let team2 = this.getTeamById(this.vm.team2Id);
+        this.opponent2 = team2.name;
+        this.players2 = '('+ this.getPlayerById(team2.p1Id).preferredName + ', ' + this.getPlayerById(team2.p2Id).preferredName + ')';
+        this.opponent2Seed = team2.seed;
+      }
   }
   
   getPlayerById(id: number) {
@@ -53,4 +81,8 @@ export class SplashCMP {
   seed: string = window.location.href.split('=')[1];
   opponent1: string;
   opponent2: string;
+  opponent1Seed: string;
+  opponent2Seed: string;
+  players1: string;
+  players2: string;
 }

@@ -18,12 +18,12 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = 'Sigmasin, JHobz296';
     background: string = 'iceless';
-    groupName: string = 'Swiss - Round 2';
+    groupName: string = 'Swiss - Round 3';
     matchType: string = this.groupName + ' (2-0)';
     tracker: Tracker = new Tracker();
     zoomBracket: boolean = false;
     bestOf: number = 1;
-    tournament: number = 1;
+    tournament: number = 2;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
@@ -36,14 +36,26 @@ export class Information {
     players: Array<any> = [
         {
             'id': 1,
-            'name': 'TheRooseIsLoose89',
-            'preferredName': 'TheRooseIsLoose',
+            'name': 'Terra21',
+            'preferredName': 'Terra',
             'seed': '20'
         },
         {
           'id': 2,
-          'name': 'Terra21',
-          'preferredName': 'Terra',
+          'name': 'Grimelios',
+          'preferredName': 'Grimelios',
+          'seed': '19'
+        },
+        {
+          'id': 3,
+          'name': 'eikocastsholy',
+          'preferredName': 'Eiko',
+          'seed': '19'
+        },
+        {
+          'id': 4,
+          'name': 'Skulblaka17',
+          'preferredName': 'Skulblaka',
           'seed': '19'
         },
       ];
@@ -54,13 +66,13 @@ export class Information {
           'name': 'Team Zote',
           'p1Id': 1,
           'p2Id': 2,
-          'seed': '20'
+          'seed': '15'
         },
         {
           'id': 2,
           'name': 'Team Polarity Shift',
-          'p1Id': 2,
-          'p2Id': 1,
+          'p1Id': 3,
+          'p2Id': 4,
           'seed': '20'
         }];
 }
