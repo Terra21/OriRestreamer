@@ -156,3 +156,58 @@
     padding: 45px 10px 0px 0px;
     color: rgb(149, 229, 253);
 }
+
+.name-twitch {
+    animation-name: start-fade;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-direction: alternate;
+}
+
+.name-twitch > img {
+    width: 22px;
+    height: 24px;
+}
+
+.name-signup {
+	animation-name: fade;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation-iteration-count: infinite;
+	animation-duration: 30s;
+    animation-direction: alternate;
+}
+
+.name-cycle {
+	flex-grow: 1;
+	position: relative;
+}
+
+.name-cycle > div {
+	position: absolute;
+	margin-left: 0px;
+}
+
+.name-cycle.player2 > div, 
+.name-cycle.player4 > div {
+	right: 0;
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+
+@keyframes start-fade {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+    45% { opacity: 0 }
+    50% { opacity: 1}
+	100% { opacity: 1; }
+}
+
+@keyframes fade {
+	0% { opacity: 1; }
+	25% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+	100% { opacity: 0; }
+}

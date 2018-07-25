@@ -3,9 +3,9 @@ import { Tracker } from './tracker';
 export class Information {
     seed: string = null;
 
-    player1: string = 'TheRooseIsLoose';
+    player1: string = 'Grimelios';
     player2: string = 'Terra';
-    player1_twitch: string = 'TheRooseIsLoose89';
+    player1_twitch: string = 'Grimelios';
     player2_twitch: string = 'Terra21';
     player1_seed: string = null;
     player2_seed: string = null;

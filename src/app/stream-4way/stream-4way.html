@@ -3,33 +3,58 @@
     </div>
 
     <div class="team1">
-        {{ team1Name }}
+        {{ team1.name }}
     </div>
     
     <div class="stream-placeholder-top-right">
     </div>
 
     <div class="middle-team1">
-        <div class="player1">
-            {{ player1Name }}
+        <div class="name-cycle player1">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ player1.name }}
+            </div>
+            <div class="name-signup">
+                {{ player1.preferredName }}
+            </div>
         </div>
+
         <div class="matchType">
             {{ vm.matchType }}
         </div>
-        <div class="player2">
-            {{ player2Name }}
+        <div class="name-cycle player2">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ player2.name }}
+            </div>
+            <div class="name-signup">
+                {{ player2.preferredName }}
+            </div>
         </div>
     </div>
     <div class="middle-team2">
-        <div class="player3">
-            {{ player3Name }}
+        <div class="name-cycle player3">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ player3.name }}
+            </div>
+            <div class="name-signup">
+                {{ player3.preferredName }}
+            </div>
         </div>
         <div class="commentators">
             <img src="../../assets/commentary.png" />
             {{ vm.commentators }}
         </div>
-        <div class="player4">
-            {{ player4Name }}
+        <div class="name-cycle player4">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon.png" />
+                {{ player4.name }}
+            </div>
+            <div class="name-signup">
+                {{ player4.preferredName }}
+            </div>
         </div>
     </div>
 
@@ -37,7 +62,7 @@
     </div>
 
     <div class="team2">
-        {{ team2Name }}
+        {{ team2.name }}
     </div>
     
     <div class="stream-placeholder-bottom-right">

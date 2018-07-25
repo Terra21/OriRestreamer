@@ -53,31 +53,27 @@ import { Socket } from 'net';
 
   debug(){
 
-        let team1 = this.getTeamById(this.vm.team1Id);
-        this.team1Name = team1.name;
+        this.team1 = this.getTeamById(this.vm.team1Id);
+        this.team2 = this.getTeamById(this.vm.team2Id);
 
-      this.player1Name = this.getPlayerById(team1.p1Id).name;
-        this.player2Name = this.getPlayerById(team1.p2Id).name;
+        this.player1 = this.getPlayerById(this.team1.p1Id);
+        this.player2 = this.getPlayerById(this.team1.p2Id);
 
-        let team2 = this.getTeamById(this.vm.team2Id);
-        this.team2Name = team2.name;
-
-        this.player3Name = this.getPlayerById(team2.p1Id).name;
-        this.player4Name = this.getPlayerById(team2.p2Id).name;
-
+        this.player3 = this.getPlayerById(this.team2.p1Id);
+        this.player4 = this.getPlayerById(this.team2.p2Id);
   }
 
   public vm: Information = new Information();
   socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
 
-  team1Name: string;
-  team2Name: string;
+  team1: any;
+  team2: any;
 
-  player1Name: string;
-  player2Name: string;
-  player3Name: string;
-  player4Name: string;
+  player1: any;
+  player2: any;
+  player3: any;
+  player4: any;
 
   getPlayerById(id: number) {
     return  jQuery.grep(this.vm.players, function(n: any, i) {
