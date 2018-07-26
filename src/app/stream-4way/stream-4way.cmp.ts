@@ -18,8 +18,7 @@ import { Socket } from 'net';
     constructor() { }
 
     ngOnInit(){
-        this.debug();
-
+      this.setDefaults();
         this.socket.on('data', function(data: Information){
           if(data.seed !== this.seed)
             return;
@@ -34,12 +33,10 @@ import { Socket } from 'net';
           this.p2SecondWin = this.vm.player2_winCount >= 2;
           this.p2ThirdWin = this.vm.player2_winCount >= 3;
     
-          console.log(data);
-
           let team1 = this.getTeamById(this.vm.team1Id);
           this.team1Name = team1.name;
   
-        this.player1Name = this.getPlayerById(team1.p1Id).name;
+          this.player1Name = this.getPlayerById(team1.p1Id).name;
           this.player2Name = this.getPlayerById(team1.p2Id).name;
   
           let team2 = this.getTeamById(this.vm.team2Id);
@@ -51,8 +48,7 @@ import { Socket } from 'net';
         }.bind(this));
   }
 
-  debug(){
-
+  setDefaults(){
         this.team1 = this.getTeamById(this.vm.team1Id);
         this.team2 = this.getTeamById(this.vm.team2Id);
 

@@ -31,32 +31,30 @@ export class Information {
     team1Id: number = 1;
     team2Id: number = 2;
 
-
-
     players: Array<any> = [
         {
             'id': 1,
             'name': 'Terra21',
             'preferredName': 'Terra',
-            'seed': '20'
+            'seed': null
         },
         {
           'id': 2,
           'name': 'Grimelios',
           'preferredName': 'Grimelios',
-          'seed': '19'
+          'seed': null
         },
         {
           'id': 3,
           'name': 'eikocastsholy',
           'preferredName': 'Eiko',
-          'seed': '19'
+          'seed': null
         },
         {
           'id': 4,
           'name': 'Skulblaka17',
           'preferredName': 'Skulblaka',
-          'seed': '19'
+          'seed': null
         },
       ];
     
@@ -66,13 +64,13 @@ export class Information {
           'name': 'Team Zote',
           'p1Id': 1,
           'p2Id': 2,
-          'seed': '15'
+          'seed': null
         },
         {
           'id': 2,
           'name': 'Team Polarity Shift',
           'p1Id': 3,
           'p2Id': 4,
-          'seed': '20'
+          'seed': null
         }];
 }
