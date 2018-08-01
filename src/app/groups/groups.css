@@ -1,9 +1,16 @@
+@font-face{
+    font-family: "Gara";
+    src: url('../../assets/belleza-regular.ttf') format("truetype")
+}
+
 .container {
-    font-family: "Angie";
+    font-family: "Gara";
+    font-size: 24px;
     color: white;
     width: 1920px;
-    height: 1080px;
-    background-color: rgba(0,0,0,0.5);
+	height: 1080px;
+    background-size: 1920px 1080px;
+    background-color: rgba(0,0,0,0.15)
 }
 
 .groupTitle {
@@ -14,32 +21,33 @@
     font-size: 80px;
 }
 
-.table {
+table {
     margin: 0 auto;
+    width: 1500px;
 }
 
-.table td, .table th {
+table td, .table th {
 	min-width: 200px;
 }
 
-.table > thead > th {
-    padding-left: 50px;
-    padding-right: 50px;
+table > thead > tr > th {
+    padding-left: 10px;
+    padding-right: 10px;
 	text-align: center;
 	font-family: "Segoe UI";
-	font-size: 52px;
+	font-size: 24px;
 	color: #fff36a;
 }
 
-.table > tbody > tr > td {
-	padding: 15px 50px;
+table > tbody > tr > td {
+	padding: 5px 5px;
     text-align: left;
 	vertical-align: middle;
-    font-size: 62px;
+    font-size: 24px;
 	text-align: center;
 }
 
-.table > tbody > tr {
+table > tbody > tr {
     background-color: rgba(255,255,255,0.1);
 }
 
