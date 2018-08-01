@@ -34,43 +34,237 @@ export class Information {
     players: Array<any> = [
         {
             'id': 1,
-            'name': 'Terra21',
-            'preferredName': 'Terra',
+            'name': 'Vulajin',
+            'preferredName': 'Vulajin',
             'seed': null
         },
         {
-          'id': 2,
-          'name': 'Grimelios',
-          'preferredName': 'Grimelios',
-          'seed': null
+			'id': 2,
+			'name': 'Terra21',
+			'preferredName': 'Terra',
+			'seed': null
         },
         {
-          'id': 3,
-          'name': 'eikocastsholy',
-          'preferredName': 'Eiko',
-          'seed': null
+			'id': 3,
+			'name': 'eikocastsholy',
+			'preferredName': 'Eiko',
+			'seed': null
         },
         {
-          'id': 4,
-          'name': 'Skulblaka17',
-          'preferredName': 'Skulblaka',
-          'seed': null
+			'id': 4,
+			'name': 'Skulblaka17',
+			'preferredName': 'Skulblaka',
+			'seed': null
         },
+        {
+			'id': 5,
+			'name': 'du_raziel',
+			'preferredName': 'Raziel',
+			'seed': null
+		},
+		{
+			'id': 6,
+			'name': 'sigmasin',
+			'preferredName': 'sigma',
+			'seed': null
+		},
+		{
+			'id': 7,
+			'name': 'Cleanfel',
+			'preferredName': 'Cleanfel',
+			'seed': null
+		},
+		{
+			'id': 8,
+			'name': 'qusteka',
+			'preferredName': 'questeka',
+			'seed': null
+		},
+		{
+			'id': 9,
+			'name': 'jhobz296',
+			'preferredName': 'JHobz',
+			'seed': null
+		},
+		{
+			'id': 10,
+			'name': 'RebelWatt',
+			'preferredName': 'Rebel',
+			'seed': null
+		},
+		{
+			'id': 11,
+			'name': 'TheRooseIsLoose89',
+			'preferredName': 'Roose',
+			'seed': null
+		},
+		{
+			'id': 12,
+			'name': 'Covert_Muffin',
+			'preferredName': 'CovertMuffin',
+			'seed': null
+		},
+		{
+			'id': 13,
+			'name': 'oshiimine',
+			'preferredName': 'oshiimine',
+			'seed': null
+		},
+		{
+			'id': 14,
+			'name': 'shedd_',
+			'preferredName': 'shedd',
+			'seed': null
+		},
+		{
+			'id': 15,
+			'name': 'Grimelios',
+			'preferredName': 'Grimelios',
+			'seed': null
+		},
+		{
+			'id': 16,
+			'name': 'roryrai',
+			'preferredName': 'roryrai',
+			'seed': null
+		},
+		{
+			'id': 17,
+			'name': 'Synyadriel',
+			'preferredName': 'Synyadriel',
+			'seed': null
+		},
+		{
+			'id': 18,
+			'name': 'TAS_Snoop',
+			'preferredName': 'Snoopy',
+			'seed': null
+		},
+		{
+			'id': 19,
+			'name': 'TheFlyingMarlin',
+			'preferredName': 'TheFlyingMarlin',
+			'seed': null
+		},
+		{
+			'id': 20,
+			'name': 'nfnite',
+			'preferredName': 'nfnite',
+			'seed': null
+		},
+		{
+			'id': 21,
+			'name': 'Phant_TV',
+			'preferredName': 'Phant',
+			'seed': null
+		},
+		{
+			'id': 22,
+			'name': 'nfnite',
+			'preferredName': 'nfnite',
+			'seed': null
+		},
+		{
+			'id': 23,
+			'name': 'M3atShield',
+			'preferredName': 'MeatShield',
+			'seed': null
+		},
+		{
+			'id': 24,
+			'name': 'Osey889',
+			'preferredName': 'Osey',
+			'seed': null
+		},
+		{
+			'id': 25,
+			'name': 'trojandude12',
+			'preferredName': 'trojandude',
+			'seed': null
+		},
+		{
+			'id': 26,
+			'name': 'cutieroo1',
+			'preferredName': 'Cutieroo',
+			'seed': null
+		},
+		{
+			'id': 27,
+			'name': 'SmashyLe',
+			'preferredName': 'Smashy',
+			'seed': null
+		},
+		{
+			'id': 28,
+			'name': 'MeldonTaragorn',
+			'preferredName': 'Meldon',
+			'seed': null
+		},
       ];
     
       teams: Array<any> = [
         {
-          'id': 1,
-          'name': 'Team Zote',
-          'p1Id': 1,
-          'p2Id': 2,
-          'seed': null
+			'id': 1,
+			'name': 'TBD',
+			'p1Id': 1,
+			'p2Id': 21,
+			'seed': null
         },
         {
-          'id': 2,
-          'name': 'Team Polarity Shift',
-          'p1Id': 3,
-          'p2Id': 4,
-          'seed': null
-        }];
+			'id': 2,
+			'name': 'Team Zote',
+			'p1Id': 2,
+			'p2Id': 15,
+			'seed': null
+		},
+		{
+			'id': 3,
+			'name': 'Team Polarity Shift',
+			'p1Id': 3,
+			'p2Id': 4,
+			'seed': null
+		},
+		{
+			'id': 4,
+			'name': 'That Is Still Faster',
+			'p1Id': 5,
+			'p2Id': 6,
+			'seed': null
+		},
+		{
+			'id': 5,
+			'name': 'Asa Tims',
+			'p1Id': 9,
+			'p2Id': 10,
+			'seed': null
+		},
+		{
+			'id': 6,
+			'name': 'Team Smasharoo',
+			'p1Id': 11,
+			'p2Id': 27,
+			'seed': null
+		},
+		{
+			'id': 7,
+			'name': 'Team Heck',
+			'p1Id': 13,
+			'p2Id': 14,
+			'seed': null
+		},
+		{
+			'id': 8,
+			'name': 'Team Skillless',
+			'p1Id': 11,
+			'p2Id': 27,
+			'seed': null
+		},
+		{
+			'id': 9,
+			'name': 'Team City Escape',
+			'p1Id': 25,
+			'p2Id': 26,
+			'seed': null
+		},
+	];
 }
