@@ -29,7 +29,7 @@ export class Information {
     player2_winCount: number = 0;
 
     team1Id: number = 1;
-    team2Id: number = 2;
+    team2Id: number = 3;
 
     players: Array<any> = [
         {
@@ -210,13 +210,6 @@ export class Information {
 			'p2Id': 21,
 			'seed': null
         },
-        {
-			'id': 2,
-			'name': 'Team Zote',
-			'p1Id': 2,
-			'p2Id': 15,
-			'seed': null
-		},
 		{
 			'id': 3,
 			'name': 'Team Polarity Shift',

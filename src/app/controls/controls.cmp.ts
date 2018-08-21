@@ -1,11 +1,9 @@
-import { Component, Input, transition } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Information } from '../services/information';
 import { environment } from '../../environments/environment';
-import * as moment from 'moment';
 import * as $ from 'jquery';
+import * as moment from 'moment';
 import io from 'socket.io-client';
-import { retry } from 'rxjs/operators/retry';
 
 @Component({
   templateUrl: './controls.html',
@@ -25,72 +23,6 @@ export class ControlsCMP {
 
       this.vm = data;
 
-
-    }.bind(this));
-
-    this.socket.on('timer', function(start: boolean, data: Information){
-      if (data.seed !== this.seed)
-        return;
-
-      if (!start) {
-        clearInterval(this.player1Interval);
-        clearInterval(this.player2Interval);
-        this.ticks1 = '0:00:00';
-        this.ticks2 = '0:00:00';
-      }
-      else {
-        if (this.timerStarted) return;
-
-        this.timerStarted = true;
-        let seconds = new Date().getTime(), last = seconds;
-        this.player1Interval = setInterval(function(){
-          if (this.timer1Paused)
-            return;
-
-          let now = new Date().getTime();
-          last = now;
-          this.ticks1 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
-        }.bind(this), 100);
-
-        this.player2Interval = setInterval(function(){
-          if (this.timer2Paused)
-            return;
-
-          let now = new Date().getTime();
-          last = now;
-          this.ticks2 = moment().startOf('day').seconds((now - seconds) / 1000).format('H:mm:ss');
-        }.bind(this), 100);
-      }
-    }.bind(this));
-
-    this.socket.on('timer1', function(finished: boolean, data: Information) {
-      if (data.seed !== this.seed)
-        return;
-
-      if (!finished) {
-      }
-      else {
-        this._vm.player1_finishTime = this.ticks1;
-        if(this._vm.player2_finishTime == '0:00:00')
-          ++this._vm.player1_winCount;
-        this.socket.emit('data', this.vm);
-        clearInterval(this.player1Interval);
-      }
-    }.bind(this));
-
-    this.socket.on('timer2', function(finished: boolean, data: Information) {
-      if (data.seed !== this.seed)
-        return;
-
-      if (!finished) {
-      }
-      else {
-        this._vm.player2_finishTime = this.ticks2;
-        if(this._vm.player1_finishTime == '0:00:00')
-          ++this._vm.player2_winCount;
-        this.socket.emit('data', this.vm);
-        clearInterval(this.player2Interval);
-      }
     }.bind(this));
   }
 
@@ -104,16 +36,12 @@ export class ControlsCMP {
 
   canStartTimer: boolean = !this.timer1Paused && !this.timer2Paused && !this.timerStarted;
 
-  ticks1 = '0:00:00';
-  ticks2 = '0:00:00';
-  player1Interval: any;
-  player2Interval: any;
-  public nameTimer: Observable<number> = Observable.timer(0, 1000);
-  public timer2: Observable<number> = Observable.timer(0, 1000);
-  private $timer2: Subscription;
+  t1P1_Time = '0:00:00';
+  t1P2_Time = '0:00:00';
+  t2P1_Time = '0:00:00';
+  t2P2_Time = '0:00:00';
+
   socket: any = io.connect(environment.socketPath);
-  isLinked = false;
-  linkedInterval: any;
 
   p1StatsSelectionId = 0;
   p2StatsSelectionId = 0;
@@ -131,6 +59,30 @@ export class ControlsCMP {
   updateInfo(){
     this.socket.emit('data', this.vm);
   }
+
+  	calcTeam1Average() {
+	  	let a = this.t1P1_Time.split(':');
+	  	let b = this.t1P2_Time.split(':');
+		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
+
+		let average = (p1Ticks + p2Ticks) / 2;
+
+		let newP1TimerTicks = moment().startOf('day').seconds(average).format('H:mm:ss');
+		console.log(newP1TimerTicks);
+	  }
+	  
+	  calcTeam2Average() {
+		let a = this.t2P1_Time.split(':');
+		let b = this.t2P2_Time.split(':');
+		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
+
+		let average = (p1Ticks + p2Ticks) / 2;
+
+		let newP1TimerTicks = moment().startOf('day').seconds(average).format('H:mm:ss');
+		console.log(newP1TimerTicks);
+	}
 
   setP1Name(event: any){
     let runner = jQuery.grep(this.vm.players, function(n: any, i) {
