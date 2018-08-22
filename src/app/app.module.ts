@@ -14,6 +14,7 @@ import { SplashReplayCMP } from './splash-replay/splash-replay.cmp';
 import { BracketCMP } from './bracket/bracket.cmp';
 import { StatsCMP } from './stats/stats.cmp';
 import { CreditsCMP } from './credits/credits.cmp';
+import { SwissCMP } from './swiss/swiss.cmp';
 import { IntermissionCMP } from './intermission/intermission.cmp';
 import { DivisionComponent } from './division/division.component';
 
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'stats', component: StatsCMP },
   { path: 'credits', component: CreditsCMP },
   { path: 'intermission', component: IntermissionCMP },
+  { path: 'swiss', component: SwissCMP },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     StatsCMP,
     CreditsCMP,
     IntermissionCMP,
+    SwissCMP,
     DivisionComponent
   ],
   imports: [
