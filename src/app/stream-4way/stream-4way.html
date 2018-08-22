@@ -1,12 +1,15 @@
 <div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '-4way.png)'}">
-    <div class="stream-placeholder-top-left">
+    <div [ngClass]="{ 'winner': vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0 }"
+        class="stream-placeholder-top-left">
     </div>
 
-    <div class="team1">
+    <div [ngClass]="{ 'winner': vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0 }" 
+        class="team1">
         <span *ngIf="team1.seed">({{ team1.seed }}) </span>{{ team1.name }}
     </div>
     
-    <div class="stream-placeholder-top-right">
+    <div [ngClass]="{ 'winner': vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0 }" 
+        class="stream-placeholder-top-right">
     </div>
 
     <div class="middle-team1">
@@ -58,13 +61,16 @@
         </div>
     </div>
 
-    <div class="stream-placeholder-bottom-left">
+    <div [ngClass]="{ 'winner': vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0 }" 
+        class="stream-placeholder-bottom-left">
     </div>
 
-    <div class="team2">
+    <div [ngClass]="{ 'winner': vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0 }"   
+        class="team2">
         <span *ngIf="team2.seed">({{ team2.seed }}) </span>{{ team2.name }}
     </div>
     
-    <div class="stream-placeholder-bottom-right">
+    <div [ngClass]="{ 'winner': vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0 }"  
+        class="stream-placeholder-bottom-right">
     </div>
  </div>

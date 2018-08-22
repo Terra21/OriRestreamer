@@ -29,7 +29,9 @@ export class Information {
     player2_winCount: number = 0;
 
     team1Id: number = 1;
-    team2Id: number = 3;
+	team2Id: number = 3;
+	team1_FinishTime: number = 0;
+	team2_FinishTime: number = 0;
 
     players: Array<any> = [
         {

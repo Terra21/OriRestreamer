@@ -94,7 +94,7 @@
 		<label class="label r11 c1" for="p1Seed">Seed</label>
 		<input id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
 		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
-		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW AVERAGE" (click)="calcTeam1Average()" />
+		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
 
         <div class="col-4 center label-big players r8 c5">PLAYER 2 - Wins:
 			<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
@@ -110,7 +110,7 @@
 		<label class="label r11 c5" for="p2Seed">Seed</label>
 		<input id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
 		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
-		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c7 col-1" value="SHOW AVERAGE" (click)="calcTeam2Average()" />
+		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c7 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
 
 		<hr class="spacer r12 c1" />
 

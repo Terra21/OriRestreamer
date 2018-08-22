@@ -195,6 +195,13 @@
 	margin-right: 15px;
 }
 
+.winner {
+    box-sizing: border-box;
+    border-color: gold;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+}
 
 @keyframes start-fade {
 	0% { opacity: 0; }

@@ -60,6 +60,15 @@ export class ControlsCMP {
     this.socket.emit('data', this.vm);
   }
 
+  calcAverage() {
+	  this.calcTeam1Average();
+	  this.calcTeam2Average();
+
+	  console.log('Done');
+
+	  this.socket.emit('data', this.vm);
+  }
+
   	calcTeam1Average() {
 	  	let a = this.t1P1_Time.split(':');
 	  	let b = this.t1P2_Time.split(':');
@@ -67,9 +76,10 @@ export class ControlsCMP {
 		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
 
 		let average = (p1Ticks + p2Ticks) / 2;
-
-		let newP1TimerTicks = moment().startOf('day').seconds(average).format('H:mm:ss');
-		console.log(newP1TimerTicks);
+		if(p1Ticks != 0 && p2Ticks != 0) {
+			this.vm.team1_FinishTime = average;
+			console.log(average);
+		}
 	  }
 	  
 	  calcTeam2Average() {
@@ -80,10 +90,12 @@ export class ControlsCMP {
 
 		let average = (p1Ticks + p2Ticks) / 2;
 
-		let newP1TimerTicks = moment().startOf('day').seconds(average).format('H:mm:ss');
-		console.log(newP1TimerTicks);
-	}
-
+		if(p1Ticks != 0 && p2Ticks != 0) {
+			this.vm.team2_FinishTime = average;
+			console.log(average);
+		}
+  }
+  
   setP1Name(event: any){
     let runner = jQuery.grep(this.vm.players, function(n: any, i) {
       return n.name == event;
