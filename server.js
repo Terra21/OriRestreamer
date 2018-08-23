@@ -55,6 +55,14 @@ io.on('connection', function(client) {
     client.on('freeTextStats', function(data, text){
         io.emit('freeTextStats', data, text);
     });
+
+    client.on('swissPlayerSelected', function(data, playerId){
+        io.emit('swissPlayerSelected', data, playerId);
+    });
+
+    client.on('swissTeamSelected', function(data, teamId){
+        io.emit('swissTeamSelected', data, teamId);
+    });
 });
 
 server.listen(port);

@@ -23,7 +23,7 @@ export class Information {
     tracker: Tracker = new Tracker();
     zoomBracket: boolean = false;
     bestOf: number = 1;
-    tournament: number = 2;
+    tournament: number = 3;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
@@ -207,7 +207,7 @@ export class Information {
       teams: Array<any> = [
         {
 			'id': 1,
-			'name': 'TBD',
+			'name': 'Fanta Gin',
 			'p1Id': 1,
 			'p2Id': 21,
 			'seed': null

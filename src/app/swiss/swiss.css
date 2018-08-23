@@ -29,6 +29,11 @@ div {
     text-align: center;
 }
 
+.matchups > div > div {
+    font-size: 29px;
+    text-align: center;
+}
+
 .matchups > div:before {
     content: "";
     height: 1px;

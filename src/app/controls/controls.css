@@ -5,11 +5,14 @@
 
 .container {
 	display: grid;
-	grid-template-rows: [top] auto auto [bg] auto [spacer] 5px [timer] auto auto [spacer2] 5px [players] auto auto auto;
+	grid-template-rows: min-content auto min-content;
 	grid-template-columns: repeat( 8, 1fr );
 	grid-row-gap: 15px;
 	grid-column-gap: 20px;
-	height: 1080px;
+}
+
+.main-controls {
+	margin-bottom: 250px;
 }
 
 .active-background {
