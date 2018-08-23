@@ -28,6 +28,9 @@
 
     <div class="matchups"> 
         <div><b>Singles</b></div>
+        <div *ngFor="let v of singlesMatchups">
+            {{ v.p1 }} vs {{ v.p2 }}
+        </div>
         <!-- <div>TheRooseIsLoose vs TheFlyingMarlin</div>
         <div>Vulajin vs Brynhold</div>
         <div>Eiko vs Raziel</div>

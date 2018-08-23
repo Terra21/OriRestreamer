@@ -9,6 +9,7 @@
 	grid-template-columns: repeat( 8, 1fr );
 	grid-row-gap: 15px;
 	grid-column-gap: 20px;
+	height: 1080px;
 }
 
 .active-background {
@@ -28,6 +29,7 @@
 	background: #162458;
 	border: 1px solid #233166;
 	color: inherit;
+	height: 100px;
 }
 
 .btn-update {

@@ -15,6 +15,8 @@ export class SwissCMP {
   constructor() { }
 
   ngOnInit(){
+    this.singlesMatchups.push({ 'p1': 'Terra', 'p2': 'Grimelios'});
+
     this.socket.on('data', function(data: Information){
       if(data.seed !== this.seed)
         return;
@@ -40,4 +42,6 @@ export class SwissCMP {
 
   socket: any = io.connect(environment.socketPath);
   seed: string = window.location.href.split('=')[1];
+
+  singlesMatchups: Array<any> = new Array<any>();
 }

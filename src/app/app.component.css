@@ -3,6 +3,9 @@
     src: url('../assets/AngieRegular.otf') format("opentype")
 }
 
+body {
+    height: 1500px;
+}
 .btn {
     color: #FFFFFF;
     margin: 10px;
