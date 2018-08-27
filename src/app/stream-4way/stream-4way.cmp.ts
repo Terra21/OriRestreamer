@@ -14,38 +14,38 @@ import { Socket } from 'net';
 		styleUrls: ['./stream-4way.css']
 	})
 	
-	export class Stream4WayCMP {
-		constructor() { }
+export class Stream4WayCMP {
+	constructor() { }
 
-		ngOnInit() {
-			this.setDefaults();
-			this.socket.on('data', function(data: Information){
-				if(data.seed !== this.seed)
-					return;
-	
-				this.vm = data;
-	
-				this.p1FirstWin = this.vm.player1_winCount >= 1;
-				this.p1SecondWin = this.vm.player1_winCount >= 2;
-				this.p1ThirdWin = this.vm.player1_winCount >= 3;
-	
-				this.p2FirstWin = this.vm.player2_winCount >= 1;
-				this.p2SecondWin = this.vm.player2_winCount >= 2;
-				this.p2ThirdWin = this.vm.player2_winCount >= 3;
-	
-				let team1 = this.getTeamById(this.vm.team1Id);
-				this.team1Name = team1.name;
+	ngOnInit() {
+		this.setDefaults();
+		this.socket.on('data', function(data: Information){
+			if(data.seed !== this.seed)
+				return;
 
-				this.player1Name = this.getPlayerById(team1.p1Id).name;
-				this.player2Name = this.getPlayerById(team1.p2Id).name;
+		this.vm = data;
 
-				let team2 = this.getTeamById(this.vm.team2Id);
-				this.team2Name = team2.name;
+		this.p1FirstWin = this.vm.player1_winCount >= 1;
+		this.p1SecondWin = this.vm.player1_winCount >= 2;
+		this.p1ThirdWin = this.vm.player1_winCount >= 3;
 
-				this.player3Name = this.getPlayerById(team2.p1Id).name;
-				this.player4Name = this.getPlayerById(team2.p2Id).name;
+		this.p2FirstWin = this.vm.player2_winCount >= 1;
+		this.p2SecondWin = this.vm.player2_winCount >= 2;
+		this.p2ThirdWin = this.vm.player2_winCount >= 3;
 
-			}.bind(this));
+		let team1 = this.getTeamById(this.vm.team1Id);
+		this.team1 = team1;
+
+		this.player1 = this.getPlayerById(team1.p1Id);
+		this.player2 = this.getPlayerById(team1.p2Id);
+
+		let team2 = this.getTeamById(this.vm.team2Id);
+		this.team2 = team2;
+
+		this.player3 = this.getPlayerById(team2.p1Id);
+		this.player4 = this.getPlayerById(team2.p2Id);
+
+		}.bind(this));
 	}
 
 	setDefaults(){

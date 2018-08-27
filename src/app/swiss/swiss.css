@@ -25,16 +25,26 @@ div {
 }
 
 .matchups > div {
-    font-size: 29px;
+    font-size: 24px;
     text-align: center;
 }
 
 .matchups > div > div {
-    font-size: 29px;
+    font-size: 24px;
     text-align: center;
 }
 
 .matchups > div:before {
+    content: "";
+    height: 1px;
+    background: linear-gradient(to right,  rgba(0,0,0,0) 10%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 90%);
+
+    display: block;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.matchups > div > div:before {
     content: "";
     height: 1px;
     background: linear-gradient(to right,  rgba(0,0,0,0) 10%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 90%);

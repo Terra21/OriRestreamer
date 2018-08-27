@@ -69,20 +69,19 @@ export class ControlsCMP {
 		this.socket.emit('data', this.vm);
 	}
 
-		calcTeam1Average() {
-			let a = this.t1P1_Time.split(':');
-			let b = this.t1P2_Time.split(':');
+	calcTeam1Average() {
+		let a = this.t1P1_Time.split(':');
+		let b = this.t1P2_Time.split(':');
 		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
 		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
 
 		let average = (p1Ticks + p2Ticks) / 2;
 		if(p1Ticks != 0 && p2Ticks != 0) {
 			this.vm.team1_FinishTime = average;
-			console.log(average);
 		}
-		}
+	}
 		
-		calcTeam2Average() {
+	calcTeam2Average() {
 		let a = this.t2P1_Time.split(':');
 		let b = this.t2P2_Time.split(':');
 		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
@@ -92,7 +91,6 @@ export class ControlsCMP {
 
 		if(p1Ticks != 0 && p2Ticks != 0) {
 			this.vm.team2_FinishTime = average;
-			console.log(average);
 		}
 	}
 

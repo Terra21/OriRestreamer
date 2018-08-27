@@ -155,8 +155,10 @@
 				<span><b>Singles</b></span>
 			</div>
 			<div *ngFor="let p of vm.players">
+				<span *ngIf="p.singles">
 					<input type="checkbox" value="p.name" (change)="addRemovePlayer($event, p.id, p.name)" />
 					<span>{{ p.name }}</span>
+				</span>
 			</div>
 	</span>
 	<span style="position: absolute; top: 0; left: 400px; width: 200px; background-color: #181819 ">	
@@ -164,8 +166,10 @@
 				<span><b>Doubles</b></span>
 			</div>		
 			<div *ngFor="let p of vm.teams">
+				<span>
 					<input type="checkbox" value="p.name" (change)="addRemoveTeam($event, p.id, p.name)" />
 					<span>{{ p.name }}</span>
+				</span>
 			</div>
 			<div style="margin-top: 75px">
 				<span>Click the names as they appear on the reveal stream! No need to press update stream button</span>

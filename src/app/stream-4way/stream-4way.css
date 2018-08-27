@@ -14,6 +14,7 @@
 
 .team1 {
     float: left;
+    overflow: hidden;
     text-align: center;
     margin-top: 3px;
     padding-top: 5px;
@@ -25,10 +26,12 @@
     border-width: 2px;
     border-top-style: solid;
     border-bottom-style: solid;
+    position: relative;
 }
 
 .team2 {
     float: left;
+    overflow: hidden;
     margin-top: 386px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -40,6 +43,36 @@
     border-width: 2px;
     border-top-style: solid;
     border-bottom-style: solid;
+    position: relative;
+}
+
+.finishTimeWinner {
+    position: absolute;
+    top: 0;
+    left: -372px;
+    height: 75px;
+    width: 372px;
+    background:  #ffd900;
+    transition: 1s;
+    color: white;
+    text-shadow: 0;
+}
+
+.finishTimeLoser {
+    position: absolute;
+    top: 0;
+    left: -372px;
+    height: 75px;
+    width: 372px;
+    background: #295ddf;
+    transition: 1s;
+    color: white;
+    text-shadow: transparent;
+}
+
+.team-winner {
+    transition: 1s;
+    left: 0;
 }
 
 .stream-placeholder-top-left {
@@ -197,7 +230,7 @@
 
 .winner {
     box-sizing: border-box;
-    border-color: gold;
+    border-color: #ffb600;
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
