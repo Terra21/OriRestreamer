@@ -17,7 +17,7 @@ export class Information {
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
     commentators: string = 'Mattermonkey, TheFlyingMarlin';
-    background: string = 'iceless';
+    background: string = 'brbms';
     groupName: string = 'Swiss - Round 3';
     matchType: string = this.groupName + ' (2-0)';
     zoomBracket: boolean = false;
@@ -362,6 +362,27 @@ export class Information {
 			'singles': false,
 			'seed': null
 		},
+		{
+			'id': 50,
+			'name': 'its_galaxy',
+			'preferredName': 'Galaxy',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 51,
+			'name': 'FlaggerMoose',
+			'preferredName': 'Moose',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 52,
+			'name': 'Ushebti',
+			'preferredName': 'Ushebti',
+			'singles': true,
+			'seed': null
+		}
       ];
     
       teams: Array<any> = [
@@ -470,5 +491,12 @@ export class Information {
 			'p2Id': 49,
 			'seed': null
 		},
+		{
+			'id': 17,
+			'name': 'Slurp Squad',
+			'p1Id': 50,
+			'p2Id': 51,
+			'seed': null
+		}
 	];
 }

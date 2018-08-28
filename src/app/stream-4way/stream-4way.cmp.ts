@@ -45,6 +45,15 @@ export class Stream4WayCMP {
 		this.player3 = this.getPlayerById(team2.p1Id);
 		this.player4 = this.getPlayerById(team2.p2Id);
 
+		if(data.team1_FinishTime > 0)
+			this.team1FinishTime = moment().startOf('day').seconds((data.team1_FinishTime)).format('H:mm:ss');
+
+		if(data.team2_FinishTime > 0)
+			this.team2FinishTime = moment().startOf('day').seconds((data.team2_FinishTime)).format('H:mm:ss');
+
+			console.log(data.team1_FinishTime);
+			console.log(this.team1FinishTime);
+
 		}.bind(this));
 	}
 
@@ -65,6 +74,9 @@ export class Stream4WayCMP {
 
 	team1: any;
 	team2: any;
+
+	team1FinishTime: string;
+	team2FinishTime: string;
 
 	player1: any;
 	player2: any;
