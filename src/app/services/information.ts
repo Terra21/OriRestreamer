@@ -359,7 +359,7 @@ export class Information {
 			'id':49,
 			'name': 'Chicken_Supreme',
 			'preferredName': 'Chicken Supreme',
-			'singles': true,
+			'singles': false,
 			'seed': null
 		},
       ];
@@ -374,7 +374,7 @@ export class Information {
         },
 		{
 			'id': 3,
-			'name': 'Polarity Shift',
+			'name': 'Team Duo Leaves',
 			'p1Id': 3,
 			'p2Id': 4,
 			'seed': null
