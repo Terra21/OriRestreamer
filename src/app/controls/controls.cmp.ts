@@ -95,25 +95,25 @@ export class ControlsCMP {
 	}
 
 	addRemovePlayer(event: any, id: number, name: string){
-		if(!confirm(name)){
-			event.target.checked = false;
-			return;
-		}
-
-		event.target.disabled = true;
-
 		this.socket.emit('swissPlayerSelected', this.vm, id, event.target.checked);
 	}
 	
 	addRemoveTeam(event: any, id: number, name: string){
-		if(!confirm(name)){
-			event.target.checked = false;
-			return;
-		}
-
-		event.target.disabled = true;
-
 		this.socket.emit('swissTeamSelected', this.vm, id, event.target.checked);
+	}
+
+	resetSwiss() {
+		this.socket.emit('resetSwiss', this.vm);
+		$('input[type=checkbox]').prop('checked',false);
+		$('input[type=checkbox]').prop('disabled',false);
+	}
+
+	undoSwissSingles() {
+		this.socket.emit('undoSwissSingles', this.vm);
+	}
+
+	undoSwissDoubles() {
+		this.socket.emit('undoSwissDoubles', this.vm);
 	}
 
 	setP1Name(event: any){

@@ -1,6 +1,9 @@
 <div class="container">
-    <!-- <div class="matchType">
+    <div class="matchType" *ngIf="vm.tournament == 1 || vm.tournament == 2">
         {{ vm.matchType }}
+    </div>
+    <div class="matchType" *ngIf="vm.tournament == 3">
+        Swiss Reveal
     </div>
     <div class="matchup" *ngIf="vm.tournament == 1">
         <div>
@@ -21,7 +24,13 @@
             <span *ngIf="opponent2Seed">({{ opponent2Seed }})</span> {{ opponent2 }}
             <span *ngIf="players2"><br />{{ players2 }}</span>
         </div>
-    </div> -->
+    </div>
+
+    <div class="matchup" *ngIf="vm.tournament == 3">
+        <div>
+            Round 1 Pairings
+        </div>
+    </div>
     <div>
         <div class="logo">
             <div>

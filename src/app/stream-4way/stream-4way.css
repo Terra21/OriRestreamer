@@ -141,6 +141,7 @@
     width: 766px;
     padding: 20px 0px 0px 10px;
     color:  rgb(252, 176, 77);
+    font-size: 28px;
 }
 
 .player2 {
@@ -149,6 +150,7 @@
     padding: 20px 10px 0px 0px;
     text-align: right;
     color:  rgb(252, 176, 77);
+    font-size: 28px;
 }
 
 .matchType {
@@ -181,6 +183,7 @@
     padding: 45px 0px 0px 10px;
     vertical-align: text-bottom;
     color: rgb(149, 229, 253);
+    font-size: 28px;
 }
 
 .player4 { 
@@ -189,6 +192,7 @@
     width: 756px;
     padding: 45px 10px 0px 0px;
     color: rgb(149, 229, 253);
+    font-size: 28px;
 }
 
 .name-twitch {

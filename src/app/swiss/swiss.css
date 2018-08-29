@@ -5,7 +5,6 @@
 
 .container {
     font-family: "Gara";
-    font-size: 24px;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -18,19 +17,20 @@ div {
 }
 
 .matchups {
-    position: absolute;
+    position: fixed;
     right: 5px;
     top: 5px;
-    width: 384px;
+    width: 20%;
+    height: 100%;
 }
 
 .matchups > div {
-    font-size: 24px;
+    font-size: 1vw;
     text-align: center;
 }
 
 .matchups > div > div {
-    font-size: 24px;
+    font-size: 1vw;
     text-align: center;
 }
 
@@ -70,7 +70,7 @@ div {
     position: absolute;
     bottom: 40px;
     left: 275px;
-    font-size: 48px;
+    font-size: 32px;
 }
 
 .sub-title > img {
@@ -81,4 +81,14 @@ div {
     background: black;
     width: 80%;
     height: 80%;
+}
+
+.doubles {
+    width: 100%; 
+    height: 35%;
+}
+
+.singles {
+    width: 100%; 
+    height: 65%;
 }

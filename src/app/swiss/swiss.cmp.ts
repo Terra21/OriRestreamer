@@ -55,6 +55,63 @@ export class SwissCMP {
 				this.doublesMatchups.push({ p1: null, p2: null });
 			}
 		}.bind(this));
+
+		this.socket.on('resetSwiss', function(data: Information, id: number){
+			if(data.seed !== this.seed)
+				return;
+
+			this.singlesMatchups = new Array<any>();
+			this.doublesMatchups = new Array<any>();
+			this.singlesMatchups.push({ p1: null, p2: null });
+			this.doublesMatchups.push({ p1: null, p2: null });
+
+		}.bind(this));
+
+		this.socket.on('undoSwissSingles', function(data: Information, id: number){
+			if(data.seed !== this.seed)
+				return;
+				
+			if(this.singlesMatchups[this.singlesMatchups.length - 1].p1 != null) {
+				this.singlesMatchups.pop();
+				this.singlesMatchups.push({ p1: null, p2: null });
+			} else {
+				if(this.singlesMatchups[this.singlesMatchups.length - 1].p2 != null) {
+					this.singlesMatchups.push({ p1: null, p2: null });
+				} else {
+					this.singlesMatchups.pop();
+					this.singlesMatchups.pop();
+					this.singlesMatchups.push({ p1: null, p2: null });
+				}
+			}
+
+			if(this.singlesMatchups.length < 1) {
+				this.singlesMatchups = new Array<any>();
+			}
+
+		}.bind(this));
+
+		this.socket.on('undoSwissDoubles', function(data: Information, id: number){
+			if(data.seed !== this.seed)
+				return;
+				
+			if(this.doublesMatchups[this.doublesMatchups.length - 1].p1 != null) {
+				this.doublesMatchups.pop();
+				this.doublesMatchups.push({ p1: null, p2: null });
+			} else {
+				if(this.doublesMatchups[this.doublesMatchups.length - 1].p2 != null) {
+					this.doublesMatchups.push({ p1: null, p2: null });
+				} else {
+					this.doublesMatchups.pop();
+					this.doublesMatchups.pop();
+					this.doublesMatchups.push({ p1: null, p2: null });
+				}
+			}
+
+			if(this.doublesMatchups.length < 1) {
+				this.doublesMatchups = new Array<any>();
+			}
+
+		}.bind(this));
 	}
 	
 	getPlayerById(id: number) {

@@ -63,6 +63,18 @@ io.on('connection', function(client) {
     client.on('swissTeamSelected', function(data, teamId){
         io.emit('swissTeamSelected', data, teamId);
     });
+
+    client.on('resetSwiss', function(data){
+        io.emit('resetSwiss', data);
+    });
+
+    client.on('undoSwissSingles', function(data){
+        io.emit('undoSwissSingles', data);
+    });
+
+    client.on('undoSwissDoubles', function(data){
+        io.emit('undoSwissDoubles', data);
+    });
 });
 
 server.listen(port);

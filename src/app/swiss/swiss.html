@@ -27,30 +27,16 @@
     </div>
 
     <div class="matchups"> 
-        <div><b>Singles</b></div>
-        <div *ngFor="let v of singlesMatchups">
-            <span *ngIf="v.p1">
-                {{ v.p1 }} vs {{ v.p2 }}
-            </span>
+        <div class="singles">
+            <b>Singles</b>
+            <div *ngFor="let v of singlesMatchups">
+                <span *ngIf="v.p1">
+                    {{ v.p1 }} vs {{ v.p2 }}
+                </span>
+            </div>
         </div>
-        <!-- <div>TheRooseIsLoose vs TheFlyingMarlin</div>
-        <div>Vulajin vs Brynhold</div>
-        <div>Eiko vs Raziel</div>
-        <div>Skulblaka vs Sigmasin</div>
-        <div>Cleanfel vs JHobz</div>
-        <div>roryrai vs CovertMuffin</div>
-        <div>oshiimine vs shedd</div>
-        <div>Grimelios vs Terra</div>
-        <div>Synyadriel vs TASSnoop</div>
-        <div>nfnite vs MeatShield</div>
-        <div>Osey vs trojandude12</div>
-        <div>Cutieroo vs Hydra</div>
-        <div>Willson vs sloaters</div>
-        <div>Meldon vs Dedew</div>
-        <div>ogndrahcir vs rainbowpoogle</div>
-        <div>UncleRonny vs Lusther</div> -->
 
-        <div style="position: absolute; right: 5px; top: 700px; width: 360px;">
+        <div class="doubles">
             <b>Doubles</b>
             <div *ngFor="let v of doublesMatchups">
                 <span *ngIf="v.p1">

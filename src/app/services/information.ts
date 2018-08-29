@@ -17,7 +17,7 @@ export class Information {
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
     commentators: string = 'Mattermonkey, TheFlyingMarlin';
-    background: string = 'brbms';
+    background: string = 'iceless';
     groupName: string = 'Swiss - Round 3';
     matchType: string = this.groupName + ' (2-0)';
     zoomBracket: boolean = false;
