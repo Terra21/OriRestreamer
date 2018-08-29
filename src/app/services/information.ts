@@ -33,144 +33,158 @@ export class Information {
 	team2_FinishTime: number = 0;
 
     players: Array<any> = [
-        {
-            'id': 1,
-            'name': 'Vulajin',
-			'preferredName': 'Vulajin',
+		{
+			'id': 1,
+			'name': 'Brynhold2',
+			'preferredName': 'Brynhold',
 			'singles': true,
-            'seed': null
-        },
-        {
+			'seed': null
+		},
+		{
 			'id': 2,
-			'name': 'Terra21',
-			'preferredName': 'Terra',
-			'singles': true,
+			'name': 'Chicken_Supreme',
+			'preferredName': 'Chicken Supreme',
+			'singles': false,
 			'seed': null
-        },
-        {
+		},
+		{
 			'id': 3,
-			'name': 'eikocastsholy',
-			'preferredName': 'Eiko',
-			'singles': true,
-			'seed': null
-        },
-        {
-			'id': 4,
-			'name': 'Skulblaka17',
-			'preferredName': 'Skulblaka',
-			'singles': true,
-			'seed': null
-        },
-        {
-			'id': 5,
-			'name': 'du_raziel',
-			'preferredName': 'Raziel',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 6,
-			'name': 'sigmasin',
-			'preferredName': 'sigma',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 7,
 			'name': 'Cleanfel',
 			'preferredName': 'Cleanfel',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id': 9,
-			'name': 'jhobz296',
-			'preferredName': 'JHobz',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 10,
-			'name': 'RebelWatt',
-			'preferredName': 'Rebel',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id': 11,
-			'name': 'RooseSR',
-			'preferredName': 'Roose',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 12,
+			'id': 4,
 			'name': 'Covert_Muffin',
 			'preferredName': 'CovertMuffin',
 			'singles': true,
 			'seed': null
 		},
 		{
+			'id': 5,
+			'name': 'cutieroo1',
+			'preferredName': 'Cutieroo',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 6,
+			'name': 'Dr_Tuen',
+			'preferredName': 'Dr. Tuen',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 7,
+			'name': 'du_raziel',
+			'preferredName': 'Raziel',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 8,
+			'name': 'eikocastsholy',
+			'preferredName': 'Eiko',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 9,
+			'name': 'ephpls',
+			'preferredName': 'Eph',
+			'singles': false,
+			'seed': null
+		},
+		{
+			'id': 10,
+			'name': 'FlaggerMoose',
+			'preferredName': 'Moose',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 11,
+			'name': 'FluffyPrower',
+			'preferredName': 'FluffyPrower',
+			'singles': false,
+			'seed': null
+		},
+		{
+			'id': 12,
+			'name': 'gecko376',
+			'preferredName': 'gecko',
+			'singles': false,
+			'seed': null
+		},
+		{
 			'id': 13,
-			'name': 'oshiimine',
-			'preferredName': 'oshiimine',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 14,
-			'name': 'shedd_',
-			'preferredName': 'shedd',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 15,
 			'name': 'Grimelios',
 			'preferredName': 'Grimelios',
 			'singles': true,
 			'seed': null
 		},
 		{
+			'id': 14,
+			'name': 'HydraSR',
+			'preferredName': 'Hydra',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 15,
+			'name': 'its_galaxy',
+			'preferredName': 'Galaxy',
+			'singles': true,
+			'seed': null
+		},
+		{
 			'id': 16,
-			'name': 'roryrai',
-			'preferredName': 'roryrai',
+			'name': 'j_halcyon',
+			'preferredName': 'j_halcyon',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 17,
-			'name': 'Synyadriel',
-			'preferredName': 'Synyadriel',
+			'name': 'jhobz296',
+			'preferredName': 'JHobz',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 18,
-			'name': 'TAS_Snoop',
-			'preferredName': 'Snoopy',
+			'name': 'Lacke',
+			'preferredName': 'lackedragon',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 19,
-			'name': 'TheFlyingMarlin',
-			'preferredName': 'TheFlyingMarlin',
-			'singles': true,
+			'name': 'Kirefel',
+			'preferredName': 'Kirefel',
+			'singles': false,
 			'seed': null
 		},
 		{
 			'id': 20,
-			'name': 'nfnite',
-			'preferredName': 'nfnite',
-			'singles': true,
+			'name': 'lhukblade',
+			'preferredName': 'Lhuk',
+			'singles': false,
 			'seed': null
 		},
 		{
 			'id': 21,
-			'name': 'Phant_TV',
-			'preferredName': 'Phant',
-			'singles': false,
+			'name': 'LostDedew',
+			'preferredName': 'Dedew',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 22,
+			'name': 'Lusther',
+			'preferredName': 'Lusther',
+			'singles': true,
 			'seed': null
 		},
 		{
@@ -182,320 +196,327 @@ export class Information {
 		},
 		{
 			'id': 24,
-			'name': 'Osey889',
-			'preferredName': 'Osey',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 25,
-			'name': 'trojandude12',
-			'preferredName': 'trojandude',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 26,
-			'name': 'cutieroo1',
-			'preferredName': 'Cutieroo',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 27,
-			'name': 'SmashyLe',
-			'preferredName': 'Smashy',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id': 28,
-			'name': 'MeldonTaragorn',
-			'preferredName': 'Meldon',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 29,
-			'name': 'HydraSR',
-			'preferredName': 'Hydra',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':30,
-			'name': 'Willson',
-			'preferredName': 'Willson',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':31,
-			'name': 'sloaters27',
-			'preferredName': 'sloaters',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':32,
-			'name': 'LostDedew',
-			'preferredName': 'Dedew',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':33,
-			'name': 'ogndrahcir',
-			'preferredName': 'Richard',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':34,
-			'name': 'Brynhold2',
-			'preferredName': 'Brynhold',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':35,
-			'name': 'rainbowpoogle',
-			'preferredName': 'rainbowpoogle',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':36,
-			'name': 'UncleRonny',
-			'preferredName': 'UncleRonny',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':37,
-			'name': 'ephpls',
-			'preferredName': 'Eph',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id':38,
-			'name': 'Lusther',
-			'preferredName': 'Lusther',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':39,
-			'name': 'FluffyPrower',
-			'preferredName': 'FluffyPrower',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id':40,
-			'name': 'MrGreez',
-			'preferredName': 'GreeZ',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':41,
-			'name': 'Mattermonkey',
-			'preferredName': 'Mattermonkey',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id':42,
 			'name': 'madinsane_',
 			'preferredName': 'madinsane',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id':43,
-			'name': 'Dr_Tuen',
-			'preferredName': 'Dr. Tuen',
+			'id': 25,
+			'name': 'Mattermonkey',
+			'preferredName': 'Mattermonkey',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id':44,
-			'name': 'j_halcyon',
-			'preferredName': 'j_halcyon',
+			'id': 26,
+			'name': 'MeldonTaragorn',
+			'preferredName': 'Meldon',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id':45,
-			'name': 'Lacke',
-			'preferredName': 'lackedragon',
+			'id': 27,
+			'name': 'MrGreez',
+			'preferredName': 'GreeZ',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id':46,
-			'name': 'lhukblade',
-			'preferredName': 'Lhuk',
+			'id': 28,
+			'name': 'nfnite',
+			'preferredName': 'nfnite',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 29,
+			'name': 'og1764',
+			'preferredName': 'og1764',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 30,
+			'name': 'ogndrahcir',
+			'preferredName': 'Richard',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 31,
+			'name': 'Osey889',
+			'preferredName': 'Osey',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 32,
+			'name': 'oshiimine',
+			'preferredName': 'oshiimine',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 33,
+			'name': 'Phant_TV',
+			'preferredName': 'Phant',
 			'singles': false,
 			'seed': null
 		},
 		{
-			'id':47,
-			'name': 'gecko376',
-			'preferredName': 'gecko',
+			'id': 34,
+			'name': 'rainbowpoogle',
+			'preferredName': 'rainbowpoogle',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 35,
+			'name': 'RebelWatt',
+			'preferredName': 'Rebel',
 			'singles': false,
 			'seed': null
 		},
 		{
-			'id':48,
+			'id': 36,
+			'name': 'RooseSR',
+			'preferredName': 'Roose',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 37,
+			'name': 'roryrai',
+			'preferredName': 'roryrai',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 38,
 			'name': 'SeaAverage',
 			'preferredName': 'SeaAverage',
 			'singles': true,
 			'seed': null
 		},
 		{
-			'id':49,
-			'name': 'Chicken_Supreme',
-			'preferredName': 'Chicken Supreme',
+			'id': 39,
+			'name': 'shedd_',
+			'preferredName': 'shedd',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 40,
+			'name': 'sigmasin',
+			'preferredName': 'sigma',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 41,
+			'name': 'Skulblaka17',
+			'preferredName': 'Skulblaka',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 42,
+			'name': 'sloaters27',
+			'preferredName': 'sloaters',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 43,
+			'name': 'SmashyLe',
+			'preferredName': 'Smashy',
 			'singles': false,
 			'seed': null
 		},
 		{
+			'id': 44,
+			'name': 'Synyadriel',
+			'preferredName': 'Synyadriel',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 45,
+			'name': 'TAS_Snoop',
+			'preferredName': 'Snoopy',
+			'singles': true,
+			'seed': null
+		},
+        {
+			'id': 46,
+			'name': 'Terra21',
+			'preferredName': 'Terra',
+			'singles': true,
+			'seed': null
+        },
+		{
+			'id': 47,
+			'name': 'TheFlyingMarlin',
+			'preferredName': 'TheFlyingMarlin',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 48,
+			'name': 'trojandude12',
+			'preferredName': 'trojandude',
+			'singles': true,
+			'seed': null
+		},
+		{
+			'id': 49,
+			'name': 'UncleRonny',
+			'preferredName': 'UncleRonny',
+			'singles': true,
+			'seed': null
+		},
+		{
 			'id': 50,
-			'name': 'its_galaxy',
-			'preferredName': 'Galaxy',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 51,
-			'name': 'FlaggerMoose',
-			'preferredName': 'Moose',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 52,
 			'name': 'Ushebti',
 			'preferredName': 'Ushebti',
 			'singles': true,
 			'seed': null
-		}
+		},
+        {
+            'id': 51,
+            'name': 'Vulajin',
+			'preferredName': 'Vulajin',
+			'singles': true,
+            'seed': null
+        },
+		{
+			'id': 52,
+			'name': 'Willson',
+			'preferredName': 'Willson',
+			'singles': true,
+			'seed': null
+		},
       ];
     
       teams: Array<any> = [
         {
 			'id': 1,
 			'name': 'Fanta Gin',
-			'p1Id': 1,
-			'p2Id': 21,
+			'p1Id': 51,
+			'p2Id': 33,
 			'seed': null
         },
 		{
-			'id': 3,
+			'id': 2,
 			'name': 'Team Duo Leaves',
-			'p1Id': 3,
-			'p2Id': 4,
+			'p1Id': 8,
+			'p2Id': 41,
+			'seed': null
+		},
+		{
+			'id': 3,
+			'name': 'That Is Still Faster',
+			'p1Id': 40,
+			'p2Id': 7,
 			'seed': null
 		},
 		{
 			'id': 4,
-			'name': 'That Is Still Faster',
-			'p1Id': 5,
-			'p2Id': 6,
+			'name': 'Asa Tims',
+			'p1Id': 17,
+			'p2Id': 35,
 			'seed': null
 		},
 		{
 			'id': 5,
-			'name': 'Asa Tims',
-			'p1Id': 9,
-			'p2Id': 10,
+			'name': 'Smasharoo',
+			'p1Id': 36,
+			'p2Id': 43,
 			'seed': null
 		},
 		{
 			'id': 6,
-			'name': 'Smasharoo',
-			'p1Id': 11,
-			'p2Id': 27,
+			'name': 'Team Heck',
+			'p1Id': 32,
+			'p2Id': 39,
 			'seed': null
 		},
 		{
 			'id': 7,
-			'name': 'Team Heck',
-			'p1Id': 13,
-			'p2Id': 14,
+			'name': 'Skillless',
+			'p1Id': 37,
+			'p2Id': 26,
 			'seed': null
 		},
 		{
 			'id': 8,
-			'name': 'Skillless',
-			'p1Id': 11,
-			'p2Id': 27,
+			'name': 'City Escape',
+			'p1Id': 5,
+			'p2Id': 48,
 			'seed': null
 		},
 		{
 			'id': 9,
-			'name': 'City Escape',
-			'p1Id': 25,
-			'p2Id': 26,
-			'seed': null
-		},
-		{
-			'id': 10,
 			'name': '3 HP Master Race',
-			'p1Id': 25,
-			'p2Id': 26,
-			'seed': null
-		},
-		{
-			'id': 11,
-			'name': 'Transatlantic',
-			'p1Id': 32,
-			'p2Id': 37,
-			'seed': null
-		},
-		{
-			'id': 12,
-			'name': 'TwiceTheBaguette',
-			'p1Id': 38,
-			'p2Id': 40,
-			'seed': null
-		},
-		{
-			'id': 13,
-			'name': 'Team BRB',
-			'p1Id': 39,
-			'p2Id': 42,
-			'seed': null
-		},
-		{
-			'id': 14,
-			'name': 'Infinity Death Gauntlet',
-			'p1Id': 43,
-			'p2Id': 44,
-			'seed': null
-		},
-		{
-			'id': 15,
-			'name': 'Lacked Lhuk',
-			'p1Id': 45,
-			'p2Id': 46,
-			'seed': null
-		},
-		{
-			'id': 16,
-			'name': 'Team Cockatrice',
-			'p1Id': 47,
+			'p1Id': 34,
 			'p2Id': 49,
 			'seed': null
 		},
 		{
-			'id': 17,
+			'id': 10,
+			'name': 'Transatlantic',
+			'p1Id': 21,
+			'p2Id': 9,
+			'seed': null
+		},
+		{
+			'id': 11,
+			'name': 'TwiceTheBaguette',
+			'p1Id': 22,
+			'p2Id': 27,
+			'seed': null
+		},
+		{
+			'id': 12,
+			'name': 'Team BRB',
+			'p1Id': 24,
+			'p2Id': 11,
+			'seed': null
+		},
+		{
+			'id': 13,
+			'name': 'Infinity Death Gauntlet',
+			'p1Id': 6,
+			'p2Id': 16,
+			'seed': null
+		},
+		{
+			'id': 14,
+			'name': 'Lacked Lhuk',
+			'p1Id': 18,
+			'p2Id': 20,
+			'seed': null
+		},
+		{
+			'id': 15,
+			'name': 'Team Cockatrice',
+			'p1Id': 12,
+			'p2Id': 2,
+			'seed': null
+		},
+		{
+			'id': 16,
 			'name': 'Slurp Squad',
-			'p1Id': 50,
-			'p2Id': 51,
+			'p1Id': 15,
+			'p2Id': 10,
+			'seed': null
+		},
+		{
+			'id': 17,
+			'name': 'Fellows',
+			'p1Id': 3,
+			'p2Id': 19,
 			'seed': null
 		}
 	];
