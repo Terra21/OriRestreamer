@@ -34,6 +34,13 @@ export class Information {
 
     players: Array<any> = [
 		{
+			'id': 0,
+			'name': 'Bye',
+			'preferredName': 'Bye',
+			'singles': true,
+			'seed': null
+		},
+		{
 			'id': 1,
 			'name': 'Brynhold2',
 			'preferredName': 'Brynhold',
@@ -287,8 +294,8 @@ export class Information {
 		},
 		{
 			'id': 37,
-			'name': 'roryrai',
-			'preferredName': 'roryrai',
+			'name': 'Roryrai',
+			'preferredName': 'Roryrai',
 			'singles': true,
 			'seed': null
 		},
@@ -402,6 +409,13 @@ export class Information {
       teams: Array<any> = [
 		{
 			'id': 1,
+			'name': 'Bye',
+			'p1Id': 1,
+			'p2Id': 2,
+			'seed': null
+		},
+		{
+			'id': 1,
 			'name': '3 HP Master Race',
 			'p1Id': 34,
 			'p2Id': 49,
@@ -430,7 +444,7 @@ export class Information {
 		},
 		{
 			'id': 5,
-			'name': 'Infinity Death Gauntlet',
+			'name': '∞ Death Gauntlet',
 			'p1Id': 6,
 			'p2Id': 16,
 			'seed': null

@@ -153,21 +153,21 @@
 			<span><b>Singles</b></span>
 		</div>
 		<div *ngFor="let p of vm.players">
-			<span *ngIf="p.singles && p.id < 30">
+			<span *ngIf="p.singles && p.id < 29">
 				<input style="text-shadow: none;" type="button" value="+" (click)="addRemovePlayer($event, p.id, p.name)" />
 				<span>{{ p.name }}</span>
 			</span>
 		</div>
 	</span>
-	<span style="width: 300px; position: absolute; top: 0; left: 400px;">
+	<span style="width: 300px; position: absolute; top: 0; left: 300px;">
 		<div *ngFor="let p of vm.players">
-			<span *ngIf="p.singles && p.id >= 30">
+			<span *ngIf="p.singles && p.id >= 29">
 				<input style="text-shadow: none;" type="button" value="+" (click)="addRemovePlayer($event, p.id, p.name)" />
 				<span>{{ p.name }}</span>
 			</span>
 		</div>
 	</span>
-	<span style="position: absolute; top: 0; left: 800px; width: 200px; background-color: #181819 ">	
+	<span style="position: absolute; top: 0; left: 500px; width: 200px; background-color: #181819 ">	
 		<div>
 			<span><b>Doubles</b></span>
 		</div>		
@@ -177,17 +177,14 @@
 				<span>{{ p.name }}</span>
 			</span>
 		</div>
-		<div style="margin-top: 75px">
-			<span>Click the names as they appear on the reveal stream! No need to press update stream button</span>
-		</div>
 	</span>
-	<span style="position: absolute; top: 0; left: 1100px; width: 400px; background-color: #181819 ">
+	<span style="position: absolute; top: 0; left: 700px; width: 400px; background-color: #181819 ">
 		<input type="button" class="btn btn-warning r14 c7 col-1" value="RESET" (click)="resetSwiss()" />
 	</span>
-	<span style="position: absolute; top: 500px; left: 400px; width: 400px; background-color: #181819 ">
+	<span style="position: absolute; top: 520px; left: 300px; width: 400px; background-color: #181819 ">
 		<input type="button" class="btn btn-warning r14 c7 col-1" value="UNDO SINGLES" (click)="undoSwissSingles()" />
 	</span>
-	<span style="position: absolute; top: 200px; left: 1100px; width: 400px; background-color: #181819 ">
+	<span style="position: absolute; top: 520px; left: 500px; width: 400px; background-color: #181819 ">
 		<input type="button" class="btn btn-warning r14 c7 col-1" value="UNDO DOUBLES" (click)="undoSwissDoubles()" />
 	</span>
 </div>

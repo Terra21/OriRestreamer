@@ -7,82 +7,80 @@ import * as $ from 'jquery';
 import { Socket } from 'net';
 
 @Component({
-  templateUrl: './splash.html',
-  styleUrls: ['./splash.css']
+	templateUrl: './splash.html',
+	styleUrls: ['./splash.css']
 })
 
 export class SplashCMP {
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(){
-    this.socket.on('data', function(data: Information){
-      if(data.seed !== this.seed)
-        return;
+	ngOnInit(){
+		this.socket.on('data', function(data: Information){
+			if(data.seed !== this.seed)
+				return;
 
-      this.vm = data;
+			this.vm = data;
 
-      //Singles
-      if(this.vm.tournament == 1) {
-        this.opponent1 = this.vm.player1;
-        this.opponent2 = this.vm.player2;
-      } 
-      //Doubles
-      else if(this.vm.tournament == 2 ) {
-        let team1 = this.getTeamById(this.vm.team1Id);
-        this.opponent1 = team1.name + ' ('+ this.getPlayerById(team1.p1Id) + ', ' + this.getPlayerById(team1.p2Id) + ')';
+			//Singles
+			if(this.vm.tournament == 1) {
+				this.opponent1 = this.vm.player1;
+				this.opponent2 = this.vm.player2;
+			} 
+			//Doubles
+			else if(this.vm.tournament == 2 ) {
+				let team1 = this.getTeamById(this.vm.team1Id);
+				this.opponent1 = team1.name + ' ('+ this.getPlayerById(team1.p1Id) + ', ' + this.getPlayerById(team1.p2Id) + ')';
 
-        let team2 = this.getTeamById(this.vm.team2Id);
-        this.opponent2 = team2.name;
-      }
+				let team2 = this.getTeamById(this.vm.team2Id);
+				this.opponent2 = team2.name;
+			}
 
-      this.debug();
-    }.bind(this));
+			this.debug();
+		}.bind(this));
 
-    this.debug();
-  }
+		this.debug();
+	}
 
+	debug() {
+		//Singles
+		if(this.vm.tournament == 1) {
+			this.opponent1 = this.vm.player1;
+			this.opponent2 = this.vm.player2;
+		} 
+		//Doubles
+		else if(this.vm.tournament == 2 ) {
+			let team1 = this.getTeamById(this.vm.team1Id);
+			this.opponent1 = team1.name;
+			this.players1 = '('+ this.getPlayerById(team1.p1Id).preferredName + ', ' + this.getPlayerById(team1.p2Id).preferredName + ')';
+			this.opponent1Seed = team1.seed;
 
-  debug() {
-    
-      //Singles
-      if(this.vm.tournament == 1) {
-        this.opponent1 = this.vm.player1;
-        this.opponent2 = this.vm.player2;
-      } 
-      //Doubles
-      else if(this.vm.tournament == 2 ) {
-        let team1 = this.getTeamById(this.vm.team1Id);
-        this.opponent1 = team1.name;
-        this.players1 = '('+ this.getPlayerById(team1.p1Id).preferredName + ', ' + this.getPlayerById(team1.p2Id).preferredName + ')';
-        this.opponent1Seed = team1.seed;
+			let team2 = this.getTeamById(this.vm.team2Id);
+			this.opponent2 = team2.name;
+			this.players2 = '('+ this.getPlayerById(team2.p1Id).preferredName + ', ' + this.getPlayerById(team2.p2Id).preferredName + ')';
+			this.opponent2Seed = team2.seed;
+		}
+	}
+	
+	getPlayerById(id: number) {
+		return  jQuery.grep(this.vm.players, function(n: any, i) {
+				return n.id == id;
+		}.bind(this))[0];
+	}
 
-        let team2 = this.getTeamById(this.vm.team2Id);
-        this.opponent2 = team2.name;
-        this.players2 = '('+ this.getPlayerById(team2.p1Id).preferredName + ', ' + this.getPlayerById(team2.p2Id).preferredName + ')';
-        this.opponent2Seed = team2.seed;
-      }
-  }
-  
-  getPlayerById(id: number) {
-    return  jQuery.grep(this.vm.players, function(n: any, i) {
-        return n.id == id;
-    }.bind(this))[0];
-  }
+	getTeamById(id: number) {
+			return  jQuery.grep(this.vm.teams, function(n: any, i) {
+					return n.id == id;
+			}.bind(this))[0];
+	}
 
-  getTeamById(id: number) {
-      return  jQuery.grep(this.vm.teams, function(n: any, i) {
-          return n.id == id;
-      }.bind(this))[0];
-  }
+	public vm: Information = new Information();
 
-  public vm: Information = new Information();
-
-  socket: any = io.connect(environment.socketPath);
-  seed: string = window.location.href.split('=')[1];
-  opponent1: string;
-  opponent2: string;
-  opponent1Seed: string;
-  opponent2Seed: string;
-  players1: string;
-  players2: string;
+	socket: any = io.connect(environment.socketPath);
+	seed: string = window.location.href.split('=')[1];
+	opponent1: string;
+	opponent2: string;
+	opponent1Seed: string;
+	opponent2Seed: string;
+	players1: string;
+	players2: string;
 }
