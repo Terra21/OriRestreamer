@@ -71,6 +71,18 @@
     text-shadow: none;
 }
 
+.finishTimeDraw {
+    position: absolute;
+    top: 0;
+    left: -372px;
+    height: 75px;
+    width: 372px;
+    background: rgb(142, 142, 142);
+    transition: 1s;
+    color: #ffffff;
+    text-shadow: none;
+}
+
 .team-winner {
     transition: 1s;
     left: 0;

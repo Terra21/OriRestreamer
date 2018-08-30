@@ -45,10 +45,10 @@ export class Stream4WayCMP {
 		this.player3 = this.getPlayerById(team2.p1Id);
 		this.player4 = this.getPlayerById(team2.p2Id);
 
-		if(data.team1_FinishTime > 0)
+		if(this.vm.team1_FinishTime > 0)
 			this.team1FinishTime = moment().startOf('day').seconds((data.team1_FinishTime)).format('H:mm:ss');
 
-		if(data.team2_FinishTime > 0)
+		if(this.vm.team2_FinishTime > 0)
 			this.team2FinishTime = moment().startOf('day').seconds((data.team2_FinishTime)).format('H:mm:ss');
 
 			console.log(data.team1_FinishTime);

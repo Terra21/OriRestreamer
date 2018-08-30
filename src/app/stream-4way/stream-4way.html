@@ -10,6 +10,8 @@
             class="finishTimeWinner">Winner: {{ team1FinishTime }} (avg)</div>
         <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) }"
             class="finishTimeLoser">{{ team1FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime == vm.team1_FinishTime && (vm.team1_FinishTime != 0 && vm.team2_FinishTime != 0)) }"
+            class="finishTimeDraw">{{ team1FinishTime }} (avg)</div>
     </div>
     
     <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }" 
@@ -75,7 +77,9 @@
         <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"
             class="finishTimeWinner">Winner: {{ team2FinishTime }} (avg)</div>
         <div [ngClass]="{ 'team-winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) }"
-                class="finishTimeLoser">{{ team2FinishTime }} (avg)</div>
+            class="finishTimeLoser">{{ team2FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime == vm.team1_FinishTime && (vm.team2_FinishTime != 0 && vm.team1_FinishTime != 0)) }"
+            class="finishTimeDraw">{{ team2FinishTime }} (avg)</div>
     </div>
     
     <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"  
