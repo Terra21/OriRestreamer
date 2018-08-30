@@ -30,8 +30,11 @@
         <div class="singles">
             <b>Singles</b>
             <div *ngFor="let v of singlesMatchups">
+                <div class="seperator"></div>
                 <span *ngIf="v.p1">
-                    {{ v.p1 }} vs {{ v.p2 }}
+                    <div style="float: left; text-align: right; width: 164px;">{{ v.p1 }}</div> 
+                    <div style="float: left; width: 39px;">vs</div> 
+                    <div style="float: left; text-align: left; width: 164px;">{{ v.p2 }}</div>
                 </span>
             </div>
         </div>
@@ -39,8 +42,11 @@
         <div class="doubles">
             <b>Doubles</b>
             <div *ngFor="let v of doublesMatchups">
+                <div class="seperator"></div>
                 <span *ngIf="v.p1">
-                    {{ v.p1 }} vs {{ v.p2 }}
+                    <div style="float: left; text-align: right; width: 164px;">{{ v.p1 }}</div> 
+                    <div style="float: left; width: 39px;">vs</div> 
+                    <div style="float: left; text-align: left; width: 164px;">{{ v.p2 }}</div>
                 </span>
             </div>
         </div>

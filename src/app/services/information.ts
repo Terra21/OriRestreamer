@@ -107,14 +107,14 @@ export class Information {
 			'id': 11,
 			'name': 'FluffyPrower',
 			'preferredName': 'FluffyPrower',
-			'singles': false,
+			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 12,
 			'name': 'gecko376',
 			'preferredName': 'gecko',
-			'singles': false,
+			'singles': true,
 			'seed': null
 		},
 		{
@@ -400,123 +400,124 @@ export class Information {
       ];
     
       teams: Array<any> = [
-        {
+		{
 			'id': 1,
-			'name': 'Fanta Gin',
-			'p1Id': 51,
-			'p2Id': 33,
-			'seed': null
-        },
-		{
-			'id': 2,
-			'name': 'Team Duo Leaves',
-			'p1Id': 8,
-			'p2Id': 41,
-			'seed': null
-		},
-		{
-			'id': 3,
-			'name': 'That Is Still Faster',
-			'p1Id': 40,
-			'p2Id': 7,
-			'seed': null
-		},
-		{
-			'id': 4,
-			'name': 'Asa Tims',
-			'p1Id': 17,
-			'p2Id': 35,
-			'seed': null
-		},
-		{
-			'id': 5,
-			'name': 'Smasharoo',
-			'p1Id': 36,
-			'p2Id': 43,
-			'seed': null
-		},
-		{
-			'id': 6,
-			'name': 'Team Heck',
-			'p1Id': 32,
-			'p2Id': 39,
-			'seed': null
-		},
-		{
-			'id': 7,
-			'name': 'Skillless',
-			'p1Id': 37,
-			'p2Id': 26,
-			'seed': null
-		},
-		{
-			'id': 8,
-			'name': 'City Escape',
-			'p1Id': 5,
-			'p2Id': 48,
-			'seed': null
-		},
-		{
-			'id': 9,
 			'name': '3 HP Master Race',
 			'p1Id': 34,
 			'p2Id': 49,
 			'seed': null
 		},
 		{
-			'id': 10,
-			'name': 'Transatlantic',
-			'p1Id': 21,
-			'p2Id': 9,
+			'id': 2,
+			'name': 'Asa Tims',
+			'p1Id': 17,
+			'p2Id': 35,
+			'seed': null
+		},
+        {
+			'id': 3,
+			'name': 'Fanta Gin',
+			'p1Id': 51,
+			'p2Id': 33,
 			'seed': null
 		},
 		{
-			'id': 11,
-			'name': 'TwiceTheBaguette',
-			'p1Id': 22,
-			'p2Id': 27,
+			'id': 4,
+			'name': 'Fellows',
+			'p1Id': 3,
+			'p2Id': 19,
 			'seed': null
 		},
 		{
-			'id': 12,
-			'name': 'Team BRB',
-			'p1Id': 24,
-			'p2Id': 11,
-			'seed': null
-		},
-		{
-			'id': 13,
+			'id': 5,
 			'name': 'Infinity Death Gauntlet',
 			'p1Id': 6,
 			'p2Id': 16,
 			'seed': null
 		},
 		{
-			'id': 14,
+			'id': 6,
 			'name': 'Lacked Lhuk',
 			'p1Id': 18,
 			'p2Id': 20,
 			'seed': null
 		},
 		{
-			'id': 15,
-			'name': 'Team Cockatrice',
-			'p1Id': 12,
-			'p2Id': 2,
-			'seed': null
-		},
-		{
-			'id': 16,
+			'id': 7,
 			'name': 'Slurp Squad',
 			'p1Id': 15,
 			'p2Id': 10,
 			'seed': null
 		},
 		{
+			'id': 8,
+			'name': 'Team BRB',
+			'p1Id': 24,
+			'p2Id': 11,
+			'seed': null
+		},
+		{
+			'id': 9,
+			'name': 'Team City Escape',
+			'p1Id': 5,
+			'p2Id': 48,
+			'seed': null
+		},
+		
+		{
+			'id': 10,
+			'name': 'Team Cockatrice',
+			'p1Id': 12,
+			'p2Id': 2,
+			'seed': null
+		},
+		{
+			'id': 11,
+			'name': 'Team Duo Leaves',
+			'p1Id': 8,
+			'p2Id': 41,
+			'seed': null
+		},
+		{
+			'id': 12,
+			'name': 'Team Heck',
+			'p1Id': 32,
+			'p2Id': 39,
+			'seed': null
+		},
+		{
+			'id': 13,
+			'name': 'Team Skillless',
+			'p1Id': 37,
+			'p2Id': 26,
+			'seed': null
+		},
+		{
+			'id': 14,
+			'name': 'Team Smasharoo',
+			'p1Id': 36,
+			'p2Id': 43,
+			'seed': null
+		},
+		{
+			'id': 15,
+			'name': 'Team Transatlantic',
+			'p1Id': 21,
+			'p2Id': 9,
+			'seed': null
+		},
+		{
+			'id': 16,
+			'name': 'That Is Still Faster',
+			'p1Id': 40,
+			'p2Id': 7,
+			'seed': null
+		},
+		{
 			'id': 17,
-			'name': 'Fellows',
-			'p1Id': 3,
-			'p2Id': 19,
+			'name': 'TwiceTheBaguette',
+			'p1Id': 22,
+			'p2Id': 27,
 			'seed': null
 		}
 	];
