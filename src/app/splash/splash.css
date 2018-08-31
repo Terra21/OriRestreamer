@@ -51,7 +51,7 @@ div {
 
 .logo {
     position: absolute;
-    bottom: 50px;
+    bottom: -75px;
     left: 50px;
 }
 
@@ -61,3 +61,6 @@ div {
     left: 500px;
 }
 
+video {
+    background: transparent;
+}
