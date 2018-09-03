@@ -16,13 +16,13 @@ export class Information {
     player1_stats: number = 0;
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
-    commentators: string = 'Mattermonkey, TheFlyingMarlin';
+    commentators: string = '';
     background: string = 'iceless';
-    groupName: string = 'Swiss - Round 3';
-    matchType: string = this.groupName + ' (2-0)';
+    groupName: string = 'Swiss - Round 1';
+    matchType: string = this.groupName + ' (0-0)';
     zoomBracket: boolean = false;
     bestOf: number = 1;
-    tournament: number = 3;
+    tournament: number = 1;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
@@ -84,7 +84,7 @@ export class Information {
 		},
 		{
 			'id': 7,
-			'name': 'du_raziel',
+			'name': 'IMRaziel',
 			'preferredName': 'Raziel',
 			'singles': true,
 			'seed': null
@@ -105,7 +105,7 @@ export class Information {
 		},
 		{
 			'id': 10,
-			'name': 'FlaggerMoose',
+			'name': 'MooseSR',
 			'preferredName': 'Moose',
 			'singles': true,
 			'seed': null
@@ -140,8 +140,8 @@ export class Information {
 		},
 		{
 			'id': 15,
-			'name': 'its_galaxy',
-			'preferredName': 'Galaxy',
+			'name': 'its_galaxi',
+			'preferredName': 'Galaxi',
 			'singles': true,
 			'seed': null
 		},
@@ -161,8 +161,8 @@ export class Information {
 		},
 		{
 			'id': 18,
-			'name': 'Lacke',
-			'preferredName': 'lackedragon',
+			'name': 'lackedragon',
+			'preferredName': 'Lacke',
 			'singles': true,
 			'seed': null
 		},
@@ -217,7 +217,7 @@ export class Information {
 		},
 		{
 			'id': 26,
-			'name': 'MeldonTaragorn',
+			'name': 'MeldonTaragon',
 			'preferredName': 'Meldon',
 			'singles': true,
 			'seed': null
@@ -408,7 +408,7 @@ export class Information {
     
       teams: Array<any> = [
 		{
-			'id': 1,
+			'id': 0,
 			'name': 'Bye',
 			'p1Id': 1,
 			'p2Id': 2,
@@ -515,7 +515,7 @@ export class Information {
 		},
 		{
 			'id': 15,
-			'name': 'Team Transatlantic',
+			'name': 'HalfTheBaguette',
 			'p1Id': 21,
 			'p2Id': 9,
 			'seed': null

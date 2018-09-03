@@ -46,7 +46,12 @@
     position: relative;
 }
 
+
 .finishTimeWinner {
+    color: rgba(0,0,0,0.8);
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    text-shadow: none;
     position: absolute;
     top: 0;
     left: -372px;
@@ -54,24 +59,13 @@
     width: 372px;
     background:  rgb(255, 217, 0);
     transition: 1s;
-    color: #ffffff;
-    text-shadow:
-    0px 0px 6px #000;
-}
-
-.finishTimeLoser {
-    position: absolute;
-    top: 0;
-    left: -372px;
-    height: 75px;
-    width: 372px;
-    background: rgb(52, 91, 187);
-    transition: 1s;
-    color: #ffffff;
-    text-shadow: none;
 }
 
 .finishTimeDraw {
+    color: rgba(0,0,0,0.8);
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    text-shadow: none;
     position: absolute;
     top: 0;
     left: -372px;
@@ -79,8 +73,20 @@
     width: 372px;
     background: rgb(142, 142, 142);
     transition: 1s;
-    color: #ffffff;
+}
+
+.finishTimeLoser {
+    color: rgba(0,0,0,0.8);
+    font-family: 'Segoe UI';
+    font-weight: bold;
     text-shadow: none;
+    position: absolute;
+    top: 0;
+    left: -372px;
+    height: 75px;
+    width: 372px;
+    background: rgb(52, 91, 187);
+    transition: 1s;
 }
 
 .team-winner {

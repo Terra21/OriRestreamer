@@ -343,10 +343,6 @@ public set seed(seed: string){
 	{
 		name: 'Doubles',
 		value: 2
-	},
-	{
-		name: 'Swiss Reveal',
-		value: 3
 	}];
 
 	stats = [{
