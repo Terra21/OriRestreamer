@@ -82,8 +82,9 @@
 		
 			<hr class="spacer r7 c1" />
 
-			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c1">PLAYER 1 - Wins:
-				<input class="p1Wins" type="number" [(ngModel)]="p1_wins" />
+			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c1">
+				PLAYER 1 <span *ngIf="vm.bestOf > 1"> - Wins: 
+				<input class="p1Wins" type="number" [(ngModel)]="p1_wins" /></span>
 			</div>
 			<label *ngIf="vm.tournament == 1" class="label r9 c1" for="p1Name">Name</label>
 			<input *ngIf="vm.tournament == 1" id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
@@ -97,9 +98,13 @@
 			<input *ngIf="vm.tournament == 1" id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
 			<!-- <input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" /> -->
 			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
-	
-			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c5">PLAYER 2 - Wins:
-				<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
+			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c4 col-1" value="RESET AVERAGE" (click)="resetAverage()" />
+
+			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c5">
+				PLAYER 2 
+				<span  *ngIf="vm.bestOf > 1"> - Wins:
+					<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
+				</span>
 			</div>
 			<label *ngIf="vm.tournament == 1" class="label r9 c5" for="p2Name">Name</label>
 			<input *ngIf="vm.tournament == 1" id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
@@ -112,18 +117,23 @@
 			<label *ngIf="vm.tournament == 1" class="label r11 c5" for="p2Seed">Seed</label>
 			<input *ngIf="vm.tournament == 1" id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
 			<!-- <input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" /> -->
-			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c7 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
 	
-			<div *ngIf="vm.tournament == 2" class="col-4 center label-big players r13 c1">TEAM 1 - Wins:
-				<input class="p1Wins" type="number" [(ngModel)]="p1_wins" />
+			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c1">
+				TEAM 1 
+				<span *ngIf="vm.bestOf > 1"> - Wins:
+					<input class="p1Wins" type="number" [(ngModel)]="p1_wins" />
+				</span>
 			</div>
 			<label *ngIf="vm.tournament == 2" class="label r14 c1" for="t1Id">Name</label>
 			<select *ngIf="vm.tournament == 2" class="twitch r14 c2" [(ngModel)]="t1Id">
 				<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
 			</select>
 	
-			<div *ngIf="vm.tournament == 2" class="col-4 center label-big players r13 c5">TEAM 2 - Wins:
-				<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
+			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c5">
+				TEAM 2 
+				<span *ngIf="vm.bestOf > 1">  - Wins:
+					<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
+				</span>
 			</div>
 			<label *ngIf="vm.tournament == 2" class="label r14 c5" for="t2Id">Name</label>
 			<select *ngIf="vm.tournament == 2" class="twitch r14 c6" [(ngModel)]="t2Id">

@@ -60,11 +60,20 @@ export class ControlsCMP {
 		this.socket.emit('data', this.vm);
 	}
 
+	resetAverage() {
+		this.vm.team1_FinishTime = 0;
+		this.vm.team2_FinishTime = 0;
+		this.t1P1_Time = "0:00:00";
+		this.t1P2_Time = "0:00:00";
+		this.t2P1_Time = "0:00:00";
+		this.t2P2_Time = "0:00:00";
+
+		this.socket.emit('data', this.vm);
+	}
+
 	calcAverage() {
 		this.calcTeam1Average();
 		this.calcTeam2Average();
-
-		console.log('Done');
 
 		this.socket.emit('data', this.vm);
 	}
