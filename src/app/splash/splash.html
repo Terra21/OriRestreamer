@@ -17,12 +17,12 @@
     <div class="matchup-doubles" *ngIf="vm.tournament == 2">
         <div>
             <span *ngIf="opponent1Seed">({{ opponent1Seed }})</span> {{ opponent1 }}
-            <span *ngIf="players1"><br />{{ players1 }}</span>
+            <span class="players" *ngIf="players1"><br />{{ players1 }}</span>
         </div>
         <div>vs</div>
         <div>
             <span *ngIf="opponent2Seed">({{ opponent2Seed }})</span> {{ opponent2 }}
-            <span *ngIf="players2"><br />{{ players2 }}</span>
+            <span class="players" *ngIf="players2"><br />{{ players2 }}</span>
         </div>
     </div>
 
