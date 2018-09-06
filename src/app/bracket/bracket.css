@@ -1,11 +1,16 @@
+@font-face{
+    font-family: "Gara";
+    src: url('../../assets/belleza-regular.ttf') format("truetype")
+}
+
 .container {
-	position: absolute; /* Fix for <body>'s unremovable margin by user agent */
-	font-family: "Angie";
-	font-size: 32px;
-	line-height: 32px;
-	color: white;
-	width: 1920px;
+    font-family: "Gara";
+    font-size: 24px;
+    color: white;
+    width: 1920px;
 	height: 1080px;
+    background-size: 1920px 1080px;
+    background-color: rgba(0,0,0,0.15)
 }
 
 .ui {
@@ -20,11 +25,17 @@ header {
 	font-size: 56px;
 	margin: 10px;
 	align-items: center;
+	margin-top: -100px;
+	margin-left: -60px;
 }
 
 header > div,
 header > img {
 	display: inline-block;
+}
+
+header > div {
+	margin-left: -50px;
 }
 
 .logo {
