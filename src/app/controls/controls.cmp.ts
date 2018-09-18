@@ -103,6 +103,21 @@ export class ControlsCMP {
 		}
 	}
 
+	player1Winner() {
+		this.vm.soloWinner = 1;
+		this.socket.emit('data', this.vm);
+	}
+
+	player2Winner() {
+		this.vm.soloWinner = 2;
+		this.socket.emit('data', this.vm);
+	}
+
+	resetWinner() {
+		this.vm.soloWinner = 0;
+		this.socket.emit('data', this.vm);
+	}
+
 	addRemovePlayer(event: any, id: number, name: string){
 		this.socket.emit('swissPlayerSelected', this.vm, id, event.target.checked);
 	}

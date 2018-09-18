@@ -20,6 +20,8 @@
 				</select><br>
 			</div>
 		<input type="button" class="btn col-1 update r2 c4" (click)="updateInfo()" value="UPDATE STREAM INFO" />
+		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r2 c5 col-1" value="RESET WINNERS" (click)="resetWinner()" />
+		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r2 c5 col-1" value="RESET AVERAGE" (click)="resetAverage()" />
 
 	</div>
     <div class="container main-controls" *ngIf="vm.tournament == 1 || vm.tournament == 2"  >
@@ -96,9 +98,9 @@
 	
 			<label *ngIf="vm.tournament == 1" class="label r11 c1" for="p1Seed">Seed</label>
 			<input *ngIf="vm.tournament == 1" id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
-			<!-- <input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" /> -->
+			<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
+			<label *ngIf="vm.tournament == 1" class="label r11 c4">This will display winner on splash screen</label>
 			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
-			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c4 col-1" value="RESET AVERAGE" (click)="resetAverage()" />
 
 			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c5">
 				PLAYER 2 
@@ -116,7 +118,7 @@
 	
 			<label *ngIf="vm.tournament == 1" class="label r11 c5" for="p2Seed">Seed</label>
 			<input *ngIf="vm.tournament == 1" id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
-			<!-- <input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" /> -->
+			<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
 	
 			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c1">
 				TEAM 1 

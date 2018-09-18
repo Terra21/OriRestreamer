@@ -22,7 +22,7 @@ export class Information {
     matchType: string = this.groupName + ' (0-0)';
     zoomBracket: boolean = false;
     bestOf: number = 1;
-    tournament: number = 1;
+    tournament: number = 2;
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
@@ -31,6 +31,8 @@ export class Information {
 	team2Id: number = 3;
 	team1_FinishTime: number = 0;
 	team2_FinishTime: number = 0;
+
+	soloWinner: number = 0;
 
     players: Array<any> = [
 		{

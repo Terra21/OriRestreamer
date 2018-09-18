@@ -29,9 +29,10 @@
 	    </div>
 	</div>
 
-    <div class="stream-placeholder">
+    <div [ngClass]="{ 'winner': vm.soloWinner == 1, 'stream-placeholder': vm.soloWinner != 1 }">
     </div>
-    <div class="stream-placeholder">
+
+    <div [ngClass]="{ 'winner': vm.soloWinner == 2, 'stream-placeholder': vm.soloWinner != 2 }">
     </div>
 
     <div class="stats-container">

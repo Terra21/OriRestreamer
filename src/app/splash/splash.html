@@ -6,22 +6,26 @@
         Swiss Reveal
     </div>
     <div class="matchup" *ngIf="vm.tournament == 1">
-        <div>
+        <div [ngClass]="{ 'winner': vm.soloWinner == 1 }">
             <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ opponent1 }}
+            <span *ngIf="vm.soloWinner == 1">(Winner)</span>
         </div>
         <div>vs</div>
-        <div>
+        <div [ngClass]="{ 'winner': vm.soloWinner == 2 }">
             <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ opponent2 }}
+            <span *ngIf="vm.soloWinner == 2">(Winner)</span>
         </div>
     </div>
     <div class="matchup-doubles" *ngIf="vm.tournament == 2">
-        <div>
+        <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }">
             <span *ngIf="opponent1Seed">({{ opponent1Seed }})</span> {{ opponent1 }}
+            <span *ngIf="(vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)">(Winner)</span>
             <span class="players" *ngIf="players1"><br />{{ players1 }}</span>
         </div>
         <div>vs</div>
-        <div>
+        <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)}" >
             <span *ngIf="opponent2Seed">({{ opponent2Seed }})</span> {{ opponent2 }}
+            <span *ngIf="(vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)">(Winner)</span>
             <span class="players" *ngIf="players2"><br />{{ players2 }}</span>
         </div>
     </div>
