@@ -122,7 +122,7 @@ export class Information {
 		{
 			'id': 12,
 			'name': 'gecko376',
-			'preferredName': 'gecko',
+			'preferredName': 'Gecko',
 			'singles': true,
 			'seed': null
 		},
@@ -150,7 +150,7 @@ export class Information {
 		{
 			'id': 16,
 			'name': 'j_halcyon',
-			'preferredName': 'j_halcyon',
+			'preferredName': 'J_Halcyon',
 			'singles': true,
 			'seed': null
 		},
@@ -206,7 +206,7 @@ export class Information {
 		{
 			'id': 24,
 			'name': 'madinsane_',
-			'preferredName': 'madinsane',
+			'preferredName': 'Madinsane',
 			'singles': true,
 			'seed': null
 		},
@@ -234,20 +234,20 @@ export class Information {
 		{
 			'id': 28,
 			'name': 'nfnite',
-			'preferredName': 'nfnite',
+			'preferredName': 'Nfnite',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 29,
 			'name': 'og1764',
-			'preferredName': 'og1764',
+			'preferredName': 'Og1764',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 30,
-			'name': 'ogndrahcir',
+			'name': 'ogNdrahciR',
 			'preferredName': 'Richard',
 			'singles': true,
 			'seed': null
@@ -262,7 +262,7 @@ export class Information {
 		{
 			'id': 32,
 			'name': 'oshiimine',
-			'preferredName': 'oshiimine',
+			'preferredName': 'Oshiimine',
 			'singles': true,
 			'seed': null
 		},
@@ -275,8 +275,8 @@ export class Information {
 		},
 		{
 			'id': 34,
-			'name': 'rainbowpoogle',
-			'preferredName': 'rainbowpoogle',
+			'name': 'RainbowPoogle',
+			'preferredName': 'RainbowPoogle',
 			'singles': true,
 			'seed': null
 		},
@@ -311,14 +311,14 @@ export class Information {
 		{
 			'id': 39,
 			'name': 'shedd_',
-			'preferredName': 'shedd',
+			'preferredName': 'Shedd',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 40,
 			'name': 'sigmasin',
-			'preferredName': 'sigma',
+			'preferredName': 'Sigma',
 			'singles': true,
 			'seed': null
 		},
@@ -332,7 +332,7 @@ export class Information {
 		{
 			'id': 42,
 			'name': 'sloaters27',
-			'preferredName': 'sloaters',
+			'preferredName': 'Sloaters',
 			'singles': true,
 			'seed': null
 		},
@@ -374,7 +374,7 @@ export class Information {
 		{
 			'id': 48,
 			'name': 'trojandude12',
-			'preferredName': 'trojandude',
+			'preferredName': 'Trojandude',
 			'singles': true,
 			'seed': null
 		},
