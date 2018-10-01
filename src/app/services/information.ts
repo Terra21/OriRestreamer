@@ -52,7 +52,7 @@ export class Information {
 		},
 		{
 			'id': 2,
-			'name': 'Chicken_Supreme',
+			'name': 'chicken_supreme',
 			'preferredName': 'Chicken Supreme',
 			'singles': false,
 			'seed': null
@@ -73,8 +73,8 @@ export class Information {
 		},
 		{
 			'id': 5,
-			'name': 'cutieroo1',
-			'preferredName': 'Cutieroo',
+			'name': 'Cutieroo1',
+			'preferredName': 'Roo',
 			'singles': true,
 			'seed': null
 		},
@@ -143,28 +143,28 @@ export class Information {
 		},
 		{
 			'id': 15,
-			'name': 'its_galaxi',
+			'name': 'Its_Galaxi',
 			'preferredName': 'Galaxi',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 16,
-			'name': 'j_halcyon',
-			'preferredName': 'j_halcyon',
+			'name': 'J_Halcyon',
+			'preferredName': 'Hal',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 17,
-			'name': 'jhobz296',
+			'name': 'JHobz296',
 			'preferredName': 'JHobz',
 			'singles': true,
 			'seed': null
 		},
 		{
 			'id': 18,
-			'name': 'lackedragon',
+			'name': 'LackeDragon',
 			'preferredName': 'Lacke',
 			'singles': true,
 			'seed': null
@@ -178,7 +178,7 @@ export class Information {
 		},
 		{
 			'id': 20,
-			'name': 'lhukblade',
+			'name': 'LhukBlade',
 			'preferredName': 'Lhuk',
 			'singles': false,
 			'seed': null
@@ -248,7 +248,7 @@ export class Information {
 		},
 		{
 			'id': 30,
-			'name': 'ogndrahcir',
+			'name': 'ogNdrahciR',
 			'preferredName': 'Richard',
 			'singles': true,
 			'seed': null
@@ -276,8 +276,8 @@ export class Information {
 		},
 		{
 			'id': 34,
-			'name': 'rainbowpoogle',
-			'preferredName': 'rainbowpoogle',
+			'name': 'RainbowPoogle',
+			'preferredName': 'Poogle',
 			'singles': true,
 			'seed': null
 		},
@@ -318,8 +318,8 @@ export class Information {
 		},
 		{
 			'id': 40,
-			'name': 'sigmasin',
-			'preferredName': 'sigma',
+			'name': 'Sigmasin',
+			'preferredName': 'Sigma',
 			'singles': true,
 			'seed': null
 		},
