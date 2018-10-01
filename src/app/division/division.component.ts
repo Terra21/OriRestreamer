@@ -73,41 +73,18 @@ export class DivisionComponent implements OnInit {
 	  this.division.name = this.name;
 
       switch (this.name){
-        case 'Reem':
-          divCols = 'B6:X19';
-		  this.shouldMirror = false;
+        case 'SinglesL':
+          	divCols = 'B6:P19';
+		    this.shouldMirror = false;
           break;
-        case 'Ano':
-          divCols = 'B128:X142';
-		  this.shouldMirror = true;
+        case 'SinglesR':
+        	divCols = 'B23:P36';
+		    this.shouldMirror = false;
           break;
-        case 'Ilo':
-          divCols = 'B76:X90';
-		  this.shouldMirror = true;
+        case 'Doubles':
+          	divCols = 'B45:P58';
+		    this.shouldMirror = false;
           break;
-        case 'Eki':
-          divCols = 'B58:X72';
-		  this.shouldMirror = false;
-          break;
-        case 'Fil':
-          divCols = 'B41:X55';
-		  this.shouldMirror = false;
-          break;
-        case 'Tatsu':
-          divCols = 'B93:X107';
-		  this.shouldMirror = true;
-          break;
-        case 'Leru':
-          divCols = 'B111:X125';
-		  this.shouldMirror = true;
-          break;
-        case 'Nir':
-          divCols = 'B23:X37';
-		  this.shouldMirror = false;
-          break;
-		case 'Sol':
-		  divCols = 'AA6:AK19';
-		  this.shouldMirror = false;
 		default:
 		  console.log(this.name);
 		  break;
@@ -118,7 +95,7 @@ export class DivisionComponent implements OnInit {
         return;
 
       $.ajax({
-        url: 'https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Bracket!' + divCols + '?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0',
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1GofVzlbd-um5wfU9ZjLD7x8nFb3dKgtcCGAApKEsGOQ/values/Bracket!' + divCols + '?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0',
         dataType: 'json',
         error: function(response) {
           console.log(response);
