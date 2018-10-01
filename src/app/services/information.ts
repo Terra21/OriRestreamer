@@ -18,11 +18,12 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = '';
     background: string = 'iceless';
-    groupName: string = 'Swiss - Round 1';
-    matchType: string = this.groupName + ' (0-0)';
+    groupName: string = 'Swiss Round 5 -';
+    matchType: string = this.groupName + ' (?-?)';
     zoomBracket: boolean = false;
     bestOf: number = 1;
-    tournament: number = 2;
+	tournament: number = 1;
+	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;
     player2_winCount: number = 0;
@@ -519,7 +520,7 @@ export class Information {
 			'id': 15,
 			'name': 'HalfTheBaguette',
 			'p1Id': 21,
-			'p2Id': 9,
+			'p2Id': 4,
 			'seed': null
 		},
 		{

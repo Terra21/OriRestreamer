@@ -25,17 +25,11 @@ header {
 	font-size: 56px;
 	margin: 10px;
 	align-items: center;
-	margin-top: -100px;
-	margin-left: -60px;
 }
 
 header > div,
 header > img {
 	display: inline-block;
-}
-
-header > div {
-	margin-left: -50px;
 }
 
 .logo {
@@ -53,12 +47,16 @@ header > div {
 	overflow: hidden;
 }
 
+.hidden {
+	display: none;
+}
+
 .full-bracket {
 	display: grid;
 	grid:
 		"reem .   ilo" 225px
 		"nir  sol tatsu" 225px
-		"fil  sol leru" 225px
+		"SinglesL  Doubles SinglesR" 225px
 		"eki  .   ano" 225px
 		/ 33.33% 33.33% 33.33%;
 	grid-auto-flow: row dense;

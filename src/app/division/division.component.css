@@ -9,21 +9,22 @@
 	width: 1910px;
 	display: grid;
 	grid:
-		                     [header-start] "pre r1  lr1 r2  lr2 wb" auto [header-end]
-		  [main-start upper-start m5-start] "pre r1  lr1 r2  lr2 wb" 50px []
-		                [m2-start m7-start] "pre r1  lr1 r2  lr2 wb" 50px [m5-end]
-		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [m2-end]
-		                [m6-start wb-start] "pre r1  lr1 r2  lr2 wb" 50px [m7-end]
-		                         [m8-start] "pre r1  lr1 r2  lr2 wb" 50px [m6-end wb-end upper-end]
-		                     [spacer-start] "pre r1  lr1 r2  lr2 wb"  5px [spacer-end]
-		[lower-start mL11-start mL14-start] "pre r1  lr1 r2  lr2 wb" 50px [m8-end]
-		                        [mL9-start] "pre r1  lr1 r2  lr2 wb" 50px [mL11-end mL14-end]
-		             [mL5-start mL13-start] "pre r1  lr1 r2  lr2 wb" 50px [mL9-end]
-		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL5-end]
-		                       [mL10-start] "pre r1  lr1 r2  lr2 wb" 50px [mL13-end]
-		                       [mL12-start] "pre r1  lr1 r2  lr2 wb" 50px [mL10-end]
-		                                 [] "pre r1  lr1 r2  lr2 wb" 50px [mL12-end lower-end main-end]
-										   / 1fr 1fr 1fr 1fr 1fr 1fr;
+		                     [header-start] "pre r1 r2 wb" auto [header-end]
+		  [main-start upper-start m9-start] "pre r1 r2 wb" 50px []
+		            [m1-start m15-start] "pre r1 r2 wb" 50px [m9-end]
+		                                 [] "pre r1 r2 wb" 50px [m1-end]
+		                [m7-start wb-start] "pre r1 r2 wb" 50px [m15-end]
+		                         [m19-start] "pre r1 r2 wb" 50px [m7-end wb-end upper-end]
+		                     /* [spacer-start] "pre r1 r2 wb"  5px [spacer-end] */
+		[lower-start mL11-start mL14-start] "pre r1 r2 wb" 50px [m19-end]
+		                        [m10-start] "pre r1 r2 wb" 50px [mL11-end mL14-end]
+		             [m2-start m16-start] "pre r1 r2 wb" 50px [m10-end]
+		                                 [] "pre r1 r2 wb" 50px [m2-end]
+							   [m11-start] "pre r1 r2 wb" 50px [m16-end]
+							   [m3-start] "pre r1 r2 wb" 50px []
+							   [mL12-start] "pre r1 r2 wb" 50px [m3-end m11-end]
+										 [] "pre r1 r2 wb" 50px [mL12-end lower-end main-end]
+										   / 1fr 1fr 1fr 1fr;
 	grid-gap: 20px 20px;
 	justify-content: center;
 	align-items: center;
@@ -31,21 +32,21 @@
 
 .grid.mirror {
 	grid-template-areas:
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre"
-		"wb  lr2 r2  lr1 r1  pre";
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre"
+		"wb r2 r1 pre";
 }
 
 #Sol.grid {

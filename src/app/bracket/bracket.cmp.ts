@@ -15,25 +15,19 @@ import { Socket } from 'net';
 export class BracketCMP {
 	socket: any = io.connect(environment.socketPath);
 	seed: string = window.location.href.split('=')[1];
-	divisions: Array<string> = ['Reem', 'Ano', 'Ilo', 'Eki', 'Fil', 'Tatsu', 'Leru', 'Nir', 'Sol', 'Semi Final'];
+	divisions: Array<string> = ['Singles (Left)', 'Singles (Right)', 'Doubles'];
 	currentDivision: Division = new Division();
-	shouldShowHeaders = false;
+	shouldShowHeaders = true;
 	zoomBracket = false;
+	bracket: string = "Singles (Left)";
 
 	constructor(private sanitizer: DomSanitizer) { }
 
 	public setOrigin(division: string): SafeStyle {
 		const origins = {
-			Reem: 'left top',
-			Ano: 'right bottom',
-			Ilo: 'right top',
-			Eki: 'left bottom',
-			Fil: 'left 66.6666%',
-			Tatsu: 'right 33.3333%',
-			Leru: 'right 66.6666%',
-			Nir: 'left 33.3333%',
-			Sol: 'center',
-			["Semi Final"]: 'center'
+			["Singles (Left)"]: 'left 66.6666%',
+			["Singles (Right)"]: 'right 33.3333%',
+			Doubles: 'center'
 		};
 		return this.sanitizer.bypassSecurityTrustStyle(`--origin: ${origins[division]}`);
 	}
@@ -46,10 +40,13 @@ export class BracketCMP {
 			if (data.seed !== this.seed) {
 				return;
 			}
-			this.currentDivision.name = data.groupName;
+
+			this.currentDivision.name = data.bracket;
 			this.zoomBracket = data.zoomBracket;
 
 			this.shouldShowHeaders = data.zoomBracket;
+
+
 		}.bind(this));
 	}
 

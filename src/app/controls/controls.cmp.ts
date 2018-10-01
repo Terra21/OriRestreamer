@@ -267,10 +267,21 @@ public set seed(seed: string){
 
 	public set tournament(tournament: number){
 		this._vm.tournament = tournament;
+
+		if(tournament == 2)
+			this.bracket = "Doubles";
 	}
 
 	public get tournament(): number {
 		return this._vm.tournament;
+	}
+	
+	public set bracket(bracket: string){
+		this._vm.bracket = bracket;
+	}
+
+	public get bracket(): string {
+		return this._vm.bracket;
 	}
 
 	public set bestOf(bestOf: number){
@@ -367,6 +378,15 @@ public set seed(seed: string){
 	{
 		name: 'Doubles',
 		value: 2
+	}];
+
+	brackets = [{
+		value: 'Singles (Left)',
+		name: 'Left'
+	},
+	{
+		value: 'Singles (Right)',
+		name: 'Right'
 	}];
 
 	stats = [{

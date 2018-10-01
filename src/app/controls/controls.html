@@ -7,6 +7,7 @@
 				<label for="commentators">Commentators</label><br>
 				<label for="bestOf">Best of</label><br>
 				<label for="tournament">Tournament</label><br>
+				<label *ngIf="vm.tournament == 1" for="bracket">Bracket Side</label><br>
 			</div>
 			<div class="col-2 r2 c2">
 				<input type="text" id="trackerId" [(ngModel)]="seed"><br>
@@ -17,6 +18,10 @@
 				</select><br>
 				<select class="twitch" [(ngModel)]="tournament">
 					<option *ngFor="let type of tournaments" [value]="type.value" >{{ type.name }}</option>
+				</select><br>
+
+				<select *ngIf="vm.tournament == 1" class="twitch" [(ngModel)]="bracket">
+					<option *ngFor="let type of brackets" [value]="type.value" >{{ type.name }}</option>
 				</select><br>
 			</div>
 		<input type="button" class="btn col-1 update r2 c4" (click)="updateInfo()" value="UPDATE STREAM INFO" />
