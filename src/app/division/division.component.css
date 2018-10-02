@@ -97,23 +97,47 @@
 	background: linear-gradient(
 		90deg,
 		var(--bg, rgba(0,0,0,0.6)) 0%,
-		var(--bg, rgba(0,0,0,0.6)) 97%,
-		#fff36a 97%,
-		#fff36a 100%
-	);
+		var(--bg, rgba(0,0,0,0.6)) 95%,
+		#348838 95%,
+		#348838 100%
+	) !important;
 }
 
 .match-container > .player-container.loser {
 	opacity: 0.4;
+	background: linear-gradient(
+		90deg,
+		var(--bg, rgba(0,0,0,0.6)) 0%,
+		var(--bg, rgba(0,0,0,0.6)) 95%,
+		#692828 95%,
+		#692828 100%
+	) !important;
+}
+
+.match-container > .player-container.underway {
+	background: linear-gradient(
+		90deg,
+		var(--bg, rgba(0,0,0,0.6)) 0%,
+		var(--bg, rgba(0,0,0,0.6)) 95%,
+		#fff36a 95%,
+		#fff36a 100%
+	);
+}
+
+.underway-score {
+	color: rgba(0,0,0,0.75) !important;
 }
 
 .match-container .score {
-	width: 36px;
-	height: 32px;
 	padding: 10px 5px;
-	font-size: 22px;
-	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	height: 32px;
 	text-align: center;
+	float: right;
+	font-family: "Segoe UI";
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: none;
 }
 
 .match-container > div:first-child {
@@ -142,7 +166,7 @@
 .match-container .player-name {
 	padding: 10px 5px;
 	height: 32px;
-	font-size: 24px;
+	font-size: 28px;
 }
 
 .match-container .player-name.placeholder {

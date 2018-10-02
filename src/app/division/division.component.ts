@@ -73,20 +73,38 @@ export class DivisionComponent implements OnInit {
           break;
         case 'Doubles':
 			  divCols = 'B45:P58';
-			  console.log(2);
 		    this.shouldMirror = false;
           break;
 		default:
 		  console.log(this.name);
 		  break;
-	  }
+    }
+    
+    $.ajax({
+      url: 'https://sheets.googleapis.com/v4/spreadsheets/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
+      dataType: 'json',
+      error: function(response) {
+        console.log(response);
+      },
+      success: function( response: any ) {
+    if (this.division.matches.length > 0) {
+      this.division.matches = new Array<Match>();
+    }
+        //Pulled from
+        //https://docs.google.com/spreadsheets/d/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/edit#gid=1820809674
+
+        console.log(response);
+        this.mapSheetToDivision(this.division.name, response);
+    // $(`#${this.division.name}`).addClass('expand');
+      }.bind(this)
+    });
 
     this.socket.on('data', function(data: Information){
       if (data.seed !== this.seed || !divCols)
 				return;
 				
       $.ajax({
-        url: 'https://sheets.googleapis.com/v4/spreadsheets/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/values/Bracket!' + divCols + '?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0',
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
         dataType: 'json',
         error: function(response) {
           console.log(response);
