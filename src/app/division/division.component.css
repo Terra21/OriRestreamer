@@ -107,6 +107,15 @@
 	opacity: 0.4;
 }
 
+.match-container .score {
+	width: 36px;
+	height: 32px;
+	padding: 10px 5px;
+	font-size: 22px;
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	text-align: center;
+}
+
 .match-container > div:first-child {
 	margin-bottom: 2px;
 }

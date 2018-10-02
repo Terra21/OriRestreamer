@@ -20,7 +20,8 @@
 		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2, 'loser': match.winner === match.player1 }">
 			<div class="player-seed ui">{{ match.player2_seed }}</div>
 			<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player2_seed }">{{ match.player2 }}</div>
+			<div class="score">{{ match.player2_result}}</div>
 		</div>
-		<div class="match-label ui">Match {{ match.name | slice:1 | uppercase }}</div>
+		<div class="match-label ui">{{ match.friendlyMatchName }}</div>
 	</div>
 </div>

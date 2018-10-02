@@ -1,13 +1,15 @@
 export class Match {
     constructor(name: string = "",
-				round: string = "",
+                friendlyMatchName: string = "",
+                round: string = "",
 				player1_seed: string = "",
                 player2_seed: string = "",
                 player1: string = "",
                 player2: string = "",
                 player1_result: string = "",
                 player2_result: string = ""){
-		this.name = name;
+        this.name = name;
+        this.friendlyMatchName = friendlyMatchName;
 		this.round = round;
         this.player1 = player1;
         this.player2 = player2;
@@ -18,7 +20,8 @@ export class Match {
         this.winner = player1_result === "2" ? player1 : player2_result === "2" ? player2 : null;
     }
 
-	name: string;
+    name: string;
+    friendlyMatchName: string;
 	round: string;
     player1: string;
     player2: string;
