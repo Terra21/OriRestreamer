@@ -21,7 +21,7 @@ export class Information {
     groupName: string = 'Swiss Round 5 -';
     matchType: string = this.groupName + ' (?-?)';
     zoomBracket: boolean = false;
-    bestOf: number = 1;
+    bestOf: number = 3;
 	tournament: number = 1;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
@@ -34,6 +34,8 @@ export class Information {
 	team2_FinishTime: number = 0;
 
 	soloWinner: number = 0;
+
+	currentSeries: Array<any> = [{ winner: 0}, {winner: 0}, {winner: 0}];
 
     players: Array<any> = [
 		{

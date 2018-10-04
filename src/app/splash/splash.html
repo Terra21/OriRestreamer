@@ -6,15 +6,26 @@
         Swiss Reveal
     </div>
     <div class="matchup" *ngIf="vm.tournament == 1">
-        <div [ngClass]="{ 'winner': vm.soloWinner == 1 }">
+        <span [ngClass]="{ 'winner': vm.soloWinner == 1 }">
             <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ opponent1 }}
             <span *ngIf="vm.soloWinner == 1">(Winner)</span>
-        </div>
-        <div>vs</div>
-        <div [ngClass]="{ 'winner': vm.soloWinner == 2 }">
+        </span>
+        <span>vs</span>
+        <span [ngClass]="{ 'winner': vm.soloWinner == 2 }">
             <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> {{ opponent2 }}
             <span *ngIf="vm.soloWinner == 2">(Winner)</span>
+        </span>
+        <div class="matchup-results" *ngIf="vm.bestOf == 3">
+            <span class="match-title">Best of 3</span>
+            <div *ngFor="let m of vm.currentSeries; let i = index">
+                <span *ngIf="m.winner === 1">W</span>
+                <span *ngIf="m.winner === 2 || m.winner === 0">L/TP</span>
+                <span *ngIf="m.winner === 0">Game {{ i + 1 }}</span>
+                <span *ngIf="m.winner === 1 || m.winner === 0">L/TP</span>
+                <span *ngIf="m.winner === 2">W</span>
+            </div>
         </div>
+
     </div>
     <div class="matchup-doubles" *ngIf="vm.tournament == 2">
         <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }">
@@ -29,6 +40,7 @@
             <span class="players" *ngIf="players2"><br />{{ players2 }}</span>
         </div>
     </div>
+
 
     <div class="matchup" *ngIf="vm.tournament == 3">
         <div>

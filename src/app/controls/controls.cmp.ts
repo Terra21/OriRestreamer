@@ -250,6 +250,11 @@ public set seed(seed: string){
 	}
 
 	public set p1_wins(wins: number){
+		if(wins > this._vm.player1_winCount)
+			this._vm.currentSeries.push({ winner: 1 });
+		else
+			this._vm.currentSeries.pop();
+
 		this._vm.player1_winCount = wins;
 	}
 
@@ -258,6 +263,11 @@ public set seed(seed: string){
 	}
 
 	public set p2_wins(wins: number){
+		if(wins > this._vm.player2_winCount)
+			this._vm.currentSeries.push({ winner: 2 });
+		else
+			this._vm.currentSeries.pop();
+
 		this._vm.player2_winCount = wins;
 	}
 

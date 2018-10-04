@@ -98,8 +98,8 @@
 		90deg,
 		var(--bg, rgba(0,0,0,0.6)) 0%,
 		var(--bg, rgba(0,0,0,0.6)) 95%,
-		#348838 95%,
-		#348838 100%
+		#fff36a 95%,
+		#fff36a 100%
 	) !important;
 }
 
@@ -109,8 +109,8 @@
 		90deg,
 		var(--bg, rgba(0,0,0,0.6)) 0%,
 		var(--bg, rgba(0,0,0,0.6)) 95%,
-		#692828 95%,
-		#692828 100%
+		#fff36a 95%,
+		#fff36a 100%
 	) !important;
 }
 
@@ -136,7 +136,7 @@
 	font-family: "Segoe UI";
 	font-size: 22px;
 	font-weight: bold;
-	color: #ffffff;
+	color: #000;
 	text-shadow: none;
 }
 

@@ -41,6 +41,30 @@ div {
     height: 450px;
 }
 
+.matchup-results {
+    margin-top: 50px;
+    font-size: 32px;
+    width: 300px;
+    margin-left: 800px;
+}
+
+.matchup-results > div {
+    font-size: 32px;
+    margin-top: 40px;
+}
+
+.match-title {
+    border-bottom-color: #fff;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 20px;
+
+}
+
+.current-match {
+    color: #ffb600;
+}
+
 .matchType {
     position: absolute;
     top: 75px;
