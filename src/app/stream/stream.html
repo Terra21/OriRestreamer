@@ -48,16 +48,29 @@
         <!-- </div> -->
     </div>
 
+    <!-- <div class="matchup">
+        <div class="matchup-results" *ngIf="vm.bestOf == 3">
+            <span class="match-title">Best of 3</span>
+            <div *ngFor="let m of vm.currentSeries; let i = index">
+                <span *ngIf="m.winner === 1"><img class="icon" src="../../assets/win-icon.png" /></span>
+                <span *ngIf="m.winner === 2 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
+                <span [ngClass]="{ 'winner-match': ((vm.player1_winCount) + (vm.player2_winCount)) === i, 'played': ((vm.player1_winCount) + (vm.player2_winCount)) > i }">Game {{ i + 1 }}</span>
+                <span *ngIf="m.winner === 1 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
+                <span *ngIf="m.winner === 2"><img class="icon" src="../../assets/win-icon.png" /></span>
+            </div>
+        </div>
+    </div> -->
+
     <div *ngIf="vm.bestOf >= 3" class="win-count-container">
         <div class="win-count-p1">
             <img *ngIf="vm.bestOf >= 5 && !p1ThirdWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p1ThirdWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p1ThirdWin" src="../../assets/win-icon.png">
 
             <img *ngIf="vm.bestOf >= 3 && !p1SecondWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p1SecondWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p1SecondWin" src="../../assets/win-icon.png">
 
             <img *ngIf="!p1FirstWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p1FirstWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p1FirstWin" src="../../assets/win-icon.png">
         </div>
         <div class="match-type">
             <span *ngIf="vm.bestOf == 3">Best of 3</span>
@@ -65,13 +78,13 @@
         </div>
         <div class="win-count-p2">
             <img *ngIf="!p2FirstWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p2FirstWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p2FirstWin" src="../../assets/win-icon.png">
 
             <img *ngIf="vm.bestOf >= 3 && !p2SecondWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p2SecondWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p2SecondWin" src="../../assets/win-icon.png">
 
             <img *ngIf="vm.bestOf >= 5 && !p2ThirdWin" src="../../assets/bo3;5-indicatorRing.png">
-            <img *ngIf="p2ThirdWin" src="../../assets/bo3;5-indicator.png">
+            <img *ngIf="p2ThirdWin" src="../../assets/win-icon.png">
         </div>
     </div>
 

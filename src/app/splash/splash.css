@@ -42,27 +42,44 @@ div {
 }
 
 .matchup-results {
-    margin-top: 50px;
-    font-size: 32px;
+    margin-top: 150px;
+    font-size: 40px;
     width: 300px;
     margin-left: 800px;
 }
 
 .matchup-results > div {
-    font-size: 32px;
-    margin-top: 40px;
+    font-size: 40px;
+    margin-top: 20px;
 }
 
 .match-title {
     border-bottom-color: #fff;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
 
+.vs {
+    width: 5%;
+    font-size: 42px;
+    padding-top: 35px;
+}
+
+.matchup-players {
+    width: 100%;
+}
+
+.matchup-players > div {
+    float: left;
 }
 
 .current-match {
     color: #ffb600;
+}
+
+.played {
+    color: lightgray;
 }
 
 .matchType {
@@ -73,8 +90,12 @@ div {
     word-wrap: break-word;
 }
 
-.matchup, .matchup-doubles > div {
+.matchup, .matchup-doubles {
     text-align: center;
+}
+
+.icon {
+    vertical-align: bottom;
 }
 
 .logo {

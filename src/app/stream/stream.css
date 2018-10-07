@@ -149,6 +149,61 @@
 	justify-content: center;
 }
 
+.matchup-results {
+    margin-top: 150px;
+    font-size: 40px;
+    width: 300px;
+    margin-left: 800px;
+}
+
+.matchup-results > div {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.match-title {
+    border-bottom-color: #fff;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+	margin-bottom: 40px;
+	text-align: center;
+	margin-left: 35px;
+}
+
+.icon {
+    vertical-align: bottom;
+}
+
+.matchup {
+    position: absolute;
+	top: 270px;
+	left: 45px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 300px;
+}
+
+.matchup-results {
+    margin-top: 150px;
+    font-size: 40px;
+    width: 300px;
+    margin-left: 800px;
+}
+
+.matchup-results > div {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.winner-match {
+	color: #ffb600;
+}
+
+.played {
+    color: lightgray;
+}
+
 /* .stats-container > .wrapper {
 	width: 950px;
 	height: 50px;
@@ -289,9 +344,10 @@
 }
 
 .win-count-container {
-	position: relative;
+	position: absolute;
 	text-align: center;
-	margin-top: -50px;
+	top: 0;
+	left: 710px;
 }
 
 .win-count-p1, .win-count-p2 {

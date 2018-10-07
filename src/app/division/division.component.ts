@@ -81,7 +81,7 @@ export class DivisionComponent implements OnInit {
     }
     
     $.ajax({
-      url: 'https://sheets.googleapis.com/v4/spreadsheets/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
+      url: 'https://sheets.googleapis.com/v4/spreadsheets/1WTLveLqtSkyCo_lyg8bjn0mgOLpbs6xSjHSES6dcrUc/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
       dataType: 'json',
       error: function(response) {
         console.log(response);
@@ -91,7 +91,7 @@ export class DivisionComponent implements OnInit {
       this.division.matches = new Array<Match>();
     }
         //Pulled from
-        //https://docs.google.com/spreadsheets/d/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/edit#gid=1820809674
+        //https://docs.google.com/spreadsheets/d/1WTLveLqtSkyCo_lyg8bjn0mgOLpbs6xSjHSES6dcrUc/edit#gid=1820809674
 
         console.log(response);
         this.mapSheetToDivision(this.division.name, response);
@@ -104,7 +104,7 @@ export class DivisionComponent implements OnInit {
 				return;
 				
       $.ajax({
-        url: 'https://sheets.googleapis.com/v4/spreadsheets/1CEOugHXubspvRFSR7-bZoKy6W5kpKXDVEUIutraWOCI/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
+        url: 'https://sheets.googleapis.com/v4/spreadsheets/1WTLveLqtSkyCo_lyg8bjn0mgOLpbs6xSjHSES6dcrUc/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
         dataType: 'json',
         error: function(response) {
           console.log(response);

@@ -18,17 +18,17 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = '';
     background: string = 'iceless';
-    groupName: string = 'Swiss Round 5 -';
-    matchType: string = this.groupName + ' (?-?)';
+    groupName: string = 'Preliminary/Round of 16/Quarter Final/Semi Final/Final';
+	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;
-	tournament: number = 1;
+	tournament: number = 2;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;
-    player2_winCount: number = 0;
+	player2_winCount: number = 0;
 
-    team1Id: number = 1;
+    team1Id: number = 1
 	team2Id: number = 3;
 	team1_FinishTime: number = 0;
 	team2_FinishTime: number = 0;
@@ -190,7 +190,7 @@ export class Information {
 			'name': 'LostDedew',
 			'preferredName': 'Dedew',
 			'singles': true,
-			'seed': null
+			'seed': '1'
 		},
 		{
 			'id': 22,
@@ -323,7 +323,7 @@ export class Information {
 			'name': 'Sigmasin',
 			'preferredName': 'Sigma',
 			'singles': true,
-			'seed': null
+			'seed': '2'
 		},
 		{
 			'id': 41,

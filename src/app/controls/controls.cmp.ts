@@ -68,6 +68,12 @@ export class ControlsCMP {
 		this.t2P1_Time = "0:00:00";
 		this.t2P2_Time = "0:00:00";
 
+		this.vm.currentSeries = [{ winner: 0}, {winner: 0}, {winner: 0}];
+		this.vm.player1_winCount = 0;
+		this.vm.player2_winCount = 0;
+		this.p1_wins = 0;
+		this.p2_wins = 0;
+
 		this.socket.emit('data', this.vm);
 	}
 
@@ -115,6 +121,11 @@ export class ControlsCMP {
 
 	resetWinner() {
 		this.vm.soloWinner = 0;
+		this.vm.currentSeries = [{ winner: 0}, {winner: 0}, {winner: 0}];
+		this.vm.player1_winCount = 0;
+		this.vm.player2_winCount = 0;
+		this.p1_wins = 0;
+		this.p2_wins = 0;
 		this.socket.emit('data', this.vm);
 	}
 
@@ -249,13 +260,34 @@ public set seed(seed: string){
 		return this._vm.player1_winCount;
 	}
 
-	public set p1_wins(wins: number){
-		if(wins > this._vm.player1_winCount)
-			this._vm.currentSeries.push({ winner: 1 });
-		else
-			this._vm.currentSeries.pop();
+	//Bug with angular that calls setters twice
 
-		this._vm.player1_winCount = wins;
+	p1WinsSet: boolean = false;
+	p2WinsSet: boolean = false;
+
+	public set p1_wins(wins: number){
+		if(wins === 0){
+			this._vm.player1_winCount = 0;
+			return;
+		}
+
+		if(!this.p1WinsSet){
+			this.p1WinsSet = true;
+			return;
+		}
+		else{
+			for(let i = 0; i < this._vm.currentSeries.length; i++){
+				if(this._vm.currentSeries[i].winner === 0){
+					this._vm.currentSeries[i].winner = 1;
+					console.log(this._vm.currentSeries);
+					this._vm.player1_winCount = wins;
+					this.p1WinsSet = false;
+					return;
+				}
+			}
+	
+			this._vm.player1_winCount = wins;
+		}
 	}
 
 	public get p2_wins(): number {
@@ -263,12 +295,25 @@ public set seed(seed: string){
 	}
 
 	public set p2_wins(wins: number){
-		if(wins > this._vm.player2_winCount)
-			this._vm.currentSeries.push({ winner: 2 });
-		else
-			this._vm.currentSeries.pop();
+		if(wins === 0){
+			this._vm.player2_winCount = 0;
+			return;
+		}
 
-		this._vm.player2_winCount = wins;
+		if(!this.p2WinsSet){
+			this.p2WinsSet = true;
+			return;
+		}
+		else{
+			for(let i = 0; i < this._vm.currentSeries.length; i++){
+				if(this._vm.currentSeries[i].winner === 0){
+					this._vm.currentSeries[i].winner = 2;
+					this._vm.player2_winCount = wins;
+					this.p2WinsSet = false;
+					return;
+				}
+			}
+		}
 	}
 
 	public get bestOf(): number {
