@@ -50,7 +50,7 @@ export class Information {
 			'name': 'Brynhold2',
 			'preferredName': 'Brynhold',
 			'singles': true,
-			'seed': null
+			'seed': '9'
 		},
 		{
 			'id': 2,
@@ -64,14 +64,14 @@ export class Information {
 			'name': 'Cleanfel',
 			'preferredName': 'Cleanfel',
 			'singles': true,
-			'seed': null
+			'seed': '6'
 		},
 		{
 			'id': 4,
 			'name': 'Covert_Muffin',
 			'preferredName': 'CovertMuffin',
 			'singles': true,
-			'seed': null
+			'seed': '4'
 		},
 		{
 			'id': 5,
@@ -92,7 +92,7 @@ export class Information {
 			'name': 'IMRaziel',
 			'preferredName': 'Raziel',
 			'singles': true,
-			'seed': null
+			'seed': '3'
 		},
 		{
 			'id': 8,
@@ -134,7 +134,7 @@ export class Information {
 			'name': 'Grimelios',
 			'preferredName': 'Grimelios',
 			'singles': true,
-			'seed': null
+			'seed': '17'
 		},
 		{
 			'id': 14,
@@ -211,21 +211,21 @@ export class Information {
 			'name': 'madinsane_',
 			'preferredName': 'madinsane',
 			'singles': true,
-			'seed': null
+			'seed': '18'
 		},
 		{
 			'id': 25,
 			'name': 'Mattermonkey',
 			'preferredName': 'Mattermonkey',
 			'singles': true,
-			'seed': null
+			'seed': '19'
 		},
 		{
 			'id': 26,
 			'name': 'MeldonTaragon',
 			'preferredName': 'Meldon',
 			'singles': true,
-			'seed': null
+			'seed': '12'
 		},
 		{
 			'id': 27,
@@ -239,7 +239,7 @@ export class Information {
 			'name': 'nfnite',
 			'preferredName': 'nfnite',
 			'singles': true,
-			'seed': null
+			'seed': '22'
 		},
 		{
 			'id': 29,
@@ -253,7 +253,7 @@ export class Information {
 			'name': 'ogNdrahciR',
 			'preferredName': 'Richard',
 			'singles': true,
-			'seed': null
+			'seed': '20'
 		},
 		{
 			'id': 31,
@@ -295,14 +295,14 @@ export class Information {
 			'name': 'RooseSR',
 			'preferredName': 'Roose',
 			'singles': true,
-			'seed': null
+			'seed': '21'
 		},
 		{
 			'id': 37,
 			'name': 'Roryrai',
 			'preferredName': 'Roryrai',
 			'singles': true,
-			'seed': null
+			'seed': '10'
 		},
 		{
 			'id': 38,
@@ -316,7 +316,7 @@ export class Information {
 			'name': 'shedd_',
 			'preferredName': 'shedd',
 			'singles': true,
-			'seed': null
+			'seed': '5'
 		},
 		{
 			'id': 40,
@@ -330,7 +330,7 @@ export class Information {
 			'name': 'Skulblaka17',
 			'preferredName': 'Skulblaka',
 			'singles': true,
-			'seed': null
+			'seed': '14'
 		},
 		{
 			'id': 42,
@@ -365,7 +365,7 @@ export class Information {
 			'name': 'Terra21',
 			'preferredName': 'Terra',
 			'singles': true,
-			'seed': null
+			'seed': '15'
         },
 		{
 			'id': 47,
@@ -379,35 +379,35 @@ export class Information {
 			'name': 'trojandude12',
 			'preferredName': 'trojandude',
 			'singles': true,
-			'seed': null
+			'seed': '13'
 		},
 		{
 			'id': 49,
 			'name': 'UncleRonny',
 			'preferredName': 'UncleRonny',
 			'singles': true,
-			'seed': null
+			'seed': '7'
 		},
 		{
 			'id': 50,
 			'name': 'Ushebti',
 			'preferredName': 'Ushebti',
 			'singles': true,
-			'seed': null
+			'seed': '11'
 		},
         {
             'id': 51,
             'name': 'Vulajin',
 			'preferredName': 'Vulajin',
 			'singles': true,
-            'seed': null
+            'seed': '16'
         },
 		{
 			'id': 52,
 			'name': 'Willson',
 			'preferredName': 'Willson',
 			'singles': true,
-			'seed': null
+			'seed': '8'
 		},
       ];
     
@@ -424,7 +424,7 @@ export class Information {
 			'name': '3 HP Master Race',
 			'p1Id': 34,
 			'p2Id': 49,
-			'seed': null
+			'seed': '5'
 		},
 		{
 			'id': 2,
@@ -438,7 +438,7 @@ export class Information {
 			'name': 'Fanta Gin',
 			'p1Id': 51,
 			'p2Id': 33,
-			'seed': null
+			'seed': '7'
 		},
 		{
 			'id': 4,
@@ -452,7 +452,7 @@ export class Information {
 			'name': '∞ Death Gauntlet',
 			'p1Id': 6,
 			'p2Id': 16,
-			'seed': null
+			'seed': '8'
 		},
 		{
 			'id': 6,
@@ -480,7 +480,7 @@ export class Information {
 			'name': 'Team City Escape',
 			'p1Id': 5,
 			'p2Id': 48,
-			'seed': null
+			'seed': '6'
 		},
 		
 		{
@@ -502,35 +502,35 @@ export class Information {
 			'name': 'Team Heck',
 			'p1Id': 32,
 			'p2Id': 39,
-			'seed': null
+			'seed': '4'
 		},
 		{
 			'id': 13,
 			'name': 'Team Skillless',
 			'p1Id': 37,
 			'p2Id': 26,
-			'seed': null
+			'seed': '3'
 		},
 		{
 			'id': 14,
 			'name': 'Team Smasharoo',
 			'p1Id': 36,
 			'p2Id': 43,
-			'seed': null
+			'seed': '9'
 		},
 		{
 			'id': 15,
 			'name': 'HalfTheBaguette',
 			'p1Id': 21,
 			'p2Id': 4,
-			'seed': null
+			'seed': '2'
 		},
 		{
 			'id': 16,
 			'name': 'That Is Still Faster',
 			'p1Id': 40,
 			'p2Id': 7,
-			'seed': null
+			'seed': '1'
 		},
 		{
 			'id': 17,
