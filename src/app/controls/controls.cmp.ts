@@ -414,16 +414,8 @@ public set seed(seed: string){
 
 
 	matchTypes = [{
-		name: 'Best of 1',
-		value: 1
-	},
-	{
 		name: 'Best of 3',
 		value: 3
-	},
-	{
-		name: 'Best of 5',
-		value: 5
 	}];
 
 	tournaments = [{

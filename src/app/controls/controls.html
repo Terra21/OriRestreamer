@@ -90,8 +90,7 @@
 			<hr class="spacer r7 c1" />
 
 			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c1">
-				PLAYER 1 <span *ngIf="vm.bestOf > 1"> - Wins: 
-				<input class="p1Wins" type="number" [(ngModel)]="p1_wins" /></span>
+				PLAYER 1
 			</div>
 			<label *ngIf="vm.tournament == 1" class="label r9 c1" for="p1Name">Name</label>
 			<input *ngIf="vm.tournament == 1" id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
@@ -108,11 +107,16 @@
 			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
 
 			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c5">
-				PLAYER 2 
-				<span  *ngIf="vm.bestOf > 1"> - Wins:
-					<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
-				</span>
+				PLAYER 2
 			</div>
+
+			<div class="col-4 center label-big players r8 c3">
+				<div *ngFor="let match of vm.currentSeries; let i = index">
+					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1">
+					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="2" [checked]="match.winner === 2">
+				</div>
+			</div>
+
 			<label *ngIf="vm.tournament == 1" class="label r9 c5" for="p2Name">Name</label>
 			<input *ngIf="vm.tournament == 1" id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
 			<label *ngIf="vm.tournament == 1" class="label r10 c5" for="p2Twitch">Twitch</label>
