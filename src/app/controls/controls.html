@@ -110,9 +110,17 @@
 				PLAYER 2
 			</div>
 
-			<div class="col-4 center label-big players r8 c3">
+			<div class="col-4 center label players r8 c3">
+				<span><b>Match Winners</b></span>
+				<div>
+					(P1) () (P2)
+				</div>
 				<div *ngFor="let match of vm.currentSeries; let i = index">
-					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1">
+					<span>
+						{{ match.name }}
+						<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1">
+					</span>
+					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="0" [checked]="match.winner === 0">
 					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="2" [checked]="match.winner === 2">
 				</div>
 			</div>

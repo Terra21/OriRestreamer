@@ -18,7 +18,7 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = '';
     background: string = 'iceless';
-    groupName: string = 'Preliminary/Round of 16/Quarter Final/Semi Final/Final';
+    groupName: string = 'Preliminary Round/Round of 16/Quarterfinal/Semifinal/Final';
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;

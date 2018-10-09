@@ -68,7 +68,7 @@ export class ControlsCMP {
 		this.t2P1_Time = "0:00:00";
 		this.t2P2_Time = "0:00:00";
 
-		this.vm.currentSeries = [{ winner: 0}, {winner: 0}, {winner: 0}];
+		this.vm.currentSeries =  [{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}];
 		this.vm.player1_winCount = 0;
 		this.vm.player2_winCount = 0;
 		this.p1_wins = 0;
@@ -121,7 +121,7 @@ export class ControlsCMP {
 
 	resetWinner() {
 		this.vm.soloWinner = 0;
-		this.vm.currentSeries = [{ winner: 0}, {winner: 0}, {winner: 0}];
+		this.vm.currentSeries = [{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}];
 		this.vm.player1_winCount = 0;
 		this.vm.player2_winCount = 0;
 		this.p1_wins = 0;

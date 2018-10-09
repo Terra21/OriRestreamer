@@ -24,7 +24,7 @@
             <div *ngFor="let m of vm.currentSeries; let i = index">
                 <span *ngIf="m.winner === 1"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
                 <span *ngIf="m.winner === 2 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
-                <span [ngClass]="{ 'winner': ((vm.player1_winCount) + (vm.player2_winCount)) === i, 'played': ((vm.player1_winCount) + (vm.player2_winCount)) > i }">Game {{ i + 1 }}</span>
+                <span [ngClass]="{ 'winner': (((p1WinCount) + (p2WinCount)) === i) && (p1WinCount !== 2 && p2WinCount !== 2), 'played': (((p1WinCount) + (p2WinCount)) > i), 'not-playing': (((p1WinCount === 2 && p2WinCount === 0) || (p2WinCount === 2 && p1WinCount === 0)) && i === 2) }">Game {{ i + 1 }}</span>
                 <span *ngIf="m.winner === 1 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
                 <span *ngIf="m.winner === 2"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
             </div>
@@ -51,7 +51,7 @@
             <div *ngFor="let m of vm.currentSeries; let i = index">
                 <span *ngIf="m.winner === 1"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
                 <span *ngIf="m.winner === 2 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
-                <span [ngClass]="{ 'winner': ((vm.player1_winCount) + (vm.player2_winCount)) === i, 'played': ((vm.player1_winCount) + (vm.player2_winCount)) > i }">Game {{ i + 1 }}</span>
+                <span [ngClass]="{ 'winner': (((p1WinCount) + (p2WinCount)) === i) && (p1WinCount !== 2 && p2WinCount !== 2), 'played': (((p1WinCount) + (p2WinCount)) > i), 'not-playing': (((p1WinCount === 2 && p2WinCount === 0) || (p2WinCount === 2 && p1WinCount === 0)) && i === 2) }">Game {{ i + 1 }}</span>
                 <span *ngIf="m.winner === 1 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
                 <span *ngIf="m.winner === 2"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
             </div>

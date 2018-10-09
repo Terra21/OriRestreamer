@@ -82,6 +82,11 @@ div {
     color: lightgray;
 }
 
+.not-playing {
+    text-decoration: line-through; 
+    color: grey;
+}
+
 .matchType {
     position: absolute;
     top: 75px;
