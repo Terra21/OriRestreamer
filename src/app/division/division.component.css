@@ -98,8 +98,8 @@
 		90deg,
 		var(--bg, rgba(0,0,0,0.6)) 0%,
 		var(--bg, rgba(0,0,0,0.6)) 95%,
-		#fff36a 95%,
-		#fff36a 100%
+		#2d852d 95%,
+		#2d852d 100%
 	) !important;
 }
 
@@ -122,6 +122,10 @@
 		#fff36a 95%,
 		#fff36a 100%
 	);
+}
+
+.score {
+	color: #fff !important;
 }
 
 .underway-score {

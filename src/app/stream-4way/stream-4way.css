@@ -46,6 +46,25 @@
     position: relative;
 }
 
+.team1-score {
+    position: absolute;
+    top: 55px;
+    left: 917px;
+}
+
+.team1-score, .team2-score > span > img {
+    height: 40px;
+}
+
+.team2-score {
+    position: absolute;
+    bottom: 50px;
+    left: 917px;
+}
+
+.team1-score > span > img {
+    height: 40px;
+}
 
 .finishTimeWinner {
     color: rgba(0,0,0,0.8);

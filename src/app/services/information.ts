@@ -22,7 +22,7 @@ export class Information {
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;
-	tournament: number = 1;
+	tournament: number = 2;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;
@@ -39,25 +39,11 @@ export class Information {
 
     players: Array<any> = [
 		{
-			'id': 0,
-			'name': 'Bye',
-			'preferredName': 'Bye',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 1,
 			'name': 'Brynhold2',
 			'preferredName': 'Brynhold',
 			'singles': true,
 			'seed': '9'
-		},
-		{
-			'id': 2,
-			'name': 'chicken_supreme',
-			'preferredName': 'Chicken Supreme',
-			'singles': false,
-			'seed': null
 		},
 		{
 			'id': 3,
@@ -74,13 +60,6 @@ export class Information {
 			'seed': '4'
 		},
 		{
-			'id': 5,
-			'name': 'Cutieroo1',
-			'preferredName': 'Roo',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 6,
 			'name': 'Dr_Tuen',
 			'preferredName': 'Dr. Tuen',
@@ -95,60 +74,11 @@ export class Information {
 			'seed': '3'
 		},
 		{
-			'id': 8,
-			'name': 'eikocastsholy',
-			'preferredName': 'Eiko',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 9,
-			'name': 'ephpls',
-			'preferredName': 'Eph',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id': 10,
-			'name': 'MooseSR',
-			'preferredName': 'Moose',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 11,
-			'name': 'FluffyPrower',
-			'preferredName': 'FluffyPrower',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 12,
-			'name': 'gecko376',
-			'preferredName': 'gecko',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 13,
 			'name': 'Grimelios',
 			'preferredName': 'Grimelios',
 			'singles': true,
 			'seed': '17'
-		},
-		{
-			'id': 14,
-			'name': 'HydraSR',
-			'preferredName': 'Hydra',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 15,
-			'name': 'Its_Galaxi',
-			'preferredName': 'Galaxi',
-			'singles': true,
-			'seed': null
 		},
 		{
 			'id': 16,
@@ -158,53 +88,11 @@ export class Information {
 			'seed': null
 		},
 		{
-			'id': 17,
-			'name': 'JHobz296',
-			'preferredName': 'JHobz',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 18,
-			'name': 'LackeDragon',
-			'preferredName': 'Lacke',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 19,
-			'name': 'Kirefel',
-			'preferredName': 'Kirefel',
-			'singles': false,
-			'seed': null
-		},
-		{
-			'id': 20,
-			'name': 'LhukBlade',
-			'preferredName': 'Lhuk',
-			'singles': false,
-			'seed': null
-		},
-		{
 			'id': 21,
 			'name': 'LostDedew',
 			'preferredName': 'Dedew',
 			'singles': true,
 			'seed': '1'
-		},
-		{
-			'id': 22,
-			'name': 'Lusther',
-			'preferredName': 'Lusther',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 23,
-			'name': 'M3atShield',
-			'preferredName': 'MeatShield',
-			'singles': true,
-			'seed': null
 		},
 		{
 			'id': 24,
@@ -228,13 +116,6 @@ export class Information {
 			'seed': '12'
 		},
 		{
-			'id': 27,
-			'name': 'MrGreez',
-			'preferredName': 'GreeZ',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 28,
 			'name': 'nfnite',
 			'preferredName': 'nfnite',
@@ -242,32 +123,11 @@ export class Information {
 			'seed': '22'
 		},
 		{
-			'id': 29,
-			'name': 'og1764',
-			'preferredName': 'og1764',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 30,
 			'name': 'ogNdrahciR',
 			'preferredName': 'Richard',
 			'singles': true,
 			'seed': '20'
-		},
-		{
-			'id': 31,
-			'name': 'Osey889',
-			'preferredName': 'Osey',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 32,
-			'name': 'oshiimine',
-			'preferredName': 'oshiimine',
-			'singles': true,
-			'seed': null
 		},
 		{
 			'id': 33,
@@ -284,13 +144,6 @@ export class Information {
 			'seed': null
 		},
 		{
-			'id': 35,
-			'name': 'RebelWatt',
-			'preferredName': 'Rebel',
-			'singles': false,
-			'seed': null
-		},
-		{
 			'id': 36,
 			'name': 'RooseSR',
 			'preferredName': 'Roose',
@@ -303,13 +156,6 @@ export class Information {
 			'preferredName': 'Roryrai',
 			'singles': true,
 			'seed': '10'
-		},
-		{
-			'id': 38,
-			'name': 'SeaAverage',
-			'preferredName': 'SeaAverage',
-			'singles': true,
-			'seed': null
 		},
 		{
 			'id': 39,
@@ -333,31 +179,10 @@ export class Information {
 			'seed': '14'
 		},
 		{
-			'id': 42,
-			'name': 'sloaters27',
-			'preferredName': 'sloaters',
-			'singles': true,
-			'seed': null
-		},
-		{
 			'id': 43,
 			'name': 'SmashyLe',
 			'preferredName': 'Smashy',
 			'singles': false,
-			'seed': null
-		},
-		{
-			'id': 44,
-			'name': 'Synyadriel',
-			'preferredName': 'Synyadriel',
-			'singles': true,
-			'seed': null
-		},
-		{
-			'id': 45,
-			'name': 'TAS_Snoop',
-			'preferredName': 'Snoopy',
-			'singles': true,
 			'seed': null
 		},
         {
@@ -367,13 +192,6 @@ export class Information {
 			'singles': true,
 			'seed': '15'
         },
-		{
-			'id': 47,
-			'name': 'TheFlyingMarlin',
-			'preferredName': 'TheFlyingMarlin',
-			'singles': true,
-			'seed': null
-		},
 		{
 			'id': 48,
 			'name': 'trojandude12',

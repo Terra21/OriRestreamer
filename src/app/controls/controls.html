@@ -139,9 +139,6 @@
 	
 			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c1">
 				TEAM 1 
-				<span *ngIf="vm.bestOf > 1"> - Wins:
-					<input class="p1Wins" type="number" [(ngModel)]="p1_wins" />
-				</span>
 			</div>
 			<label *ngIf="vm.tournament == 2" class="label r14 c1" for="t1Id">Name</label>
 			<select *ngIf="vm.tournament == 2" class="twitch r14 c2" [(ngModel)]="t1Id">
@@ -150,9 +147,6 @@
 	
 			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c5">
 				TEAM 2 
-				<span *ngIf="vm.bestOf > 1">  - Wins:
-					<input class="p2Wins" type="number" [(ngModel)]="p2_wins" />
-				</span>
 			</div>
 			<label *ngIf="vm.tournament == 2" class="label r14 c5" for="t2Id">Name</label>
 			<select *ngIf="vm.tournament == 2" class="twitch r14 c6" [(ngModel)]="t2Id">

@@ -34,15 +34,24 @@ export class DivisionComponent implements OnInit {
   private mapSheetToDivision(division: string, response: any){
 	// Prelims
 	if (response.values[0][0] !== '') {
-		this.division.matches.push(new Match('m1', 'Match P1', 'pre', response.values[0][0], response.values[1][0], response.values[0][1], response.values[1][1], response.values[0][2], response.values[1][2]));
+    if (division === "Singles (Right)")
+      this.division.matches.push(new Match('m1', 'Match P4', 'pre', response.values[0][0], response.values[1][0], response.values[0][1], response.values[1][1], response.values[0][2], response.values[1][2]));
+    else
+      this.division.matches.push(new Match('m1', 'Match P1', 'pre', response.values[0][0], response.values[1][0], response.values[0][1], response.values[1][1], response.values[0][2], response.values[1][2]));
 	}
 
 	if (response.values[8][0] !== '') {
-		this.division.matches.push(new Match('m2', 'Match P2','pre', response.values[8][0], response.values[9][0], response.values[8][1], response.values[9][1], response.values[8][2], response.values[9][2]));
+    if (division === "Singles (Right)")
+      this.division.matches.push(new Match('m2', 'Match P5','pre', response.values[8][0], response.values[9][0], response.values[8][1], response.values[9][1], response.values[8][2], response.values[9][2]));
+    else
+      this.division.matches.push(new Match('m2', 'Match P2','pre', response.values[8][0], response.values[9][0], response.values[8][1], response.values[9][1], response.values[8][2], response.values[9][2]));
 	}
 
 	if (response.values[12][0] !== '') {
-		this.division.matches.push(new Match('m3', 'Match P3','pre', response.values[12][0], response.values[13][0], response.values[12][1], response.values[13][1], response.values[12][2], response.values[13][2]));
+    if (division === "Singles (Right)")
+      this.division.matches.push(new Match('m3', 'Match P6','pre', response.values[12][0], response.values[13][0], response.values[12][1], response.values[13][1], response.values[12][2], response.values[13][2]));
+    else
+      this.division.matches.push(new Match('m3', 'Match P3','pre', response.values[12][0], response.values[13][0], response.values[12][1], response.values[13][1], response.values[12][2], response.values[13][2]));
 	}
 
 	this.division.matches.push(new Match('m9', response.values[0][3], 'r1', response.values[0][4], response.values[1][4], response.values[0][5], response.values[1][5], response.values[0][6], response.values[1][6]));
