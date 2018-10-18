@@ -12,3 +12,11 @@ html, body {
     text-shadow: 2px 3px 3px #000000;
     
 }
+
+.clickable {
+	cursor: pointer !important;
+}
+
+.clickable:hover{
+	border: 2px solid green !important;
+}

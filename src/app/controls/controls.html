@@ -24,64 +24,56 @@
 					<option *ngFor="let type of brackets" [value]="type.value" >{{ type.name }}</option>
 				</select><br>
 			</div>
-		<input type="button" class="btn col-1 update r2 c4" (click)="updateInfo()" value="UPDATE STREAM INFO" />
-		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r2 c5 col-1" value="RESET WINNERS / SCORE" (click)="resetWinner()" />
-		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r2 c5 col-1" value="RESET AVERAGE / SCORE" (click)="resetAverage()" />
+		<input type="button" class="btn col-1 update r2 c4 clickable" (click)="updateInfo()" value="UPDATE STREAM INFO" />
+		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r2 c5 col-1 clickable" value="RESET WINNERS / SCORE" (click)="resetWinner()" />
+		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r2 c5 col-1 clickable" value="RESET AVERAGE / SCORE" (click)="resetAverage()" />
 
 	</div>
+
     <div class="container main-controls" *ngIf="vm.tournament == 1 || vm.tournament == 2"  >
 		<div class="backgrounds col-8 center r3 c1">
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'gladesms' }"
-				(click)="setBackground('gladesms')" src="../../assets/background-gladesms.png" style="max-height:50px;">
+			<div (click)="setBackground('gladesms')" class="clickable">
+				<img [ngClass]="{ 'active-background': vm.background == 'gladesms' }" src="../../assets/background-gladesms.png" style="max-height:50px;">
 				<br>
 				<b>Glades (M1)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'iceless' }"
-				(click)="setBackground('iceless')" src="../../assets/background-iceless.png" style="max-height:50px;">
+			<div (click)="setBackground('iceless')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'iceless' }">
+				<img src="../../assets/background-iceless.png" style="max-height:50px;">
 				<br>
 				<b>Iceless (M2)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'brbms' }"
-				(click)="setBackground('brbms')" src="../../assets/background-brbms.png" style="max-height:50px;">
+			<div (click)="setBackground('brbms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'brbms' }">
+				<img src="../../assets/background-brbms.png" style="max-height:50px;">
 				<br>
 				<b>Blackroot (M3)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'grottoms' }"
-				(click)="setBackground('grottoms')" src="../../assets/background-grottoms.png" style="max-height:50px;">
+			<div (click)="setBackground('grottoms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'grottoms' }">
+				<img src="../../assets/background-grottoms.png" style="max-height:50px;">
 				<br>
 				<b>Grotto (M4)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'swampms' }"
-				(click)="setBackground('swampms')" src="../../assets/background-swampms.png" style="max-height:50px;">
+			<div (click)="setBackground('swampms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'swampms' }">
+				<img src="../../assets/background-swampms.png" style="max-height:50px;">
 				<br>
 				<b>Swamp (M5)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'forlornms' }"
-				(click)="setBackground('forlornms')" src="../../assets/background-forlornms.png" style="max-height:50px;">
+			<div (click)="setBackground('forlornms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'forlornms' }">
+				<img src="../../assets/background-forlornms.png" style="max-height:50px;">
 				<br>
 				<b>Forlorn (M6)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'valleyms' }"
-				(click)="setBackground('valleyms')" src="../../assets/background-valleyms.png" style="max-height:50px;">
+			<div (click)="setBackground('valleyms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'valleyms' }">
+				<img src="../../assets/background-valleyms.png" style="max-height:50px;">
 				<br>
 				<b>Valley (M7)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'sorrowms' }"
-				(click)="setBackground('sorrowms')" src="../../assets/background-sorrowms.png" style="max-height:50px;">
+			<div (click)="setBackground('sorrowms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'sorrowms' }">
+				<img src="../../assets/background-sorrowms.png" style="max-height:50px;">
 				<br>
 				<b>Sorrow (M8)</b>
 			</div>
-			<div>
-				<img [ngClass]="{ 'active-background': vm.background == 'horums' }"
-				(click)="setBackground('horums')" src="../../assets/background-horums.png" style="max-height:50px;">
+			<div (click)="setBackground('horums')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'horums' }">
+				<img src="../../assets/background-horums.png" style="max-height:50px;">
 				<br>
 				<b>Horu (M9)</b>
 			</div>
@@ -162,11 +154,6 @@
 			<input *ngIf="vm.tournament == 2" id="t1P1" class="seed r15 c6" [(ngModel)]="t2P1_Time" placeholder="0:00:00"/>
 			<label *ngIf="vm.tournament == 2" class="label r16 c5" for="t1P2">Player 2 Time</label>
 			<input *ngIf="vm.tournament == 2" id="t1P2" class="seed r16 c6" [(ngModel)]="t2P2_Time" placeholder="0:00:00"/>
-	
-
-		<!-- <input type="button" class="btn btn-warning r14 c3 col-1" value="WINNER" (click)="player1Winner()" /> -->
-		<!-- <input type="button" class="btn btn-warning r14 c7 col-1" value="WINNER" (click)="player2Winner()" /> -->
-
 	</div>
 
 </div>
