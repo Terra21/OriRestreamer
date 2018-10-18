@@ -94,4 +94,22 @@ export class Stream4WayCMP {
 					return n.id == id;
 			}.bind(this))[0];
 	}
+
+	get p1WinCount(){ 
+		let count = 0;
+		this.vm.currentSeries.forEach(function (a) {
+			if(a.winner === 1)
+				count++;
+		});
+		return count;
+	}
+
+	get p2WinCount(){ 
+		let count = 0;
+		this.vm.currentSeries.forEach(function (a) {
+			if(a.winner === 2)
+				count++;
+		});
+		return count;
+	}
 }

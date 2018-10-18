@@ -60,6 +60,13 @@ export class Information {
 			'seed': '4'
 		},
 		{
+			'id': 5,
+			'name': 'CutieRoo1',
+			'preferredName': 'Roo',
+			'singles': true,
+			'seed': null
+		},
+		{
 			'id': 6,
 			'name': 'Dr_Tuen',
 			'preferredName': 'Dr. Tuen',
@@ -128,6 +135,13 @@ export class Information {
 			'preferredName': 'Richard',
 			'singles': true,
 			'seed': '20'
+		},
+		{
+			'id': 32,
+			'name': 'oshiimine',
+			'preferredName': 'oshiimine',
+			'singles': true,
+			'seed': null
 		},
 		{
 			'id': 33,
