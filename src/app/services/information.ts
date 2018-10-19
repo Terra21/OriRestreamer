@@ -5,8 +5,8 @@ export class Information {
 
     player1: string = 'Terra';
     player2: string = 'Grimelios';
-    player1_twitch: string = 'Grimelios';
-    player2_twitch: string = 'Terra21';
+    player1_twitch: string = 'Terra21';
+    player2_twitch: string = 'Grimelios';
     player1_seed: string = null;
     player2_seed: string = null;
     player1_timerVisible: boolean = false;
