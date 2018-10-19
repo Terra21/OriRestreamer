@@ -1,200 +1,240 @@
-<div class="controls">
-	<div class="container">
-			<div class="col-8 center label-big r1 c1">GENERAL INFO</div>
-			<div class="label r2 c1">
-				<label for="trackerId">Broadcast ID</label><br>
-				<label for="matchType">Match Type</label><br>
-				<label for="commentators">Commentators</label><br>
-				<label for="bestOf">Best of</label><br>
-				<label for="tournament">Tournament</label><br>
-				<label *ngIf="vm.tournament == 1" for="bracket">Bracket Side</label><br>
-			</div>
-			<div class="col-2 r2 c2">
-				<input type="text" id="trackerId" [(ngModel)]="seed"><br>
-				<input type="text" id="matchType" [(ngModel)]="matchType"  placeholder="Swiss/Bracket Stage - Round Name">
-				<input type="text" id="commentators" [(ngModel)]="commentators"  placeholder="ENTER COMMENTATORS">
-				<select class="twitch" [(ngModel)]="bestOf">
-					<option *ngFor="let match of matchTypes" [value]="match.value" >{{ match.name }}</option>
-				</select><br>
-				<select class="twitch" [(ngModel)]="tournament">
-					<option *ngFor="let type of tournaments" [value]="type.value" >{{ type.name }}</option>
-				</select><br>
-
-				<select *ngIf="vm.tournament == 1" class="twitch" [(ngModel)]="bracket">
-					<option *ngFor="let type of brackets" [value]="type.value" >{{ type.name }}</option>
-				</select><br>
-			</div>
-		<input type="button" class="btn col-1 update r2 c4 clickable" (click)="updateInfo()" value="UPDATE STREAM INFO" />
-		<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r2 c5 col-1 clickable" value="RESET WINNERS / SCORE" (click)="resetWinner()" />
-		<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r2 c5 col-1 clickable" value="RESET AVERAGE / SCORE" (click)="resetAverage()" />
-
-	</div>
-
-    <div class="container main-controls" *ngIf="vm.tournament == 1 || vm.tournament == 2"  >
-		<div class="backgrounds col-8 center r3 c1">
-			<div (click)="setBackground('gladesms')" class="clickable">
-				<img src="../../assets/background-gladesms.png" style="max-height:50px;">
-				<br>
-				<b>Glades (M1)</b>
-			</div>
-			<div (click)="setBackground('iceless')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'iceless' }">
-				<img src="../../assets/background-iceless.png" style="max-height:50px;">
-				<br>
-				<b>Iceless (M2)</b>
-			</div>
-			<div (click)="setBackground('brbms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'brbms' }">
-				<img src="../../assets/background-brbms.png" style="max-height:50px;">
-				<br>
-				<b>Blackroot (M3)</b>
-			</div>
-			<div (click)="setBackground('grottoms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'grottoms' }">
-				<img src="../../assets/background-grottoms.png" style="max-height:50px;">
-				<br>
-				<b>Grotto (M4)</b>
-			</div>
-			<div (click)="setBackground('swampms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'swampms' }">
-				<img src="../../assets/background-swampms.png" style="max-height:50px;">
-				<br>
-				<b>Swamp (M5)</b>
-			</div>
-			<div (click)="setBackground('forlornms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'forlornms' }">
-				<img src="../../assets/background-forlornms.png" style="max-height:50px;">
-				<br>
-				<b>Forlorn (M6)</b>
-			</div>
-			<div (click)="setBackground('valleyms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'valleyms' }">
-				<img src="../../assets/background-valleyms.png" style="max-height:50px;">
-				<br>
-				<b>Valley (M7)</b>
-			</div>
-			<div (click)="setBackground('sorrowms')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'sorrowms' }">
-				<img src="../../assets/background-sorrowms.png" style="max-height:50px;">
-				<br>
-				<b>Sorrow (M8)</b>
-			</div>
-			<div (click)="setBackground('horums')" class="clickable" [ngClass]="{ 'active-background': vm.background == 'horums' }">
-				<img src="../../assets/background-horums.png" style="max-height:50px;">
-				<br>
-				<b>Horu (M9)</b>
-			</div>
-		</div>
+<div class="container">
+	<div class="row">
+		<div class="six columns">
+			<form>
+				<h5>General Info</h5>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="trackerId">Broadcast ID</label>
+						<input class="u-full-width" type="text" id="trackerId" [(ngModel)]="seed" name="seed">
+					</div>
+				</div>
 		
-			<hr class="spacer r7 c1" />
-
-			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c1">
-				PLAYER 1
-			</div>
-			<label *ngIf="vm.tournament == 1" class="label r9 c1" for="p1Name">Name</label>
-			<input *ngIf="vm.tournament == 1" id="p1Name" class="name r9 c2" [(ngModel)]="p1_name" />
-			<label *ngIf="vm.tournament == 1" class="label r10 c1" for="p1Twitch">Twitch</label>
-	
-			<select *ngIf="vm.tournament == 1" class="twitch r10 c2" [(ngModel)]="p1_twitch" (ngModelChange)="setP1Name($event)">
-				<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
-			</select>
-	
-			<label *ngIf="vm.tournament == 1" class="label r11 c1" for="p1Seed">Seed</label>
-			<input *ngIf="vm.tournament == 1" id="p1Seed" class="seed r11 c2" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY"/>
-			<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
-			<label *ngIf="vm.tournament == 1" class="label r11 c4">This will display winner on splash screen</label>
-			<input *ngIf="vm.tournament == 2" type="button" class="btn btn-warning r15 c3 col-1" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" />
-
-			<div *ngIf="vm.tournament == 1" class="col-4 center label-big players r8 c5">
-				PLAYER 2
-			</div>
-
-			<div class="col-4 center label players r8 c3">
-				<span><b>Match Winners</b></span>
-				<div>
-					(P1) () (P2)
+				<div class="row">
+					<div class="twelve columns">
+						<label for="matchType">Match Type</label>
+						<input class="u-full-width" type="text" id="matchType" [(ngModel)]="matchType"  placeholder="Swiss/Bracket Stage - Round Name" name="matchType">
+					</div>
 				</div>
-				<div *ngFor="let match of vm.currentSeries; let i = index">
-					<span>
-						{{ match.name }}
-						<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1">
-					</span>
-					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="0" [checked]="match.winner === 0">
-					<input type="radio" name="{{match.name}}" [(ngModel)]="match.winner" [value]="2" [checked]="match.winner === 2">
+		
+				<div class="row">
+					<div class="twelve columns">
+						<label for="commentators">Commentators</label>
+						<input class="u-full-width" type="text" id="commentators" [(ngModel)]="commentators"  placeholder="ENTER COMMENTATORS" name="commentators">
+					</div>
+				</div>
+		
+				<div class="row">
+					<div class="four columns">
+						<label for="bestOf">Best of</label>
+						<select class="u-full-width" [(ngModel)]="bestOf" name="bestOf">
+							<option *ngFor="let match of matchTypes" [value]="match.value" >{{ match.name }}</option>
+						</select>
+					</div>
+		
+					<div class="four columns">
+						<label for="tournament">Tournament</label>
+						<select class="u-full-width" [(ngModel)]="tournament" name="tournament">
+							<option *ngFor="let type of tournaments" [value]="type.value" >{{ type.name }}</option>
+						</select>
+					</div>
+		
+					<div *ngIf="vm.tournament == 1" class="four columns">
+						<label  for="bracket">Bracket Side</label>
+						<select class="u-full-width" [(ngModel)]="bracket" name="bracket">
+							<option *ngFor="let type of brackets" [value]="type.value" >{{ type.name }}</option>
+						</select>
+					</div>
+				</div>
+		
+				<div class="row">
+					<input class="button-secondary" type="button" (click)="updateInfo()" value="UPDATE STREAM INFO" />
+					<input class="button-secondary" *ngIf="vm.tournament == 1" type="button" value="RESET WINNERS / SCORE" (click)="resetWinner()" />
+					<input class="button-secondary" *ngIf="vm.tournament == 2" type="button" value="RESET AVERAGE / SCORE" (click)="resetAverage()" />
+				</div>
+		
+			</form>
+		</div>
+
+		<div class="six columns top-margin">
+			<div class="row">
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('gladesms')" [ngClass]="{ 'map-background-active': vm.background == 'gladesms' }">
+						<span class="map-name">Glades (M1)</span>
+						<img src="../../assets/background-gladesms.png">
+					</div>
+				</div>
+	
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('iceless')" [ngClass]="{ 'map-background-active': vm.background == 'iceless' }">
+						<span class="map-name">Iceless (M2)</span>
+						<img src="../../assets/background-iceless.png">
+					</div>				
+				</div>
+	
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('brbms')" [ngClass]="{ 'map-background-active': vm.background == 'brbms' }">
+						<span class="map-name">Blackroot (M3)</span>
+						<img src="../../assets/background-brbms.png">
+					</div>
 				</div>
 			</div>
 
-			<label *ngIf="vm.tournament == 1" class="label r9 c5" for="p2Name">Name</label>
-			<input *ngIf="vm.tournament == 1" id="p2Name" class="name r9 c6" [(ngModel)]="p2_name" />
-			<label *ngIf="vm.tournament == 1" class="label r10 c5" for="p2Twitch">Twitch</label>
+			<div class="row">
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('grottoms')" [ngClass]="{ 'map-background-active': vm.background == 'grottoms' }">
+						<span class="map-name">Grotto (M4)</span>
+						<img src="../../assets/background-grottoms.png">
+					</div>
+				</div>
 	
-			<select *ngIf="vm.tournament == 1" class="twitch r10 c6" [(ngModel)]="p2_twitch" (ngModelChange)="setP2Name($event)">
-				<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
-			</select>
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('swampms')" [ngClass]="{ 'map-background-active': vm.background == 'swampms' }">
+						<span class="map-name">Swamp (M5)</span>
+						<img src="../../assets/background-swampms.png">
+					</div>				
+				</div>
 	
-			<label *ngIf="vm.tournament == 1" class="label r11 c5" for="p2Seed">Seed</label>
-			<input *ngIf="vm.tournament == 1" id="p2Seed" class="seed r11 c6" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY"/>
-			<input *ngIf="vm.tournament == 1" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
-	
-			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c1">
-				TEAM 1 
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('forlornms')" [ngClass]="{ 'map-background-active': vm.background == 'forlornms' }">
+						<span class="map-name">Forlorn (M6)</span>
+						<img src="../../assets/background-forlornms.png">
+					</div>
+				</div>
 			</div>
-			<label *ngIf="vm.tournament == 2" class="label r14 c1" for="t1Id">Name</label>
-			<select *ngIf="vm.tournament == 2" class="twitch r14 c2" [(ngModel)]="t1Id">
-				<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
-			</select>
+
+			<div class="row">
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('valleyms')" [ngClass]="{ 'map-background-active': vm.background == 'valleyms' }">
+						<span class="map-name">Valley (M7)</span>
+						<img src="../../assets/background-valleyms.png">
+					</div>
+				</div>
 	
-			<div *ngIf="vm.tournament == 2" class="col-3 center label-big players r13 c5">
-				TEAM 2 
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('sorrowms')" [ngClass]="{ 'map-background-active': vm.background == 'sorrowms' }">
+						<span class="map-name">Sorrow (M8)</span>
+						<img src="../../assets/background-sorrowms.png">
+					</div>
+				</div>
+	
+				<div class="four columns">
+					<div class="map-background" (click)="setBackground('horums')" [ngClass]="{ 'map-background-active': vm.background == 'horums' }">
+						<span class="map-name">Horu (M9)</span>
+						<img src="../../assets/background-horums.png">
+					</div>
+				</div>
 			</div>
-			<label *ngIf="vm.tournament == 2" class="label r14 c5" for="t2Id">Name</label>
-			<select *ngIf="vm.tournament == 2" class="twitch r14 c6" [(ngModel)]="t2Id">
-				<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
-			</select>
-	
-			<label *ngIf="vm.tournament == 2" class="label r15 c1" for="t1P1">Player 1 Time</label>
-			<input *ngIf="vm.tournament == 2" id="t1P1" class="seed r15 c2" [(ngModel)]="t1P1_Time" placeholder="0:00:00"/>
-			<label *ngIf="vm.tournament == 2" class="label r16 c1" for="t1P2">Player 2 Time</label>
-			<input *ngIf="vm.tournament == 2" id="t1P2" class="seed r16 c2" [(ngModel)]="t1P2_Time" placeholder="0:00:00"/>
-	
-			<label *ngIf="vm.tournament == 2" class="label r15 c5" for="t1P1">Player 1 Time</label>
-			<input *ngIf="vm.tournament == 2" id="t1P1" class="seed r15 c6" [(ngModel)]="t2P1_Time" placeholder="0:00:00"/>
-			<label *ngIf="vm.tournament == 2" class="label r16 c5" for="t1P2">Player 2 Time</label>
-			<input *ngIf="vm.tournament == 2" id="t1P2" class="seed r16 c6" [(ngModel)]="t2P2_Time" placeholder="0:00:00"/>
+
+		</div>
 	</div>
 
-</div>
-<div *ngIf="vm.tournament == 3" style="position: absolute; top: 220px; background-color: #181819; width: 1920px; height: 700px;">
-	<span style="width: 300px; position: absolute; top: 0; left: 75px;">
-		<div>
-			<span><b>Singles</b></span>
+	<hr/>
+
+	<div class="row" *ngIf="vm.tournament == 1">
+		<div class="five columns">
+			<form>
+				<h5>Player 1</h5>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p1Name">Name</label>
+						<input class="u-full-width" type="text" id="p1Name" [(ngModel)]="p1_name" name="p1_name">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p1Twitch">Twitch</label>
+						<select class="u-full-width" id="p1Twitch" [(ngModel)]="p1_twitch" (ngModelChange)="setP1Name($event)" name="p1_twitch">
+							<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p1Seed">Seed</label>
+						<input class="u-full-width" type="text" id="p1Seed" [(ngModel)]="p1_seed" placeholder="BRACKET STAGE ONLY" name="p1_seed">
+					</div>
+				</div>
+
+				<div class="row">
+					<input class="button-secondary" type="button" value="WINNER" (click)="player1Winner()" /> This will display winner on splash screen.
+				</div>
+			</form>
 		</div>
-		<div *ngFor="let p of vm.players">
-			<span *ngIf="p.singles && p.id < 29">
-				<input style="text-shadow: none;" type="button" value="+" (click)="addRemovePlayer($event, p.id, p.name)" />
-				<span>{{ p.name }}</span>
-			</span>
+
+		<div class="two columns">
+			<form>
+				<h5>Match Winners</h5>
+				<div *ngFor="let match of vm.currentSeries; let i = index">
+					<label>
+						<label for="{{match.name}}" class="label-body">{{match.name}}</label>
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1" name="{{match.name}}">
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="0" [checked]="match.winner === 0" name="{{match.name}}">
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="2" [checked]="match.winner === 2" name="{{match.name}}">
+					</label>
+				</div>
+			</form>
 		</div>
-	</span>
-	<span style="width: 300px; position: absolute; top: 0; left: 300px;">
-		<div *ngFor="let p of vm.players">
-			<span *ngIf="p.singles && p.id >= 29">
-				<input style="text-shadow: none;" type="button" value="+" (click)="addRemovePlayer($event, p.id, p.name)" />
-				<span>{{ p.name }}</span>
-			</span>
+
+		<div class="five columns">
+			<form>
+				<h5>Player 2</h5>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p2Name">Name</label>
+						<input class="u-full-width" type="text" id="p2Name" [(ngModel)]="p2_name" name="p2_name">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p2Twitch">Twitch</label>
+						<select class="u-full-width" id="p2Twitch" [(ngModel)]="p2_twitch" (ngModelChange)="setP2Name($event)" name="p2_twitch">
+							<option *ngFor="let option of vm.players" [value]="option.name" >{{ option.name }} ({{ option.preferredName }})</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="p2Seed">Seed</label>
+						<input class="u-full-width" type="text" id="p2Seed" [(ngModel)]="p2_seed" placeholder="BRACKET STAGE ONLY" name="p2_seed">
+					</div>
+				</div>
+
+				<div class="row">
+					<input class="button-secondary" type="button" value="WINNER" (click)="player2Winner()" /> This will display winner on splash screen.
+				</div>
+			</form>
 		</div>
-	</span>
-	<span style="position: absolute; top: 0; left: 500px; width: 200px; background-color: #181819 ">	
-		<div>
-			<span><b>Doubles</b></span>
-		</div>		
-		<div *ngFor="let p of vm.teams">
-			<span>
-				<input style="text-shadow: none;" type="button" value="+" (click)="addRemoveTeam($event, p.id, p.name)" />
-				<span>{{ p.name }}</span>
-			</span>
-		</div>
-	</span>
-	<span style="position: absolute; top: 0; left: 700px; width: 400px; background-color: #181819 ">
-		<input type="button" class="btn btn-warning r14 c7 col-1" value="RESET" (click)="resetSwiss()" />
-	</span>
-	<span style="position: absolute; top: 520px; left: 300px; width: 400px; background-color: #181819 ">
-		<input type="button" class="btn btn-warning r14 c7 col-1" value="UNDO SINGLES" (click)="undoSwissSingles()" />
-	</span>
-	<span style="position: absolute; top: 520px; left: 500px; width: 400px; background-color: #181819 ">
-		<input type="button" class="btn btn-warning r14 c7 col-1" value="UNDO DOUBLES" (click)="undoSwissDoubles()" />
-	</span>
-</div>
+	</div>
+
+	
+		<div *ngIf="vm.tournament == 2">TEAM 1</div>
+		<label *ngIf="vm.tournament == 2" for="t1Id">Name</label>
+		<select *ngIf="vm.tournament == 2" [(ngModel)]="t1Id">
+			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
+		</select>
+	
+		<div *ngIf="vm.tournament == 2">TEAM 2</div>
+		<label *ngIf="vm.tournament == 2" for="t2Id">Name</label>
+		<select *ngIf="vm.tournament == 2" [(ngModel)]="t2Id">
+			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
+		</select>
+	
+		<label *ngIf="vm.tournament == 2" for="t1P1">Player 1 Time</label>
+		<input *ngIf="vm.tournament == 2" id="t1P1" class="seed r15 c2" [(ngModel)]="t1P1_Time" placeholder="0:00:00"/>
+		<label *ngIf="vm.tournament == 2" for="t1P2">Player 2 Time</label>
+		<input *ngIf="vm.tournament == 2" id="t1P2" [(ngModel)]="t1P2_Time" placeholder="0:00:00"/>
+	
+		<label *ngIf="vm.tournament == 2" for="t1P1">Player 1 Time</label>
+		<input *ngIf="vm.tournament == 2" id="t1P1" [(ngModel)]="t2P1_Time" placeholder="0:00:00"/>
+		<label *ngIf="vm.tournament == 2" for="t1P2">Player 2 Time</label>
+		<input *ngIf="vm.tournament == 2" id="t1P2" [(ngModel)]="t2P2_Time" placeholder="0:00:00"/>
+		
+		<!-- <input *ngIf="vm.tournament == 2" type="button" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" /> -->
+
+
+</div> <!-- /Container -->
