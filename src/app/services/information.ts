@@ -5,8 +5,8 @@ export class Information {
 
     player1: string = 'Terra';
     player2: string = 'Grimelios';
-    player1_twitch: string = 'Grimelios';
-    player2_twitch: string = 'Terra21';
+    player1_twitch: string = 'Terra21';
+    player2_twitch: string = 'Grimelios';
     player1_seed: string = null;
     player2_seed: string = null;
     player1_timerVisible: boolean = false;
@@ -22,7 +22,7 @@ export class Information {
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;
-	tournament: number = 2;
+	tournament: number = 1;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;

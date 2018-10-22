@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+form{
+    background-color: #252526;
+    color: #99999a;
+    padding: 50px;
+}
+
+input, select{
+    color: black;
+}
+
+.top-margin{
+    margin-top: 20px;
+}
+
+.map-background{
+    color: #8b8b8b;
+    background-color: #181818;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    text-align: center;
+    margin: 8px;
+    cursor: pointer;
+}
+
+
+.map-background img{
+    max-height: 85%;  
+    max-width: 85%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
+.map-background-active, .map-background:hover{
+    color: white !important;
+    background-color: #2a2d2e !important;
+}
+
+.button.button-secondary,
+button.button-secondary,
+input[type="submit"].button-secondary,
+input[type="reset"].button-secondary,
+input[type="button"].button-secondary {
+  color: #8b8b8b;
+  background-color: #181818;
+  border-color: #181818; }
+.button.button-secondary:hover,
+button.button-secondary:hover,
+input[type="submit"].button-secondary:hover,
+input[type="reset"].button-secondary:hover,
+input[type="button"].button-secondary:hover,
+.button.button-secondary:focus,
+button.button-secondary:focus,
+input[type="submit"].button-secondary:focus,
+input[type="reset"].button-secondary:focus,
+input[type="button"].button-secondary:focus {
+  color: #8e8f90;
+  background-color: #2a2d2e;
+  border-color: #2a2d2e; }
+
+.golden{
+    color: #FFD700;
+}
+
+hr {
+    height: 12px; 
+    border: 0; 
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
