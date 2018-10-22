@@ -22,7 +22,7 @@ export class Information {
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;
-	tournament: number = 2;
+	tournament: number = 1;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;

@@ -48,9 +48,9 @@
 				</div>
 		
 				<div class="row">
-					<input class="button-secondary" type="button" (click)="updateInfo()" value="UPDATE STREAM INFO" />
-					<input class="button-secondary" *ngIf="vm.tournament == 1" type="button" value="RESET WINNERS / SCORE" (click)="resetWinner()" />
-					<input class="button-secondary" *ngIf="vm.tournament == 2" type="button" value="RESET AVERAGE / SCORE" (click)="resetAverage()" />
+					<button class="button-secondary" (click)="updateInfo()"><i class="fas fa-arrow-alt-circle-up"></i> UPDATE STREAM INFO</button>
+					<button class="button-secondary" (click)="resetWinner()" *ngIf="vm.tournament == 1"><i class="fas fa-redo-alt"></i> RESET WINNERS / SCORE</button>
+					<button class="button-secondary" (click)="resetAverage()" *ngIf="vm.tournament == 2"><i class="fas fa-redo-alt"></i> RESET AVERAGE / SCORE</button>
 				</div>
 		
 			</form>
@@ -159,7 +159,7 @@
 				</div>
 
 				<div class="row">
-					<input class="button-secondary" type="button" value="WINNER" (click)="player1Winner()" /> This will display winner on splash screen.
+					<button class="button-secondary" (click)="player1Winner()"><i class="fas fa-trophy golden"></i> WINNER</button> This will display winner on splash screen.
 				</div>
 			</form>
 		</div>
@@ -205,36 +205,83 @@
 				</div>
 
 				<div class="row">
-					<input class="button-secondary" type="button" value="WINNER" (click)="player2Winner()" /> This will display winner on splash screen.
+					<button class="button-secondary" (click)="player2Winner()"><i class="fas fa-trophy golden"></i> WINNER</button> This will display winner on splash screen.
 				</div>
 			</form>
 		</div>
 	</div>
 
-	
-		<div *ngIf="vm.tournament == 2">TEAM 1</div>
-		<label *ngIf="vm.tournament == 2" for="t1Id">Name</label>
-		<select *ngIf="vm.tournament == 2" [(ngModel)]="t1Id">
-			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
-		</select>
-	
-		<div *ngIf="vm.tournament == 2">TEAM 2</div>
-		<label *ngIf="vm.tournament == 2" for="t2Id">Name</label>
-		<select *ngIf="vm.tournament == 2" [(ngModel)]="t2Id">
-			<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
-		</select>
-	
-		<label *ngIf="vm.tournament == 2" for="t1P1">Player 1 Time</label>
-		<input *ngIf="vm.tournament == 2" id="t1P1" class="seed r15 c2" [(ngModel)]="t1P1_Time" placeholder="0:00:00"/>
-		<label *ngIf="vm.tournament == 2" for="t1P2">Player 2 Time</label>
-		<input *ngIf="vm.tournament == 2" id="t1P2" [(ngModel)]="t1P2_Time" placeholder="0:00:00"/>
-	
-		<label *ngIf="vm.tournament == 2" for="t1P1">Player 1 Time</label>
-		<input *ngIf="vm.tournament == 2" id="t1P1" [(ngModel)]="t2P1_Time" placeholder="0:00:00"/>
-		<label *ngIf="vm.tournament == 2" for="t1P2">Player 2 Time</label>
-		<input *ngIf="vm.tournament == 2" id="t1P2" [(ngModel)]="t2P2_Time" placeholder="0:00:00"/>
-		
-		<!-- <input *ngIf="vm.tournament == 2" type="button" value="SHOW / UPDATE AVERAGE" (click)="calcAverage()" /> -->
 
+	<div class="row" *ngIf="vm.tournament == 2">
+		<div class="five columns">
+			<form>
+				<h5>Team 1</h5>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t1Id">Name</label>
+						<select class="u-full-width" [(ngModel)]="t1Id" name="t1Id">
+							<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
+						</select>
+					</div>
+				</div>
 
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t1P1">Player 1 Time</label>
+						<input class="u-full-width" type="text" id="t1P1" [(ngModel)]="t1P1_Time" placeholder="0:00:00" name="t1P1_Time"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t1P2">Player 2 Time</label>
+						<input class="u-full-width" type="text" id="t1P2" [(ngModel)]="t1P2_Time" placeholder="0:00:00" name="t1P2_Time"/>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="two columns">
+			<form>
+				<h5>Match Winners</h5>
+				<div *ngFor="let match of vm.currentSeries; let i = index">
+					<label>
+						<label for="{{match.name}}" class="label-body">{{match.name}}</label>
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="1" [checked]="match.winner === 1" name="{{match.name}}">
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="0" [checked]="match.winner === 0" name="{{match.name}}">
+						<input type="radio" id="{{match.name}}" [(ngModel)]="match.winner" [value]="2" [checked]="match.winner === 2" name="{{match.name}}">
+					</label>
+				</div>
+			</form>
+			<button class="button-secondary u-full-width" (click)="calcAverage()">SHOW / UPDATE AVERAGE</button>
+		</div>
+
+		<div class="five columns">
+			<form>
+				<h5>Team 2</h5>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t2Id">Name</label>
+						<select class="u-full-width" [(ngModel)]="t2Id" name="t2Id">
+							<option *ngFor="let option of vm.teams" [value]="option.id" >{{ option.name }}</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t2P1">Player 1 Time</label>
+						<input class="u-full-width" type="text" id="t2P1" [(ngModel)]="t2P1_Time" placeholder="0:00:00" name="t2P1_Time"/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="twelve columns">
+						<label for="t2P2">Player 2 Time</label>
+						<input class="u-full-width" type="text" id="t2P2" [(ngModel)]="t2P2_Time" placeholder="0:00:00" name="t2P2_Time"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>	
 </div> <!-- /Container -->
