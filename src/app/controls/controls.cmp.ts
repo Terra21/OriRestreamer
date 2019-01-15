@@ -60,55 +60,6 @@ export class ControlsCMP {
 		this.socket.emit('data', this.vm);
 	}
 
-	resetAverage() {
-		this.vm.team1_FinishTime = 0;
-		this.vm.team2_FinishTime = 0;
-		this.t1P1_Time = "0:00:00";
-		this.t1P2_Time = "0:00:00";
-		this.t2P1_Time = "0:00:00";
-		this.t2P2_Time = "0:00:00";
-
-		this.vm.currentSeries =  [{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}];
-		this.vm.player1_winCount = 0;
-		this.vm.player2_winCount = 0;
-		this.p1_wins = 0;
-		this.p2_wins = 0;
-
-		this.socket.emit('data', this.vm);
-	}
-
-	calcAverage() {
-		this.calcTeam1Average();
-		this.calcTeam2Average();
-
-		this.socket.emit('data', this.vm);
-	}
-
-	calcTeam1Average() {
-		let a = this.t1P1_Time.split(':');
-		let b = this.t1P2_Time.split(':');
-		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
-
-		let average = (p1Ticks + p2Ticks) / 2;
-		if(p1Ticks != 0 && p2Ticks != 0) {
-			this.vm.team1_FinishTime = average;
-		}
-	}
-		
-	calcTeam2Average() {
-		let a = this.t2P1_Time.split(':');
-		let b = this.t2P2_Time.split(':');
-		let p1Ticks = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-		let p2Ticks = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
-
-		let average = (p1Ticks + p2Ticks) / 2;
-
-		if(p1Ticks != 0 && p2Ticks != 0) {
-			this.vm.team2_FinishTime = average;
-		}
-	}
-
 	player1Winner() {
 		this.vm.soloWinner = 1;
 		this.socket.emit('data', this.vm);
@@ -322,9 +273,6 @@ public set seed(seed: string){
 
 	public set tournament(tournament: number){
 		this._vm.tournament = tournament;
-
-		if(tournament == 2)
-			this.bracket = "Doubles";
 	}
 
 	public get tournament(): number {
@@ -383,22 +331,6 @@ public set seed(seed: string){
 		this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
 	}
 
-	public get t1Id(): number {
-		return this._vm.team1Id;
-	}
-
-	public set t1Id(id: number) {
-		this._vm.team1Id = id;
-	}
-
-	public get t2Id(): number {
-		return this._vm.team2Id;
-	}
-
-	public set t2Id(id: number) {
-		this._vm.team2Id = id;
-	}
-
 	setP1Stats(){
 		this.socket.emit('p1Stats', this._vm, this.p1StatsText);
 	}
@@ -414,16 +346,20 @@ public set seed(seed: string){
 
 
 	matchTypes = [{
+		name: 'Best of 1',
+		value: 1
+	},
+	{
 		name: 'Best of 3',
 		value: 3
 	}];
 
 	tournaments = [{
-		name: 'Singles',
+		name: 'All Skills',
 		value: 1
 	},
 	{
-		name: 'Doubles',
+		name: 'All Cells',
 		value: 2
 	}];
 

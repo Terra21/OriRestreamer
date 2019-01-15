@@ -15,7 +15,7 @@ import { Socket } from 'net';
 export class BracketCMP {
 	socket: any = io.connect(environment.socketPath);
 	seed: string = window.location.href.split('=')[1];
-	divisions: Array<string> = ['Singles (Left)', 'Singles (Right)', 'Doubles'];
+	divisions: Array<string> = ['Singles (Left)', 'Singles (Right)'];
 	currentDivision: Division = new Division();
 	shouldShowHeaders = true;
 	zoomBracket = false;

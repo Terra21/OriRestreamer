@@ -78,12 +78,6 @@ export class StreamCMP {
         return n.id == id;
     }.bind(this))[0];
   }
-
-  getTeamById(id: number) {
-      return  jQuery.grep(this.vm.teams, function(n: any, i) {
-          return n.id == id;
-      }.bind(this))[0];
-  }
   
 	get p1WinCount(){ 
 		let count = 0;

@@ -42,35 +42,14 @@ export class SplashCMP {
 	}
 
 	debug() {
-		//Singles
-		if(this.vm.tournament == 1) {
-			this.opponent1 = this.vm.player1;
-			this.opponent2 = this.vm.player2;
-		} 
-		//Doubles
-		else if(this.vm.tournament == 2 ) {
-			let team1 = this.getTeamById(this.vm.team1Id);
-			this.opponent1 = team1.name;
-			this.players1 = '('+ this.getPlayerById(team1.p1Id).preferredName + ', ' + this.getPlayerById(team1.p2Id).preferredName + ')';
-			this.opponent1Seed = team1.seed;
-
-			let team2 = this.getTeamById(this.vm.team2Id);
-			this.opponent2 = team2.name;
-			this.players2 = '('+ this.getPlayerById(team2.p1Id).preferredName + ', ' + this.getPlayerById(team2.p2Id).preferredName + ')';
-			this.opponent2Seed = team2.seed;
-		}
+		this.opponent1 = this.vm.player1;
+		this.opponent2 = this.vm.player2;
 	}
 	
 	getPlayerById(id: number) {
 		return  jQuery.grep(this.vm.players, function(n: any, i) {
 				return n.id == id;
 		}.bind(this))[0];
-	}
-
-	getTeamById(id: number) {
-			return  jQuery.grep(this.vm.teams, function(n: any, i) {
-					return n.id == id;
-			}.bind(this))[0];
 	}
 
 	get p1WinCount(){ 

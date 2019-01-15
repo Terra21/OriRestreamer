@@ -1,11 +1,6 @@
-@font-face{
-    font-family: "Gara";
-    src: url('../../assets/belleza-regular.ttf') format("truetype")
-}
-
 .container {
-    font-family: "Gara";
-    font-size: 24px;
+    font-family: "Segoe UI";
+    font-size: 14px;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -15,7 +10,7 @@
 
 .ui {
 	font-family: "Segoe UI";
-	font-size: 28px;
+	font-size: 24px;
 	font-weight: bold;
 	color: #fff36a;
 }
@@ -33,7 +28,7 @@ header > img {
 }
 
 .logo {
-	height: 150px;
+	height: 115px;
 }
 
 .title {
@@ -42,7 +37,7 @@ header > img {
 
 .big-container {
 	width: 1910px;
-	height: 900px;
+	height: 950px;
 	margin: 5px;
 	overflow: hidden;
 }

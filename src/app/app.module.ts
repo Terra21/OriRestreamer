@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardCMP } from './dashboard/dashboard.cmp';
 import { StreamCMP } from './stream/stream.cmp';
-import { Stream4WayCMP } from './stream-4way/stream-4way.cmp';
 import { ControlsCMP } from './controls/controls.cmp';
 import { GroupsCMP } from './groups/groups.cmp';
 import { SplashCMP } from './splash/splash.cmp';
@@ -14,14 +13,12 @@ import { SplashReplayCMP } from './splash-replay/splash-replay.cmp';
 import { BracketCMP } from './bracket/bracket.cmp';
 import { StatsCMP } from './stats/stats.cmp';
 import { CreditsCMP } from './credits/credits.cmp';
-import { SwissCMP } from './swiss/swiss.cmp';
 import { IntermissionCMP } from './intermission/intermission.cmp';
 import { DivisionComponent } from './division/division.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
   { path: 'stream', component: StreamCMP },
-  { path: 'stream-4way', component: Stream4WayCMP },
   { path: 'controls', component: ControlsCMP, },
   { path: 'groups', component: GroupsCMP },
   { path: 'splash', component: SplashCMP },
@@ -30,7 +27,6 @@ const appRoutes: Routes = [
   { path: 'stats', component: StatsCMP },
   { path: 'credits', component: CreditsCMP },
   { path: 'intermission', component: IntermissionCMP },
-  { path: 'swiss', component: SwissCMP },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
@@ -40,7 +36,6 @@ const appRoutes: Routes = [
     ControlsCMP,
     DashboardCMP,
     StreamCMP,
-    Stream4WayCMP,
     GroupsCMP,
     SplashCMP,
     SplashReplayCMP,
@@ -48,7 +43,6 @@ const appRoutes: Routes = [
     StatsCMP,
     CreditsCMP,
     IntermissionCMP,
-    SwissCMP,
     DivisionComponent
   ],
   imports: [

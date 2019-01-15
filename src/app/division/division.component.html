@@ -1,12 +1,6 @@
 <div [id]="division.name" [ngClass]="{ 'grid': true, 'mirror': shouldMirror }">
-	<ng-container *ngIf="division.name === 'Doubles'">
-		<div class="round-header ui" style="grid-column: 1 / 2;">Preliminary Round</div>
-		<div class="round-header ui" style="grid-column: 2 / 3;">Quartefinals</div>
-		<div class="round-header ui" style="grid-column: 3 / 4;">Semifinals</div>
-		<div class="round-header ui" style="grid-column: 4 / 5;">Final</div>
-	</ng-container>
 	<ng-container *ngIf="division.name !== 'Doubles'">
-		<div class="round-header ui" style="grid-column: pre-start / pre-end;">Preliminary Round</div>
+		<div class="round-header ui" style="grid-column: pre-start / pre-end;">Round of 32</div>
 		<div class="round-header ui" style="grid-column: r1-start / r1-end;">Round of 16</div>
 		<div class="round-header ui" style="grid-column: r2-start / r2-end;">Quarterfinals</div>
 		<div class="round-header ui" style="grid-column: wb-start / wb-end;">Semifinals</div>
