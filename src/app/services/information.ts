@@ -14,9 +14,10 @@ export class Information {
     player1_stats: number = 0;
     player2_stats: number = 0;
     currentAudioOnPlayer: number = 1;
-    commentators: string = '';
+    commentators: string = 'Sigmasin, RooseSR';
     background: string = 'iceless';
-    groupName: string = 'Round of 32/Round of 16/Quarterfinal/Semifinal/Final';
+    // groupName: string = 'Round of 32/Round of 16/Quarterfinal/Semifinal/Final';
+    groupName: string = 'Round of 32';
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 3;

@@ -1,14 +1,14 @@
 @font-face{
-    font-family: "Gara";
-    src: url('../../assets/belleza-regular.ttf') format("truetype")
+    font-family: "Alte Haas Grotesk";
+    src: url('../../assets/regular.ttf') format("truetype")
 }
 
 .container {
-    font-family: "Gara";
-    font-size: 32px;
+	font-family: "Alte Haas Grotesk";
     color: white;
     width: 1920px;
 	height: 1080px;
+	font-size: 36px;
 	background-size: 1920px 1080px;
 }
 
@@ -23,7 +23,8 @@
 .topbar {
 	display: flex;
 	justify-content: space-between;
-    font-size: 42px;
+	font-size: 42px;
+	font-weight: 100;
 	line-height: 75px;
     height: 75px;
 }
@@ -151,7 +152,6 @@
 
 .matchup-results {
     margin-top: 150px;
-    font-size: 40px;
     width: 300px;
     margin-left: 800px;
 }
@@ -192,7 +192,6 @@
 }
 
 .matchup-results > div {
-    font-size: 40px;
     margin-top: 20px;
 }
 
@@ -251,6 +250,7 @@
 
 .commentators {
 	margin-top: 10px;
+	font-size: 32px;
 }
 
 .commentators > div {
@@ -318,7 +318,7 @@
 	min-width: 400px;
 	max-width: 660px;
 	text-align: center;
-	font-size: 36px;
+	font-size: 32px;
     color: white;
     text-shadow:
      -1px -1px 0 #000,

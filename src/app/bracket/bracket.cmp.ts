@@ -20,6 +20,7 @@ export class BracketCMP {
 	shouldShowHeaders = true;
 	zoomBracket = false;
 	bracket: string = "Singles (Left)";
+	vm: Information = new Information();
 
 	constructor(private sanitizer: DomSanitizer) { }
 
@@ -41,6 +42,7 @@ export class BracketCMP {
 				return;
 			}
 
+			this.vm = data;
 			this.currentDivision.name = data.bracket;
 			this.zoomBracket = data.zoomBracket;
 

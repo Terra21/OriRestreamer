@@ -1,8 +1,8 @@
 <div class="container">
 	<header>
 		<img class="logo" src="../assets/logo.png">
-		<div class="title">Randomizer Tournament 2018 Standings - {{ currentDivision.name }}
-		</div>
+		<div class="title" *ngIf="vm.tournament == 1">All Skills Tournament 2019 Standings - {{ currentDivision.name }}</div>
+		<div class="title" *ngIf="vm.tournament == 2">All Cells Tournament 2019 Standings - {{ currentDivision.name }}</div>
 	</header>
 	<div class="big-container">
 		<app-division
