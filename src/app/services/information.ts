@@ -3,12 +3,10 @@ import { Tracker } from './tracker';
 export class Information {
     seed: string = null;
 
-    player1: string = 'Vulajin';
-    player2: string = 'Vulajin';
-    player1_twitch: string = 'Vulajin';
-    player2_twitch: string = 'Vulajin';
-    player1_seed: string = null;
-    player2_seed: string = null;
+    player1Id: number = 1;
+    player2Id: number = 2;
+    player3Id: number = 1;
+    player4Id: number = 1;
     player1_timerVisible: boolean = false;
     player2_timerVisible: boolean = false;
     player1_finishTime: string = '0:00:00';
@@ -37,6 +35,14 @@ export class Information {
 			'id': 1,
 			'name': 'Vulajin',
 			'preferredName': 'Vulajin',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+        },
+        {
+			'id': 2,
+			'name': 'HydraSR',
+			'preferredName': 'Hydra',
 			'allSkills': true,
 			'allCells': false,
 			'seed': null

@@ -3,10 +3,10 @@
     	<div class="name-cycle p1">
         	<div class="name-twitch text">
             	<img src="../../assets/twitch-icon.png" />
-            	{{ vm.player1_twitch }}
+            	{{ player1.name }}
         	</div>
         	<div class="name-signup text">
-            	{{ vm.player1 }} <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span>
+            	{{ player1.preferredName }} <span *ngIf="player1.seed">({{ player1.seed }})</span>
         	</div>
     	</div>
     	<div class="timers">
@@ -21,10 +21,10 @@
 	    <div class="name-cycle p2">
 	        <div class="name-twitch text">
 	            <img src="../../assets/twitch-icon.png" />
-	            {{ vm.player2_twitch }}
+	            {{ player2.name }}
 	        </div>
 	        <div class="name-signup text">
-                {{ vm.player2 }} <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span>
+                {{ player2.preferredName }} <span *ngIf="player2.seed">({{ player2.seed }})</span>
 	        </div>
 	    </div>
 	</div>

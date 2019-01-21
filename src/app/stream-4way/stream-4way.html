@@ -1,0 +1,105 @@
+<div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '-4way.png)'}">
+    <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0) }"
+        class="stream-placeholder-top-left">
+    </div>
+
+    <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }" 
+        class="team1">
+        <span *ngIf="team1.seed">({{ team1.seed }}) </span>{{ team1.name }}
+        <div [ngClass]="{ 'team-winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0) }"
+            class="finishTimeWinner">Winner: {{ team1FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) }"
+            class="finishTimeLoser">{{ team1FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime == vm.team1_FinishTime && (vm.team1_FinishTime != 0 && vm.team2_FinishTime != 0)) }"
+            class="finishTimeDraw">{{ team1FinishTime }} (avg)</div>
+    </div>
+    <div class="team1-score">
+        <span *ngFor="let match of vm.currentSeries">
+            <img *ngIf="match.winner === 1 || (i === 2 && match.winner === 1) " src="../../assets/win-icon.png">
+        </span>
+        <span *ngFor="let match of vm.currentSeries; let i = index">
+            <img *ngIf="match.winner !== 1 && i < 2 && p1WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
+        </span>
+    </div>
+
+    <div class="team2-score">
+        <span *ngFor="let match of vm.currentSeries">
+            <img *ngIf="match.winner === 2" src="../../assets/win-icon.png">
+        </span>
+        <span *ngFor="let match of vm.currentSeries; let i = index">
+            <img *ngIf="match.winner !== 2 && i < 2 && p2WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
+        </span>
+    </div>
+
+    <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }" 
+        class="stream-placeholder-top-right">
+    </div>
+
+    <div class="middle-team1">
+        <div class="name-cycle player1">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon-t1.png" />
+                {{ player1.name }}
+            </div>
+            <div class="name-signup">
+                {{ player1.preferredName }}
+            </div>
+        </div>
+
+        <div class="matchType">
+            {{ vm.matchType }}
+        </div>
+        <div class="name-cycle player2">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon-t1.png" />
+                {{ player2.name }}
+            </div>
+            <div class="name-signup">
+                {{ player2.preferredName }}
+            </div>
+        </div>
+    </div>
+    <div class="middle-team2">
+        <div class="name-cycle player3">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon-t2.png" />
+                {{ player3.name }}
+            </div>
+            <div class="name-signup">
+                {{ player3.preferredName }}
+            </div>
+        </div>
+        <div class="commentators">
+            <img src="../../assets/commentary.png" />
+            {{ vm.commentators }}
+        </div>
+        <div class="name-cycle player4">
+            <div class="name-twitch">
+                <img src="../../assets/twitch-icon-t2.png" />
+                {{ player4.name }}
+            </div>
+            <div class="name-signup">
+                {{ player4.preferredName }}
+            </div>
+        </div>
+    </div>
+
+    <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)}" 
+        class="stream-placeholder-bottom-left">
+    </div>
+    
+    <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"   
+        class="team2">
+        <span *ngIf="team2.seed">({{ team2.seed }}) </span>{{ team2.name }}
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"
+            class="finishTimeWinner">Winner: {{ team2FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) }"
+            class="finishTimeLoser">{{ team2FinishTime }} (avg)</div>
+        <div [ngClass]="{ 'team-winner': (vm.team2_FinishTime == vm.team1_FinishTime && (vm.team2_FinishTime != 0 && vm.team1_FinishTime != 0)) }"
+            class="finishTimeDraw">{{ team2FinishTime }} (avg)</div>
+    </div>
+    
+    <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"  
+        class="stream-placeholder-bottom-right">
+    </div>
+ </div>

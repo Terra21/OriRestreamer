@@ -47,8 +47,8 @@
 		"wb r2 r1 pre";
 }
 
-#Sol.grid {
-	height: 1800px;
+[id='Top 8'].grid {
+	height: 900px;
 	grid:
 		[header-start] "h   h    h    h   h" auto [header-end]
 		               "mQ1 .    .    . mQ3" 120px
@@ -159,14 +159,14 @@
 .match-container .player-seed {
 	width: 36px;
 	height: 24px;
-	padding: 8px 5px;
+	padding: 8px 5px 10px 5px;
 	font-size: 20px;
 	border-right: 1px solid rgba(255, 255, 255, 0.3);
 	text-align: center;
 }
 
 .match-container .player-name {
-	padding: 8px 5px;
+	/* padding: 8px 5px; */
 	height: 24px;
 	font-size: 24px;
 }
@@ -174,6 +174,9 @@
 .match-container .player-name.placeholder {
 	font-style: italic;
 	color: rgba(255, 255, 255, 0.6);
+	vertical-align: top;
+	padding-top: 5px;
+	height: 20px;
 }
 
 #mF1 {

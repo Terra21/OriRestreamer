@@ -21,13 +21,8 @@ export class StatsCMP {
 			if(data.seed !== this.seed)
 				return;
 
-			var runner1 = jQuery.grep(this.players, function(n: any, i) {
-				return n.name == data.player1_twitch;
-			})[0];
-
-			var runner2 = jQuery.grep(this.players, function(n: any, i) {
-				return n.name == data.player2_twitch;
-			})[0];
+			var runner1 = this.getPlayerById(data.player1Id)
+			var runner2 = this.getPlayerById(data.player2Id)
 
 			$.ajax({
 				url: "https://sheets.googleapis.com/v4/spreadsheets/1ZNRh0DrZsY1YMd1EIiEOwmdk-3uGxmTNgX7qamzeozw/values/Stream Stats!" + runner1.startColumn + ":"+ runner1.endColumn +"?key=AIzaSyDoT4WSyHDf4a1D0qc6lhdySl92d0tXVG0",
@@ -142,7 +137,13 @@ export class StatsCMP {
 			});
 			this.vm = data;
 		}.bind(this));
-	}
+  }
+  
+  getPlayerById(id: number) {
+    return  jQuery.grep(this.vm.players, function(n: any, i) {
+        return n.id == id;
+    }.bind(this))[0];
+  }
 
   public vm: Information = new Information();
 

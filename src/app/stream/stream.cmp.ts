@@ -16,68 +16,77 @@ import { Socket } from 'net';
 export class StreamCMP {
   constructor() { }
 
-  ngOnInit(){
-    this.socket.on('data', function(data: Information){
-      if(data.seed !== this.seed)
-        return;
+	ngOnInit(){
+		this.player1 = this.getPlayerById(this.vm.player1Id);
+		this.player2 = this.getPlayerById(this.vm.player2Id);
 
-      this.vm = data;
+		this.socket.on('data', function(data: Information){
+		if(data.seed !== this.seed)
+			return;
 
-      this.p1FirstWin = this.vm.player1_winCount >= 1;
-      this.p1SecondWin = this.vm.player1_winCount >= 2;
-      this.p1ThirdWin = this.vm.player1_winCount >= 3;
+		this.vm = data;
 
-      this.p2FirstWin = this.vm.player2_winCount >= 1;
-      this.p2SecondWin = this.vm.player2_winCount >= 2;
-      this.p2ThirdWin = this.vm.player2_winCount >= 3;
+		this.p1FirstWin = this.vm.player1_winCount >= 1;
+		this.p1SecondWin = this.vm.player1_winCount >= 2;
+		this.p1ThirdWin = this.vm.player1_winCount >= 3;
 
-    }.bind(this));
+		this.p2FirstWin = this.vm.player2_winCount >= 1;
+		this.p2SecondWin = this.vm.player2_winCount >= 2;
+		this.p2ThirdWin = this.vm.player2_winCount >= 3;
 
-    this.socket.on('p1Stats', function(data: Information, text: string){
-      if(data.seed !== this.seed)
-        return;
+		this.player1 = this.getPlayerById(this.vm.player1Id);
+		this.player2 = this.getPlayerById(this.vm.player2Id);
 
-        this.p1StatsText = text;
-        let statbox = $('.stat-flyin.p1').addClass('show');
-		setTimeout(() => statbox.removeClass('show'), 8000);
+		}.bind(this));
 
-    }.bind(this));
+		this.socket.on('p1Stats', function(data: Information, text: string){
+		if(data.seed !== this.seed)
+			return;
 
-    this.socket.on('p2Stats', function(data: Information, text: string){
-      if(data.seed !== this.seed)
-        return;
+			this.p1StatsText = text;
+			let statbox = $('.stat-flyin.p1').addClass('show');
+			setTimeout(() => statbox.removeClass('show'), 8000);
 
-        this.p2StatsText = text;
-        let statbox = $('.stat-flyin.p2').addClass('show');
-		setTimeout(() => statbox.removeClass('show'), 8000);
+		}.bind(this));
 
-    }.bind(this));
-  }
+		this.socket.on('p2Stats', function(data: Information, text: string){
+		if(data.seed !== this.seed)
+			return;
 
-  seed: string = window.location.href.split('=')[1];
+			this.p2StatsText = text;
+			let statbox = $('.stat-flyin.p2').addClass('show');
+			setTimeout(() => statbox.removeClass('show'), 8000);
 
-  public vm: Information = new Information();
-  socket: any = io.connect(environment.socketPath);
+		}.bind(this));
+	}
 
-  p1First: boolean;
-  p2First: boolean;
+	seed: string = window.location.href.split('=')[1];
 
-  p1StatsText: string;
-  p2StatsText: string;
+	public vm: Information = new Information();
+	socket: any = io.connect(environment.socketPath);
 
-  p1FirstWin: boolean;
-  p1SecondWin: boolean;
-  p1ThirdWin: boolean;
+	p1First: boolean;
+	p2First: boolean;
 
-  p2FirstWin: boolean;
-  p2SecondWin: boolean;
-  p2ThirdWin: boolean;
+	p1StatsText: string;
+	p2StatsText: string;
 
-  getPlayerById(id: number) {
-    return  jQuery.grep(this.vm.players, function(n: any, i) {
-        return n.id == id;
-    }.bind(this))[0];
-  }
+	p1FirstWin: boolean;
+	p1SecondWin: boolean;
+	p1ThirdWin: boolean;
+
+	p2FirstWin: boolean;
+	p2SecondWin: boolean;
+	p2ThirdWin: boolean;
+
+	player1: any;
+	player2: any;
+
+	getPlayerById(id: number) {
+		return  jQuery.grep(this.vm.players, function(n: any, i) {
+			return n.id == id;
+		}.bind(this))[0];
+  	}
   
 	get p1WinCount(){ 
 		let count = 0;

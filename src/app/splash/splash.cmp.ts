@@ -37,13 +37,6 @@ export class SplashCMP {
 
 			this.debug();
 		}.bind(this));
-
-		this.debug();
-	}
-
-	debug() {
-		this.opponent1 = this.vm.player1;
-		this.opponent2 = this.vm.player2;
 	}
 	
 	getPlayerById(id: number) {

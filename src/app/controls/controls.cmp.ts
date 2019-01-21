@@ -80,42 +80,12 @@ export class ControlsCMP {
 		this.socket.emit('data', this.vm);
 	}
 
-	addRemovePlayer(event: any, id: number, name: string){
-		this.socket.emit('swissPlayerSelected', this.vm, id, event.target.checked);
-	}
-	
-	addRemoveTeam(event: any, id: number, name: string){
-		this.socket.emit('swissTeamSelected', this.vm, id, event.target.checked);
-	}
-
-	resetSwiss() {
-		this.socket.emit('resetSwiss', this.vm);
-		$('input[type=checkbox]').prop('checked',false);
-		$('input[type=checkbox]').prop('disabled',false);
-	}
-
-	undoSwissSingles() {
-		this.socket.emit('undoSwissSingles', this.vm);
-	}
-
-	undoSwissDoubles() {
-		this.socket.emit('undoSwissDoubles', this.vm);
-	}
-
 	setP1Name(event: any){
-		let runner = jQuery.grep(this.vm.players, function(n: any, i) {
-			return n.name == event;
-		})[0];
-		this.vm.player1 = runner.preferredName;
-		this.vm.player1_seed = runner.seed;
+		this._vm.player1Id = event;
 	}
 
 	setP2Name(event: any){
-		let runner = jQuery.grep(this.vm.players, function(n: any, i) {
-			return n.name == event;
-		})[0];
-		this.vm.player2 = runner.preferredName;
-		this.vm.player2_seed = runner.seed;
+		this._vm.player1Id = event;
 	}
 
 	private _vm: Information = new Information();
@@ -176,35 +146,27 @@ public set seed(seed: string){
 }
 
 	public get p1_name(): string {
-		return this._vm.player1;
-	}
-
-	public set p1_name(p1: string) {
-		this._vm.player1 = p1;
+		return this.getPlayerById(this._vm.player1Id).name;
 	}
 
 	public get p2_name(): string {
-		return this._vm.player2;
+		return this.getPlayerById(this._vm.player2Id).name;
 	}
 
-	public set p2_name(p2: string) {
-		this._vm.player2 = p2;
+	public get p1_twitch(): number {
+		return this._vm.player1Id;
 	}
 
-	public get p1_twitch(): string {
-		return this._vm.player1_twitch;
+	public set p1_twitch(p1: number){
+		this._vm.player1Id = p1;
 	}
 
-	public set p1_twitch(p1: string){
-		this._vm.player1_twitch = p1;
+	public get p2_twitch(): number {
+		return this._vm.player2Id;
 	}
 
-	public get p2_twitch(): string {
-		return this._vm.player2_twitch;
-	}
-
-	public set p2_twitch(p2: string){
-		this._vm.player2_twitch = p2;
+	public set p2_twitch(p2: number){
+		this._vm.player2Id = p2;
 	}
  
 	public get p1_wins(): number {
@@ -292,19 +254,11 @@ public set seed(seed: string){
 	}
 
 	public get p1_seed(): string {
-		return this._vm.player1_seed;
-	}
-
-	public set p1_seed(p1: string){
-		this._vm.player1_seed = (p1 !== '' || undefined || null) ? p1 : null;
+		return this.getPlayerById(this._vm.player1Id).seed;
 	}
 
 	public get p2_seed(): string {
-		return this._vm.player2_seed;
-	}
-
-	public set p2_seed(p2: string){
-		this._vm.player2_seed = (p2 !== '' || undefined || null) ? p2 : null;
+		return this.getPlayerById(this._vm.player2Id).seed;
 	}
 
 	public get randomizer(){
@@ -330,6 +284,12 @@ public set seed(seed: string){
 	public set p2_audio(audioSelected: boolean) {
 		this._vm.currentAudioOnPlayer = audioSelected ? 2 : this._vm.currentAudioOnPlayer;
 	}
+
+	getPlayerById(id: number) {
+		return  jQuery.grep(this.vm.players, function(n: any, i) {
+			return n.id == id;
+		}.bind(this))[0];
+	  }
 
 	setP1Stats(){
 		this.socket.emit('p1Stats', this._vm, this.p1StatsText);
@@ -370,6 +330,10 @@ public set seed(seed: string){
 	{
 		value: 'Singles (Right)',
 		name: 'Right'
+	},
+	{
+		value: 'Top 8',
+		name: 'Top 8'
 	}];
 
 	stats = [{
