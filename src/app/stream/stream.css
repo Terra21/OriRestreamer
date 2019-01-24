@@ -1,6 +1,6 @@
 .container {
     font-family: "Segoe UI";
-	font-weight: 300;
+	font-weight: 400;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -359,6 +359,25 @@
 .win-count-p2 > img {
 	-webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+
+.title-info {
+	position: absolute;
+	text-align: center;
+	left: 657px;
+	top: 700px;
+}
+
+.title {
+	float: left;
+	width: 350px;
+	font-size: 54px;
+	text-align: center;
+}
+
+.logo {
+	float: left;
+	height: 225px;
 }
 
 @keyframes start-fade {
