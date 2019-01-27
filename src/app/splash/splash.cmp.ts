@@ -21,21 +21,10 @@ export class SplashCMP {
 
 			this.vm = data;
 
-			//Singles
-			if(this.vm.tournament == 1) {
-				this.opponent1 = this.vm.player1;
-				this.opponent2 = this.vm.player2;
-			} 
-			//Doubles
-			else if(this.vm.tournament == 2 ) {
-				let team1 = this.getTeamById(this.vm.team1Id);
-				this.opponent1 = team1.name + ' ('+ this.getPlayerById(team1.p1Id) + ', ' + this.getPlayerById(team1.p2Id) + ')';
-
-				let team2 = this.getTeamById(this.vm.team2Id);
-				this.opponent2 = team2.name;
-			}
-
-			this.debug();
+			this.player1 = this.getPlayerById(data.player1Id);
+			this.player2 = this.getPlayerById(data.player2Id);
+			this.player3 = this.getPlayerById(data.player3Id);
+			this.player4 = this.getPlayerById(data.player4Id);
 		}.bind(this));
 	}
 	
@@ -67,10 +56,8 @@ export class SplashCMP {
 
 	socket: any = io.connect(environment.socketPath);
 	seed: string = window.location.href.split('=')[1];
-	opponent1: string;
-	opponent2: string;
-	opponent1Seed: string;
-	opponent2Seed: string;
-	players1: string;
-	players2: string;
+	player1: any;
+	player2: any;
+	player3: any;
+	player4: any;
 }

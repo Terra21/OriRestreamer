@@ -8,13 +8,13 @@
     <div class="matchup" *ngIf="vm.tournament == 1">
         <span class="matchup-players">
             <div style="text-align: right; width: 47%" [ngClass]="{ 'winner': vm.soloWinner == 1 }">
-                <span *ngIf="vm.player1_seed">({{ vm.player1_seed }})</span> {{ opponent1 }}
+                <span *ngIf="player1.seed">({{ player1.seed }})</span> {{ player1.name }}
                 <span *ngIf="vm.soloWinner == 1">(Winner)</span>
             </div>
             <div class="vs">vs</div>
             <div style="text-align: left; width: 48%" [ngClass]="{ 'winner': vm.soloWinner == 2 }">
-                {{ opponent2 }}
-                <span *ngIf="vm.player2_seed">({{ vm.player2_seed }})</span> 
+                {{ player2.name }}
+                <span *ngIf="player2.seed">({{ player2.seed }})</span> 
                 <span *ngIf="vm.soloWinner == 2">(Winner)</span>
             </div>
         </span>
@@ -71,6 +71,9 @@
                 <!-- <img src="../assets/logo.png" width="300px"/> -->
             </div>
         </div>
-        <div class="title">Randomizer Tournament 2018</div>
+        <div class="title">
+            <span *ngIf="vm.tournament == 1">All Skills Tournament 2019</span>
+            <span *ngIf="vm.tournament == 2">All Cells Tournament 2019</span>
+        </div>
     </div>
 </div>

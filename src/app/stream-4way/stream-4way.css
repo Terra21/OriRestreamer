@@ -1,11 +1,6 @@
-@font-face{
-    font-family: "Gara";
-    src: url('../../assets/belleza-regular.ttf') format("truetype")
-}
-
 .container {
-    font-family: "Gara";
-    font-size: 32px;
+    font-family: "Segoe UI";
+	font-weight: 350;
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -20,12 +15,6 @@
     padding-top: 5px;
     padding-bottom: 5px;
     width: 372px;
-    color:  rgb(252, 176, 77);
-    box-sizing: border-box;
-    border-color: rgba(252, 176, 77, 0.5);
-    border-width: 2px;
-    border-top-style: solid;
-    border-bottom-style: solid;
     position: relative;
 }
 
@@ -37,12 +26,6 @@
     padding-bottom: 5px;
     text-align: center;
     width: 372px;
-    color: rgb(149, 229, 253);
-    box-sizing: border-box;
-    border-color: rgba(149, 229, 253, 0.5);
-    border-width: 2px;
-    border-top-style: solid;
-    border-bottom-style: solid;
     position: relative;
 }
 
@@ -119,9 +102,9 @@
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 3px 0px 0px 3px;
     box-sizing: border-box;
-    border-color: rgba(252, 176, 77, 0.5);
+	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
-    border-width: 2px;
+	border-width: 2px;
     border-radius: 4px;
 }
 
@@ -131,9 +114,9 @@
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 3px 3px 0px 0px;
     box-sizing: border-box;
-    border-color: rgba(252, 176, 77, 0.5);
+	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
-    border-width: 2px;
+	border-width: 2px;
     border-radius: 4px;
 }
 
@@ -143,9 +126,9 @@
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 0px 0px 3px 3px;
     box-sizing: border-box;
-    border-color: rgba(149, 229, 253, 0.5);
+	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
-    border-width: 2px;
+	border-width: 2px;
     border-radius: 4px;
 }
 
@@ -155,9 +138,9 @@
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
     margin: 0px 3px 3px 0px;
     box-sizing: border-box;
-    border-color: rgba(149, 229, 253, 0.5);
+	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
-    border-width: 2px;
+	border-width: 2px;
     border-radius: 4px;
 }
 

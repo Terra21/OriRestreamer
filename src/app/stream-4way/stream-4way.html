@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="{'background-image': 'url(../../assets/background-' + vm.background + '-4way.png)'}">
+<div class="container" [ngStyle]="{'background-image': 'url(../../assets/' + vm.background + '-4way.png)'}">
     <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0) }"
         class="stream-placeholder-top-left">
     </div>
