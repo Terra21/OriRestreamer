@@ -1,11 +1,8 @@
 <div class="container">
-    <div class="matchType" *ngIf="vm.tournament == 1 || vm.tournament == 2">
+    <div class="matchType">
         {{ vm.matchType }}
     </div>
-    <div class="matchType" *ngIf="vm.tournament == 3">
-        Swiss Reveal
-    </div>
-    <div class="matchup" *ngIf="vm.tournament == 1">
+    <div class="matchup" *ngIf="vm.bestOf > 0">
         <span class="matchup-players">
             <div style="text-align: right; width: 47%" [ngClass]="{ 'winner': vm.soloWinner == 1 }">
                 <span *ngIf="player1.seed">({{ player1.seed }})</span> {{ player1.name }}
@@ -29,40 +26,17 @@
                 <span *ngIf="m.winner === 2"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
             </div>
         </div>
-
     </div>
-    <div class="matchup-doubles" *ngIf="vm.tournament == 2">
-        <span class="matchup-players">
-            <div style="text-align: right; width: 47%" [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }">
-                <span *ngIf="opponent1Seed">({{ opponent1Seed }})</span> {{ opponent1 }}
-                <span *ngIf="(vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)">(Winner)</span>
-                <!-- <span class="players" *ngIf="players1">{{ players1 }}</span> -->
-            </div>
-            <div class="vs">vs</div>
-            <div style="text-align: left; width: 48%" [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)}" >
-                <span *ngIf="opponent2Seed">({{ opponent2Seed }})</span> {{ opponent2 }}
-                <span *ngIf="(vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)">(Winner)</span>
-                <!-- <span class="players" *ngIf="players2">{{ players2 }}</span> -->
+
+    <div class="matchup" *ngIf="vm.bestOf == 0">
+        <span>
+            <div style="text-align: center;">
+                {{ player1.name }}, 
+                {{ player2.name }},
+                {{ player3.name }},
+                {{ player4.name }}
             </div>
         </span>
-
-        <div class="matchup-results" *ngIf="vm.bestOf == 3">
-            <span class="match-title">Best of 3</span>
-            <div *ngFor="let m of vm.currentSeries; let i = index">
-                <span *ngIf="m.winner === 1"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
-                <span *ngIf="m.winner === 2 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
-                <span [ngClass]="{ 'winner': (((p1WinCount) + (p2WinCount)) === i) && (p1WinCount !== 2 && p2WinCount !== 2), 'played': (((p1WinCount) + (p2WinCount)) > i), 'not-playing': (((p1WinCount === 2 && p2WinCount === 0) || (p2WinCount === 2 && p1WinCount === 0)) && i === 2) }">Game {{ i + 1 }}</span>
-                <span *ngIf="m.winner === 1 || m.winner === 0"><img class="icon" src="../../assets/lose-icon.png" /></span>
-                <span *ngIf="m.winner === 2"><img class="icon" src="../../assets/win-icon-splash.png" /></span>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="matchup" *ngIf="vm.tournament == 3">
-        <div>
-            Round 1 Pairings
-        </div>
     </div>
     <div>
         <div class="logo">
