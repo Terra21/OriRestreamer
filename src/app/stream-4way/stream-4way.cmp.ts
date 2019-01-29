@@ -23,6 +23,8 @@ export class Stream4WayCMP {
 		this.player3 = this.getPlayerById(this.vm.player3Id);
 		this.player4 = this.getPlayerById(this.vm.player4Id);
 
+		console.log(this.player1);
+
 		}.bind(this));
 	}
 

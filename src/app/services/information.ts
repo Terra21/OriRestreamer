@@ -20,7 +20,7 @@ export class Information {
     groupName: string = 'Round of 32';
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
-    bestOf: number = 3;
+    bestOf: number = 0;
 	tournament: number = 1;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;

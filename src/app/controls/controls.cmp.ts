@@ -157,16 +157,32 @@ public set seed(seed: string){
 		return this._vm.player1Id;
 	}
 
-	public set p1_twitch(p1: number){
-		this._vm.player1Id = p1;
-	}
-
 	public get p2_twitch(): number {
 		return this._vm.player2Id;
 	}
 
+	public get p3_twitch(): number {
+		return this._vm.player3Id;
+	}
+
+	public get p4_twitch(): number {
+		return this._vm.player4Id;
+	}
+
+	public set p1_twitch(p1: number){
+		this._vm.player1Id = p1;
+	}
+
 	public set p2_twitch(p2: number){
 		this._vm.player2Id = p2;
+	}
+
+	public set p3_twitch(p3: number){
+		this._vm.player3Id = p3;
+	}
+
+	public set p4_twitch(p4: number){
+		this._vm.player4Id = p4;
 	}
  
 	public get p1_wins(): number {
@@ -306,6 +322,10 @@ public set seed(seed: string){
 
 
 	matchTypes = [{
+		name: 'Qualifier',
+		value: 0
+	},
+	{
 		name: 'Best of 1',
 		value: 1
 	},

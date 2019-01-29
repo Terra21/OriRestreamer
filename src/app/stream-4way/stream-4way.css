@@ -112,7 +112,7 @@
     float: left;
     width: 771px; /* (stream_width - margins)/2 = (1920 - 4*5px)/2 = 950px */
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
-    margin: 3px 3px 0px 0px;
+    margin: 3px 3px 0px 372px;
     box-sizing: border-box;
 	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
@@ -136,7 +136,7 @@
     float: left;
     width: 771px; /* (stream_width - margins)/2 = (1920 - 4*5px)/2 = 950px */
     height: 437px; /* racefeed_width * 9 / 16 = 950 * 9 / 16 = 534.375px */
-    margin: 0px 3px 3px 0px;
+    margin: 0px 3px 3px 372px;
     box-sizing: border-box;
 	border-color: rgba(244, 244, 244, 0.60);
     border-style: solid;
@@ -160,7 +160,6 @@
     float: left;
     width: 766px;
     padding: 20px 0px 0px 10px;
-    color:  rgb(252, 176, 77);
     font-size: 28px;
 }
 
@@ -169,7 +168,6 @@
     width: 766px;
     padding: 20px 10px 0px 0px;
     text-align: right;
-    color:  rgb(252, 176, 77);
     font-size: 28px;
 }
 
@@ -180,12 +178,14 @@
     padding-top: 40px;
     text-align: center;
     margin: auto;
+    font-size: 32px;
 }
 
 .commentators {
     float: left;
     width: 388px;
     text-align: center;
+    font-size: 32px;
 }
 
 .commentators > div {
@@ -202,7 +202,6 @@
     width: 756px;
     padding: 45px 0px 0px 10px;
     vertical-align: text-bottom;
-    color: rgb(149, 229, 253);
     font-size: 28px;
 }
 
@@ -211,7 +210,6 @@
     text-align: right;
     width: 756px;
     padding: 45px 10px 0px 0px;
-    color: rgb(149, 229, 253);
     font-size: 28px;
 }
 

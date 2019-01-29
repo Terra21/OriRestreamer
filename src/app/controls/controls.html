@@ -47,8 +47,8 @@
 				<option *ngFor="let option of vm.players" [value]="option.id" >{{ option.name }} ({{ option.preferredName }})</option>
 			</select>
 	
-			<input type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
-			<label class="label r11 c4">This will display winner on splash screen</label>
+			<input *ngIf="vm.bestOf > 0" type="button" class="btn btn-warning r10 c3 col-1" value="WINNER" (click)="player1Winner()" />
+			<label *ngIf="vm.bestOf > 0" class="label r11 c4">This will display winner on splash screen</label>
 
 			<div class="col-4 center label-big players r8 c5">
 				PLAYER 2
@@ -75,6 +75,26 @@
 				<option *ngFor="let option of vm.players" [value]="option.id" >{{ option.name }} ({{ option.preferredName }})</option>
 			</select>
 	
-			<input type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
+			<input *ngIf="vm.bestOf > 0" type="button" class="btn btn-warning r10 c7 col-1" value="WINNER" (click)="player2Winner()" />
+
+			<!-- Qualifiers -->
+
+			<div *ngIf="vm.bestOf == 0" class="col-4 center label-big players r11 c1">
+				PLAYER 3
+			</div>
+			<label *ngIf="vm.bestOf == 0" class="label r13 c1" for="p1Twitch">Twitch</label>
+	
+			<select *ngIf="vm.bestOf == 0" class="twitch r13 c2" [(ngModel)]="p3_twitch" (ngModelChange)="setP3Name($event)">
+				<option *ngFor="let option of vm.players" [value]="option.id" >{{ option.name }} ({{ option.preferredName }})</option>
+			</select>
+
+			<div *ngIf="vm.bestOf == 0" class="col-4 center label-big players r11 c5">
+				PLAYER 4
+			</div>
+			<label *ngIf="vm.bestOf == 0" class="label r13 c5" for="p1Twitch">Twitch</label>
+	
+			<select *ngIf="vm.bestOf == 0" class="twitch r13 c6" [(ngModel)]="p4_twitch" (ngModelChange)="setP4Name($event)">
+				<option *ngFor="let option of vm.players" [value]="option.id" >{{ option.name }} ({{ option.preferredName }})</option>
+			</select>
 	</div>
 </div>
