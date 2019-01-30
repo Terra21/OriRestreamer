@@ -24,6 +24,15 @@ export class ControlsCMP {
 			this.vm = data;
 
 		}.bind(this));
+
+		this.vm.players.sort(function(a, b) {
+			let nameA=a.preferredName.toLowerCase(), nameB = b.preferredName.toLowerCase();
+			if(nameA < nameB)
+				return -1;
+			if(nameA > nameB)
+				return 1;
+			return 0;
+		});
 	}
 
 	playersList: any;
