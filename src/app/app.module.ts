@@ -10,7 +10,6 @@ import { Stream4WayCMP } from './stream-4way/stream-4way.cmp';
 import { ControlsCMP } from './controls/controls.cmp';
 import { GroupsCMP } from './groups/groups.cmp';
 import { SplashCMP } from './splash/splash.cmp';
-import { SplashReplayCMP } from './splash-replay/splash-replay.cmp';
 import { BracketCMP } from './bracket/bracket.cmp';
 import { StatsCMP } from './stats/stats.cmp';
 import { CreditsCMP } from './credits/credits.cmp';
@@ -24,7 +23,6 @@ const appRoutes: Routes = [
   { path: 'controls', component: ControlsCMP, },
   { path: 'groups', component: GroupsCMP },
   { path: 'splash', component: SplashCMP },
-  { path: 'splashreplay', component: SplashReplayCMP },
   { path: 'bracket', component: BracketCMP },
   { path: 'stats', component: StatsCMP },
   { path: 'credits', component: CreditsCMP },
@@ -41,7 +39,6 @@ const appRoutes: Routes = [
     Stream4WayCMP,
     GroupsCMP,
     SplashCMP,
-    SplashReplayCMP,
     BracketCMP,
     StatsCMP,
     CreditsCMP,

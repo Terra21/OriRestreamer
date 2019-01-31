@@ -1,10 +1,8 @@
 <div class="container" [ngStyle]="{'background-image': 'url(../../assets/' + vm.background + '-4way.png)'}">
-    <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0) }"
-        class="stream-placeholder-top-left">
+    <div class="stream-placeholder-top-left">
     </div>
 
-    <div [ngClass]="{ 'winner': (vm.team1_FinishTime < vm.team2_FinishTime && vm.team1_FinishTime != 0) || (vm.team1_FinishTime > 0 && vm.team2_FinishTime == 0)  }" 
-        class="stream-placeholder-top-right">
+    <div class="stream-placeholder-top-right">
     </div>
 
     <div class="middle-team1">
@@ -56,11 +54,9 @@
         </div>
     </div>
 
-    <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0)}" 
-        class="stream-placeholder-bottom-left">
+    <div class="stream-placeholder-bottom-left">
     </div>
     
-    <div [ngClass]="{ 'winner': (vm.team2_FinishTime < vm.team1_FinishTime && vm.team2_FinishTime != 0) || (vm.team2_FinishTime > 0 && vm.team1_FinishTime == 0) }"  
-        class="stream-placeholder-bottom-right">
+    <div class="stream-placeholder-bottom-right">
     </div>
  </div>
