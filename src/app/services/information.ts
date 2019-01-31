@@ -16,8 +16,7 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = 'Sigmasin, RooseSR';
     background: string = 'BlackrootDashTree';
-    // groupName: string = 'Round of 32/Round of 16/Quarterfinal/Semifinal/Final';
-    groupName: string = 'Round of 32';
+    groupName: string = 'Qualifier/Round of 32/Round of 16/Quarterfinal/Semifinal/Final';
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
     bestOf: number = 0;

@@ -20,12 +20,17 @@ export class SplashCMP {
 				return;
 
 			this.vm = data;
-
-			this.player1 = this.getPlayerById(data.player1Id);
-			this.player2 = this.getPlayerById(data.player2Id);
-			this.player3 = this.getPlayerById(data.player3Id);
-			this.player4 = this.getPlayerById(data.player4Id);
+			this.setData();
 		}.bind(this));
+
+		this.setData();
+	}
+
+	setData() {
+		this.player1 = this.getPlayerById(this.vm.player1Id);
+		this.player2 = this.getPlayerById(this.vm.player2Id);
+		this.player3 = this.getPlayerById(this.vm.player3Id);
+		this.player4 = this.getPlayerById(this.vm.player4Id);
 	}
 	
 	getPlayerById(id: number) {

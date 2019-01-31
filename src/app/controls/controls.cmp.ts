@@ -89,14 +89,6 @@ export class ControlsCMP {
 		this.socket.emit('data', this.vm);
 	}
 
-	setP1Name(event: any){
-		this._vm.player1Id = event;
-	}
-
-	setP2Name(event: any){
-		this._vm.player1Id = event;
-	}
-
 	private _vm: Information = new Information();
 	public get vm(): Information {
 		return this._vm;
