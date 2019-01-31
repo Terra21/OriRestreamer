@@ -162,9 +162,265 @@ export class Information {
 			'seed': null
 		},
         {
-			'id': 0,
-			'name': 'twitch',
-			'preferredName': 'stream name',
+			'id': 17,
+			'name': 'Phant_TV',
+			'preferredName': 'Phant',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 18,
+			'name': 'SeaAverage',
+			'preferredName': 'SeaAverage',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 19,
+			'name': 'lurkingassassin',
+			'preferredName': 'LurkingAssassin',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 20,
+			'name': 'Tritonite_',
+			'preferredName': 'Tritonite',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 21,
+			'name': 'Cleanfel',
+			'preferredName': 'Clean',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 22,
+			'name': 'AC9_Nineball',
+			'preferredName': 'Nineball',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 23,
+			'name': 'Covert_Muffin',
+			'preferredName': 'CovertMuffin',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 24,
+			'name': 'og1764',
+			'preferredName': 'og1764',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 25,
+			'name': 'Sparik',
+			'preferredName': 'Sparik',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 26,
+			'name': 'CheeseLover',
+			'preferredName': 'Cheese Lover',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 27,
+			'name': 'TheFlyingMarlin',
+			'preferredName': 'Marlin',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 28,
+			'name': 'sloaters27',
+			'preferredName': 'sloaters',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 29,
+			'name': 'loopyloo77',
+			'preferredName': 'loopyloo',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 30,
+			'name': 'ogNdrahciR',
+			'preferredName': 'ogNdrahciR',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 31,
+			'name': 'TAS_Snoop',
+			'preferredName': 'Snoop',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 32,
+			'name': 'Lusther',
+			'preferredName': 'LusTher',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 33,
+			'name': 'Foopyo',
+			'preferredName': 'Foopyo',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 34,
+			'name': 'Mattermonkey',
+			'preferredName': 'Mattermonkey',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 35,
+			'name': 'Whoopee_Cushion',
+			'preferredName': 'Whoopee',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 36,
+			'name': 'Skulblaka17',
+			'preferredName': 'Skul',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 37,
+			'name': 'cereberon',
+			'preferredName': 'cereberon',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 38,
+			'name': 'AHuntersPixxel',
+			'preferredName': 'Pix',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 39,
+			'name': 'LostDedew',
+			'preferredName': 'Dedew',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 40,
+			'name': 'j_halcyon',
+			'preferredName': 'Hal',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 41,
+			'name': 'skurryisoffline',
+			'preferredName': 'Skurry',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 42,
+			'name': 'primorix',
+			'preferredName': 'Primorix',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 43,
+			'name': 'athos213',
+			'preferredName': 'Athos',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 44,
+			'name': 'Jelluh24',
+			'preferredName': 'Jelluh',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 45,
+			'name': 'Kirefel',
+			'preferredName': 'Kirefel',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 46,
+			'name': 'Elojimmini',
+			'preferredName': 'Elojimmini',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 47,
+			'name': 'XeroGoFast',
+			'preferredName': 'Xero',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 48,
+			'name': 'Brynhold2',
+			'preferredName': 'Brynhold',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 49,
+			'name': 'Nightfighter47',
+			'preferredName': 'Nightfighter',
 			'allSkills': true,
 			'allCells': false,
 			'seed': null
