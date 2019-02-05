@@ -1,60 +1,55 @@
 <div class="container">
     <div>
         <img src="../assets/logo.png" width="300px" style="z-index:999">
-        <div class="title">All Skills Tournament 2018</div>
+        <div class="title">
+            <span *ngIf="vm.tournament == 1">All Skills Tournament 2019</span>
+            <span *ngIf="vm.tournament == 2">All Cells Tournament 2019</span>
+        </div>
     </div>
 
-    <table *ngIf="player1 && player2">
+    <table *ngIf="player1Stats && player2Stats">
         <thead>
             <tr>
                 <td style="width: 500px;"></td>
-                <td>{{ vm.player1_twitch }}</td>
-                <td>{{ vm.player2_twitch }}</td>
+                <td>{{ player1.name }}</td>
+                <td>{{ player2.name }}</td>
             </tr>
         </thead>
-        <tbody>
             <tr class="seeds">
                 <td></td>
-                <td style="text-align: center;">Seed ({{ vm.player1_seed }})</td>
-                <td style="text-align: center;">Seed ({{ vm.player2_seed }})</td>
+                <td style="text-align: center;">Seed ({{ player1.seed }})</td>
+                <td style="text-align: center;">Seed ({{ player2.seed }})</td>
             </tr>
             <tr class="stats">
                 <td class="ui" style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Current PB (Improvement)</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[1] }} {{ player1[2] }} <span *ngIf="player1[3]">({{ player1[3] }})</span></td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[1] }} {{ player2[2] }} <span *ngIf="player2[3]">({{ player2[3] }})</span></td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1Stats[1] }} {{ player1Stats[2] }} <span *ngIf="player1Stats[3]">({{ player1Stats[3] }})</span></td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2Stats[1] }} {{ player2Stats[2] }} <span *ngIf="player2Stats[3]">({{ player2Stats[3] }})</span></td>
             </tr>
             <tr class="method">
                 <td class="ui" style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Input Method</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[4] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[4] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1Stats[4] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2Stats[4] }}</td>
             </tr>
             <tr class="tricks">
-                <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Average Race Time</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1.stats">{{ player1.stats[0] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2.stats">{{ player2.stats[0] }}</td>
+                <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Route</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[7] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[7] }}</td>
             </tr>
             <tr class="tricks">
-                <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Best Race Time</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1.stats">{{ player1.stats[1] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2.stats">{{ player2.stats[1] }}</td>
+                <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Health Cells</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[8] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[8] }}</td>
             </tr>
             <tr class="misc">
-	            <td class="radar ui" rowspan="2" style="background-color:rgba(0,0,0,0.6);">
-                    <span class="chartName p1">{{ p1Chart }}</span>
-                    <span class="chartName p2">{{ p2Chart }}</span>
-                    <canvas id="statChart" height="460px" width="480px"></canvas>
+                <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Miscellaneous</td>
+                <td style="text-align: center;  background-color:rgba(0,0,0,0.4);">
+                    {{ player1Stats[5] }}<br><br>
+                    {{ player1Stats[6] }}
                 </td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1[5] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2[5] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">
+                    {{ player2Stats[5] }}<br><br>
+                    {{ player2Stats[6] }}
+                </td>
             </tr>
-            <tr class="misc">
-                    <td style="text-align: center;  background-color:rgba(0,0,0,0.4);">
-                        {{ player1[6] }}
-                    </td>
-                    <td style="text-align: center; background-color:rgba(0,0,0,0.6);">
-                        {{ player2[6] }}
-                    </td>
-            </tr>
-        </tbody>
     </table>
 </div>

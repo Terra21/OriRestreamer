@@ -1,21 +1,24 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Information } from '../services/information';
-import io from 'socket.io-client';
-import * as $ from 'jquery';
-import * as moment from 'moment';
-import { Socket } from 'net';
-import { forEach } from '@angular/router/src/utils/collection';
+import { BaseCMP } from '../core/base.cmp';
 
 @Component({
   templateUrl: './intermission.html',
-  styleUrls: ['./intermission.css']
+  styleUrls: ['./intermission.css', '../app.component.css']
 })
 
-export class IntermissionCMP {
-  constructor() { }
+export class IntermissionCMP extends BaseCMP {
+  constructor() {
+	  super();
+   }
 
-  ngOnInit(){
-	  //TODO: Add next match info
-  }
+	ngOnInit(){
+		this.socket.on('data', function(data: Information){
+			if (data.seed !== this.seed)
+				return;
+
+			this.vm = data;
+
+		}.bind(this));
+	}
 }

@@ -6,6 +6,7 @@ import io from 'socket.io-client';
 import * as $ from 'jquery';
 import { Division } from '../services/division';
 import { Match } from '../services/match';
+import { BaseCMP } from '../core/base.cmp';
 
 @Component({
 	selector: 'app-division',
@@ -13,16 +14,17 @@ import { Match } from '../services/match';
 	styleUrls: ['./division.component.css']
 })
 
-export class DivisionComponent implements OnInit {
-	constructor(private sanitizer: DomSanitizer) { }
+export class DivisionComponent extends BaseCMP implements OnInit {
+	constructor(private sanitizer: DomSanitizer) {
+		super();
+	}
 
 	@Input() name: string;
 	@Input() shouldShowHeaders = false;
 	division: Division = new Division();
 	matches: Match[];
 	shouldMirror = false;
-	socket: any = io.connect(environment.socketPath);
-	seed: string = window.location.href.split('=')[1];
+	divCols: string;
 
 	public matchStyles(match: Match): SafeStyle {
 		let bg;
@@ -64,49 +66,50 @@ export class DivisionComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		let divCols: string;
-		this.division.name = this.name;
-		console.log('Name of Value: ' + this.name);
+		this.socket.on('data', function(data: Information){
+			if (data.seed !== this.seed)
+				return;
+					
+			this.vm = data;
 
-		switch (this.name){
+			this.getData();
+		}.bind(this));
+
+		this.getData();
+	}
+
+	getData() {
+		this.division.name = this.vm.bracket;
+
+		switch (this.division.name){
 			case 'Singles (Left)':
-				divCols = 'A5:P34';
+				this.divCols = 'A5:P34';
 				this.shouldMirror = false;
 			break;
 			case 'Singles (Right)':
-				divCols = 'A37:P66';
+				this.divCols = 'A37:P66';
 				this.shouldMirror = true;
 			break;
 			case 'Top 8':
-				divCols = 'I11:U60';
+				this.divCols = 'I11:U60';
 				this.shouldMirror = false;
-			default:
-				console.log(this.name);
 			break;
 		}
-		
-		this.socket.on('data', function(data: Information){
-			if (data.seed !== this.seed || !divCols)
-				return;
-						
-			let url = data.tournament == 1 ? '1LAvyCLpxzfN7KTfy0aeNeSmHSUlZP_tnL8tW_XvJVWg' : '15-X1m1xy6-bxJ-8ZNwEvk6THf2-SfxQhRpiWrmi517s';
-			this.division.name = data.bracket;
 
-			$.ajax({
-				url: 'https://sheets.googleapis.com/v4/spreadsheets/' + url + '/values/Bracket!' + divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
-				dataType: 'json',
-				error: function(response) {
-					console.log(response);
-				},
-				
-				success: function( response: any ) {
-				if (this.division.matches.length > 0) {
+		let url = this.vm.tournament == 1 ? '1LAvyCLpxzfN7KTfy0aeNeSmHSUlZP_tnL8tW_XvJVWg' : '15-X1m1xy6-bxJ-8ZNwEvk6THf2-SfxQhRpiWrmi517s';
+
+		$.ajax({
+			url: 'https://sheets.googleapis.com/v4/spreadsheets/' + url + '/values/Bracket!' + this.divCols + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
+			dataType: 'json',
+			error: function(response) {
+				console.log(response);
+			},
+			success: function( response: any ) {
+				if (this.division.matches.length > 0) 
 					this.division.matches = new Array<Match>();
-				}
 
 				this.mapSheetToDivision(this.division.name, response);
-				}.bind(this)
-			});
-		}.bind(this));
+			}.bind(this)
+		});
 	}
 }

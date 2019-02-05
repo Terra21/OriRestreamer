@@ -1,27 +1,9 @@
-@font-face{
-    font-family: "Angie";
-    src: url('../assets/AngieRegular.otf') format("opentype")
-}
-
-.btn {
-    color: #FFFFFF;
-    margin: 10px;
-    width: 250px;
-    height: 100px;
-    font-family: "Angie";
-    font-size: 24px;
+.container {
+    font-family: "Segoe UI";
+	font-weight: 350;
     color: white;
-    text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
-}
-
-.btn-restream {
-    background: url('../assets/btn1.png');
-}
-
-.btn-controls {
-    background: url('../assets/btn2.png');
+    width: 1920px;
+	height: 1080px;
+    background-size: 1920px 1080px;
+    background-color: rgba(0,0,0,0.15);
 }

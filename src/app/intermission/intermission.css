@@ -1,22 +1,3 @@
-@font-face{
-    font-family: "Gara";
-    src: url('../../assets/belleza-regular.ttf') format("truetype")
-}
-
-.container {
-    font-family: "Gara";
-    color: white;
-    width: 1920px;
-	height: 1080px;
-    background-size: 1920px 1080px;
-    background-color: rgba(0,0,0,0.15)
-}
-
-
-div {
-    font-size: 80px;
-}
-
 .matchup {
     position: absolute;
 	top: 0;
@@ -24,24 +5,16 @@ div {
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	height: 300px;
+    height: 300px;
+    font-size: 80px;
 }
-
-.matchType {
-    position: absolute;
-    top: 75px;
-    left: 100px;
-    font-size: 100px;
-    word-wrap: break-word;
-}
-
 .matchup > div {
     text-align: center;
 }
 
 .logo {
     position: absolute;
-    bottom: 50px;
+    bottom: -75px;
     left: 50px;
 }
 
@@ -49,4 +22,5 @@ div {
     position: absolute;
     bottom: 100px;
     left: 500px;
+    font-size: 80px;
 }

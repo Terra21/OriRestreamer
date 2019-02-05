@@ -5,9 +5,12 @@
     <div>
         <div class="logo">
             <div>
-                <img src="../assets/logo.png" width="300px"/>
+                <video width="500px" src="../../assets/75scale40opacity.webm" loop autoplay style="background:transparent"></video>
             </div>
         </div>
-        <div class="title">Randomizer Tournament 2018</div>
+        <div class="title">
+            <span *ngIf="vm.tournament == 1">All Skills Tournament 2019</span>
+            <span *ngIf="vm.tournament == 2">All Cells Tournament 2019</span>
+        </div>
     </div>
 </div>

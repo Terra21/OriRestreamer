@@ -1,17 +1,3 @@
-.container {
-    font-family: "Segoe UI";
-	font-weight: 350;
-    color: white;
-    width: 1920px;
-	height: 1080px;
-    background-size: 1920px 1080px;
-    background-color: rgba(0,0,0,0.15)
-}
-
-div {
-    font-size: 80px;
-}
-
 .winner {
     color: #ffb600;
 }
@@ -23,7 +9,8 @@ div {
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	height: 300px;
+    height: 300px;
+    font-size: 80px;
 }
 
 .matchup-doubles {
@@ -108,50 +95,9 @@ div {
     position: absolute;
     bottom: 100px;
     left: 500px;
-}
-
-video {
-    background: transparent;
+    font-size: 80px;
 }
 
 .players {
     font-size: 54px;
 }
-/* 
-.rotate {
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	animation-iteration-count: infinite;
-    animation-duration: 30s;
-    animation-direction: alternate;
-}
-
-.rotate-names {
-    animation-name: start-fade;
-}
-
-.rotate-teams {
-	animation-name: fade;
-}
-
-.rotate-container {
-    flex-grow: 1;
-	position: relative;
-}
-
-.rotate-cycle 
-
-@keyframes start-fade {
-	0% { opacity: 0; }
-	25% { opacity: 0; }
-    45% { opacity: 0 }
-    50% { opacity: 1}
-	100% { opacity: 1; }
-}
-
-@keyframes fade {
-	0% { opacity: 1; }
-	25% { opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0; }
-	100% { opacity: 0; }
-} */

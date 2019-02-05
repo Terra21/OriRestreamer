@@ -37,7 +37,9 @@ export class Information {
 			'preferredName': 'Vulajin',
 			'allSkills': true,
 			'allCells': false,
-			'seed': null
+			'seed': null,
+			'statsStartColumn': 'B52',
+			'statsEndColumn': 'J52'
         },
         {
 			'id': 2,
@@ -45,7 +47,9 @@ export class Information {
 			'preferredName': 'Hydra',
 			'allSkills': true,
 			'allCells': false,
-			'seed': null
+			'seed': null,
+			'statsStartColumn': 'B18',
+			'statsEndColumn': 'J18'
         }
         ,
         {
@@ -54,7 +58,9 @@ export class Information {
 			'preferredName': 'Terra',
 			'allSkills': true,
 			'allCells': false,
-			'seed': null
+			'seed': null,
+			'statsStartColumn': 'B44',
+			'statsEndColumn': 'J44'
         },
         {
 			'id': 4,
@@ -62,7 +68,9 @@ export class Information {
 			'preferredName': 'shedd',
 			'allSkills': true,
 			'allCells': false,
-			'seed': null
+			'seed': null,
+			'statsStartColumn': 'B39',
+			'statsEndColumn': 'J39'
         },
         {
 			'id': 5,
@@ -420,6 +428,38 @@ export class Information {
 			'id': 49,
 			'name': 'Nightfighter47',
 			'preferredName': 'Nightfighter',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 50,
+			'name': 'IMRaziel',
+			'preferredName': 'Raziel',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 51,
+			'name': 'Lusidus',
+			'preferredName': 'Lusidus',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 52,
+			'name': 'noxitu',
+			'preferredName': 'Noxitu',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null
+		},
+        {
+			'id': 53,
+			'name': 'hitachihex',
+			'preferredName': 'hitachihex',
 			'allSkills': true,
 			'allCells': false,
 			'seed': null
