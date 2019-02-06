@@ -33,7 +33,6 @@ export class StatsCMP extends BaseCMP {
 		this.player2 = this.getPlayerById(this.vm.player2Id);
 		this.getGoogleSheet(this.statsUrl, this.player1.statsStartColumn + ':' + this.player1.statsEndColumn)
 			.subscribe(result => {
-				console.log(result.values[0]);
 				this.player1Stats = result.values[0];
 		});
 
