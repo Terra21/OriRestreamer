@@ -64,7 +64,7 @@ input:not([type="button"]), select, option {
 }
 
 .label-big {
-	font-size: 36px;
+	font-size: 24px;
 	font-weight: bold;
 }
 

@@ -1,5 +1,3 @@
-import { Tracker } from './tracker';
-
 export class Information {
     seed: string = null;
 
@@ -50,8 +48,7 @@ export class Information {
 			'seed': null,
 			'statsStartColumn': 'B18',
 			'statsEndColumn': 'J18'
-        }
-        ,
+        },
         {
 			'id': 3,
 			'name': 'Terra21',

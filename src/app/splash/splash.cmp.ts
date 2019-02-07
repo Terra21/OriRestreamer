@@ -19,7 +19,7 @@ export class SplashCMP extends BaseCMP {
 
 	ngOnInit(){
 		this.socket.on('data', function(data: Information){
-			if(data.seed !== this.seed())
+			if(data.seed !== this.seed)
 				return;
 
 			this.vm = data;

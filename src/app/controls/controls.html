@@ -121,5 +121,17 @@
 			<select *ngIf="vm.bestOf == 0" class="twitch r13 c6" [(ngModel)]="p4_twitch">
 				<option *ngFor="let option of vm.players" [value]="option.id" >{{ option.name }} ({{ option.preferredName }})</option>
 			</select>
+
+			<!-- Stats -->
+
+			<div *ngIf="vm.bestOf > 0" class="col-4 center label-big players r13 c1">PLAYER 1 STATS</div>
+			<div *ngIf="vm.bestOf > 0" class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
+
+			<input *ngIf="vm.bestOf > 0" class="twitch r14 c2" [(ngModel)]="p1StatsText" />
+	
+			<input *ngIf="vm.bestOf > 0" type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
+	
+			<input *ngIf="vm.bestOf > 0" class="twitch r14 c6" [(ngModel)]="p2StatsText" />
+			<input *ngIf="vm.bestOf > 0" type="button" class="btn col-1 r14 c7" value="SHOW ON STREAM" (click)="setP2Stats()" />
 	</div>
 </div>
