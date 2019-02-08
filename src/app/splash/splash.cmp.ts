@@ -1,10 +1,5 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Information } from '../services/information';
-import { environment } from '../../environments/environment';
-import io from 'socket.io-client';
-import * as $ from 'jquery';
-import { Socket } from 'net';
 import { BaseCMP } from '../core/base.cmp';
 
 @Component({

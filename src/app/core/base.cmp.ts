@@ -20,24 +20,6 @@ export class BaseCMP {
 		}.bind(this))[0];
     }
     
-    get p1WinCount() { 
-		let count = 0;
-		this.vm.currentSeries.forEach(function (a) {
-			if(a.winner === 1)
-				count++;
-		});
-		return count;
-	}
-
-	get p2WinCount(){ 
-		let count = 0;
-		this.vm.currentSeries.forEach(function (a) {
-			if(a.winner === 2)
-				count++;
-		});
-		return count;
-    }
-    
     getGoogleSheet(url: string, params: string): Observable<any> {
         return fromPromise(
             $.get('https://sheets.googleapis.com/v4/spreadsheets/' + url + params + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU')
