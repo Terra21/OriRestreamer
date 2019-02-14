@@ -26,29 +26,34 @@
                 <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2Stats[1] }} {{ player2Stats[2] }} <span *ngIf="player2Stats[3]">({{ player2Stats[3] }})</span></td>
             </tr>
             <tr class="method">
-                <td class="ui" style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Input Method</td>
+                <td class="ui" style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Qualifier Time</td>
                 <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1Stats[4] }}</td>
                 <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2Stats[4] }}</td>
             </tr>
+            <tr class="method">
+                <td class="ui" style="text-align: right;  background-color:rgba(0,0,0,0.6); padding-right:25px">Input Method</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);">{{ player1Stats[5] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);">{{ player2Stats[5] }}</td>
+            </tr>
             <tr class="tricks">
                 <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Route</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[7] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[7] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[8] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[8] }}</td>
             </tr>
             <tr class="tricks">
                 <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Health Cells</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[8] }}</td>
-                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[8] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.4);" *ngIf="player1Stats">{{ player1Stats[9] }}</td>
+                <td style="text-align: center; background-color:rgba(0,0,0,0.6);" *ngIf="player2Stats">{{ player2Stats[9] }}</td>
             </tr>
             <tr class="misc">
                 <td class="ui" style="text-align: right; background-color:rgba(0,0,0,0.6); padding-right:25px">Miscellaneous</td>
                 <td style="text-align: center;  background-color:rgba(0,0,0,0.4);">
-                    {{ player1Stats[5] }}<br><br>
-                    {{ player1Stats[6] }}
+                    {{ player1Stats[6] }}<br><br>
+                    {{ player1Stats[7] }}
                 </td>
                 <td style="text-align: center; background-color:rgba(0,0,0,0.6);">
-                    {{ player2Stats[5] }}<br><br>
-                    {{ player2Stats[6] }}
+                    {{ player2Stats[6] }}<br><br>
+                    {{ player2Stats[7] }}
                 </td>
             </tr>
     </table>

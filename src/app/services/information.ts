@@ -36,8 +36,8 @@ export class Information {
 			'allSkills': true,
 			'allCells': false,
 			'seed': null,
-			'statsStartColumn': 'B52',
-			'statsEndColumn': 'J52'
+			'statsStartColumn': 'B50',
+			'statsEndColumn': 'K50'
         },
         {
 			'id': 2,
@@ -46,8 +46,8 @@ export class Information {
 			'allSkills': true,
 			'allCells': false,
 			'seed': null,
-			'statsStartColumn': 'B18',
-			'statsEndColumn': 'J18'
+			'statsStartColumn': 'B17',
+			'statsEndColumn': 'K17'
         },
         {
 			'id': 3,
@@ -56,8 +56,8 @@ export class Information {
 			'allSkills': true,
 			'allCells': false,
 			'seed': null,
-			'statsStartColumn': 'B44',
-			'statsEndColumn': 'J44'
+			'statsStartColumn': '',
+			'statsEndColumn': ''
         },
         {
 			'id': 4,
@@ -66,8 +66,8 @@ export class Information {
 			'allSkills': true,
 			'allCells': false,
 			'seed': null,
-			'statsStartColumn': 'B39',
-			'statsEndColumn': 'J39'
+			'statsStartColumn': '',
+			'statsEndColumn': ''
         },
         {
 			'id': 5,
@@ -275,7 +275,9 @@ export class Information {
 			'preferredName': 'ogNdrahciR',
 			'allSkills': true,
 			'allCells': false,
-			'seed': null
+			'seed': null,
+			'statsStartColumn': 'B33',
+			'statsEndColumn': 'K33'
 		},
         {
 			'id': 31,
