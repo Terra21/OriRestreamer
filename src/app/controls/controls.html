@@ -60,6 +60,16 @@
 				<br>
 				<b>CFlame</b>
 			</div>
+			<div (click)="setBackground('ChargeJumpTree')" class="clickable">
+				<img src="../../assets/ChargeJumpTree.png" style="max-height:50px;">
+				<br>
+				<b>CJump</b>
+			</div>
+			<div (click)="setBackground('ClimbTree')" class="clickable">
+				<img src="../../assets/ClimbTree.png" style="max-height:50px;">
+				<br>
+				<b>Climb</b>
+			</div>
 		</div>
 			<hr class="spacer r7 c1" />
 
@@ -128,10 +138,16 @@
 			<div *ngIf="vm.bestOf > 0" class="col-4 center label-big players r13 c5">PLAYER 2 STATS</div>
 
 			<input *ngIf="vm.bestOf > 0" class="twitch r14 c2" [(ngModel)]="p1StatsText" />
-	
+			<!-- <select class="twitch r15 c2" [(ngModel)]="p1StatsSelectionId"  (change)="calculateStat(vm.player1Id)">
+				<option *ngFor="let option of stats" [value]="option.index">{{ option.name }}</option>
+			</select>
+			-->
 			<input *ngIf="vm.bestOf > 0" type="button" class="btn col-1 r14 c3" value="SHOW ON STREAM" (click)="setP1Stats()" />
 	
 			<input *ngIf="vm.bestOf > 0" class="twitch r14 c6" [(ngModel)]="p2StatsText" />
+			<!-- <select class="twitch r15 c6" [(ngModel)]="p2StatsSelectionId" (change)="calculateStat(vm.player2Id)">
+				<option *ngFor="let option of stats" [value]="option.index" >{{ option.name }}</option>
+			</select> -->
 			<input *ngIf="vm.bestOf > 0" type="button" class="btn col-1 r14 c7" value="SHOW ON STREAM" (click)="setP2Stats()" />
 	</div>
 </div>

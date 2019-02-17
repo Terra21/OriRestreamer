@@ -321,6 +321,40 @@ public set seed(seed: string){
 		this.setP2Stats();
 	}
 
+	
+	calculateStat(playerId: number) {
+		let title = jQuery.grep(this.stats, function(n: any, i) {
+		  return n.index == this.p1StatsSelectionId;
+		}.bind(this))[0];
+	
+		let player = this.getPlayerById(playerId);
+		console.log(player);
+
+		$.ajax({
+		  url: 'https://sheets.googleapis.com/v4/spreadsheets/1cnJai1UJb9qmriC6lVpCiz0-wq_nbg-BxuywtmrrZ-8/values/Stats Summary!' + player.raceStatsStartColumn + ':' + player.raceStatsEndColumn + '?key=AIzaSyBg9fQgl81Zhk2shiOIYm1k4o9Kv3dvxHU',
+		  dataType: 'json',
+		  error: function(response) {
+			console.log(response);
+		  },
+		  success: function( response: any ) {
+			console.log(response.values[0]);
+			this.player1Stats = response.values[0];
+			console.log(this.player1Stats);
+			if (this.player1Stats[this._vm.player1_stats] == '')
+			this.player1Stats[this._vm.player1_stats] = 'Does not attempt';
+		  else{
+			if (title.convertToPercentage  && !isNaN(this.player1Stats[this._vm.player1_stats] * 100))
+			this.player1Stats[this._vm.player1_stats] = (this.player1Stats[this._vm.player1_stats] * 100).toFixed(2) + '%';
+		  }
+	
+		  console.log(this.player1Stats[this._vm.player1_stats]);
+	
+		  this.p1StatsText = title.name + ': ' + this.player1Stats[this._vm.player1_stats];
+	
+		  }.bind(this)
+		});
+	
+	}
 
 	matchTypes = [{
 		name: 'Qualifier',
@@ -357,10 +391,240 @@ public set seed(seed: string){
 		name: 'Top 8'
 	}];
 
-	stats = [{
-		index: 0,
-		name: 'Free Text',
-		convertToPercentage: false
-	}
+stats = [{
+    index: 0,
+    name: 'Average Race Time',
+    convertToPercentage: false
+  },
+  {
+    index: 1,
+    name: 'Best Race Time',
+    convertToPercentage: false
+  },
+  {
+    index: 2,
+    name: 'Worst Race Time',
+    convertToPercentage: false
+  },
+  {
+    index: 12,
+    name: 'Grotto Cycle (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 19,
+    name: 'Grotto Skip (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 34,
+    name: 'Swamp Entry (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 43,
+    name: 'Kuro CS Skip (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 50,
+    name: 'Stompless (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 57,
+    name: 'Sorrow Bash (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 84,
+    name: 'Door Warp (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 87,
+    name: 'Grenade Jump (Success %)',
+    convertToPercentage: true
+  },
+  {
+    index: 3,
+    name: 'Wall Jump (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 4,
+    name: 'Wall Jump (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 5,
+    name: 'Wall Jump (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 6,
+    name: 'Dash (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 7,
+    name: 'Dash (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 8,
+    name: 'Dash (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 13,
+    name: 'Double Jump (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 14,
+    name: 'Double Jump (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 15,
+    name: 'Double Jump (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 22,
+    name: 'Enter Ginso (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 23,
+    name: 'Enter Ginso (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 24,
+    name: 'Enter Ginso (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 28,
+    name: 'Bash (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 29,
+    name: 'Bash (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 30,
+    name: 'Bash (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 37,
+    name: 'Stomp (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 38,
+    name: 'Stomp (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 39,
+    name: 'Stomp (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 44,
+    name: 'Charge Flame (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 45,
+    name: 'Charge Flame (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 46,
+    name: 'Charge Flame (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 51,
+    name: 'Feather (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 52,
+    name: 'Feather (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 53,
+    name: 'Feather (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 60,
+    name: 'Charge Jump (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 61,
+    name: 'Charge Jump (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 62,
+    name: 'Charge Jump (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 66,
+    name: 'Climb (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 67,
+    name: 'Climb (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 68,
+    name: 'Climb (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 72,
+    name: 'Grenade (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 73,
+    name: 'Grenade (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 74,
+    name: 'Grenade (Worst)',
+    convertToPercentage: false
+  },
+  {
+    index: 78,
+    name: 'Enter Horu (Average)',
+    convertToPercentage: false
+  },
+  {
+    index: 79,
+    name: 'Enter Horu (Best)',
+    convertToPercentage: false
+  },
+  {
+    index: 80,
+    name: 'Enter Horu (Worst)',
+    convertToPercentage: false
+  }
 ];
 }

@@ -17,7 +17,11 @@ export class Match {
         this.player2_seed = player2_seed;
         this.player1_result = player1_result;
         this.player2_result = player2_result;
-        this.winner = player1_result === "2" ? player1 : player2_result === "2" ? player2 : null;
+
+        if(round !== "pre")
+            this.winner = player1_result === "2" ? player1 : player2_result === "2" ? player2 : null;
+        else
+            this.winner = player1_result === "1" ? player1 : player2_result === "1" ? player2 : null;
 
         if(this.player1_seed != "" && this.player2_seed != "" && this.player1_result == "")
             this.player1_result = "0";

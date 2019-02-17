@@ -13,15 +13,15 @@
 		<div class="round-header ui" style="grid-column: wb-start / wb-end;">Semifinals</div>
 	</ng-container>
 	<div *ngFor="let match of division.matches" [id]="match.name" class="match-container" [style]="matchStyles(match)">
-		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2, 'underway': (match.player1_result === '1' || match.player2_result === '1') || (match.player1_result === '0' && match.player2_result === '0') }">
+		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player1, 'loser': match.winner === match.player2, 'underway': (((match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0')) && match.round !== 'pre') || ((match.player1_result === '0' && match.player2_result === '0') && match.round === 'pre') }">
 			<div class="player-seed ui">{{ match.player1_seed }}</div>
 			<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player1_seed }">{{ match.player1 }}</div>
-			<div [ngClass]="{ 'score': true, 'underway-score': (match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0') }">{{ match.player1_result}}</div>
+			<div [ngClass]="{ 'top8': division.name === 'Top 8', 'score': true, 'underway-score': (((match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0')) && match.round !== 'pre') || ((match.player1_result === '0' && match.player2_result === '0') && match.round === 'pre') }">{{ match.player1_result}}</div>
 		</div>
-		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2, 'loser': match.winner === match.player1, 'underway': (match.player1_result === '1' || match.player2_result === '1') || (match.player1_result === '0' && match.player2_result === '0')  }">
+		<div [ngClass]="{ 'player-container': true, 'winner': match.winner === match.player2, 'loser': match.winner === match.player1, 'underway': (((match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0')) && match.round !== 'pre') || ((match.player1_result === '0' && match.player2_result === '0') && match.round === 'pre') }">
 			<div class="player-seed ui">{{ match.player2_seed }}</div>
 			<div [ngClass]="{ 'player-name': true, 'placeholder': !match.player2_seed }">{{ match.player2 }}</div>
-			<div [ngClass]="{ 'score': true, 'underway-score': (match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0') }">{{ match.player2_result}}</div>
+			<div [ngClass]="{ 'top8': division.name === 'Top 8', 'score': true, 'underway-score': (((match.player1_result === '1' && match.player2_result != '2') || (match.player2_result === '1' && match.player1_result != '2') || (match.player1_result === '0' && match.player2_result === '0')) && match.round !== 'pre') || ((match.player1_result === '0' && match.player2_result === '0') && match.round === 'pre')  }">{{ match.player2_result}}</div>
 		</div>
 		<div class="match-label ui">{{ match.friendlyMatchName }}</div>
 	</div>
