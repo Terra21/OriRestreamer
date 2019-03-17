@@ -16,6 +16,8 @@ import { CreditsCMP } from './credits/credits.cmp';
 import { IntermissionCMP } from './intermission/intermission.cmp';
 import { DivisionComponent } from './division/division.component';
 
+import { NumberLoop } from './pipes/number-loop';
+
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardCMP },
   { path: 'stream', component: StreamCMP },
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     StatsCMP,
     CreditsCMP,
     IntermissionCMP,
-    DivisionComponent
+    DivisionComponent,
+    NumberLoop
   ],
   imports: [
     BrowserModule,

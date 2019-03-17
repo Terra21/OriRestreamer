@@ -56,6 +56,19 @@ export class StreamCMP extends BaseCMP {
 		this.p2ThirdWin = this.vm.player2_winCount >= 3;
 		this.player1 = this.getPlayerById(this.vm.player1Id);
 		this.player2 = this.getPlayerById(this.vm.player2Id);
+
+		this.p1WinCount = this.vm.player1_winCount;
+		this.p2WinCount = this.vm.player2_winCount;
+
+		this.vm.currentSeries.forEach(function(m) {
+			if(m.winner == 1)
+				this.p1WinCount++;
+			if(m.winner == 2)
+				this.p2WinCount++;
+		}.bind(this));
+
+		this.p1GamesLeft = (3 - this.p1WinCount);
+		this.p2GamesLeft = (3 - this.p2WinCount);
 	}
 
 	p1First: boolean;
@@ -71,4 +84,10 @@ export class StreamCMP extends BaseCMP {
 	p2FirstWin: boolean;
 	p2SecondWin: boolean;
 	p2ThirdWin: boolean;
+
+	p1WinCount: number;
+	p2WinCount: number;
+
+	p1GamesLeft: number;
+	p2GamesLeft: number;
 }

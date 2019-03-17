@@ -24,14 +24,14 @@
 }
 
 .matchup-results {
-    margin-top: 150px;
-    font-size: 40px;
+    margin-top: 130px;
+    font-size: 34px;
     width: 300px;
     margin-left: 800px;
 }
 
 .matchup-results > div {
-    font-size: 40px;
+    font-size: 32px;
     margin-top: 20px;
 }
 
@@ -100,4 +100,8 @@
 
 .players {
     font-size: 54px;
+}
+
+.bo5-splash {
+    font-size: 10px;
 }

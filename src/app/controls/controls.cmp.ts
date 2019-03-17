@@ -25,6 +25,8 @@ export class ControlsCMP {
 
 		}.bind(this));
 
+		this.resetWinner();
+
 		this.vm.players.sort(function(a, b) {
 			let nameA=a.preferredName.toLowerCase(), nameB = b.preferredName.toLowerCase();
 			if(nameA < nameB)
@@ -81,7 +83,8 @@ export class ControlsCMP {
 
 	resetWinner() {
 		this.vm.soloWinner = 0;
-		this.vm.currentSeries = [{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}];
+		this.vm.currentSeries = this.vm.bestOf == 3 ? [{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}] :
+			[{ winner: 0, name: 'Match 1'}, {winner: 0, name: 'Match 2'}, {winner: 0, name: 'Match 3'}, {winner: 0, name: 'Match 4'}, {winner: 0, name: 'Match 5'}];
 		this.vm.player1_winCount = 0;
 		this.vm.player2_winCount = 0;
 		this.p1_wins = 0;
@@ -268,6 +271,7 @@ public set seed(seed: string){
 
 	public set bestOf(bestOf: number){
 		this._vm.bestOf = bestOf;
+		this.resetWinner();
 	}
 
 	public get p1_seed(): string {
@@ -367,6 +371,10 @@ public set seed(seed: string){
 	{
 		name: 'Best of 3',
 		value: 3
+	},
+	{
+		name: 'Best of 5',
+		value: 5
 	}];
 
 	tournaments = [{

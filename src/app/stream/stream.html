@@ -47,21 +47,27 @@
     <div *ngIf="vm.bestOf >= 3" class="win-count-container">
         <div class="win-count-p1">
             <span *ngFor="let match of vm.currentSeries; let i = index">
-                <img *ngIf="match.winner !== 1 && i < 2 && p1WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
+                <img *ngIf="vm.bestOf == 3 && match.winner !== 1 && i < 2 && p1WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
+            </span>
+            <span *ngFor='let key of p1GamesLeft | numberLoop'>
+                <img *ngIf="vm.bestOf == 5" src="../../assets/bo3;5-indicatorRing.png">
             </span>
             <span *ngFor="let match of vm.currentSeries">
                 <img *ngIf="match.winner === 1 || (i === 2 && match.winner === 1) " src="../../assets/win-icon.png">
             </span>
         </div>
         <div class="match-type">
-            <span *ngIf="vm.bestOf == 3">Best of 3</span>
+            <span *ngIf="vm.bestOf >= 3">Best of {{ vm.bestOf }}</span>
         </div>
         <div class="win-count-p2">
             <span *ngFor="let match of vm.currentSeries">
                 <img *ngIf="match.winner === 2" src="../../assets/win-icon.png">
             </span>
+            <span *ngFor='let key of p2GamesLeft | numberLoop'>
+                <img *ngIf="vm.bestOf == 5" src="../../assets/bo3;5-indicatorRing.png">
+            </span>
             <span *ngFor="let match of vm.currentSeries; let i = index">
-                <img *ngIf="match.winner !== 2 && i < 2 && p2WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
+                <img *ngIf="vm.bestOf == 3 && match.winner !== 2 && i < 2 && p2WinCount !== 2" src="../../assets/bo3;5-indicatorRing.png">
             </span>
         </div>
     </div>

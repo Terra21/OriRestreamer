@@ -338,10 +338,9 @@
 }
 
 .win-count-container {
-	position: absolute;
+	position: relative;
 	text-align: center;
-	top: 0;
-	left: 710px;
+	top: -660px;
 }
 
 .win-count-p1, .win-count-p2 {
