@@ -14,11 +14,11 @@ export class Information {
     currentAudioOnPlayer: number = 1;
     commentators: string = 'Sigmasin, RooseSR';
     background: string = 'BlackrootDashTree';
-    groupName: string = 'Qualifier/Round of 32/Round of 16/Quarterfinal/Semifinal/Final';
+	groupName: string = 'Qualifier/Quarterfinal/Semifinal/Grand Final';
 	matchType: string = this.groupName;
     zoomBracket: boolean = false;
-    bestOf: number = 5;
-	tournament: number = 1;
+    bestOf: number = 1;
+	tournament: number = 2;
 	bracket: string = "Singles (Left)";
     randomizer: boolean = false;
     player1_winCount: number = 0;
@@ -83,7 +83,7 @@ export class Information {
 			'preferredName': 'Grifs',
 			'allSkills': true,
 			'allCells': false,
-			'seed': '26',
+			'seed': null,
 			'statsStartColumn': 'B11',
 			'statsEndColumn': 'K11',
 			'raceStatsStartColumn': 'B15',
@@ -408,6 +408,31 @@ export class Information {
 			'allSkills': true,
 			'allCells': false,
 			'seed': '13',
+			'statsStartColumn': 'B12',
+			'statsEndColumn': 'K12',
+			'raceStatsStartColumn': 'B16',
+			'raceStatsEndColumn': 'CP16'
+		}
+		,
+        {
+			'id': 54,
+			'name': 'RooseSR',
+			'preferredName': 'RooseSR',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null,
+			'statsStartColumn': 'B12',
+			'statsEndColumn': 'K12',
+			'raceStatsStartColumn': 'B16',
+			'raceStatsEndColumn': 'CP16'
+		},
+        {
+			'id': 55,
+			'name': 'sigmasin',
+			'preferredName': 'sigma',
+			'allSkills': true,
+			'allCells': false,
+			'seed': null,
 			'statsStartColumn': 'B12',
 			'statsEndColumn': 'K12',
 			'raceStatsStartColumn': 'B16',

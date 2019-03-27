@@ -1,6 +1,10 @@
+@font-face{
+    font-family: "Majalla";
+    src: url('../../assets/majalla.ttf') format("truetype")
+}
+
 .container {
-    font-family: "Segoe UI";
-	font-weight: 350;
+    font-family: "Majalla";
     color: white;
     width: 1920px;
 	height: 1080px;
@@ -19,7 +23,7 @@
 	display: flex;
 	justify-content: space-between;
 	line-height: 75px;
-	font-size: 38px;
+	font-size: 52px;
     height: 75px;
 }
 
@@ -244,7 +248,7 @@
 
 .commentators {
 	margin-top: 10px;
-	font-size: 32px;
+	font-size: 48px;
 }
 
 .commentators > div {
@@ -308,12 +312,13 @@
 
 .info {
 	flex-grow: 1;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	min-width: 400px;
 	max-width: 660px;
 	text-align: center;
-	font-size: 36px;
-    color: white;
+	font-size: 48px;
+	color: white;
+	line-height: 1.1;
     text-shadow:
      -1px -1px 0 #000,
       1px -1px 0 #000,
@@ -370,8 +375,9 @@
 .title {
 	float: left;
 	width: 350px;
-	font-size: 54px;
+	font-size: 68px;
 	text-align: center;
+	line-height: 1.2;
 }
 
 .logo {
