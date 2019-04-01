@@ -38,13 +38,13 @@
 
 .matchup-results {
     margin-top: 130px;
-    font-size: 34px;
+    font-size: 38px;
     width: 300px;
     margin-left: 800px;
 }
 
 .matchup-results > div {
-    font-size: 32px;
+    font-size: 38px;
     margin-top: 20px;
 }
 
@@ -95,6 +95,7 @@
 }
 
 .icon {
+    margin-bottom: 10px;
     vertical-align: bottom;
 }
 

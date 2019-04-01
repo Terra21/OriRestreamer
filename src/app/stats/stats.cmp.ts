@@ -12,7 +12,7 @@ export class StatsCMP extends BaseCMP {
 		super();
 	}
 
-	statsUrl: string = "1LAvyCLpxzfN7KTfy0aeNeSmHSUlZP_tnL8tW_XvJVWg/values/Stream Stats!";
+	statsUrl: string = "15-X1m1xy6-bxJ-8ZNwEvk6THf2-SfxQhRpiWrmi517s/values/Stream Stats!";
 	player1Stats: any;
 	player2Stats: any;
 
